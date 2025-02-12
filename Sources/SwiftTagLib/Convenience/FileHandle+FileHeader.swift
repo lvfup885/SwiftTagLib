@@ -1,5 +1,7 @@
 
-import Foundation.NSFileHandle
+import class Foundation.FileHandle
+import struct Foundation.Data
+import protocol Foundation.LocalizedError
 
 enum FileHeaderReadError: Swift.Error, LocalizedError {
     case unableToReadHeaderOfFile

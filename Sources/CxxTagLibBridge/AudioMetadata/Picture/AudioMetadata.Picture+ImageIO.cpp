@@ -1,5 +1,6 @@
 
 #import "AudioMetadata.hpp"
+#import <CoreFoundation/CoreFoundation.h>
 #import <ImageIO/ImageIO.h>
 
 /// Attempts to extract `MIME type` from raw image `bytes`, if fails returns empty string.

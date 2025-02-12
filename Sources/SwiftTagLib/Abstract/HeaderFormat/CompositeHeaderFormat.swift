@@ -11,7 +11,7 @@ protocol CompositeHeaderFormat {
     associatedtype HeaderLayout: CompositeHeaderLayout
 }
 
-import Foundation.NSFileHandle
+import class Foundation.FileHandle
 
 extension CompositeHeaderFormat where Self: AudioFormat {
     static func isFormatSupported(_ fileHandle: FileHandle) -> Bool {

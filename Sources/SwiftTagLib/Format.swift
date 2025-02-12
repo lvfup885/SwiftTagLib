@@ -1,5 +1,6 @@
 
 extension AudioFile {
+    /// Describes the file format of `AudioFile`.
     public enum Format: CaseIterable {
         case aiff
         case dsdiff
@@ -54,11 +55,11 @@ extension AudioFile.Format {
 }
 
 // MARK: - AudioFile.Format forFile
-import Foundation.NSURL
-import Foundation.NSFileHandle
+import struct Foundation.URL
+import class Foundation.FileHandle
 
 extension AudioFile.Format {
-    @usableFromInline static func forFile(at url: URL) throws(AudioFile.InitializationError) -> Self? {
+    static func forFile(at url: URL) throws(AudioFile.InitializationError) -> Self? {
         let fileExtension = url.pathExtension.lowercased()
         guard let fileHandle = try? FileHandle(forReadingFrom: url) else { throw .unableToOpenFile }
         var score: Int = 10

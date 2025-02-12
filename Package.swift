@@ -1,4 +1,4 @@
-// swift-tools-version: 5.10
+// swift-tools-version: 5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -10,10 +10,10 @@ let package = Package(
         .macOS(.v14),
     ],
     products: [
-        .library(name: "SwiftTagLib", targets: ["SwiftTagLib"]),
+        .library(name: "SwiftTagLib", type: .static, targets: ["SwiftTagLib"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/sbooth/CXXTagLib", .branch("main")),// .upToNextMajor(from: "2.0.2")),
+        .package(url: "https://github.com/sbooth/CXXTagLib", revision: "d729ec1"),
     ],
     targets: [
         .target(
@@ -33,17 +33,6 @@ let package = Package(
             swiftSettings: [
                 .interoperabilityMode(.Cxx),
             ]
-            /// weirdly works just fine without explicitly stating header search path here
-//            cSettings: [
-//                .headerSearchPath("include"),
-//            ],
-//            cxxSettings: [
-//                .headerSearchPath("include"),
-//            ],
-            /// unsure if it it really needs to be specified here.
-//            linkerSettings: [
-//                .linkedFramework("ImageIO"),
-//            ]
         ),
 //        .testTarget(
 //            name: "SwiftTagLibTests",
@@ -55,5 +44,5 @@ let package = Package(
 //            ]
 //        ),
     ],
-    cxxLanguageStandard: .cxx20
+    cxxLanguageStandard: .cxx2b //.cxx20
 )

@@ -2,6 +2,7 @@
 @_implementationOnly import CxxTagLibBridge
 
 public extension AudioFile {
+    /// Aggregate metadata container built from `AuidoFile.Formt` specific combination of the following: `TagLib::Tag`, `TagLib:ID3v1::Tag`, `TagLib::ID3v2::Tag`, `TagLib::Ogg::XiphComment`, `TagLib::APE::Tag`, `TagLib::MP4::Tag`.
     struct Metadata: CxxRepresentable, Hashable {
         // MARK: - Basic Properties shared across ID3v1, ID3v2 and some other Tags
         public var title: String = ""
@@ -31,7 +32,7 @@ public extension AudioFile {
         // MARK: - Additional Metadata
         public var additional: [AdditionalMetadataPair] = []
         // MARK: - init
-        @inlinable public init() {}
+        public init() {}
 
         init(_ metadata: AudioMetadata) {
             title = String(metadata.title)
@@ -92,10 +93,10 @@ public extension AudioFile {
 }
 
 // MARK: - read
-import Foundation.NSURL
+import struct Foundation.URL
 
 extension AudioFile.Metadata {
-    @usableFromInline static func read(
+    static func read(
         from url: URL,
         format: AudioFile.Format
     ) throws(AudioFile.InitializationError) -> Self {
@@ -110,7 +111,7 @@ extension AudioFile.Metadata {
 
 // MARK: - write
 extension AudioFile.Metadata {
-    @usableFromInline func write(
+    func write(
         to url: URL,
         format: AudioFile.Format
     ) throws(AudioFile.MetadataWritingError) {

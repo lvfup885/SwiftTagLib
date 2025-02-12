@@ -11,7 +11,7 @@ protocol BasicHeaderFormat {
     associatedtype HeaderLayout: BasicHeaderLayout
 }
 
-import Foundation.NSFileHandle
+import class Foundation.FileHandle
 
 extension BasicHeaderFormat where Self: AudioFormat {
     static func isFormatSupported(_ fileHandle: FileHandle) -> Bool {

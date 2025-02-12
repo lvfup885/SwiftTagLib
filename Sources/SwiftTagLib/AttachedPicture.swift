@@ -1,14 +1,18 @@
 
-import Foundation.NSData
+import struct Foundation.Data
 @_implementationOnly import CxxTagLibBridge
 
 public extension AudioFile.Metadata {
+    /// `Image` attached to `AudioFile` and packed in any of the tags, specific to `AudioFile.Format`.
     struct AttachedPicture: CxxRepresentable, Hashable {
+        /// raw bytes.
         public let data: Data
+        /// image description.
         public let description: String
+        /// kind of image.
         public let kind: Kind
 
-        @usableFromInline internal init(data: Data, kind: Kind, description: String) {
+        internal init(data: Data, kind: Kind, description: String) {
             self.data = data
             self.kind = kind
             self.description = description

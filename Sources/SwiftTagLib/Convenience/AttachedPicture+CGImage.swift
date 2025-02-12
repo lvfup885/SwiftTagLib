@@ -1,10 +1,12 @@
 
-import CoreImage
-import UniformTypeIdentifiers
+import ImageIO
+internal import class CoreGraphics.CGImage
+import struct Foundation.Data
+import protocol Foundation.LocalizedError
 
-public extension AudioFile.Metadata.AttachedPicture {
+internal extension AudioFile.Metadata.AttachedPicture {
     /// Creates `AttachedPicture` from `CGImage` with `kind` and `description`.
-    @inlinable init(image: CGImage, kind: Kind, description: String) throws(ImageDataExtractionError) {
+    init(image: CGImage, kind: Kind, description: String) throws(ImageDataExtractionError) {
         guard let dataProvider = image.dataProvider else {
             throw .noDataProvider
         }
@@ -13,11 +15,8 @@ public extension AudioFile.Metadata.AttachedPicture {
         }
         self.init(data: data, kind: kind, description: description)
     }
-}
-
-public extension AudioFile.Metadata.AttachedPicture {
     /// Attempts to construct `CGImage` from **raw** `Data`.
-    @inlinable var image: CGImage? {
+    var cgImage: CGImage? {
         guard
             let imageSource = CGImageSourceCreateWithData(data as CFData, .none),
             let image = CGImageSourceCreateImageAtIndex(imageSource, 0, nil)
@@ -25,17 +24,6 @@ public extension AudioFile.Metadata.AttachedPicture {
             return .none
         }
         return image
-    }
-    /// Provides `UTType` of image in **raw** `Data`, presumably should only ever be `public.jpeg`.
-    @inlinable var type: UTType? {
-        guard
-            let imageSource = CGImageSourceCreateWithData(data as CFData, .none),
-            let identifier = CGImageSourceGetType(imageSource) as? String,
-            let type = UTType(identifier)
-        else {
-            return .none
-        }
-        return type
     }
 }
 

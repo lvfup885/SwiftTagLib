@@ -13,8 +13,3 @@ Currently supporting reading from most of the same types as [SFBAudioEngine](htt
 #### Notes:
 
 - [WMA](https://en.wikipedia.org/wiki/Advanced_Systems_Format) file format is supported by taglib, but not `SFBAudioEngine`, can probably try to support it even though it's outdated.
-
-#### Todo:
-
-- [x] method to create attached picture from CGImage, UIImage, NSImage.
-  - [ ] cover with tests.

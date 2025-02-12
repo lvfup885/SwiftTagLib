@@ -1,5 +1,5 @@
 
-import Foundation.NSData
+import struct Foundation.Data
 
 protocol CustomHeaderLayout {
     typealias Data = Foundation.Data
@@ -15,7 +15,7 @@ protocol CustomHeaderFormat {
     associatedtype HeaderLayout: CustomHeaderLayout
 }
 
-import Foundation.NSFileHandle
+import class Foundation.FileHandle
 
 extension CustomHeaderFormat where Self: AudioFormat {
     static func isFormatSupported(_ fileHandle: FileHandle) -> Bool {

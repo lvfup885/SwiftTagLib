@@ -1,0 +1,17 @@
+
+VALIDATE_PRODUCT = YES
+SWIFT_OPTIMIZATION_LEVEL = -Onone
+SWIFT_OBJC_INTEROP_MODE = objcxx
+SWIFT_VERSION = 5.9
+HEADER_SEARCH_PATHS = ./cxxheaders/include-taglib/ \
+    ./cxxheaders/utfcpp/ \
+    ./cxxheaders/taglib/ \
+    ./cxxheaders/mod/ \
+    ./cxxheaders/riff/ \
+    ./cxxheaders/toolkit/ \
+    ./cxxheaders/cxx-tag-lib-bridge/
+OTHER_LDFLAGS = $(inherited) \
+    -framework CoreFoundation \
+    -framework Foundation \
+    -framework ImageIO \
+    -framework CoreGraphics

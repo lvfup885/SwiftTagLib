@@ -1,5 +1,5 @@
 
-import Foundation
+import protocol Foundation.LocalizedError
 
 public extension AudioFile {
     enum InitializationError: Swift.Error, LocalizedError {

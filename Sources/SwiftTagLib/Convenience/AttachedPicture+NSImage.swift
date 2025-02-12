@@ -1,10 +1,11 @@
 
 #if canImport(AppKit)
-import AppKit
+import class AppKit.NSImage
+import ImageIO
 
 public extension AudioFile.Metadata.AttachedPicture {
     /// Creates `AttachedPicture` from `NSImage` with `kind` and `description`.
-    @inlinable init(image: NSImage, kind: Kind, description: String) throws(ImageDataExtractionError) {
+    init(image: NSImage, kind: Kind, description: String) throws(ImageDataExtractionError) {
         guard let tiffRepresentation = image.tiffRepresentation else {
             throw .noTiffRepresentationBehindNSImage
         }
@@ -15,6 +16,11 @@ public extension AudioFile.Metadata.AttachedPicture {
             throw .failedToCreateCGImage
         }
         try self.init(image: image, kind: kind, description: description)
+    }
+    /// Attempts to construct `NSImage` from `CGImage` from **raw** `Data`.
+    var image: NSImage? {
+        guard let cgImage = cgImage else { return .none }
+        return NSImage(cgImage: cgImage, size: .zero)
     }
 }
 #endif

@@ -1,8 +1,10 @@
 
-import Foundation.NSData
+import struct Foundation.Data
+import protocol Foundation.LocalizedError
 
+/// A helper to easily read `UTF8` strings from file headers.
 struct BinaryData {
-    private let data: [UInt8]
+    let data: [UInt8]
 
     enum Error: Swift.Error, LocalizedError {
         case notEnoughData

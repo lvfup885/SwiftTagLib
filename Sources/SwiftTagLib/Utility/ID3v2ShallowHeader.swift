@@ -1,11 +1,12 @@
 
-import Foundation.NSData
+import struct Foundation.Data
+import protocol Foundation.LocalizedError
 
 struct ID3v2ShallowHeader {
     /// both header size and footer size.
     static var size: Int { 10 }
 
-    private let bytes: Data
+    let bytes: Data
 
     enum Error: Swift.Error, LocalizedError {
         case dataIsNotID3v2Header
@@ -17,7 +18,7 @@ struct ID3v2ShallowHeader {
     }
 
     /**
-     An `ID3v2` tag can be detected with the following pattern: `$49 44 33 yy yy xx zz zz zz zz`
+     An `ID3v2` tag can be detected with the following pattewrn: `$49 44 33 yy yy xx zz zz zz zz`
      Where `yy` is less than `$FF`, `xx` is the `flags` byte and `zz` is less than `$80`.
      */
     init(_ bytes: Data) throws(Error) {
