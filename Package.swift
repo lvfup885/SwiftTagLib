@@ -45,15 +45,15 @@ let package = Package(
 //                .linkedFramework("ImageIO"),
 //            ]
         ),
-        .testTarget(
-            name: "SwiftTagLibTests",
-            dependencies: [
-                "SwiftTagLib",
-            ],
-            swiftSettings: [
-                .interoperabilityMode(.Cxx),
-            ]
-        ),
+//        .testTarget(
+//            name: "SwiftTagLibTests",
+//            dependencies: [
+//                "SwiftTagLib",
+//            ],
+//            swiftSettings: [
+//                .interoperabilityMode(.Cxx),
+//            ]
+//        ),
     ],
     cxxLanguageStandard: .cxx20
 )

@@ -1,6 +1,6 @@
 
 import Foundation.NSFileHandle
-import CxxTagLibBridge
+@_implementationOnly import CxxTagLibBridge
 
 /// Describes details to identify file as corresponding to specific format and abstracts away implementation.
 protocol AudioFormat {

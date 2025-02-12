@@ -1,9 +1,16 @@
 
 import Foundation.NSFileHandle
 
-enum FileHeaderReadError: Swift.Error {
+enum FileHeaderReadError: Swift.Error, LocalizedError {
     case unableToReadHeaderOfFile
     case insufficientLength
+
+    public var errorDescription: String? {
+        switch self {
+            case .unableToReadHeaderOfFile: "unable to read header of file"
+            case .insufficientLength: "insufficient length"
+        }
+    }
 }
 
 extension FileHandle {

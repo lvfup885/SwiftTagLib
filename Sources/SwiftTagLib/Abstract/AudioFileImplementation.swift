@@ -1,7 +1,7 @@
 
-import CxxTagLibBridge
+@_implementationOnly import CxxTagLibBridge
 
-/// Acts as common interace for C++ AudioFile subtypes.
+/// Acts as common interace for `C++` `AudioFile` subtypes.
 protocol AudioFileImplementation {
     init(_ fileName: std.string)
     func readMetadata(_ metadata: UnsafeMutablePointer<AudioMetadata>!) -> MetadataReadingOutcome

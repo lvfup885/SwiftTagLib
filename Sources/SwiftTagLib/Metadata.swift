@@ -1,5 +1,5 @@
 
-import CxxTagLibBridge
+@_implementationOnly import CxxTagLibBridge
 
 public extension AudioFile {
     struct Metadata: CxxRepresentable, Hashable {
@@ -33,7 +33,7 @@ public extension AudioFile {
         // MARK: - init
         @inlinable public init() {}
 
-        @usableFromInline init(_ metadata: AudioMetadata) {
+        init(_ metadata: AudioMetadata) {
             title = String(metadata.title)
             albumTitle = String(metadata.albumTitle)
             artist = String(metadata.artist)
@@ -57,7 +57,7 @@ public extension AudioFile {
             additional = metadata.additional.map(AdditionalMetadataPair.init)
         }
 
-        @usableFromInline var cxxRepresentation: AudioMetadata {
+        var cxxRepresentation: AudioMetadata {
             var metadata = AudioMetadata()
             metadata.title = std.string(title)
             metadata.albumTitle = std.string(albumTitle)

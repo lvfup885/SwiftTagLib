@@ -1,5 +1,5 @@
 
-import CxxTagLibBridge
+@_implementationOnly import CxxTagLibBridge
 
 extension AudioFile.Metadata {
     public struct AdditionalMetadataPair: CxxRepresentable, Hashable {
@@ -11,12 +11,12 @@ extension AudioFile.Metadata {
             self.value = value
         }
 
-        @usableFromInline init(_ pair: AudioMetadata.AdditionalMetadataPair) {
+        init(_ pair: AudioMetadata.AdditionalMetadataPair) {
             self.key = String(pair.first);
             self.value = String(pair.second)
         }
 
-        @usableFromInline var cxxRepresentation: AudioMetadata.AdditionalMetadataPair {
+        var cxxRepresentation: AudioMetadata.AdditionalMetadataPair {
             .init(first: std.string(key), second: std.string(value))
         }
     }

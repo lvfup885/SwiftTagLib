@@ -2,7 +2,7 @@
 import Foundation
 
 public extension AudioFile {
-    enum InitializationError: Error, LocalizedError {
+    enum InitializationError: Swift.Error, LocalizedError {
         case unableToDetermineAudioFormat
         case unableToOpenFile
         case invalidFile
@@ -18,7 +18,7 @@ public extension AudioFile {
         }
     }
 
-    enum MetadataWritingError: Error, LocalizedError {
+    enum MetadataWritingError: Swift.Error, LocalizedError {
         case unableToOpenFile
         case invalidFile
         case saveError
@@ -35,10 +35,10 @@ public extension AudioFile {
     }
 }
 
-import CxxTagLibBridge
+@_implementationOnly import CxxTagLibBridge
 
 extension AudioFile.InitializationError {
-    @usableFromInline static func throwIfNeeded(_ outcome: MetadataReadingOutcome) throws(Self) {
+    static func throwIfNeeded(_ outcome: MetadataReadingOutcome) throws(Self) {
         switch outcome {
             case .success: return
             case .fileIsNotOpen: throw .unableToOpenFile
@@ -49,7 +49,7 @@ extension AudioFile.InitializationError {
 }
 
 extension AudioFile.MetadataWritingError {
-    @usableFromInline static func throwIfNeeded(_ outcome: MetadataWritingOutcome) throws(Self) {
+    static func throwIfNeeded(_ outcome: MetadataWritingOutcome) throws(Self) {
         switch outcome {
             case .success: return
             case .fileIsNotOpen: throw .unableToOpenFile

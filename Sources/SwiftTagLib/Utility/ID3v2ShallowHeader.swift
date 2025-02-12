@@ -7,8 +7,13 @@ struct ID3v2ShallowHeader {
 
     private let bytes: Data
 
-    enum Error: Swift.Error {
+    enum Error: Swift.Error, LocalizedError {
         case dataIsNotID3v2Header
+        public var errorDescription: String? {
+            switch self {
+                case .dataIsNotID3v2Header: "data is not ID3v2 header"
+            }
+        }
     }
 
     /**

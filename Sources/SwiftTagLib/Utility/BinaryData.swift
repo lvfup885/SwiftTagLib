@@ -4,9 +4,16 @@ import Foundation.NSData
 struct BinaryData {
     private let data: [UInt8]
 
-    enum Error: Swift.Error {
+    enum Error: Swift.Error, LocalizedError {
         case notEnoughData
         case failedToConvertToString
+
+        public var errorDescription: String? {
+            switch self {
+                case .notEnoughData: "not enough data"
+                case .failedToConvertToString: "failed to convert to string"
+            }
+        }
     }
 
     init(data: Data) {
