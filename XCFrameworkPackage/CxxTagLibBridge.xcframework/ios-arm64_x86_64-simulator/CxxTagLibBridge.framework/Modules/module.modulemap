@@ -1,0 +1,6 @@
+framework module CxxTagLibBridge {
+  umbrella header "CxxTagLibBridge.h"
+  export *
+
+  module * { export * }
+}

@@ -10,50 +10,18 @@ let package = Package(
         .macOS(.v14),
     ],
     products: [
-        .library(name: "SwiftTagLib", targets: ["SwiftTagLib"]),
-        .library(name: "CxxTagLibBridge", targets: ["CxxTagLibBridge"]),
-        .library(name: "taglib", targets: ["taglib"]),
+        .library(
+            name: "SwiftTagLib",
+            targets: [
+                "SwiftTagLib",
+                "CxxTagLibBridge",
+                "taglib",
+            ]
+        )
     ],
     targets: [
-        .target(
-            name: "SwiftTagLib",
-            dependencies: [
-                .byName(name: "CxxTagLibBridge"),
-            ],
-            swiftSettings: [
-                .interoperabilityMode(.Cxx),
-            ]
-        ),
-        .target(
-            name: "CxxTagLibBridge",
-            dependencies: [
-                .byName(name: "taglib"),
-            ],
-            swiftSettings: [
-                .interoperabilityMode(.Cxx),
-            ]
-        ),
-        /// borrowed from .package(url: "https://github.com/sbooth/CXXTagLib", revision: "d729ec1")
-        .target(
-            name: "taglib",
-            cxxSettings: [
-                .headerSearchPath("include/taglib"),
-                .headerSearchPath("utfcpp/source"),
-                .headerSearchPath("."),
-                .headerSearchPath("mod"),
-                .headerSearchPath("riff"),
-                .headerSearchPath("toolkit"),
-            ]
-        ),
-//        .testTarget(
-//            name: "SwiftTagLibTests",
-//            dependencies: [
-//                "SwiftTagLib",
-//            ],
-//            swiftSettings: [
-//                .interoperabilityMode(.Cxx),
-//            ]
-//        ),
-    ],
-    cxxLanguageStandard: .cxx2b //.cxx20
+        .binaryTarget(name: "SwiftTagLib", path: "./XCFrameworkPackage/SwiftTagLib.xcframework"),
+        .binaryTarget(name: "CxxTagLibBridge", path: "./XCFrameworkPackage/CxxTagLibBridge.xcframework"),
+        .binaryTarget(name: "taglib", path: "./XCFrameworkPackage/taglib.xcframework"),
+    ]
 )

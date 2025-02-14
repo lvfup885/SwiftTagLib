@@ -1,0 +1,241 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios17.0-simulator -enable-objc-interop -cxx-interoperability-mode=default -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name SwiftTagLib
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import Foundation/*.Data*/
+import Foundation/*.FileHandle*/
+import Foundation/*.LocalizedError*/
+import Foundation/*.TimeInterval*/
+import Foundation/*.URL*/
+import ImageIO
+import Swift
+import UIKit/*.UIImage*/
+import UniformTypeIdentifiers/*.UTType*/
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+extension SwiftTagLib.AudioFile.Metadata {
+  public struct AdditionalMetadataPair : Swift.Hashable {
+    public let key: Swift.String
+    public let value: Swift.String
+    public init(key: Swift.String, value: Swift.String)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: SwiftTagLib.AudioFile.Metadata.AdditionalMetadataPair, b: SwiftTagLib.AudioFile.Metadata.AdditionalMetadataPair) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension SwiftTagLib.AudioFile.Metadata {
+  public struct AttachedPicture : Swift.Hashable {
+    public let data: Foundation.Data
+    public let description: Swift.String
+    public let kind: SwiftTagLib.AudioFile.Metadata.AttachedPicture.Kind
+    public init(data: Foundation.Data, kind: SwiftTagLib.AudioFile.Metadata.AttachedPicture.Kind, description: Swift.String)
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: SwiftTagLib.AudioFile.Metadata.AttachedPicture, b: SwiftTagLib.AudioFile.Metadata.AttachedPicture) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension SwiftTagLib.AudioFile.Metadata.AttachedPicture {
+  public enum Kind : Swift.UInt32, Swift.RawRepresentable, Swift.CustomStringConvertible {
+    case other
+    case fileIcon
+    case otherFileIcon
+    case frontCover
+    case backCover
+    case leafletPage
+    case media
+    case leadArtist
+    case artist
+    case conductor
+    case band
+    case composer
+    case lyricist
+    case recordingLocation
+    case duringRecording
+    case duringPerformance
+    case movieScreenCapture
+    case colouredFish
+    case illustration
+    case bandLogo
+    case publisherLogo
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.UInt32)
+    public typealias RawValue = Swift.UInt32
+    public var rawValue: Swift.UInt32 {
+      get
+    }
+  }
+}
+public struct AudioFile {
+  public let url: Foundation.URL
+  public let format: SwiftTagLib.AudioFile.Format
+  public var metadata: SwiftTagLib.AudioFile.Metadata
+  public let properties: SwiftTagLib.AudioFile.Properties
+  #if compiler(>=5.3) && $TypedThrows
+  public init(url: Foundation.URL) throws(SwiftTagLib.AudioFile.InitializationError)
+  #endif
+  #if compiler(>=5.3) && $TypedThrows
+  public func write() throws(SwiftTagLib.AudioFile.MetadataWritingError)
+  #endif
+}
+extension SwiftTagLib.AudioFile.Metadata.AttachedPicture {
+  public enum ImageDataExtractionError : Swift.Error, Foundation.LocalizedError {
+    case noDataProvider
+    case noDataInDataProvider
+    case noCGImageBehindUIImage
+    case noTiffRepresentationBehindNSImage
+    case failedToCreateImageSource
+    case failedToCreateCGImage
+    public var errorDescription: Swift.String? {
+      get
+    }
+    public static func == (a: SwiftTagLib.AudioFile.Metadata.AttachedPicture.ImageDataExtractionError, b: SwiftTagLib.AudioFile.Metadata.AttachedPicture.ImageDataExtractionError) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension SwiftTagLib.AudioFile.Metadata.AttachedPicture {
+  #if compiler(>=5.3) && $TypedThrows
+  public init(image: UIKit.UIImage, kind: SwiftTagLib.AudioFile.Metadata.AttachedPicture.Kind, description: Swift.String) throws(SwiftTagLib.AudioFile.Metadata.AttachedPicture.ImageDataExtractionError)
+  #endif
+  public var image: UIKit.UIImage? {
+    get
+  }
+}
+extension SwiftTagLib.AudioFile.Metadata.AttachedPicture {
+  public var type: UniformTypeIdentifiers.UTType? {
+    get
+  }
+}
+extension SwiftTagLib.AudioFile {
+  public enum InitializationError : Swift.Error, Foundation.LocalizedError {
+    case unableToDetermineAudioFormat
+    case unableToOpenFile
+    case invalidFile
+    case unknownError
+    public var errorDescription: Swift.String? {
+      get
+    }
+    public static func == (a: SwiftTagLib.AudioFile.InitializationError, b: SwiftTagLib.AudioFile.InitializationError) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum MetadataWritingError : Swift.Error, Foundation.LocalizedError {
+    case unableToOpenFile
+    case invalidFile
+    case saveError
+    case unknownError
+    public var errorDescription: Swift.String? {
+      get
+    }
+    public static func == (a: SwiftTagLib.AudioFile.MetadataWritingError, b: SwiftTagLib.AudioFile.MetadataWritingError) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension SwiftTagLib.AudioFile {
+  public enum Format : Swift.CaseIterable {
+    case aiff
+    case dsdiff
+    case dsf
+    case flac
+    case monkeysAudio
+    case mp3
+    case mp4
+    case musepack
+    case oggFlac
+    case oggOpus
+    case oggSpeex
+    case oggVorbix
+    case trueAudio
+    case wave
+    case wavPack
+    public static func == (a: SwiftTagLib.AudioFile.Format, b: SwiftTagLib.AudioFile.Format) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [SwiftTagLib.AudioFile.Format]
+    nonisolated public static var allCases: [SwiftTagLib.AudioFile.Format] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension SwiftTagLib.AudioFile {
+  public struct Metadata : Swift.Hashable {
+    public var title: Swift.String
+    public var albumTitle: Swift.String
+    public var artist: Swift.String
+    public var genre: Swift.String
+    public var releaseDate: Swift.String
+    public var comment: Swift.String
+    public var composer: Swift.String
+    public var albumArtist: Swift.String
+    public var bpm: Swift.Int32
+    public var rating: Swift.Int32
+    public var trackNumber: Swift.Int32
+    public var trackTotal: Swift.Int32
+    public var discNumber: Swift.Int32
+    public var discTotal: Swift.Int32
+    public var lyrics: Swift.String
+    public var compilation: Swift.Bool
+    public var isrc: Swift.String
+    public var mcn: Swift.String
+    public var musicBrainzReleaseID: Swift.String
+    public var musicBrainzRecordingID: Swift.String
+    public var attachedPictures: [SwiftTagLib.AudioFile.Metadata.AttachedPicture]
+    public var additional: [SwiftTagLib.AudioFile.Metadata.AdditionalMetadataPair]
+    public init()
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: SwiftTagLib.AudioFile.Metadata, b: SwiftTagLib.AudioFile.Metadata) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension SwiftTagLib.AudioFile {
+  public struct Properties : Swift.Hashable {
+    public var lengthInSeconds: Swift.Int32 {
+      get
+    }
+    public var channels: Swift.Int32 {
+      get
+    }
+    public var sampleRate: Swift.Int32 {
+      get
+    }
+    public var bitrate: Swift.Int32 {
+      get
+    }
+    public var duration: Foundation.TimeInterval {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: SwiftTagLib.AudioFile.Properties, b: SwiftTagLib.AudioFile.Properties) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+extension SwiftTagLib.AudioFile.Metadata.AttachedPicture.Kind : Swift.Equatable {}
+extension SwiftTagLib.AudioFile.Metadata.AttachedPicture.Kind : Swift.Hashable {}
+extension SwiftTagLib.AudioFile.Metadata.AttachedPicture.ImageDataExtractionError : Swift.Equatable {}
+extension SwiftTagLib.AudioFile.Metadata.AttachedPicture.ImageDataExtractionError : Swift.Hashable {}
+extension SwiftTagLib.AudioFile.InitializationError : Swift.Equatable {}
+extension SwiftTagLib.AudioFile.InitializationError : Swift.Hashable {}
+extension SwiftTagLib.AudioFile.MetadataWritingError : Swift.Equatable {}
+extension SwiftTagLib.AudioFile.MetadataWritingError : Swift.Hashable {}
+extension SwiftTagLib.AudioFile.Format : Swift.Equatable {}
+extension SwiftTagLib.AudioFile.Format : Swift.Hashable {}
