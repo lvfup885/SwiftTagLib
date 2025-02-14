@@ -35,7 +35,7 @@ AudioMetadata AudioMetadata::fromXiphComment(const TagLib::Ogg::XiphComment *tag
             metadata.trackTotal = std::stoi(value);
         } else if (strcasecmp(key, "Compilation")) {
             #warning unknown metadata value expectations
-            metadata.comment = strcmp(value, "true") == 0;
+            metadata.compilation = strcmp(value, "true") == 0;
         } else if (strcasecmp(key, "DiscNumber")) {
             metadata.discNumber = std::stoi(value);
         } else if (strcasecmp(key, "DiscTotal")) {
