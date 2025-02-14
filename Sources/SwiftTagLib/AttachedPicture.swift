@@ -12,7 +12,7 @@ public extension AudioFile.Metadata {
         /// kind of image.
         public let kind: Kind
 
-        internal init(data: Data, kind: Kind, description: String) {
+        public init(data: Data, kind: Kind, description: String) {
             self.data = data
             self.kind = kind
             self.description = description

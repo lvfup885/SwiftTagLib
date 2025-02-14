@@ -10,10 +10,9 @@ let package = Package(
         .macOS(.v14),
     ],
     products: [
-        .library(name: "SwiftTagLib", type: .static, targets: ["SwiftTagLib"]),
-    ],
-    dependencies: [
-        .package(url: "https://github.com/sbooth/CXXTagLib", revision: "d729ec1"),
+        .library(name: "SwiftTagLib", targets: ["SwiftTagLib"]),
+        .library(name: "CxxTagLibBridge", targets: ["CxxTagLibBridge"]),
+        .library(name: "taglib", targets: ["taglib"]),
     ],
     targets: [
         .target(
@@ -28,10 +27,22 @@ let package = Package(
         .target(
             name: "CxxTagLibBridge",
             dependencies: [
-                .product(name: "taglib", package: "CXXTagLib"),
+                .byName(name: "taglib"),
             ],
             swiftSettings: [
                 .interoperabilityMode(.Cxx),
+            ]
+        ),
+        /// borrowed from .package(url: "https://github.com/sbooth/CXXTagLib", revision: "d729ec1")
+        .target(
+            name: "taglib",
+            cxxSettings: [
+                .headerSearchPath("include/taglib"),
+                .headerSearchPath("utfcpp/source"),
+                .headerSearchPath("."),
+                .headerSearchPath("mod"),
+                .headerSearchPath("riff"),
+                .headerSearchPath("toolkit"),
             ]
         ),
 //        .testTarget(

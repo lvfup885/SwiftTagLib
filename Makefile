@@ -11,11 +11,10 @@ xcframework:
 		--platform ios \
 		--xcconfig xcframework.xcconfig \
 		--xc-setting BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
-		--debug-symbols \
-		--zip \
+		--no-debug-symbols \
 		| xcbeautify -q
-	du -hs SwiftTagLib.zip
 
 # should include DSYM, can toggle between --debug-symbols and --no-debug-sybmols
 # not including DSYM saves about 80% of the size of XCFramework
 # if macos is needed add --platform macos
+# add --zip if distribution as package is needed
