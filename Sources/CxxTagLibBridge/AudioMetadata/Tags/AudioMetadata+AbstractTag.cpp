@@ -1,7 +1,7 @@
 
 #import "AudioMetadata.hpp"
 
-///// constructor for `AudioMetadata` from **abstract** `TagLib::Tag`.
+/// constructor for `AudioMetadata` from **abstract** `TagLib::Tag`.
 AudioMetadata AudioMetadata::fromTag(const TagLib::Tag *tag) {
     AudioMetadata metadata = {
         tag->title().toCString(true),

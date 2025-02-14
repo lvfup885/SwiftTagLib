@@ -10,7 +10,6 @@ void AudioMetadata::overlay(AudioMetadata layer) {
     STRING_OVERLAY(layer, artist);
     STRING_OVERLAY(layer, genre);
     STRING_OVERLAY(layer, releaseDate);
-    STRING_OVERLAY(layer, track);
     STRING_OVERLAY(layer, comment);
     STRING_OVERLAY(layer, composer);
     STRING_OVERLAY(layer, albumArtist);

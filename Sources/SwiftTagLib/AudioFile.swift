@@ -9,13 +9,17 @@ public struct AudioFile {
     public let format: Format
     /// attached metadata.
     public var metadata: Metadata
+    /// audio file properties.
+    public let properties: Properties
 
     /// attempts to create `AudioFile` from `URL`.
     public init(url: URL) throws(InitializationError) {
         guard let format = try Format.forFile(at: url) else { throw .unableToDetermineAudioFormat }
         self.url = url
         self.format = format
-        self.metadata = try .read(from: url, format: format)
+        let (metadata, properties) = try Metadata.readMetadataAndProperties(from: url, format: format)
+        self.metadata = metadata
+        self.properties = properties
     }
 
     /// writes changes to `Metadata`.

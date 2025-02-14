@@ -10,6 +10,7 @@ public extension AudioFile {
         public var artist: String = ""
         public var genre: String = ""
         public var releaseDate: String = ""
+        public var comment: String = ""
         // MARK: - ID3v2 Properties
         public var composer: String = ""
         public var albumArtist: String = ""
@@ -40,6 +41,7 @@ public extension AudioFile {
             artist = String(metadata.artist)
             genre = String(metadata.genre)
             releaseDate = String(metadata.releaseDate)
+            comment = String(metadata.comment)
             composer = String(metadata.composer)
             albumArtist = String(metadata.albumArtist)
             bpm = metadata.beatPerMinute
@@ -65,6 +67,7 @@ public extension AudioFile {
             metadata.artist = std.string(artist)
             metadata.genre = std.string(genre)
             metadata.releaseDate = std.string(releaseDate)
+            metadata.comment = std.string(comment)
             metadata.composer = std.string(composer)
             metadata.albumArtist = std.string(albumArtist)
             metadata.beatPerMinute = bpm
@@ -96,16 +99,17 @@ public extension AudioFile {
 import struct Foundation.URL
 
 extension AudioFile.Metadata {
-    static func read(
+    static func readMetadataAndProperties(
         from url: URL,
         format: AudioFile.Format
-    ) throws(AudioFile.InitializationError) -> Self {
+    ) throws(AudioFile.InitializationError) -> (metadata: Self, properties: AudioFile.Properties) {
         let cString = std.string(url.path)
         var metadata = AudioMetadata()
+        var properties = AudioProperties()
         let implementation = format.implementationMetatype.init(cString)
-        let outcome = implementation.readMetadata(&metadata)
+        let outcome = implementation.readMetadata(&metadata, &properties)
         try AudioFile.InitializationError.throwIfNeeded(outcome)
-        return .init(metadata)
+        return (.init(metadata), .init(properties))
     }
 }
 

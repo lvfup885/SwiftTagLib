@@ -7,7 +7,7 @@
         _class(std::string fileName): fileName(fileName) {}; \
         std::string fileName; \
         std::string getFileName() const SWIFT_COMPUTED_PROPERTY; \
-        MetadataReadingOutcome readMetadata(AudioMetadata *metadata) const; \
+        MetadataReadingOutcome readMetadata(AudioMetadata *metadata, AudioProperties *properties) const; \
         MetadataWritingOutcome writeMetadata(AudioMetadata *metadata) const; \
     };
 
@@ -16,7 +16,7 @@
 
 /// Macro to define `Audio File Class` `readMetadata` **implementation** as `lambda function`.
 #define AUDIO_FILE_METADATA_READ_IMPLEMENTATION(_class, _file, _lamda_implementation) \
-    MetadataReadingOutcome _class::readMetadata(AudioMetadata *metadata) const { \
+    MetadataReadingOutcome _class::readMetadata(AudioMetadata *metadata, AudioProperties *properties) const { \
         TagLib::FileStream stream(fileName.c_str(), true); \
         if (!stream.isOpen()) { \
             return MetadataReadingOutcome::fileIsNotOpen; \
@@ -28,6 +28,10 @@
         do { \
             _lamda_implementation(file); \
         } while (0); \
+        if (file.audioProperties()) { \
+            auto audioProperties = file.audioProperties(); \
+            properties->fillFromProperties(*audioProperties); \
+        } \
         return MetadataReadingOutcome::success; \
     }
 

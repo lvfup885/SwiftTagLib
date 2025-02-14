@@ -24,7 +24,6 @@ public:
     AUDIO_METADATA_PROPERTY(std::string, artist, Artist);
     AUDIO_METADATA_PROPERTY(std::string, genre, Genre);
     AUDIO_METADATA_PROPERTY(std::string, releaseDate, ReleaseDate);
-    AUDIO_METADATA_PROPERTY(std::string, track, Track);
     AUDIO_METADATA_PROPERTY(std::string, comment, Comment);
     // MARK: - ID3v2 Properties
     AUDIO_METADATA_PROPERTY(std::string, composer, Composer);

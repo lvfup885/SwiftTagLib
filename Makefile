@@ -3,9 +3,9 @@ xcframework:
 	@command -v swift-create-xcframework >/dev/null 2>&1 || { echo "please install https://github.com/segment-integrations/swift-create-xcframework"; exit 1; }
 	@command -v xcbeautify >/dev/null 2>&1 || { echo "please install https://github.com/cpisciotta/xcbeautify"; exit 1; }
 	@rm -rf .build
-	@rm -rf SwiftTagLib.xcframework
-	@rm -rf SwiftTagLib.zip
-	@rm -rf SwiftTagLib.sha256
+	@rm -rf SwiftTagLib.xcframework SwiftTagLib.zip SwiftTagLib.sha256
+	@rm -rf CxxTagLibBridge.xcframework CxxTagLibBridge.zip CxxTagLibBridge.sha256
+	@rm -rf taglib.xcframework taglib.zip taglib.sha256
 	@rm -rf Package.resolved
 	time swift-create-xcframework \
 		--platform ios \

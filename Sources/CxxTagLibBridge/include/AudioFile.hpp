@@ -1,5 +1,6 @@
 
 #import "AudioMetadata.hpp"
+#import "AudioProperties.hpp"
 #import "AudioFileClass.hpp"
 
 /// Tells the API consumer the outcome of `readMetadata` method.
