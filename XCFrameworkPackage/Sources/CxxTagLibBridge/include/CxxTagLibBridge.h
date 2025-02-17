@@ -2,11 +2,13 @@
 #ifndef CxxTagLibBridge_h
 #define CxxTagLibBridge_h
 
-//#import <swift/bridging>
+// MARK: - Dependencies
 #import <ImageIO/ImageIO.h>
 #import <CoreFoundation/CoreFoundation.h>
+// MARK: - Core
 #import "AudioProperties.hpp"
 #import "AudioMetadata.hpp"
+#import "AbstractAudioFile.hpp"
 #import "AudioFile.hpp"
 
 #endif

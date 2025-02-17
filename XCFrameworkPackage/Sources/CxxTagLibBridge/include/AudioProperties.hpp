@@ -15,5 +15,10 @@ public:
     AUDIO_PROPERTIES_PROPERTY(int, sampleRate, SampleRate);
     AUDIO_PROPERTIES_PROPERTY(int, bitrate, Bitrate);
     // MARK: - Utility
-    void fillFromProperties(const TagLib::AudioProperties &properties);
+    void fillFromProperties(const TagLib::AudioProperties &properties) {
+        lengthInSeconds = properties.lengthInSeconds();
+        channels = properties.channels();
+        sampleRate = properties.sampleRate();
+        bitrate = properties.bitrate();
+    }
 };
