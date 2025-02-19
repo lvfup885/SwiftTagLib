@@ -117,8 +117,10 @@ AudioMetadata AudioMetadata::fromID3v2Tag(const TagLib::ID3v2::Tag *tag) {
     // Extract compilation if present (iTunes TCMP tag)
     frameList = tag->frameListMap()["TCMP"];
     if (!frameList.isEmpty()) {
-        // It seems that the presence of this frame indicates a compilation
-        metadata.compilation = true;
+        auto value = frameList.front()->toString().toCString(true);
+        if (std::atoi(value) > 0) {
+            metadata.compilation = true;
+        }
     }
 
     // Extract ISRC id
@@ -238,7 +240,7 @@ void AudioMetadata::fillID3v2Tag(TagLib::ID3v2::Tag *tag) const {
     // Lyrics
     apply_specific_frame("USLT", [&] (auto id) {
         auto frame = new TagLib::ID3v2::UnsynchronizedLyricsFrame(TagLib::String::UTF8);
-        frame->setText(TagLib::String(lyrics));
+        frame->setText(TagLib::String(lyrics, TagLib::String::UTF8));
         return frame;
     });
     /// ISRC

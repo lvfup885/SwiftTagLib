@@ -5,29 +5,29 @@ public extension AudioFile {
     /// Aggregate metadata container built from `AuidoFile.Formt` specific combination of the following: `TagLib::Tag`, `TagLib:ID3v1::Tag`, `TagLib::ID3v2::Tag`, `TagLib::Ogg::XiphComment`, `TagLib::APE::Tag`, `TagLib::MP4::Tag`.
     struct Metadata: CxxRepresentable, Hashable {
         // MARK: - Basic Properties shared across ID3v1, ID3v2 and some other Tags
-        public var title: String = ""
-        public var albumTitle: String = ""
-        public var artist: String = ""
-        public var genre: String = ""
-        public var releaseDate: String = ""
-        public var comment: String = ""
+        @StringProperty public var title: String?
+        @StringProperty public var albumTitle: String?
+        @StringProperty public var artist: String?
+        @StringProperty public var genre: String?
+        @StringProperty public var releaseDate: String?
+        @StringProperty public var comment: String?
         // MARK: - ID3v2 Properties
-        public var composer: String = ""
-        public var albumArtist: String = ""
-        public var bpm: Int32 = 0
-        public var rating: Int32 = 0
-        public var trackNumber: Int32 = 0
-        public var trackTotal: Int32 = 0
-        public var discNumber: Int32 = 0
-        public var discTotal: Int32 = 0
-        public var lyrics: String = ""
+        @StringProperty public var composer: String?
+        @StringProperty public var albumArtist: String?
+        @IntProperty public var bpm: Int32?
+        @IntProperty public var rating: Int32?
+        @IntProperty public var trackNumber: Int32?
+        @IntProperty public var trackTotal: Int32?
+        @IntProperty public var discNumber: Int32?
+        @IntProperty public var discTotal: Int32?
+        @StringProperty public var lyrics: String?
         public var compilation: Bool = false
         /// International Standard Recording Code
-        public var isrc: String = ""
+        @StringProperty public var isrc: String?
         /// Media Catalog Number
-        public var mcn: String = ""
-        public var musicBrainzReleaseID: String = ""
-        public var musicBrainzRecordingID: String = ""
+        @StringProperty public var mcn: String?
+        @StringProperty public var musicBrainzReleaseID: String?
+        @StringProperty public var musicBrainzRecordingID: String?
         // MARK: - Attached Pictures
         public var attachedPictures: [AttachedPicture] = []
         // MARK: - Additional Metadata
@@ -36,52 +36,52 @@ public extension AudioFile {
         public init() {}
 
         init(_ metadata: AudioMetadata) {
-            title = String(metadata.title)
-            albumTitle = String(metadata.albumTitle)
-            artist = String(metadata.artist)
-            genre = String(metadata.genre)
-            releaseDate = String(metadata.releaseDate)
-            comment = String(metadata.comment)
-            composer = String(metadata.composer)
-            albumArtist = String(metadata.albumArtist)
-            bpm = metadata.beatPerMinute
-            rating = metadata.rating
-            trackNumber = metadata.trackNumber
-            trackTotal = metadata.trackTotal
-            discNumber = metadata.discNumber
-            discTotal = metadata.discTotal
-            lyrics = String(metadata.lyrics)
+            _title = .init(metadata.title)
+            _albumTitle = .init(metadata.albumTitle)
+            _artist = .init(metadata.artist)
+            _genre = .init(metadata.genre)
+            _releaseDate = .init(metadata.releaseDate)
+            _comment = .init(metadata.comment)
+            _composer = .init(metadata.composer)
+            _albumArtist = .init(metadata.albumArtist)
+            _bpm = .init(metadata.beatPerMinute)
+            _rating = .init(metadata.rating)
+            _trackNumber = .init(metadata.trackNumber)
+            _trackTotal = .init(metadata.trackTotal)
+            _discNumber = .init(metadata.discNumber)
+            _discTotal = .init(metadata.discTotal)
+            _lyrics = .init(metadata.lyrics)
             compilation = metadata.compilation
-            isrc = String(metadata.internationalStandardRecordingCode)
-            mcn = String(metadata.mediaCatalogNumber)
-            musicBrainzReleaseID = String(metadata.musicBrainzReleaseID)
-            musicBrainzRecordingID = String(metadata.musicBrainzRecordingID)
+            _isrc = .init(metadata.internationalStandardRecordingCode)
+            _mcn = .init(metadata.mediaCatalogNumber)
+            _musicBrainzReleaseID = .init(metadata.musicBrainzReleaseID)
+            _musicBrainzRecordingID = .init(metadata.musicBrainzRecordingID)
             attachedPictures = metadata.attachedPictures.map(AttachedPicture.init)
             additional = metadata.additional.map(AdditionalMetadataPair.init)
         }
 
         var cxxRepresentation: AudioMetadata {
             var metadata = AudioMetadata()
-            metadata.title = std.string(title)
-            metadata.albumTitle = std.string(albumTitle)
-            metadata.artist = std.string(artist)
-            metadata.genre = std.string(genre)
-            metadata.releaseDate = std.string(releaseDate)
-            metadata.comment = std.string(comment)
-            metadata.composer = std.string(composer)
-            metadata.albumArtist = std.string(albumArtist)
-            metadata.beatPerMinute = bpm
-            metadata.rating = rating
-            metadata.trackNumber = trackNumber
-            metadata.trackTotal = trackTotal
-            metadata.discNumber = discNumber
-            metadata.discTotal = discTotal
-            metadata.lyrics = std.string(lyrics)
+            metadata.title = _title.underlyingValue
+            metadata.albumTitle = _albumTitle.underlyingValue
+            metadata.artist = _artist.underlyingValue
+            metadata.genre = _genre.underlyingValue
+            metadata.releaseDate = _releaseDate.underlyingValue
+            metadata.comment = _comment.underlyingValue
+            metadata.composer = _composer.underlyingValue
+            metadata.albumArtist = _albumArtist.underlyingValue
+            metadata.beatPerMinute = _bpm.underlyingValue
+            metadata.rating = _rating.underlyingValue
+            metadata.trackNumber = _trackNumber.underlyingValue
+            metadata.trackTotal = _trackTotal.underlyingValue
+            metadata.discNumber = _discNumber.underlyingValue
+            metadata.discTotal = _discTotal.underlyingValue
+            metadata.lyrics = _lyrics.underlyingValue
             metadata.compilation = compilation
-            metadata.internationalStandardRecordingCode = std.string(isrc)
-            metadata.mediaCatalogNumber = std.string(mcn)
-            metadata.musicBrainzReleaseID = std.string(musicBrainzReleaseID)
-            metadata.musicBrainzRecordingID = std.string(musicBrainzRecordingID)
+            metadata.internationalStandardRecordingCode = _isrc.underlyingValue
+            metadata.mediaCatalogNumber = _mcn.underlyingValue
+            metadata.musicBrainzReleaseID = _musicBrainzReleaseID.underlyingValue
+            metadata.musicBrainzRecordingID = _musicBrainzRecordingID.underlyingValue
             /// unfortunately this is the only way of converting Array of more complex types than int/bool/string
             /// to std::vector, generalization isn't possible yet. 22.11.2024
             var attachedPictures = AudioMetadata.AttachedPictures()
@@ -103,10 +103,9 @@ extension AudioFile.Metadata {
         from url: URL,
         format: AudioFile.Format
     ) throws(AudioFile.InitializationError) -> (metadata: Self, properties: AudioFile.Properties) {
-        let cString = std.string(url.path)
         var metadata = AudioMetadata()
         var properties = AudioProperties()
-        let implementation = format.implementationMetatype.init(cString)
+        let implementation = format.implementationMetatype.init(std.string(url.path))
         let outcome = implementation.readMetadata(&metadata, &properties)
         try AudioFile.InitializationError.throwIfNeeded(outcome)
         return (.init(metadata), .init(properties))
@@ -119,8 +118,7 @@ extension AudioFile.Metadata {
         to url: URL,
         format: AudioFile.Format
     ) throws(AudioFile.MetadataWritingError) {
-        let cString = std.string(url.path)
-        let implementation = format.implementationMetatype.init(cString)
+        let implementation = format.implementationMetatype.init(std.string(url.path))
         var metadata = cxxRepresentation
         let outcome = implementation.writeMetadata(&metadata)
         try AudioFile.MetadataWritingError.throwIfNeeded(outcome)

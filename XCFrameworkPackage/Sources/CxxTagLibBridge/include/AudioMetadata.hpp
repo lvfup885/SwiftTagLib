@@ -139,5 +139,5 @@ public:
     static AudioMetadata fromMP4Tag(const TagLib::MP4::Tag *tag);
     void fillMP4Tag(TagLib::MP4::Tag *tag) const;
     // MARK: - Utility
-    void overlay(AudioMetadata layer);
+    void overlay(const AudioMetadata layer);
 };

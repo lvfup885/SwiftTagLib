@@ -2,7 +2,7 @@
 #import "AudioMetadata.hpp"
 
 /// constructor for `AudioMetadata` from `TagLib::APE::Tag`.
-AudioMetadata AudioMetadata::fromAPETag(const TagLib::APE::Tag * tag) {
+AudioMetadata AudioMetadata::fromAPETag(const TagLib::APE::Tag *tag) {
     auto metadata = AudioMetadata();
     auto additionalMetadata = AudioMetadata::AdditionalMetadata();
 

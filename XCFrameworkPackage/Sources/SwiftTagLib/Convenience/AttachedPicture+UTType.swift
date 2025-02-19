@@ -1,4 +1,5 @@
 
+#if ImageDataTransformationEnabled
 import struct UniformTypeIdentifiers.UTType
 import ImageIO
 
@@ -15,3 +16,4 @@ public extension AudioFile.Metadata.AttachedPicture {
         return type
     }
 }
+#endif

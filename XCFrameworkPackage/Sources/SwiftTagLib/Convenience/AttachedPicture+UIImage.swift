@@ -1,5 +1,5 @@
 
-#if canImport(UIKit)
+#if ImageDataTransformationEnabled && canImport(UIKit)
 import class UIKit.UIImage
 internal import class CoreGraphics.CGImage
 

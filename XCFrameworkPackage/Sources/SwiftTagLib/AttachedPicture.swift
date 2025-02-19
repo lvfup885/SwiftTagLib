@@ -4,7 +4,7 @@ import struct Foundation.Data
 
 public extension AudioFile.Metadata {
     /// `Image` attached to `AudioFile` and packed in any of the tags, specific to `AudioFile.Format`.
-    struct AttachedPicture: CxxRepresentable, Hashable {
+    struct AttachedPicture: CxxRepresentable, Hashable, Equatable {
         /// raw bytes.
         public let data: Data
         /// image description.

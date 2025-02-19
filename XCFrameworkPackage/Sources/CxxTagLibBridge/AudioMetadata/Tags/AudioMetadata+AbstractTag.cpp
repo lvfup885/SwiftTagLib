@@ -3,16 +3,15 @@
 
 /// constructor for `AudioMetadata` from **abstract** `TagLib::Tag`.
 AudioMetadata AudioMetadata::fromTag(const TagLib::Tag *tag) {
-    AudioMetadata metadata = {
-        tag->title().toCString(true),
-        tag->album().toCString(true),
-        tag->artist().toCString(true),
-        tag->genre().toCString(true),
-        std::to_string(tag->year()).c_str(),
-        std::to_string(tag->track()).c_str(),
-        tag->comment().toCString()
+    return {
+        .title = tag->title().toCString(true),
+        .albumTitle = tag->album().toCString(true),
+        .artist = tag->artist().toCString(true),
+        .genre = tag->genre().toCString(true),
+        .comment = tag->comment().toCString(),
+        .releaseDate = std::to_string(tag->year()),
+        .trackNumber = static_cast<int>(tag->track()),
     };
-    return metadata;
 }
 
 #import <charconv>

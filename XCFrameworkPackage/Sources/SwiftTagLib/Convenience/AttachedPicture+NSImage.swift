@@ -1,5 +1,5 @@
 
-#if canImport(AppKit)
+#if ImageDataTransformationEnabled && canImport(AppKit)
 import class AppKit.NSImage
 import ImageIO
 

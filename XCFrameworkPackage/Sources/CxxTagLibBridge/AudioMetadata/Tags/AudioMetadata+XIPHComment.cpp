@@ -103,8 +103,10 @@ AudioMetadata AudioMetadata::fromXiphComment(const TagLib::Ogg::XiphComment *tag
 /// fills`TagLib::Ogg::XiphComment` from `AudioMetadata`.
 void AudioMetadata::fillXiphComment(TagLib::Ogg::XiphComment *tag) const {
     auto apply_string = [&] (const char *key, std::string value) {
-        tag->removeFields(key);
-        tag->addField(key, TagLib::String(value));
+//        tag->removeFields(key);
+//        tag->addField(key, TagLib::String(value));
+        tag->addField(key, TagLib::String(value).toCString(), true);
+//        tag->addField(key, TagLib::String(value, TagLib::String::UTF8).toCString(), true);
     };
 
     auto apply_number = [&] (const char *key, int value) {

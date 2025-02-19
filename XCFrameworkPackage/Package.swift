@@ -3,6 +3,57 @@
 
 import PackageDescription
 
+// MARK: - Convenience
+extension Target {
+    var asDependency: Dependency { .byName(name: name) }
+    var asLibrary: Product { .library(name: name, targets: [name]) }
+}
+
+// MARK: - Configuration
+let swiftSettings: [SwiftSetting] = [
+    .interoperabilityMode(.Cxx),
+//    .define("ImageDataTransformationEnabled"),
+]
+
+// MARK: - Targets
+/// borrowed from .package(url: "https://github.com/sbooth/CXXTagLib", revision: "d729ec1")
+let taglib = Target.target(
+    name: "taglib",
+    cxxSettings: [
+        .headerSearchPath("include/taglib"),
+        .headerSearchPath("utfcpp/source"),
+        .headerSearchPath("."),
+        .headerSearchPath("mod"),
+        .headerSearchPath("riff"),
+        .headerSearchPath("toolkit"),
+    ]
+)
+/// C++ intermediate layer replacing AudioMetadata class hierarchy from SFBAudioEngine.
+let taglibBridge = Target.target(
+    name: "CxxTagLibBridge",
+    dependencies: [
+        taglib.asDependency,
+    ],
+    swiftSettings: swiftSettings
+)
+
+let swiftTagLib = Target.target(
+    name: "SwiftTagLib",
+    dependencies: [
+        taglibBridge.asDependency,
+    ],
+    swiftSettings: swiftSettings
+)
+
+let tests = Target.testTarget(
+    name: "SwiftTagLibTests",
+    dependencies: [
+        swiftTagLib.asDependency,
+    ],
+    swiftSettings: swiftSettings
+)
+
+// MARK: - Package
 let package = Package(
     name: "SwiftTagLib",
     platforms: [
@@ -10,50 +61,10 @@ let package = Package(
         .macOS(.v14),
     ],
     products: [
-        .library(name: "SwiftTagLib", targets: ["SwiftTagLib"]),
-        .library(name: "CxxTagLibBridge", targets: ["CxxTagLibBridge"]),
-        .library(name: "taglib", targets: ["taglib"]),
+        taglib.asLibrary, taglibBridge.asLibrary, swiftTagLib.asLibrary,
     ],
     targets: [
-        .target(
-            name: "SwiftTagLib",
-            dependencies: [
-                .byName(name: "CxxTagLibBridge"),
-            ],
-            swiftSettings: [
-                .interoperabilityMode(.Cxx),
-            ]
-        ),
-        .target(
-            name: "CxxTagLibBridge",
-            dependencies: [
-                .byName(name: "taglib"),
-            ],
-            swiftSettings: [
-                .interoperabilityMode(.Cxx),
-            ]
-        ),
-        /// borrowed from .package(url: "https://github.com/sbooth/CXXTagLib", revision: "d729ec1")
-        .target(
-            name: "taglib",
-            cxxSettings: [
-                .headerSearchPath("include/taglib"),
-                .headerSearchPath("utfcpp/source"),
-                .headerSearchPath("."),
-                .headerSearchPath("mod"),
-                .headerSearchPath("riff"),
-                .headerSearchPath("toolkit"),
-            ]
-        ),
-//        .testTarget(
-//            name: "SwiftTagLibTests",
-//            dependencies: [
-//                "SwiftTagLib",
-//            ],
-//            swiftSettings: [
-//                .interoperabilityMode(.Cxx),
-//            ]
-//        ),
+        taglib, taglibBridge, swiftTagLib, tests
     ],
     cxxLanguageStandard: .cxx2b //.cxx20
 )

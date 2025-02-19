@@ -1,4 +1,5 @@
 
+#if ImageDataTransformationEnabled
 import ImageIO
 internal import class CoreGraphics.CGImage
 import struct Foundation.Data
@@ -19,7 +20,7 @@ internal extension AudioFile.Metadata.AttachedPicture {
     var cgImage: CGImage? {
         guard
             let imageSource = CGImageSourceCreateWithData(data as CFData, .none),
-            let image = CGImageSourceCreateImageAtIndex(imageSource, 0, nil)
+            let image = CGImageSourceCreateImageAtIndex(imageSource, 0, .none)
         else {
             return .none
         }
@@ -52,3 +53,4 @@ public extension AudioFile.Metadata.AttachedPicture {
         }
     }
 }
+#endif

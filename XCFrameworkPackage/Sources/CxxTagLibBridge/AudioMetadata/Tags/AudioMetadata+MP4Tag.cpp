@@ -11,6 +11,9 @@ AudioMetadata AudioMetadata::fromMP4Tag(const TagLib::MP4::Tag *tag) {
         metadata.albumArtist = tag->item("aART").toStringList().toString().toCString(true);
     }
     if (tag->contains("\251wrt")) {
+        metadata.composer = tag->item("\251wrt").toStringList().toString().toCString(true);
+    }
+    if (tag->contains("\251cmt")) {
         metadata.comment = tag->item("\251wrt").toStringList().toString().toCString(true);
     }
     if (tag->contains("\251day")) {

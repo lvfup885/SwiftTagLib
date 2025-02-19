@@ -600,10 +600,6 @@ namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
 
 
 
-
-
-
-
 class SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO") Format;
 } // end namespace 
 
@@ -782,6 +778,8 @@ struct implClassFor<SwiftTagLib::AudioFile> { using type = SwiftTagLib::_impl::_
 } // namespace swift
 
 namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
+
+
 
 
 
