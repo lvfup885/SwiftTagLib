@@ -1,7 +1,7 @@
 
 import struct Foundation.URL
 
-struct AudioSample: CustomStringConvertible {
+struct AudioSample: Hashable, Equatable, CustomStringConvertible {
     let url: URL
     var filename: String { url.lastPathComponent }
     var description: String { filename }

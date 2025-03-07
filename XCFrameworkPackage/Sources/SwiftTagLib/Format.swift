@@ -53,32 +53,3 @@ extension AudioFile.Format {
         formatMetatype.implementationMetatype
     }
 }
-
-// MARK: - AudioFile.Format forFile
-import struct Foundation.URL
-import class Foundation.FileHandle
-
-extension AudioFile.Format {
-    static func forFile(at url: URL) throws(AudioFile.InitializationError) -> Self? {
-        let fileExtension = url.pathExtension.lowercased()
-        guard let fileHandle = try? FileHandle(forReadingFrom: url) else { throw .unableToOpenFile }
-        var score: Int = 10
-        var format: Self? = .none
-        for audioFormat in Self.allCases {
-            let metatype = audioFormat.formatMetatype
-            var formatScore: Int = 0
-            if metatype.supportedPathExtensions.contains(fileExtension) {
-                formatScore += 25
-            }
-            if metatype.isFormatSupported(fileHandle) {
-                formatScore += 75
-            }
-            if formatScore > score {
-                score = formatScore
-                format = audioFormat
-            }
-        }
-        try? fileHandle.close()
-        return format
-    }
-}

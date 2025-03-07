@@ -9,14 +9,14 @@ namespace AudioFile {
     protected:
         using FileType = TagLib::MP4::File;
 
-        void readMetadataImplementation(FileType &file, AudioMetadata *metadata) const {
+        void read_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
             if (file.tag()) {
-                metadata->overlay(AudioMetadata::fromMP4Tag(file.tag()));
+                metadata->overlay(AudioMetadata::read_from_MP4_tag(file.tag()));
             }
         }
 
-        void writeMetadataImplementation(FileType &file, AudioMetadata *metadata) const {
-            metadata->fillMP4Tag(file.tag());
+        void write_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
+            metadata->write_to_MP4_tag(file.tag());
         }
     };
 }

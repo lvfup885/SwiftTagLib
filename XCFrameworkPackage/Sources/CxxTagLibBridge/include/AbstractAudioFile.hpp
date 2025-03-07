@@ -1,10 +1,14 @@
 
+// MARK: - Outcomes
 #import <stdint.h>
 
 /// Tells the API consumer the outcome of `readMetadata` method.
 enum class MetadataReadingOutcome: uint8_t {
     fileIsNotOpen,
     invalidFile,
+    runtimeError,
+    exception,
+    unknownException,
     success
 };
 
@@ -13,18 +17,25 @@ enum class MetadataWritingOutcome: uint8_t {
     fileIsNotOpen,
     invalidFile,
     saveError,
+    runtimeError,
+    exception,
+    unknownException,
     success
 };
 
+// MARK: - Abstract AudioFile
 #import "AudioMetadata.hpp"
 #import "AudioProperties.hpp"
+#import "Logging.hpp"
 #import <taglib/tfilestream.h>
 #import <taglib/tfile.h>
+#import <stdexcept>
+#import <exception>
 
 namespace AudioFile {
     /// Abstracts away specific interaction with `TagLib::FileStream` type for descendants while requiring them to
     /// specify `FileType`(which must inherit from `TagLib::File`) and allows to manipulate file directly
-    /// when `reading/writing` from `protected virtual` methods.
+    /// when `reading/writing` metadata within `protected virtual` methods.
     template <typename FileType>
         requires std::is_base_of_v<TagLib::File, FileType>
     struct AbstractAudioFile {
@@ -36,41 +47,85 @@ namespace AudioFile {
         /// Destructor.
         virtual ~AbstractAudioFile() = default;
         /// Reads `AudioMetadata` & `AudioProperties` from file.
-        MetadataReadingOutcome readMetadata(AudioMetadata *metadata, AudioProperties *properties) const {
-            TagLib::FileStream stream(fileName.c_str(), true);
-            if (!stream.isOpen()) {
-                return MetadataReadingOutcome::fileIsNotOpen;
-            }
-            FileType file(&stream);
-            if (!file.isValid()) {
-                return MetadataReadingOutcome::invalidFile;
-            }
-            readMetadataImplementation(file, metadata);
-            if (file.audioProperties()) {
-                properties->fillFromProperties(*file.audioProperties());
+        MetadataReadingOutcome readMetadata(
+            AudioMetadata *metadata,
+            AudioProperties *properties,
+            std::string *errorDescription
+        ) const {
+            try {
+                TagLib::FileStream stream(fileName.c_str(), true);
+                if (!stream.isOpen()) {
+                    taglib_bridge_log(Error, "file is not open: %s", fileName.c_str());
+                    return MetadataReadingOutcome::fileIsNotOpen;
+                }
+                FileType file(&stream);
+                if (!file.isValid()) {
+                    taglib_bridge_log(Error, "file is not valid: %s", fileName.c_str());
+                    return MetadataReadingOutcome::invalidFile;
+                }
+                read_metadata_implementation(file, metadata);
+                if (file.audioProperties()) {
+                    properties->fillFromProperties(*file.audioProperties());
+                }
+                taglib_bridge_log(Info, "metadata read successfully, file: %s", fileName.c_str());
+            } catch (const std::runtime_error &error) {
+                taglib_bridge_log(Error, "caught runtime error: %s", error.what());
+                std::string message = error.what();
+                errorDescription = &message;
+                return MetadataReadingOutcome::runtimeError;
+            } catch (const std::exception &exception) {
+                taglib_bridge_log(Error, "caught exception: %s", exception.what());
+                std::string message = exception.what();
+                errorDescription = &message;
+                return MetadataReadingOutcome::exception;
+            } catch (...) {
+                taglib_bridge_log(Error, "caught unknown exception");
+                return MetadataReadingOutcome::unknownException;
             }
             return MetadataReadingOutcome::success;
         }
-        /// Writes `AudioMetadata` to the audio file.
-        MetadataWritingOutcome writeMetadata(AudioMetadata *metadata) const {
-            TagLib::FileStream stream(fileName.c_str());
-            if (!stream.isOpen()) {
-                return MetadataWritingOutcome::fileIsNotOpen;
-            }
-            FileType file(&stream, false);
-            if (!file.isValid()) {
-                return MetadataWritingOutcome::invalidFile;
-            }
-            writeMetadataImplementation(file, metadata);
-            if (!file.save()) {
-                return MetadataWritingOutcome::saveError;
+        /// Writes `AudioMetadata` to the file.
+        MetadataWritingOutcome writeMetadata(
+            AudioMetadata *metadata,
+            std::string *errorDescription
+        ) const {
+            try {
+                TagLib::FileStream stream(fileName.c_str());
+                if (!stream.isOpen()) {
+                    taglib_bridge_log(Error, "file is not open: %s", fileName.c_str());
+                    return MetadataWritingOutcome::fileIsNotOpen;
+                }
+                FileType file(&stream, false);
+                if (!file.isValid()) {
+                    taglib_bridge_log(Error, "file is not valid: %s", fileName.c_str());
+                    return MetadataWritingOutcome::invalidFile;
+                }
+                write_metadata_implementation(file, metadata);
+                if (!file.save()) {
+                    taglib_bridge_log(Error, "error while saving file: %s", fileName.c_str());
+                    return MetadataWritingOutcome::saveError;
+                }
+                taglib_bridge_log(Info, "metadata written successfully, file: %s", fileName.c_str());
+            } catch (const std::runtime_error &error) {
+                taglib_bridge_log(Error, "caught runtime error: %s", error.what());
+                std::string message = error.what();
+                errorDescription = &message;
+                return MetadataWritingOutcome::runtimeError;
+            } catch (const std::exception &exception) {
+                taglib_bridge_log(Error, "caught exception: %s", exception.what());
+                std::string message = exception.what();
+                errorDescription = &message;
+                return MetadataWritingOutcome::exception;
+            } catch (...) {
+                taglib_bridge_log(Error, "caught unknown exception");
+                return MetadataWritingOutcome::unknownException;
             }
             return MetadataWritingOutcome::success;
         }
     protected:
-        /// Format specific internal `read` implementation.
-        virtual void readMetadataImplementation(FileType &file, AudioMetadata *metadata) const = 0;
-        /// Format specific internal `write` implementation.
-        virtual void writeMetadataImplementation(FileType &file, AudioMetadata *metadata) const = 0;
+        /// Format specific internal `read` metadata implementation.
+        virtual void read_metadata_implementation(FileType &file, AudioMetadata *metadata) const = 0;
+        /// Format specific internal `write` metadata implementation.
+        virtual void write_metadata_implementation(FileType &file, AudioMetadata *metadata) const = 0;
     };
 }

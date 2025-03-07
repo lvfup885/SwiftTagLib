@@ -3,7 +3,7 @@
 
 // MARK: - Format specific picture builders
 /// Build `TagLib::FLAC::Picture` and returns it wrapped in `std::unique_ptr`.
-AudioMetadata::Picture::FLACPicture AudioMetadata::Picture::asFlacPicture() {
+AudioMetadata::Picture::FLACPicture AudioMetadata::Picture::convert_to_FLACPicture() {
     TagLib::FLAC::Picture *picture = new TagLib::FLAC::Picture();
     picture->setData(TagLib::ByteVector(bytes.data(), size));
     picture->setType(static_cast<TagLib::FLAC::Picture::Type>(kind));
@@ -27,8 +27,8 @@ AudioMetadata::Picture::FLACPicture AudioMetadata::Picture::asFlacPicture() {
 }
 
 /// Builds `TagLib::MP4::CoverArt`.
-AudioMetadata::Picture::MP4Picture AudioMetadata::Picture::asMP4Picture() {
-    auto mimeType = this->mimeType();
+AudioMetadata::Picture::MP4Picture AudioMetadata::Picture::convert_to_MP4Picture() {
+    auto mimeType = this->mime_type();
     auto format = TagLib::MP4::CoverArt::CoverArt::Unknown;
     if (!mimeType.empty()) {
         if (strcasecmp("com.microsoft.bmp", mimeType.c_str())) {
@@ -45,10 +45,10 @@ AudioMetadata::Picture::MP4Picture AudioMetadata::Picture::asMP4Picture() {
 }
 
 /// Builds `TagLib::ID3v2::AttachedPictureFrame`  and returns it wrapped in `std::unique_ptr`.
-AudioMetadata::Picture::ID3v2Picture AudioMetadata::Picture::asID3v2Picture() {
+AudioMetadata::Picture::ID3v2Picture AudioMetadata::Picture::convert_to_ID3v2Picture() {
     #warning possible memory leak
     TagLib::ID3v2::AttachedPictureFrame *frame = new TagLib::ID3v2::AttachedPictureFrame();
-    auto mimeType = this->mimeType();
+    auto mimeType = this->mime_type();
     if (!mimeType.empty()) {
         frame->setMimeType(TagLib::String(mimeType));
     }
@@ -62,7 +62,7 @@ AudioMetadata::Picture::ID3v2Picture AudioMetadata::Picture::asID3v2Picture() {
 
 /// Builds `TagLib::ByteVector` for `TagLib::APE::Tag` and returns it alongside with a `key` for it
 /// wrapped in `std::optional<std::tuple>`.
-AudioMetadata::Picture::APEPicture AudioMetadata::Picture::asAPEPicture() {
+AudioMetadata::Picture::APEPicture AudioMetadata::Picture::convert_to_APEPicture() {
     if (kind == AudioMetadata::Picture::Kind::frontCover
         || kind == AudioMetadata::Picture::Kind:: backCover
     ) {

@@ -1,87 +1,195 @@
 
 @_implementationOnly import CxxTagLibBridge
+private import CxxStdlib
 
 public extension AudioFile {
     /// Aggregate metadata container built from `AuidoFile.Formt` specific combination of the following: `TagLib::Tag`, `TagLib:ID3v1::Tag`, `TagLib::ID3v2::Tag`, `TagLib::Ogg::XiphComment`, `TagLib::APE::Tag`, `TagLib::MP4::Tag`.
     struct Metadata: CxxRepresentable, Hashable {
         // MARK: - Basic Properties shared across ID3v1, ID3v2 and some other Tags
-        @StringProperty public var title: String?
-        @StringProperty public var albumTitle: String?
-        @StringProperty public var artist: String?
-        @StringProperty public var genre: String?
-        @StringProperty public var releaseDate: String?
-        @StringProperty public var comment: String?
+        public var title: String?
+        public var albumTitle: String?
+        public var artist: String?
+        public var genre: String?
+        public var releaseDate: String?
+        public var comment: String?
         // MARK: - ID3v2 Properties
-        @StringProperty public var composer: String?
-        @StringProperty public var albumArtist: String?
-        @IntProperty public var bpm: Int32?
-        @IntProperty public var rating: Int32?
-        @IntProperty public var trackNumber: Int32?
-        @IntProperty public var trackTotal: Int32?
-        @IntProperty public var discNumber: Int32?
-        @IntProperty public var discTotal: Int32?
-        @StringProperty public var lyrics: String?
-        public var compilation: Bool = false
-        /// International Standard Recording Code
-        @StringProperty public var isrc: String?
-        /// Media Catalog Number
-        @StringProperty public var mcn: String?
-        @StringProperty public var musicBrainzReleaseID: String?
-        @StringProperty public var musicBrainzRecordingID: String?
+        public var composer: String?
+        public var albumArtist: String?
+        public var beatPerMinute: Int32?
+        public var rating: Int32?
+        public var trackNumber: Int32?
+        public var trackTotal: Int32?
+        public var discNumber: Int32?
+        public var discTotal: Int32?
+        public var lyrics: String?
+        public var compilation: Bool?
+        public var internationalStandardRecordingCode: String?
+        public var mediaCatalogNumber: String?
+        public var musicBrainzReleaseID: String?
+        public var musicBrainzRecordingID: String?
         // MARK: - Attached Pictures
         public var attachedPictures: [AttachedPicture] = []
         // MARK: - Additional Metadata
         public var additional: [AdditionalMetadataPair] = []
+        // MARK: - Tag Source
+        public private(set) var tagSource: TagSource = .undefined
         // MARK: - init
         public init() {}
 
-        init(_ metadata: AudioMetadata) {
-            _title = .init(metadata.title)
-            _albumTitle = .init(metadata.albumTitle)
-            _artist = .init(metadata.artist)
-            _genre = .init(metadata.genre)
-            _releaseDate = .init(metadata.releaseDate)
-            _comment = .init(metadata.comment)
-            _composer = .init(metadata.composer)
-            _albumArtist = .init(metadata.albumArtist)
-            _bpm = .init(metadata.beatPerMinute)
-            _rating = .init(metadata.rating)
-            _trackNumber = .init(metadata.trackNumber)
-            _trackTotal = .init(metadata.trackTotal)
-            _discNumber = .init(metadata.discNumber)
-            _discTotal = .init(metadata.discTotal)
-            _lyrics = .init(metadata.lyrics)
-            compilation = metadata.compilation
-            _isrc = .init(metadata.internationalStandardRecordingCode)
-            _mcn = .init(metadata.mediaCatalogNumber)
-            _musicBrainzReleaseID = .init(metadata.musicBrainzReleaseID)
-            _musicBrainzRecordingID = .init(metadata.musicBrainzRecordingID)
+        /// unfortunately `TagSource` might change after `write` so we need to exclude it from being hashed.
+        public func hash(into hasher: inout Hasher) {
+            hasher.combine(title)
+            hasher.combine(albumTitle)
+            hasher.combine(artist)
+            hasher.combine(genre)
+            hasher.combine(releaseDate)
+            hasher.combine(comment)
+            hasher.combine(composer)
+            hasher.combine(albumArtist)
+            hasher.combine(beatPerMinute)
+            hasher.combine(rating)
+            hasher.combine(trackNumber)
+            hasher.combine(trackTotal)
+            hasher.combine(discNumber)
+            hasher.combine(discTotal)
+            hasher.combine(lyrics)
+            hasher.combine(compilation)
+            hasher.combine(internationalStandardRecordingCode)
+            hasher.combine(mediaCatalogNumber)
+            hasher.combine(musicBrainzReleaseID)
+            hasher.combine(musicBrainzRecordingID)
+            hasher.combine(attachedPictures)
+            hasher.combine(additional)
+        }
+
+        init(cxxRepresentation metadata: AudioMetadata) {
+            self.tagSource = TagSource(rawValue: metadata.tagSource)
+            if let title = Optional(fromCxx: metadata.title) {
+                self.title = String(title)
+            }
+            if let albumTitle = Optional(fromCxx: metadata.albumTitle) {
+                self.albumTitle = String(albumTitle)
+            }
+            if let artist = Optional(fromCxx: metadata.artist) {
+                self.artist = String(artist)
+            }
+            if let genre = Optional(fromCxx: metadata.genre) {
+                self.genre = String(genre)
+            }
+            if let releaseDate = Optional(fromCxx: metadata.releaseDate) {
+                self.releaseDate = String(releaseDate)
+            }
+            if let comment = Optional(fromCxx: metadata.comment) {
+                self.comment = String(comment)
+            }
+            if let composer = Optional(fromCxx: metadata.composer) {
+                self.composer = String(composer)
+            }
+            if let albumArtist = Optional(fromCxx: metadata.albumArtist) {
+                self.albumArtist = String(albumArtist)
+            }
+            if let beatPerMinute = Optional(fromCxx: metadata.beatPerMinute) {
+                self.beatPerMinute = beatPerMinute
+            }
+            if let rating = Optional(fromCxx: metadata.rating) {
+                self.rating = rating
+            }
+            if let trackNumber = Optional(fromCxx: metadata.trackNumber) {
+                self.trackNumber = trackNumber
+            }
+            if let trackTotal = Optional(fromCxx: metadata.trackTotal) {
+                self.trackTotal = trackTotal
+            }
+            if let discNumber = Optional(fromCxx: metadata.discNumber) {
+                self.discNumber = discNumber
+            }
+            if let discTotal = Optional(fromCxx: metadata.discTotal) {
+                self.discTotal = discTotal
+            }
+            if let lyrics = Optional(fromCxx: metadata.lyrics) {
+                self.lyrics = String(lyrics)
+            }
+            if let compilation = Optional(fromCxx: metadata.compilation) {
+                self.compilation = compilation
+            }
+            if let internationalStandardRecordingCode = Optional(fromCxx: metadata.internationalStandardRecordingCode) {
+                self.internationalStandardRecordingCode = String(internationalStandardRecordingCode)
+            }
+            if let mediaCatalogNumber = Optional(fromCxx: metadata.mediaCatalogNumber) {
+                self.mediaCatalogNumber = String(mediaCatalogNumber)
+            }
+            if let musicBrainzReleaseID = Optional(fromCxx: metadata.musicBrainzReleaseID) {
+                self.musicBrainzReleaseID = String(musicBrainzReleaseID)
+            }
+            if let musicBrainzRecordingID = Optional(fromCxx: metadata.musicBrainzRecordingID) {
+                self.musicBrainzRecordingID = String(musicBrainzRecordingID)
+            }
             attachedPictures = metadata.attachedPictures.map(AttachedPicture.init)
             additional = metadata.additional.map(AdditionalMetadataPair.init)
         }
 
         var cxxRepresentation: AudioMetadata {
             var metadata = AudioMetadata()
-            metadata.title = _title.underlyingValue
-            metadata.albumTitle = _albumTitle.underlyingValue
-            metadata.artist = _artist.underlyingValue
-            metadata.genre = _genre.underlyingValue
-            metadata.releaseDate = _releaseDate.underlyingValue
-            metadata.comment = _comment.underlyingValue
-            metadata.composer = _composer.underlyingValue
-            metadata.albumArtist = _albumArtist.underlyingValue
-            metadata.beatPerMinute = _bpm.underlyingValue
-            metadata.rating = _rating.underlyingValue
-            metadata.trackNumber = _trackNumber.underlyingValue
-            metadata.trackTotal = _trackTotal.underlyingValue
-            metadata.discNumber = _discNumber.underlyingValue
-            metadata.discTotal = _discTotal.underlyingValue
-            metadata.lyrics = _lyrics.underlyingValue
-            metadata.compilation = compilation
-            metadata.internationalStandardRecordingCode = _isrc.underlyingValue
-            metadata.mediaCatalogNumber = _mcn.underlyingValue
-            metadata.musicBrainzReleaseID = _musicBrainzReleaseID.underlyingValue
-            metadata.musicBrainzRecordingID = _musicBrainzRecordingID.underlyingValue
+            if let title {
+                metadata.setTitle(std.string(title))
+            }
+            if let albumTitle {
+                metadata.setAlbumTitle(std.string(albumTitle))
+            }
+            if let artist {
+                metadata.setArtist(std.string(artist))
+            }
+            if let genre {
+                metadata.setGenre(std.string(genre))
+            }
+            if let releaseDate {
+                metadata.setReleaseDate(std.string(releaseDate));
+            }
+            if let comment {
+                metadata.setComment(std.string(comment))
+            }
+            if let composer {
+                metadata.setComposer(std.string(composer))
+            }
+            if let albumArtist {
+                metadata.setAlbumArtist(std.string(albumArtist))
+            }
+            if let beatPerMinute {
+                metadata.setBeatPerMinute(beatPerMinute)
+            }
+            if let rating {
+                metadata.setRating(rating)
+            }
+            if let trackNumber {
+                metadata.setTrackNumber(trackNumber)
+            }
+            if let trackTotal {
+                metadata.setTrackTotal(trackTotal)
+            }
+            if let discNumber {
+                metadata.setDiscNumber(discNumber)
+            }
+            if let discTotal {
+                metadata.setDiscTotal(discTotal)
+            }
+            if let lyrics {
+                metadata.setLyrics(std.string(lyrics))
+            }
+            if let compilation {
+                metadata.setCompilation(compilation)
+            }
+            if let internationalStandardRecordingCode {
+                metadata.setInternationalStandardRecordingCode(std.string(internationalStandardRecordingCode))
+            }
+            if let mediaCatalogNumber {
+                metadata.setMediaCatalogNumber(std.string(mediaCatalogNumber))
+            }
+            if let musicBrainzReleaseID {
+                metadata.setMusicBrainzReleaseID(std.string(musicBrainzReleaseID))
+            }
+            if let musicBrainzRecordingID {
+                metadata.setMusicBrainzRecordingID(std.string(musicBrainzRecordingID))
+            }
             /// unfortunately this is the only way of converting Array of more complex types than int/bool/string
             /// to std::vector, generalization isn't possible yet. 22.11.2024
             var attachedPictures = AudioMetadata.AttachedPictures()
@@ -106,9 +214,10 @@ extension AudioFile.Metadata {
         var metadata = AudioMetadata()
         var properties = AudioProperties()
         let implementation = format.implementationMetatype.init(std.string(url.path))
-        let outcome = implementation.readMetadata(&metadata, &properties)
-        try AudioFile.InitializationError.throwIfNeeded(outcome)
-        return (.init(metadata), .init(properties))
+        var errorDescription = std.string()
+        let outcome = implementation.readMetadata(&metadata, &properties, &errorDescription)
+        try AudioFile.InitializationError.throwIfNeeded(outcome, String(errorDescription))
+        return (.init(cxxRepresentation: metadata), .init(cxxRepresentation: properties))
     }
 }
 
@@ -120,7 +229,8 @@ extension AudioFile.Metadata {
     ) throws(AudioFile.MetadataWritingError) {
         let implementation = format.implementationMetatype.init(std.string(url.path))
         var metadata = cxxRepresentation
-        let outcome = implementation.writeMetadata(&metadata)
-        try AudioFile.MetadataWritingError.throwIfNeeded(outcome)
+        var errorDescription = std.string()
+        let outcome = implementation.writeMetadata(&metadata, &errorDescription)
+        try AudioFile.MetadataWritingError.throwIfNeeded(outcome, String(errorDescription))
     }
 }

@@ -5,7 +5,7 @@ import PackageDescription
 
 // MARK: - Convenience
 extension Target {
-    var asDependency: Dependency { .byName(name: name) }
+    var asDependency: Dependency { .target(name: name) }
     var asLibrary: Product { .library(name: name, targets: [name]) }
 }
 
@@ -36,7 +36,7 @@ let taglibBridge = Target.target(
     ],
     swiftSettings: swiftSettings
 )
-
+/// Swift facade
 let swiftTagLib = Target.target(
     name: "SwiftTagLib",
     dependencies: [

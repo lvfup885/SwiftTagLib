@@ -9,12 +9,12 @@ namespace AudioFile {
     protected:
         using FileType = TagLib::DSF::File;
 
-        void readMetadataImplementation(FileType &file, AudioMetadata *metadata) const {
-            metadata->overlay(AudioMetadata::fromID3v2Tag(file.tag()));
+        void read_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
+            metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.tag()));
         }
 
-        void writeMetadataImplementation(FileType &file, AudioMetadata *metadata) const {
-            metadata->fillID3v2Tag(file.tag());
+        void write_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
+            metadata->write_to_ID3v2_tag(file.tag());
         }
     };
 }

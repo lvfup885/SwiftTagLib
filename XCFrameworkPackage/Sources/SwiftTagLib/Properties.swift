@@ -14,7 +14,7 @@ public extension AudioFile {
 
         internal init() {}
 
-        init(_ properties: AudioProperties) {
+        init(cxxRepresentation properties: AudioProperties) {
             lengthInSeconds = properties.lengthInSeconds
             channels = properties.channels
             sampleRate = properties.sampleRate

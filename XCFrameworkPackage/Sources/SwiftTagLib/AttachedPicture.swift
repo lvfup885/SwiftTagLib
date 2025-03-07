@@ -18,10 +18,10 @@ public extension AudioFile.Metadata {
             self.description = description
         }
 
-        internal init(_ picture: AudioMetadata.Picture) {
+        internal init(cxxRepresentation picture: AudioMetadata.Picture) {
             data = Data(bytes: Array(picture.bytes), count: Int(picture.size))
             description = String(picture.description)
-            kind = .init(picture.kind)
+            kind = .init(cxxRepresentation: picture.kind)
         }
 
         var cxxRepresentation: AudioMetadata.Picture {
@@ -85,7 +85,7 @@ public extension AudioFile.Metadata.AttachedPicture {
         /// Logo of the publisher (record company)
         case publisherLogo = 0x14
 
-        init(_ cxxRepresentation: AudioMetadata.Picture.Kind) {
+        init(cxxRepresentation: AudioMetadata.Picture.Kind) {
             self.init(rawValue: cxxRepresentation.rawValue)!
         }
 

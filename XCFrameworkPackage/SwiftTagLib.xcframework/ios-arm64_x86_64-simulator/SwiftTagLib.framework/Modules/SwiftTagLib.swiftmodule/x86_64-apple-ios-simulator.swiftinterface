@@ -82,17 +82,27 @@ public struct AudioFile {
   #endif
 }
 extension SwiftTagLib.AudioFile {
+  public struct CxxException {
+    public enum Kind : Swift.String {
+      case runtimeError
+      case exception
+      case unknown
+      public init?(rawValue: Swift.String)
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
+    public let kind: SwiftTagLib.AudioFile.CxxException.Kind
+    public let message: Swift.String?
+  }
   public enum InitializationError : Swift.Error, Foundation.LocalizedError {
     case unableToDetermineAudioFormat
     case unableToOpenFile
     case invalidFile
-    case unknownError
+    case exception(SwiftTagLib.AudioFile.CxxException)
+    case unknown
     public var errorDescription: Swift.String? {
-      get
-    }
-    public static func == (a: SwiftTagLib.AudioFile.InitializationError, b: SwiftTagLib.AudioFile.InitializationError) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
       get
     }
   }
@@ -100,13 +110,9 @@ extension SwiftTagLib.AudioFile {
     case unableToOpenFile
     case invalidFile
     case saveError
-    case unknownError
+    case exception(SwiftTagLib.AudioFile.CxxException)
+    case unknown
     public var errorDescription: Swift.String? {
-      get
-    }
-    public static func == (a: SwiftTagLib.AudioFile.MetadataWritingError, b: SwiftTagLib.AudioFile.MetadataWritingError) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
       get
     }
   }
@@ -141,104 +147,31 @@ extension SwiftTagLib.AudioFile {
 }
 extension SwiftTagLib.AudioFile {
   public struct Metadata : Swift.Hashable {
-    @SwiftTagLib.AudioFile.Metadata.StringProperty public var title: Swift.String? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.StringProperty public var albumTitle: Swift.String? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.StringProperty public var artist: Swift.String? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.StringProperty public var genre: Swift.String? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.StringProperty public var releaseDate: Swift.String? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.StringProperty public var comment: Swift.String? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.StringProperty public var composer: Swift.String? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.StringProperty public var albumArtist: Swift.String? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.IntProperty public var bpm: Swift.Int32? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.IntProperty public var rating: Swift.Int32? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.IntProperty public var trackNumber: Swift.Int32? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.IntProperty public var trackTotal: Swift.Int32? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.IntProperty public var discNumber: Swift.Int32? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.IntProperty public var discTotal: Swift.Int32? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.StringProperty public var lyrics: Swift.String? {
-      get
-      set
-      _modify
-    }
-    public var compilation: Swift.Bool
-    @SwiftTagLib.AudioFile.Metadata.StringProperty public var isrc: Swift.String? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.StringProperty public var mcn: Swift.String? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.StringProperty public var musicBrainzReleaseID: Swift.String? {
-      get
-      set
-      _modify
-    }
-    @SwiftTagLib.AudioFile.Metadata.StringProperty public var musicBrainzRecordingID: Swift.String? {
-      get
-      set
-      _modify
-    }
+    public var title: Swift.String?
+    public var albumTitle: Swift.String?
+    public var artist: Swift.String?
+    public var genre: Swift.String?
+    public var releaseDate: Swift.String?
+    public var comment: Swift.String?
+    public var composer: Swift.String?
+    public var albumArtist: Swift.String?
+    public var beatPerMinute: Swift.Int32?
+    public var rating: Swift.Int32?
+    public var trackNumber: Swift.Int32?
+    public var trackTotal: Swift.Int32?
+    public var discNumber: Swift.Int32?
+    public var discTotal: Swift.Int32?
+    public var lyrics: Swift.String?
+    public var compilation: Swift.Bool?
+    public var internationalStandardRecordingCode: Swift.String?
+    public var mediaCatalogNumber: Swift.String?
+    public var musicBrainzReleaseID: Swift.String?
+    public var musicBrainzRecordingID: Swift.String?
     public var attachedPictures: [SwiftTagLib.AudioFile.Metadata.AttachedPicture]
     public var additional: [SwiftTagLib.AudioFile.Metadata.AdditionalMetadataPair]
+    public var tagSource: SwiftTagLib.AudioFile.Metadata.TagSource {
+      get
+    }
     public init()
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: SwiftTagLib.AudioFile.Metadata, b: SwiftTagLib.AudioFile.Metadata) -> Swift.Bool
@@ -272,38 +205,39 @@ extension SwiftTagLib.AudioFile {
   }
 }
 extension SwiftTagLib.AudioFile.Metadata {
-  @propertyWrapper public struct IntProperty : Swift.Hashable, Swift.Equatable, Swift.CustomStringConvertible {
-    public var wrappedValue: Swift.Int32?
-    public init()
+  public struct TagSource : Swift.Hashable, Swift.Equatable, Swift.OptionSet, Swift.CustomStringConvertible {
+    public static var abstract: SwiftTagLib.AudioFile.Metadata.TagSource {
+      get
+    }
+    public static var id3v1: SwiftTagLib.AudioFile.Metadata.TagSource {
+      get
+    }
+    public static var id3v2: SwiftTagLib.AudioFile.Metadata.TagSource {
+      get
+    }
+    public static var mp4: SwiftTagLib.AudioFile.Metadata.TagSource {
+      get
+    }
+    public static var ape: SwiftTagLib.AudioFile.Metadata.TagSource {
+      get
+    }
+    public static var xiph: SwiftTagLib.AudioFile.Metadata.TagSource {
+      get
+    }
+    public let rawValue: Swift.UInt8
+    public init(rawValue: Swift.UInt8)
     public var description: Swift.String {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
-    public static func == (a: SwiftTagLib.AudioFile.Metadata.IntProperty, b: SwiftTagLib.AudioFile.Metadata.IntProperty) -> Swift.Bool
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-}
-extension SwiftTagLib.AudioFile.Metadata {
-  @propertyWrapper public struct StringProperty : Swift.Hashable, Swift.Equatable, Swift.CustomStringConvertible {
-    public var wrappedValue: Swift.String?
-    public init()
-    public var description: Swift.String {
-      get
-    }
-    public func hash(into hasher: inout Swift.Hasher)
-    public static func == (a: SwiftTagLib.AudioFile.Metadata.StringProperty, b: SwiftTagLib.AudioFile.Metadata.StringProperty) -> Swift.Bool
-    public var hashValue: Swift.Int {
-      get
-    }
+    public typealias ArrayLiteralElement = SwiftTagLib.AudioFile.Metadata.TagSource
+    public typealias Element = SwiftTagLib.AudioFile.Metadata.TagSource
+    public typealias RawValue = Swift.UInt8
   }
 }
 extension SwiftTagLib.AudioFile.Metadata.AttachedPicture.Kind : Swift.Equatable {}
 extension SwiftTagLib.AudioFile.Metadata.AttachedPicture.Kind : Swift.Hashable {}
-extension SwiftTagLib.AudioFile.InitializationError : Swift.Equatable {}
-extension SwiftTagLib.AudioFile.InitializationError : Swift.Hashable {}
-extension SwiftTagLib.AudioFile.MetadataWritingError : Swift.Equatable {}
-extension SwiftTagLib.AudioFile.MetadataWritingError : Swift.Hashable {}
+extension SwiftTagLib.AudioFile.CxxException.Kind : Swift.Equatable {}
+extension SwiftTagLib.AudioFile.CxxException.Kind : Swift.Hashable {}
+extension SwiftTagLib.AudioFile.CxxException.Kind : Swift.RawRepresentable {}
 extension SwiftTagLib.AudioFile.Format : Swift.Equatable {}
 extension SwiftTagLib.AudioFile.Format : Swift.Hashable {}

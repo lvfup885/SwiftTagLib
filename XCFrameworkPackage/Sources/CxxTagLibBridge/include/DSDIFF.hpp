@@ -9,18 +9,18 @@ namespace AudioFile {
     protected:
         using FileType = TagLib::DSDIFF::File;
 
-        void readMetadataImplementation(FileType &file, AudioMetadata *metadata) const {
+        void read_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
             if (file.hasDIINTag()) {
-                metadata->overlay(AudioMetadata::fromTag(file.DIINTag()));
+                metadata->overlay(AudioMetadata::read_from_tag(file.DIINTag()));
             }
             if (file.hasID3v2Tag()) {
-                metadata->overlay(AudioMetadata::fromID3v2Tag(file.ID3v2Tag()));
+                metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.ID3v2Tag()));
             }
         }
 
-        void writeMetadataImplementation(FileType &file, AudioMetadata *metadata) const {
-            metadata->fillTag(file.tag());
-            metadata->fillID3v2Tag(file.ID3v2Tag());
+        void write_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
+            metadata->write_to_tag(file.tag());
+            metadata->write_to_ID3v2_tag(file.ID3v2Tag());
         }
     };
 }

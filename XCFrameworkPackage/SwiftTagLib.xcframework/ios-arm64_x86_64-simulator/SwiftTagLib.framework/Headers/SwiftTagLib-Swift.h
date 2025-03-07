@@ -812,7 +812,6 @@ namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
 
 
 
-
   SWIFT_INLINE_THUNK Format AudioFile::getFormat() const {
   return _impl::_impl_Format::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
     _impl::$s11SwiftTagLib9AudioFileV6formatAC6FormatOvg(result, _getOpaquePointer());
@@ -1621,7 +1620,6 @@ struct implClassFor<SwiftTagLib::AudioFile> { using type = SwiftTagLib::_impl::_
 } // namespace swift
 
 namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
-
 
 
 

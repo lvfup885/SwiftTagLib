@@ -9,14 +9,14 @@ namespace AudioFile {
     protected:
         using FileType = TagLib::RIFF::AIFF::File;
 
-        void readMetadataImplementation(FileType &file, AudioMetadata *metadata) const {
+        void read_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
             if (file.tag()) {
-                metadata->overlay(AudioMetadata::fromID3v2Tag(file.tag()));
+                metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.tag()));
             }
         }
 
-        void writeMetadataImplementation(FileType &file, AudioMetadata *metadata) const {
-            metadata->fillID3v2Tag(file.tag());
+        void write_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
+            metadata->write_to_ID3v2_tag(file.tag());
         }
     };
 }

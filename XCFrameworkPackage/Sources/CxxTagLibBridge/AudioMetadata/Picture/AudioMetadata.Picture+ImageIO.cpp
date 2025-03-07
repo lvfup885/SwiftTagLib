@@ -4,7 +4,7 @@
 #import <ImageIO/ImageIO.h>
 
 /// Attempts to extract `MIME type` from raw image `bytes`, if fails returns empty string.
-AudioMetadata::Picture::MIMEType AudioMetadata::Picture::mimeType() {
+AudioMetadata::Picture::MIMEType AudioMetadata::Picture::mime_type() {
     auto data = CFDataCreate(nullptr, reinterpret_cast<const UInt8*>(bytes.data()), size);
     auto imageSource = CGImageSourceCreateWithData(data, nullptr);
     std::string mimeType;
@@ -48,7 +48,7 @@ AudioMetadata::Picture::Properties AudioMetadata::Picture::properties() {
         }
         // properties
         auto properties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nullptr);
-        auto extract_value = [&] (const char* rawKey) -> int {
+        auto extract_value = [&properties] (const char* rawKey) -> int {
             CFStringRef key = CFStringCreateWithCString(nullptr, rawKey, kCFStringEncodingUTF8);
             CFNumberRef number = (CFNumberRef)CFDictionaryGetValue(properties, key);
             int value = 0;

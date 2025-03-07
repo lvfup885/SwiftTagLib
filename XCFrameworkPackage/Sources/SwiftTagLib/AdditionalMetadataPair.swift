@@ -12,7 +12,7 @@ extension AudioFile.Metadata {
             self.value = value
         }
 
-        init(_ pair: AudioMetadata.AdditionalMetadataPair) {
+        init(cxxRepresentation pair: AudioMetadata.AdditionalMetadataPair) {
             self.key = String(pair.first)
             self.value = String(pair.second)
         }

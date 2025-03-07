@@ -14,7 +14,9 @@ public struct AudioFile {
 
     /// attempts to create `AudioFile` from `URL`.
     public init(url: URL) throws(InitializationError) {
-        guard let format = try Format.forFile(at: url) else { throw .unableToDetermineAudioFormat }
+        guard let format = try Format.Detector.format(at: url) else {
+            throw .unableToDetermineAudioFormat
+        }
         self.url = url
         self.format = format
         let (metadata, properties) = try Metadata.readMetadataAndProperties(from: url, format: format)

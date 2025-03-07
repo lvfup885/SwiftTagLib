@@ -3,21 +3,33 @@ import Foundation
 import Testing
 @testable import SwiftTagLib
 
-/// Just a bare bones validation that it does not fail spectacularly
-@Suite("Audio File Tests")
+@Suite("Audio File Tests", .serialized)
 struct AudioFileTests {
     @Test("Reading from same file twice should produce exactly same metadata.", arguments: AudioSample.supported)
-    func metadataReading(sample: AudioSample) {
+    func readingMetadata(sample: AudioSample) {
         do {
             let metadata = try #require(AudioFile(url: sample.url).metadata)
             let secondReadMetadata = try #require(AudioFile(url: sample.url).metadata)
-            #expect(metadata.hashValue == secondReadMetadata.hashValue, "reading metadata from same file gives exactly same metadata")
+            #expect(metadata.hashValue == secondReadMetadata.hashValue, "reading metadata from same file gives exactly same metadata; \(metadata.tagSource)")
+            guard metadata.hashValue != secondReadMetadata.hashValue else { return }
+            func compare<T: Equatable & Hashable>(_ keyPaths: [KeyPath<AudioFile.Metadata, T>]) {
+                for keyPath in keyPaths {
+                    let first = metadata[keyPath: keyPath]
+                    let second = secondReadMetadata[keyPath: keyPath]
+                    #expect(first == second, "should be same: \(keyPath)")
+                }
+            }
+            compare(AudioFile.Metadata.stringProperties)
+            compare(AudioFile.Metadata.intProperties)
+            compare(AudioFile.Metadata.dateProperties)
+            compare(AudioFile.Metadata.boolProperties)
+            #expect(metadata.additional == secondReadMetadata.additional, "same additional metadata")
         } catch {
             Issue.record(error, "file: \(sample.filename)")
         }
     }
 
-    @Test("Overwriting exact same file with same metadata should not change any metadata.", arguments: AudioSample.supported)
+    @Test("Overwriting metadata with metadata read file, no metadata should change.", arguments: AudioSample.supported)
     func sameSelfOverwrite(source: AudioSample) throws {
         let directory = Constants.Directory.test()
         let destination = directory.appending(path: source.filename)
@@ -26,15 +38,15 @@ struct AudioFileTests {
             try FileManager.default.copyItem(at: source.url, to: destination)
         }
         defer {
-            try! FileManager.default.removeItem(at: directory)
+            try? FileManager.default.removeItem(at: directory)
         }
         do {
             let original = try AudioFile(url: source.url)
             var copy = try AudioFile(url: destination)
-            #expect(original.metadata.hashValue == copy.metadata.hashValue, "copy of file has exactly same metadata")
+            #expect(original.metadata.hashValue == copy.metadata.hashValue, "copy of file has exactly same metadata; \(copy.metadata.tagSource)")
             try copy.write()
             copy = try AudioFile(url: destination)
-            #expect(original.metadata.hashValue == copy.metadata.hashValue, "metadata should be same; format \(copy.format)")
+            #expect(original.metadata.hashValue == copy.metadata.hashValue, "metadata should be same; \(copy.metadata.tagSource)")
             guard original.metadata.hashValue != copy.metadata.hashValue else { return }
             func compare<T: Equatable & Hashable>(_ keyPaths: [KeyPath<AudioFile.Metadata, T>]) {
                 for keyPath in keyPaths {
@@ -55,8 +67,8 @@ struct AudioFileTests {
         }
     }
 
-    @Test("Filling all the metadata, all fields should be written to and read from file as provided", arguments: AudioSample.supported)
-    func fillingAllMetadataFields(source: AudioSample) throws {
+    @Test("Writing metadata, all fields read should match what was written.", arguments: AudioSample.supported)
+    func writingMetadata(source: AudioSample) throws {
         let directory = Constants.Directory.test()
         let destination = directory.appending(path: source.filename)
         setup: do {
@@ -64,17 +76,17 @@ struct AudioFileTests {
             try FileManager.default.copyItem(at: source.url, to: destination)
         }
         defer {
-            try! FileManager.default.removeItem(at: directory)
+            try? FileManager.default.removeItem(at: directory)
         }
         do {
             let original = try AudioFile(url: source.url)
             var copy = try AudioFile(url: destination)
-            #expect(original.metadata.hashValue == copy.metadata.hashValue, "copy of file has exactly same metadata")
+            #expect(original.metadata.hashValue == copy.metadata.hashValue, "copy of file has exactly same metadata;  \(original.metadata.tagSource)")
             let metadata: AudioFile.Metadata = .mocked
             copy.metadata = metadata
             try copy.write()
             copy = try AudioFile(url: destination)
-            #expect(metadata.hashValue == copy.metadata.hashValue, "metadata written and read should be same; format \(copy.format)")
+            #expect(metadata.hashValue == copy.metadata.hashValue, "metadata written and read should be same; \(copy.metadata.tagSource)")
             guard metadata.hashValue != copy.metadata.hashValue else { return }
             func compare<T: Equatable & Hashable>(_ keyPaths: [KeyPath<AudioFile.Metadata, T>]) {
                 for keyPath in keyPaths {
@@ -95,8 +107,8 @@ struct AudioFileTests {
         }
     }
 
-    @Test("Empty metadata should erase all metadata from file", arguments: AudioSample.supported)
-    func allEmptyMetadataFields(source: AudioSample) throws {
+    @Test("Erasing metadata, all fields should be empty.", arguments: AudioSample.supported)
+    func erasingMetadata(source: AudioSample) throws {
         let directory = Constants.Directory.test()
         let destination = directory.appending(path: source.filename)
         setup: do {
@@ -104,17 +116,17 @@ struct AudioFileTests {
             try FileManager.default.copyItem(at: source.url, to: destination)
         }
         defer {
-            try! FileManager.default.removeItem(at: directory)
+            try? FileManager.default.removeItem(at: directory)
         }
         do {
             let original = try AudioFile(url: source.url)
             var copy = try AudioFile(url: destination)
-            #expect(original.metadata.hashValue == copy.metadata.hashValue, "copy of file has exactly same metadata")
+            #expect(original.metadata.hashValue == copy.metadata.hashValue, "copy of file has exactly same metadata; \(copy.metadata.tagSource)")
             let metadata: AudioFile.Metadata = .init()
             copy.metadata = metadata
             try copy.write()
             copy = try AudioFile(url: destination)
-            #expect(metadata.hashValue == copy.metadata.hashValue, "metadata written and read should be same; format \(copy.format)")
+            #expect(metadata.hashValue == copy.metadata.hashValue, "metadata written and read should be same; \(copy.metadata.tagSource)")
             guard metadata.hashValue != copy.metadata.hashValue else { return }
             func compare<T: Equatable & Hashable>(_ keyPaths: [KeyPath<AudioFile.Metadata, T>]) {
                 for keyPath in keyPaths {

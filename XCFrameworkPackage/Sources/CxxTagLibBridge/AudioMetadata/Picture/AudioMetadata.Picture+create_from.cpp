@@ -2,7 +2,7 @@
 #import "AudioMetadata.hpp"
 
 /// builds `AudioMetadata::Picture` from `TagLib::FLAC::Picture`.
-AudioMetadata::Picture AudioMetadata::Picture::fromFLACPicture(const TagLib::FLAC::Picture *flacPicture) {
+AudioMetadata::Picture AudioMetadata::Picture::create_from_FLACPicture(const TagLib::FLAC::Picture *flacPicture) {
     auto pointer = flacPicture->data().data();
     auto size = flacPicture->data().size();
     auto picture = AudioMetadata::Picture {
@@ -17,7 +17,7 @@ AudioMetadata::Picture AudioMetadata::Picture::fromFLACPicture(const TagLib::FLA
 }
 
 /// builds `AudioMetadata::Picture` from `TagLib::MP4::CoverArt`.
-AudioMetadata::Picture AudioMetadata::Picture::fromMP4Picture(const TagLib::MP4::CoverArt coverArt) {
+AudioMetadata::Picture AudioMetadata::Picture::create_from_MP4Picture(const TagLib::MP4::CoverArt coverArt) {
     auto pointer = coverArt.data().data();
     auto size = coverArt.data().size();
     return {
@@ -27,7 +27,7 @@ AudioMetadata::Picture AudioMetadata::Picture::fromMP4Picture(const TagLib::MP4:
 }
 
 /// builds `AudioMetadata::Picture` from `TagLib::ID3v2::AttachedPictureFrame *`.
-AudioMetadata::Picture AudioMetadata::Picture::fromID3v2Picture(const TagLib::ID3v2::AttachedPictureFrame *frame) {
+AudioMetadata::Picture AudioMetadata::Picture::create_from_ID3v2Picture(const TagLib::ID3v2::AttachedPictureFrame *frame) {
     auto pointer = frame->picture().data();
     auto size = frame->picture().size();
     auto picture = AudioMetadata::Picture {
@@ -41,7 +41,7 @@ AudioMetadata::Picture AudioMetadata::Picture::fromID3v2Picture(const TagLib::ID
 }
 
 /// maybe builds `AudioMetadata::Picture` from `const TagLib::APE::Item item` and `const char* key` return wrapped in `std::optional`.
-std::optional<AudioMetadata::Picture> AudioMetadata::Picture::fromAPEPicture(const TagLib::APE::Item item, const char* key) {
+std::optional<AudioMetadata::Picture> AudioMetadata::Picture::create_from_APEPicture(const TagLib::APE::Item item, const char* key) {
     // From http://www.hydrogenaudio.org/forums/index.php?showtopic=40603&view=findpost&p=504669
     /*
      <length> 32 bit

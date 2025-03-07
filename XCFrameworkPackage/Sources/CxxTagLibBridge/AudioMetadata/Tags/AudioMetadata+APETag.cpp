@@ -1,14 +1,109 @@
 
 #import "AudioMetadata.hpp"
+#import <unordered_map>
+#import <cstring>
+#import <string>
+#import <string_view>
 
+// MARK: - Keys
+namespace MetadataKey {
+    struct APE final {
+        static constexpr std::string title = "TITLE";
+        static constexpr std::string album = "ALBUM";
+        static constexpr std::string artist = "ARTIST";
+        static constexpr std::string genre = "GENRE";
+        static constexpr std::string releaseDate = "DATE";
+        static constexpr std::string comment = "DESCRIPTION";
+        static constexpr std::string trackNumber = "TRACKNUMBER";
+        static constexpr std::string trackTotal = "TRACKTOTAL";
+        static constexpr std::string discNumber = "DISCNUMBER";
+        static constexpr std::string discTotal = "DISCTOTAL";
+        static constexpr std::string composer = "COMPOSER";
+        static constexpr std::string albumArtist = "ALBUMARTIST";
+        static constexpr std::string bpm = "BPM";
+        static constexpr std::string rating = "RATING";
+        static constexpr std::string lyrics = "LYRICS";
+        static constexpr std::string compilation = "COMPILATION";
+        static constexpr std::string isrc = "ISRC";
+        static constexpr std::string mcn = "MCN";
+        static constexpr std::string musicBrainzReleaseID = "MUSICBRAINZ_ALBUMID";
+        static constexpr std::string musicBrainzRecordingID = "MUSICBRAINZ_TRACKID";
+        static constexpr std::string coverArtFront = "COVER ART (FRONT)";
+        static constexpr std::string coverArtBack = "COVER ART (BACK)";
+
+        using StringProperty = std::optional<std::string> AudioMetadata::*;
+        static std::unordered_map<std::string, StringProperty, std::hash<std::string>> stringPropertiesByKeys() {
+            return {
+                {APE::title, &AudioMetadata::title},
+                {APE::album, &AudioMetadata::albumTitle},
+                {APE::artist, &AudioMetadata::artist},
+                {APE::genre, &AudioMetadata::genre},
+                {APE::comment, &AudioMetadata::comment},
+                {APE::releaseDate, &AudioMetadata::releaseDate},
+                {APE::composer, &AudioMetadata::composer},
+                {APE::albumArtist, &AudioMetadata::albumArtist},
+                {APE::lyrics, &AudioMetadata::lyrics},
+                {APE::isrc, &AudioMetadata::internationalStandardRecordingCode},
+                {APE::mcn, &AudioMetadata::mediaCatalogNumber},
+                {APE::musicBrainzReleaseID, &AudioMetadata::musicBrainzReleaseID},
+                {APE::musicBrainzRecordingID, &AudioMetadata::musicBrainzRecordingID},
+            };
+        }
+
+        using IntProperty = std::optional<int> AudioMetadata::*;
+        static std::unordered_map<std::string, IntProperty, std::hash<std::string>> intPropertiesByKeys() {
+            return {
+                {APE::trackNumber, &AudioMetadata::trackNumber},
+                {APE::trackTotal, &AudioMetadata::trackTotal},
+                {APE::discNumber, &AudioMetadata::discNumber},
+                {APE::discTotal, &AudioMetadata::discTotal},
+                {APE::bpm, &AudioMetadata::beatPerMinute},
+                {APE::rating, &AudioMetadata::rating},
+            };
+        }
+    };
+}
+
+// MARK: - Read
 /// constructor for `AudioMetadata` from `TagLib::APE::Tag`.
-AudioMetadata AudioMetadata::fromAPETag(const TagLib::APE::Tag *tag) {
+AudioMetadata AudioMetadata::read_from_APE_tag(const TagLib::APE::Tag *tag) {
     auto metadata = AudioMetadata();
-    auto additionalMetadata = AudioMetadata::AdditionalMetadata();
-
     if (tag->isEmpty()) {
         return metadata;
     }
+    metadata.tagSource |= TagSource::APE;
+    auto additionalMetadata = AudioMetadata::AdditionalMetadata();
+    using Key = MetadataKey::APE;
+
+    auto none_if_empty = [](const char* string) -> std::optional<std::string> {
+        return (!std::string_view(string).empty()) ? std::optional<std::string>(string) : std::nullopt;
+    };
+
+    auto none_if_zero = [](int number) -> std::optional<int> {
+        return number != 0 ? std::optional<int>(number) : std::nullopt;
+    };
+
+    auto string_to_optional_bool = [](char const * value) -> std::optional<bool> {
+        auto lookupValue = std::string(value);
+        std::transform(lookupValue.begin(), lookupValue.end(), lookupValue.begin(), ::tolower);
+        if (lookupValue == "true") {
+            return true;
+        } else if (lookupValue == "false") {
+            return false;
+        } else {
+            int number = std::atoi(value);
+            if (number == 0) {
+                return false;
+            } else if (number == 1) {
+                return true;
+            } else {
+                return std::nullopt;
+            }
+        }
+    };
+
+    auto stringPropertiesByKeys = MetadataKey::APE::stringPropertiesByKeys();
+    auto intPropertiesByKeys = MetadataKey::APE::intPropertiesByKeys();
 
     for (auto iterator: tag->itemListMap()) {
         auto item = iterator.second;
@@ -16,83 +111,48 @@ AudioMetadata AudioMetadata::fromAPETag(const TagLib::APE::Tag *tag) {
         auto key = item.key().toCString(true);
         auto value = item.toString().toCString(true);
 
-        #warning unsafe `cString` to `int` conversions below
-        #warning some irrelevant metadata keys are ignored
-
         if (TagLib::APE::Item::Text == item.type()) {
-            if (strcasecmp(key, "Album")) {
-                metadata.albumTitle = value;
-            } else if (strcasecmp(key, "Artist")) {
-                metadata.artist = value;
-            } else if (strcasecmp(key, "AlbumArtist")) {
-                metadata.albumArtist = value;
-            } else if (strcasecmp(key, "Composer")) {
-                metadata.composer = value;
-            } else if (strcasecmp(key, "Genre")) {
-                metadata.genre = value;
-            } else if (strcasecmp(key, "Date")) {
-                metadata.releaseDate = value;
-            } else if (strcasecmp(key, "Description")) {
-                metadata.comment = value;
-            } else if (strcasecmp(key, "Title")) {
-                metadata.title = value;
-            } else if (strcasecmp(key, "TrackNumber")) {
-                metadata.trackNumber = std::stoi(value);
-            } else if (strcasecmp(key, "TrackTotal")) {
-                metadata.trackTotal = std::stoi(value);
-            } else if (strcasecmp(key, "Compilation")) {
-                #warning unknown metadata value expectations
-                metadata.compilation = strcmp(value, "true") == 0;
-            } else if (strcasecmp(key, "DiscNumber")) {
-                metadata.discNumber = std::stoi(value);
-            } else if (strcasecmp(key, "DiscTotal")) {
-                metadata.discTotal = std::stoi(value);
-            } else if (strcasecmp(key, "Lyrics")) {
-                metadata.lyrics = value;
-            } else if (strcasecmp(key, "BPM")) {
-                metadata.beatPerMinute = std::stoi(value);
-            } else if (strcasecmp(key, "Rating")) {
-                metadata.rating = std::stoi(value);
-            } else if (strcasecmp(key, "ISRC")) {
-                metadata.internationalStandardRecordingCode = value;
-            } else if (strcasecmp(key, "MCN")) {
-                metadata.mediaCatalogNumber = value;
-            } else if (strcasecmp(key, "MusicBrainz_AlbumID")) {
-                metadata.musicBrainzReleaseID = value;
-            } else if (strcasecmp(key, "MusicBrainz_TrackID")) {
-                metadata.musicBrainzRecordingID = value;
-//            } else if (strcasecmp(key, "TitleSort")) {
-//
-//            } else if (strcasecmp(key, "AlbumTitleSort")) {
-//
-//            } else if (strcasecmp(key, "ArtistSort")) {
-//
-//            } else if (strcasecmp(key, "AlbumArtistSort")) {
-//
-//            } else if (strcasecmp(key, "ComposerSort")) {
-//
-//            } else if (strcasecmp(key, "Grouping")) {
-//
-//            } else if (strcasecmp(key, "ReplayGain_Reference_Loudness")) {
-//
-//            } else if (strcasecmp(key, "ReplayGain_TracK_Gain")) {
-//
-//            } else if (strcasecmp(key, "ReplayGain_Track_Peak")) {
-//
-//            } else if (strcasecmp(key, "RaplayGain_Album_Gain")) {
-//
-//            } else if (strcasecmp(key, "ReplayGain_Album_Peak")) {
-            } else {
+            bool hasHandledValue = false;
+            auto lookupKey = std::string(key);
+            std::transform(lookupKey.begin(), lookupKey.end(), lookupKey.begin(), ::toupper);
+
+            auto stringPropertyIterator = stringPropertiesByKeys.find(lookupKey);
+            if (stringPropertyIterator != stringPropertiesByKeys.end()) {
+                auto memberPointer = stringPropertyIterator->second; /// maybe `auto&`
+                metadata.*memberPointer = none_if_empty(value);
+                hasHandledValue = true;
+            }
+            if (hasHandledValue) { continue; }
+
+            auto intPropertyIterator = intPropertiesByKeys.find(lookupKey);
+            if (intPropertyIterator != intPropertiesByKeys.end()) {
+                auto memberPointer = intPropertyIterator->second; /// maybe `auto&`
+                auto number = std::stoi(value);
+                metadata.*memberPointer = none_if_zero(number);
+                hasHandledValue = true;
+            }
+            if (hasHandledValue) { continue; }
+
+            if (lookupKey == Key::compilation) {
+                metadata.compilation = string_to_optional_bool(value);
+                if (metadata.compilation.has_value()) {
+                    hasHandledValue = true;
+                }
+            }
+            if (hasHandledValue) { continue; }
+
+            if (!hasHandledValue) {
                 additionalMetadata.push_back(std::pair<std::string, std:: string>(key, value));
-//                additionalMetadata[key] = value;
+                continue;;
             }
         } else if(TagLib::APE::Item::Binary == item.type()) {
-            auto key = item.key().toCString(true);
-            if (strcasecmp(key, "Cover Art (Front)") || strcasecmp(key, "Cover Art (Back)")) {
-                auto picture = AudioMetadata::Picture::fromAPEPicture(item, key);
+            if (key == Key::coverArtFront || key == Key::coverArtBack) {
+                auto picture = AudioMetadata::Picture::create_from_APEPicture(item, key);
                 if (picture.has_value()) {
                     metadata.attachedPictures.push_back(picture.value());
                 }
+            } else {
+                continue;
             }
         }
     }
@@ -104,74 +164,74 @@ AudioMetadata AudioMetadata::fromAPETag(const TagLib::APE::Tag *tag) {
     return metadata;
 }
 
+// MARK: - Write
 /// fills`TagLib::APE::Tag` from `AudioMetadata`.
-void AudioMetadata::fillAPETag(TagLib::APE::Tag * tag) const {
-    /// apply string value
-    auto apply_tag = [&] (const char* key, std::string value) {
+void AudioMetadata::write_to_APE_tag(TagLib::APE::Tag * tag, bool shouldWritePictures) const {
+    using Key = MetadataKey::APE;
+
+    #warning there's a chance where TagLib::String() used it needs to be called below with .toCString()
+    auto write_string = [&tag] (const std::string key, std::optional<std::string> optional) {
         tag->removeItem(key);
-        tag->addValue(key, TagLib::String(value.c_str()));
-    };
-    /// apply int value
-    auto apply_tag_number = [&] (const char* key, int value) {
-        apply_tag(key, std::to_string(value));
-    };
-    auto apply_tag_bool = [&] (const char* key, bool value) {
-        apply_tag(key, (value == true ? "1" : "0"));
+        if (optional.has_value()) {
+            auto string = optional.value();
+            tag->addValue(key, TagLib::String(string.c_str()));
+        }
     };
 
-    // Standard tags;
-    apply_tag("ALBUM", albumTitle);
-    apply_tag("ARTIST", artist);
-    apply_tag("ALBUMARTIST", albumArtist);
-    apply_tag("COMPOSER", composer);
-    apply_tag("GENRE", genre);
-    apply_tag("DATE", releaseDate);
-    apply_tag("DESCRIPTION", comment);
-    apply_tag("TITLE", title);
-    apply_tag_number("TRACKNUMBER", trackNumber);
-    apply_tag_number("TRACKTOTAL", trackTotal);
-    apply_tag_bool("COMPILATION", compilation);
-    apply_tag_number("DISCNUMBER", discNumber);
-    apply_tag_number("DISCTOTAL", discTotal);
-    apply_tag("LYRICS", lyrics);
-    apply_tag_number("BPM", beatPerMinute);
-    apply_tag_number("RATING", rating);
-    apply_tag("ISRC", internationalStandardRecordingCode);
-    apply_tag("MCN", mediaCatalogNumber);
-    apply_tag("MUSICBRAINZ_ALBUMID", musicBrainzReleaseID);
-    apply_tag("MUSICBRAINZ_TRACKID", musicBrainzRecordingID);
-    #warning some irrelevant metadata keys are ignored
-//    apply_tag("TITLESORT", titleSortOrder);
-//    apply_tag("ALBUMTITLESORT", albumTitleSortOrder);
-//    apply_tag("ARTISTSORT", artistSortOrder);
-//    apply_tag("ALBUMARTISTSORT", albumArtistSortOrder);
-//    apply_tag("COMPOSERSORT", composerSortOrder);
-//    apply_tag("GROUPING", grouping);
+    auto write_int = [&tag] (const std::string key, std::optional<int> optional) {
+        tag->removeItem(key.c_str());
+        if (optional.has_value()) {
+            auto number = std::to_string(optional.value());
+            tag->addValue(key.c_str(), TagLib::String(number.c_str()));
+        }
+    };
+
+    auto write_bool = [&tag] (const std::string key, std::optional<bool> optional) {
+        tag->removeItem(key.c_str());
+        if (optional.has_value()) {
+            auto flag = std::to_string(optional.value() ? 1 : 0);
+            tag->addValue(key.c_str(), TagLib::String(flag.c_str()));
+        }
+    };
+
+    write_string(Key::title, title);
+    write_string(Key::album, albumTitle);
+    write_string(Key::artist, artist);
+    write_string(Key::genre, genre);
+    write_string(Key::comment, comment);
+    write_string(Key::releaseDate, releaseDate);
+    write_int(Key::trackNumber, trackNumber);
+    write_int(Key::trackTotal, trackTotal);
+    write_int(Key::discNumber, discNumber);
+    write_int(Key::discTotal, discTotal);
+    write_string(Key::composer, composer);
+    write_string(Key::albumArtist, albumArtist);
+    write_int(Key::bpm, beatPerMinute);
+    write_int(Key::rating, rating);
+    write_string(Key::lyrics, lyrics);
+    write_bool(Key::compilation, compilation);
+    write_string(Key::isrc, internationalStandardRecordingCode);
+    write_string(Key::mcn, mediaCatalogNumber);
+    write_string(Key::musicBrainzReleaseID, musicBrainzReleaseID);
+    write_string(Key::musicBrainzRecordingID, musicBrainzRecordingID);
 
     // Additional metadata
     if (!additional.empty()) {
         for (auto item: additional) {
             auto key = item.first.c_str();
-            auto value = item.second;
-            apply_tag(key, value);
+            auto value = item.second.c_str();
+            tag->removeItem(key);
+            tag->addValue(key, TagLib::String(value));
         }
     }
 
-    // ReplayGain info
-    #warning replay gain metadata is ignored
-//    SetAPETagDoubleWithFormat(tag, "REPLAYGAIN_REFERENCE_LOUDNESS", this.replayGainReferenceLoudness, @"%2.1f dB");
-//    SetAPETagDoubleWithFormat(tag, "REPLAYGAIN_TRACK_GAIN", this.replayGainTrackGain, @"%+2.2f dB");
-//    SetAPETagDoubleWithFormat(tag, "REPLAYGAIN_TRACK_PEAK", this.replayGainTrackPeak, @"%1.8f");
-//    SetAPETagDoubleWithFormat(tag, "REPLAYGAIN_ALBUM_GAIN", this.replayGainAlbumGain, @"%+2.2f dB");
-//    SetAPETagDoubleWithFormat(tag, "REPLAYGAIN_ALBUM_PEAK", this.replayGainAlbumPeak, @"%1.8f");
-
     // Album art
-    tag->removeItem("Cover Art (Front)");
-    tag->removeItem("Cover Art (Back)");
+    tag->removeItem(Key::coverArtFront.c_str());
+    tag->removeItem(Key::coverArtBack.c_str());
 
-    if (!attachedPictures.empty()) {
+    if (shouldWritePictures && !attachedPictures.empty()) {
         for (auto picture: attachedPictures) {
-            auto coverData = picture.asAPEPicture();
+            auto coverData = picture.convert_to_APEPicture();
             if (coverData) {
                 auto& [key, data] = *coverData;
                 tag->setData(key, data);

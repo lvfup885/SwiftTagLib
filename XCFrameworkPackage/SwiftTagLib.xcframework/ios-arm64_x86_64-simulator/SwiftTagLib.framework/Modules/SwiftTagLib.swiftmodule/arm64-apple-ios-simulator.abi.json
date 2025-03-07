@@ -49,7 +49,7 @@
           {
             "kind": "Function",
             "name": "readMetadata",
-            "printedName": "readMetadata(_:_:)",
+            "printedName": "readMetadata(_:_:_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -100,11 +100,33 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ImplicitlyUnwrappedOptional",
+                "printedName": "Swift.UnsafeMutablePointer<__ObjC.std.__1.basic_string<CChar, char_traits<CChar>, allocator<CChar>>>?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UnsafeMutablePointer",
+                    "printedName": "Swift.UnsafeMutablePointer<__ObjC.std.__1.basic_string<CChar, char_traits<CChar>, allocator<CChar>>>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "basic_string<CChar, char_traits<CChar>, allocator<CChar>>",
+                        "printedName": "__ObjC.std.__1.basic_string<CChar, char_traits<CChar>, allocator<CChar>>",
+                        "usr": "c:@N@std@N@__1@S@basic_string>#C#$@N@std@N@__1@S@char_traits>#C#$@N@std@N@__1@S@allocator>#C"
+                      }
+                    ],
+                    "usr": "s:Sp"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11SwiftTagLib23AudioFileImplementationP12readMetadataySo0H14ReadingOutcomeVSpySo0dH0VGSg_SpySo0D10PropertiesVGSgtF",
-            "mangledName": "$s11SwiftTagLib23AudioFileImplementationP12readMetadataySo0H14ReadingOutcomeVSpySo0dH0VGSg_SpySo0D10PropertiesVGSgtF",
+            "usr": "s:11SwiftTagLib23AudioFileImplementationP12readMetadataySo0H14ReadingOutcomeVSpySo0dH0VGSg_SpySo0D10PropertiesVGSgSpySo3stdO3__1O0071basic_stringCCharchar_traitsCCharallocatorCChar_mHGHsqaGJcraCCfsaqChraaVGSgtF",
+            "mangledName": "$s11SwiftTagLib23AudioFileImplementationP12readMetadataySo0H14ReadingOutcomeVSpySo0dH0VGSg_SpySo0D10PropertiesVGSgSpySo3stdO3__1O0071basic_stringCCharchar_traitsCCharallocatorCChar_mHGHsqaGJcraCCfsaqChraaVGSgtF",
             "moduleName": "SwiftTagLib",
             "genericSig": "<τ_0_0 where τ_0_0 : SwiftTagLib.AudioFileImplementation>",
             "sugared_genericSig": "<Self where Self : SwiftTagLib.AudioFileImplementation>",
@@ -115,7 +137,7 @@
           {
             "kind": "Function",
             "name": "writeMetadata",
-            "printedName": "writeMetadata(_:)",
+            "printedName": "writeMetadata(_:_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -144,11 +166,33 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ImplicitlyUnwrappedOptional",
+                "printedName": "Swift.UnsafeMutablePointer<__ObjC.std.__1.basic_string<CChar, char_traits<CChar>, allocator<CChar>>>?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UnsafeMutablePointer",
+                    "printedName": "Swift.UnsafeMutablePointer<__ObjC.std.__1.basic_string<CChar, char_traits<CChar>, allocator<CChar>>>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "basic_string<CChar, char_traits<CChar>, allocator<CChar>>",
+                        "printedName": "__ObjC.std.__1.basic_string<CChar, char_traits<CChar>, allocator<CChar>>",
+                        "usr": "c:@N@std@N@__1@S@basic_string>#C#$@N@std@N@__1@S@char_traits>#C#$@N@std@N@__1@S@allocator>#C"
+                      }
+                    ],
+                    "usr": "s:Sp"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:11SwiftTagLib23AudioFileImplementationP13writeMetadataySo0H14WritingOutcomeVSpySo0dH0VGSgF",
-            "mangledName": "$s11SwiftTagLib23AudioFileImplementationP13writeMetadataySo0H14WritingOutcomeVSpySo0dH0VGSgF",
+            "usr": "s:11SwiftTagLib23AudioFileImplementationP13writeMetadataySo0H14WritingOutcomeVSpySo0dH0VGSg_SpySo3stdO3__1O0071basic_stringCCharchar_traitsCCharallocatorCChar_mHGHsqaGJcraCCfsaqChraaVGSgtF",
+            "mangledName": "$s11SwiftTagLib23AudioFileImplementationP13writeMetadataySo0H14WritingOutcomeVSpySo0dH0VGSg_SpySo3stdO3__1O0071basic_stringCCharchar_traitsCCharallocatorCChar_mHGHsqaGJcraCCfsaqChraaVGSgtF",
             "moduleName": "SwiftTagLib",
             "genericSig": "<τ_0_0 where τ_0_0 : SwiftTagLib.AudioFileImplementation>",
             "sugared_genericSig": "<Self where Self : SwiftTagLib.AudioFileImplementation>",
@@ -462,7 +506,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(_:)",
+            "printedName": "init(cxxRepresentation:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -476,8 +520,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11SwiftTagLib16CxxRepresentablePyx0D14RepresentationQzcfc",
-            "mangledName": "$s11SwiftTagLib16CxxRepresentablePyx0D14RepresentationQzcfc",
+            "usr": "s:11SwiftTagLib16CxxRepresentableP17cxxRepresentationx0dG0Qz_tcfc",
+            "mangledName": "$s11SwiftTagLib16CxxRepresentableP17cxxRepresentationx0dG0Qz_tcfc",
             "moduleName": "SwiftTagLib",
             "genericSig": "<τ_0_0 where τ_0_0 : SwiftTagLib.CxxRepresentable>",
             "sugared_genericSig": "<Self where Self : SwiftTagLib.CxxRepresentable>",
@@ -1596,6 +1640,430 @@
           },
           {
             "kind": "TypeDecl",
+            "name": "CxxException",
+            "printedName": "CxxException",
+            "children": [
+              {
+                "kind": "TypeDecl",
+                "name": "Kind",
+                "printedName": "Kind",
+                "children": [
+                  {
+                    "kind": "Var",
+                    "name": "runtimeError",
+                    "printedName": "runtimeError",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(SwiftTagLib.AudioFile.CxxException.Kind.Type) -> SwiftTagLib.AudioFile.CxxException.Kind",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Kind",
+                            "printedName": "SwiftTagLib.AudioFile.CxxException.Kind",
+                            "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Metatype",
+                            "printedName": "SwiftTagLib.AudioFile.CxxException.Kind.Type",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Kind",
+                                "printedName": "SwiftTagLib.AudioFile.CxxException.Kind",
+                                "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "declKind": "EnumElement",
+                    "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO12runtimeErroryA2GmF",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV12CxxExceptionV4KindO12runtimeErroryA2GmF",
+                    "moduleName": "SwiftTagLib"
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "exception",
+                    "printedName": "exception",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(SwiftTagLib.AudioFile.CxxException.Kind.Type) -> SwiftTagLib.AudioFile.CxxException.Kind",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Kind",
+                            "printedName": "SwiftTagLib.AudioFile.CxxException.Kind",
+                            "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Metatype",
+                            "printedName": "SwiftTagLib.AudioFile.CxxException.Kind.Type",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Kind",
+                                "printedName": "SwiftTagLib.AudioFile.CxxException.Kind",
+                                "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "declKind": "EnumElement",
+                    "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO9exceptionyA2GmF",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV12CxxExceptionV4KindO9exceptionyA2GmF",
+                    "moduleName": "SwiftTagLib"
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "unknown",
+                    "printedName": "unknown",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(SwiftTagLib.AudioFile.CxxException.Kind.Type) -> SwiftTagLib.AudioFile.CxxException.Kind",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Kind",
+                            "printedName": "SwiftTagLib.AudioFile.CxxException.Kind",
+                            "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Metatype",
+                            "printedName": "SwiftTagLib.AudioFile.CxxException.Kind.Type",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Kind",
+                                "printedName": "SwiftTagLib.AudioFile.CxxException.Kind",
+                                "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "declKind": "EnumElement",
+                    "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO7unknownyA2GmF",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV12CxxExceptionV4KindO7unknownyA2GmF",
+                    "moduleName": "SwiftTagLib"
+                  },
+                  {
+                    "kind": "Constructor",
+                    "name": "init",
+                    "printedName": "init(rawValue:)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "SwiftTagLib.AudioFile.CxxException.Kind?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Kind",
+                            "printedName": "SwiftTagLib.AudioFile.CxxException.Kind",
+                            "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Constructor",
+                    "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO8rawValueAGSgSS_tcfc",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV12CxxExceptionV4KindO8rawValueAGSgSS_tcfc",
+                    "moduleName": "SwiftTagLib",
+                    "implicit": true,
+                    "init_kind": "Designated"
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "rawValue",
+                    "printedName": "rawValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO8rawValueSSvp",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV12CxxExceptionV4KindO8rawValueSSvp",
+                    "moduleName": "SwiftTagLib",
+                    "implicit": true,
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO8rawValueSSvg",
+                        "mangledName": "$s11SwiftTagLib9AudioFileV12CxxExceptionV4KindO8rawValueSSvg",
+                        "moduleName": "SwiftTagLib",
+                        "implicit": true,
+                        "accessorKind": "get"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Enum",
+                "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO",
+                "mangledName": "$s11SwiftTagLib9AudioFileV12CxxExceptionV4KindO",
+                "moduleName": "SwiftTagLib",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "enumRawTypeName": "String",
+                "conformances": [
+                  {
+                    "kind": "Conformance",
+                    "name": "Copyable",
+                    "printedName": "Copyable",
+                    "usr": "s:s8CopyableP",
+                    "mangledName": "$ss8CopyableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Escapable",
+                    "printedName": "Escapable",
+                    "usr": "s:s9EscapableP",
+                    "mangledName": "$ss9EscapableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Equatable",
+                    "printedName": "Equatable",
+                    "usr": "s:SQ",
+                    "mangledName": "$sSQ"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Hashable",
+                    "printedName": "Hashable",
+                    "usr": "s:SH",
+                    "mangledName": "$sSH"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "RawRepresentable",
+                    "printedName": "RawRepresentable",
+                    "children": [
+                      {
+                        "kind": "TypeWitness",
+                        "name": "RawValue",
+                        "printedName": "RawValue",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:SY",
+                    "mangledName": "$sSY"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "kind",
+                "printedName": "kind",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Kind",
+                    "printedName": "SwiftTagLib.AudioFile.CxxException.Kind",
+                    "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4kindAE4KindOvp",
+                "mangledName": "$s11SwiftTagLib9AudioFileV12CxxExceptionV4kindAE4KindOvp",
+                "moduleName": "SwiftTagLib",
+                "declAttributes": [
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Kind",
+                        "printedName": "SwiftTagLib.AudioFile.CxxException.Kind",
+                        "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4kindAE4KindOvg",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV12CxxExceptionV4kindAE4KindOvg",
+                    "moduleName": "SwiftTagLib",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "message",
+                "printedName": "message",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV7messageSSSgvp",
+                "mangledName": "$s11SwiftTagLib9AudioFileV12CxxExceptionV7messageSSSgvp",
+                "moduleName": "SwiftTagLib",
+                "declAttributes": [
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV7messageSSSgvg",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV12CxxExceptionV7messageSSSgvg",
+                    "moduleName": "SwiftTagLib",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(kind:message:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CxxException",
+                    "printedName": "SwiftTagLib.AudioFile.CxxException",
+                    "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Kind",
+                    "printedName": "SwiftTagLib.AudioFile.CxxException.Kind",
+                    "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4KindO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV4kind7messageA2E4KindO_SSSgtcfc",
+                "mangledName": "$s11SwiftTagLib9AudioFileV12CxxExceptionV4kind7messageA2E4KindO_SSSgtcfc",
+                "moduleName": "SwiftTagLib",
+                "implicit": true,
+                "init_kind": "Designated"
+              }
+            ],
+            "declKind": "Struct",
+            "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV",
+            "mangledName": "$s11SwiftTagLib9AudioFileV12CxxExceptionV",
+            "moduleName": "SwiftTagLib",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              }
+            ]
+          },
+          {
+            "kind": "TypeDecl",
             "name": "InitializationError",
             "printedName": "InitializationError",
             "children": [
@@ -1712,8 +2180,58 @@
               },
               {
                 "kind": "Var",
-                "name": "unknownError",
-                "printedName": "unknownError",
+                "name": "exception",
+                "printedName": "exception",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(SwiftTagLib.AudioFile.InitializationError.Type) -> (SwiftTagLib.AudioFile.CxxException) -> SwiftTagLib.AudioFile.InitializationError",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(SwiftTagLib.AudioFile.CxxException) -> SwiftTagLib.AudioFile.InitializationError",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "InitializationError",
+                            "printedName": "SwiftTagLib.AudioFile.InitializationError",
+                            "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CxxException",
+                            "printedName": "SwiftTagLib.AudioFile.CxxException",
+                            "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "SwiftTagLib.AudioFile.InitializationError.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "InitializationError",
+                            "printedName": "SwiftTagLib.AudioFile.InitializationError",
+                            "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO9exceptionyAeC12CxxExceptionVcAEmF",
+                "mangledName": "$s11SwiftTagLib9AudioFileV19InitializationErrorO9exceptionyAeC12CxxExceptionVcAEmF",
+                "moduleName": "SwiftTagLib"
+              },
+              {
+                "kind": "Var",
+                "name": "unknown",
+                "printedName": "unknown",
                 "children": [
                   {
                     "kind": "TypeFunc",
@@ -1743,8 +2261,8 @@
                   }
                 ],
                 "declKind": "EnumElement",
-                "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO07unknownG0yA2EmF",
-                "mangledName": "$s11SwiftTagLib9AudioFileV19InitializationErrorO07unknownG0yA2EmF",
+                "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO7unknownyA2EmF",
+                "mangledName": "$s11SwiftTagLib9AudioFileV19InitializationErrorO7unknownyA2EmF",
                 "moduleName": "SwiftTagLib"
               },
               {
@@ -1805,104 +2323,8 @@
               },
               {
                 "kind": "Function",
-                "name": "==",
-                "printedName": "==(_:_:)",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "InitializationError",
-                    "printedName": "SwiftTagLib.AudioFile.InitializationError",
-                    "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "InitializationError",
-                    "printedName": "SwiftTagLib.AudioFile.InitializationError",
-                    "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO"
-                  }
-                ],
-                "declKind": "Func",
-                "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO2eeoiySbAE_AEtFZ",
-                "mangledName": "$s11SwiftTagLib9AudioFileV19InitializationErrorO2eeoiySbAE_AEtFZ",
-                "moduleName": "SwiftTagLib",
-                "static": true,
-                "implicit": true,
-                "funcSelfKind": "NonMutating"
-              },
-              {
-                "kind": "Var",
-                "name": "hashValue",
-                "printedName": "hashValue",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Var",
-                "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO9hashValueSivp",
-                "mangledName": "$s11SwiftTagLib9AudioFileV19InitializationErrorO9hashValueSivp",
-                "moduleName": "SwiftTagLib",
-                "implicit": true,
-                "accessors": [
-                  {
-                    "kind": "Accessor",
-                    "name": "Get",
-                    "printedName": "Get()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Int",
-                        "printedName": "Swift.Int",
-                        "usr": "s:Si"
-                      }
-                    ],
-                    "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO9hashValueSivg",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV19InitializationErrorO9hashValueSivg",
-                    "moduleName": "SwiftTagLib",
-                    "implicit": true,
-                    "accessorKind": "get"
-                  }
-                ]
-              },
-              {
-                "kind": "Function",
-                "name": "hash",
-                "printedName": "hash(into:)",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Hasher",
-                    "printedName": "Swift.Hasher",
-                    "paramValueOwnership": "InOut",
-                    "usr": "s:s6HasherV"
-                  }
-                ],
-                "declKind": "Func",
-                "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO4hash4intoys6HasherVz_tF",
-                "mangledName": "$s11SwiftTagLib9AudioFileV19InitializationErrorO4hash4intoys6HasherVz_tF",
-                "moduleName": "SwiftTagLib",
-                "implicit": true,
-                "funcSelfKind": "NonMutating"
-              },
-              {
-                "kind": "Function",
                 "name": "throwIfNeeded",
-                "printedName": "throwIfNeeded(_:)",
+                "printedName": "throwIfNeeded(_:_:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -1914,11 +2336,17 @@
                     "name": "MetadataReadingOutcome",
                     "printedName": "CxxTagLibBridge.MetadataReadingOutcome",
                     "usr": "c:@E@MetadataReadingOutcome"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO13throwIfNeededyySo22MetadataReadingOutcomeVAEYKFZ",
-                "mangledName": "$s11SwiftTagLib9AudioFileV19InitializationErrorO13throwIfNeededyySo22MetadataReadingOutcomeVAEYKFZ",
+                "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO13throwIfNeededyySo22MetadataReadingOutcomeV_SStAEYKFZ",
+                "mangledName": "$s11SwiftTagLib9AudioFileV19InitializationErrorO13throwIfNeededyySo22MetadataReadingOutcomeV_SStAEYKFZ",
                 "moduleName": "SwiftTagLib",
                 "static": true,
                 "isFromExtension": true,
@@ -1930,6 +2358,9 @@
             "usr": "s:11SwiftTagLib9AudioFileV19InitializationErrorO",
             "mangledName": "$s11SwiftTagLib9AudioFileV19InitializationErrorO",
             "moduleName": "SwiftTagLib",
+            "declAttributes": [
+              "RawDocComment"
+            ],
             "isFromExtension": true,
             "conformances": [
               {
@@ -1945,20 +2376,6 @@
                 "printedName": "Escapable",
                 "usr": "s:s9EscapableP",
                 "mangledName": "$ss9EscapableP"
-              },
-              {
-                "kind": "Conformance",
-                "name": "Equatable",
-                "printedName": "Equatable",
-                "usr": "s:SQ",
-                "mangledName": "$sSQ"
-              },
-              {
-                "kind": "Conformance",
-                "name": "Hashable",
-                "printedName": "Hashable",
-                "usr": "s:SH",
-                "mangledName": "$sSH"
               },
               {
                 "kind": "Conformance",
@@ -2101,8 +2518,58 @@
               },
               {
                 "kind": "Var",
-                "name": "unknownError",
-                "printedName": "unknownError",
+                "name": "exception",
+                "printedName": "exception",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(SwiftTagLib.AudioFile.MetadataWritingError.Type) -> (SwiftTagLib.AudioFile.CxxException) -> SwiftTagLib.AudioFile.MetadataWritingError",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(SwiftTagLib.AudioFile.CxxException) -> SwiftTagLib.AudioFile.MetadataWritingError",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "MetadataWritingError",
+                            "printedName": "SwiftTagLib.AudioFile.MetadataWritingError",
+                            "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CxxException",
+                            "printedName": "SwiftTagLib.AudioFile.CxxException",
+                            "usr": "s:11SwiftTagLib9AudioFileV12CxxExceptionV"
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "SwiftTagLib.AudioFile.MetadataWritingError.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "MetadataWritingError",
+                            "printedName": "SwiftTagLib.AudioFile.MetadataWritingError",
+                            "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO9exceptionyAeC12CxxExceptionVcAEmF",
+                "mangledName": "$s11SwiftTagLib9AudioFileV20MetadataWritingErrorO9exceptionyAeC12CxxExceptionVcAEmF",
+                "moduleName": "SwiftTagLib"
+              },
+              {
+                "kind": "Var",
+                "name": "unknown",
+                "printedName": "unknown",
                 "children": [
                   {
                     "kind": "TypeFunc",
@@ -2132,8 +2599,8 @@
                   }
                 ],
                 "declKind": "EnumElement",
-                "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO07unknownH0yA2EmF",
-                "mangledName": "$s11SwiftTagLib9AudioFileV20MetadataWritingErrorO07unknownH0yA2EmF",
+                "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO7unknownyA2EmF",
+                "mangledName": "$s11SwiftTagLib9AudioFileV20MetadataWritingErrorO7unknownyA2EmF",
                 "moduleName": "SwiftTagLib"
               },
               {
@@ -2194,104 +2661,8 @@
               },
               {
                 "kind": "Function",
-                "name": "==",
-                "printedName": "==(_:_:)",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "MetadataWritingError",
-                    "printedName": "SwiftTagLib.AudioFile.MetadataWritingError",
-                    "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "MetadataWritingError",
-                    "printedName": "SwiftTagLib.AudioFile.MetadataWritingError",
-                    "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO"
-                  }
-                ],
-                "declKind": "Func",
-                "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO2eeoiySbAE_AEtFZ",
-                "mangledName": "$s11SwiftTagLib9AudioFileV20MetadataWritingErrorO2eeoiySbAE_AEtFZ",
-                "moduleName": "SwiftTagLib",
-                "static": true,
-                "implicit": true,
-                "funcSelfKind": "NonMutating"
-              },
-              {
-                "kind": "Var",
-                "name": "hashValue",
-                "printedName": "hashValue",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Var",
-                "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO9hashValueSivp",
-                "mangledName": "$s11SwiftTagLib9AudioFileV20MetadataWritingErrorO9hashValueSivp",
-                "moduleName": "SwiftTagLib",
-                "implicit": true,
-                "accessors": [
-                  {
-                    "kind": "Accessor",
-                    "name": "Get",
-                    "printedName": "Get()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Int",
-                        "printedName": "Swift.Int",
-                        "usr": "s:Si"
-                      }
-                    ],
-                    "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO9hashValueSivg",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV20MetadataWritingErrorO9hashValueSivg",
-                    "moduleName": "SwiftTagLib",
-                    "implicit": true,
-                    "accessorKind": "get"
-                  }
-                ]
-              },
-              {
-                "kind": "Function",
-                "name": "hash",
-                "printedName": "hash(into:)",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Hasher",
-                    "printedName": "Swift.Hasher",
-                    "paramValueOwnership": "InOut",
-                    "usr": "s:s6HasherV"
-                  }
-                ],
-                "declKind": "Func",
-                "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO4hash4intoys6HasherVz_tF",
-                "mangledName": "$s11SwiftTagLib9AudioFileV20MetadataWritingErrorO4hash4intoys6HasherVz_tF",
-                "moduleName": "SwiftTagLib",
-                "implicit": true,
-                "funcSelfKind": "NonMutating"
-              },
-              {
-                "kind": "Function",
                 "name": "throwIfNeeded",
-                "printedName": "throwIfNeeded(_:)",
+                "printedName": "throwIfNeeded(_:_:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -2303,11 +2674,17 @@
                     "name": "MetadataWritingOutcome",
                     "printedName": "CxxTagLibBridge.MetadataWritingOutcome",
                     "usr": "c:@E@MetadataWritingOutcome"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO13throwIfNeededyySo0fG7OutcomeVAEYKFZ",
-                "mangledName": "$s11SwiftTagLib9AudioFileV20MetadataWritingErrorO13throwIfNeededyySo0fG7OutcomeVAEYKFZ",
+                "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO13throwIfNeededyySo0fG7OutcomeV_SStAEYKFZ",
+                "mangledName": "$s11SwiftTagLib9AudioFileV20MetadataWritingErrorO13throwIfNeededyySo0fG7OutcomeV_SStAEYKFZ",
                 "moduleName": "SwiftTagLib",
                 "static": true,
                 "isFromExtension": true,
@@ -2319,6 +2696,9 @@
             "usr": "s:11SwiftTagLib9AudioFileV20MetadataWritingErrorO",
             "mangledName": "$s11SwiftTagLib9AudioFileV20MetadataWritingErrorO",
             "moduleName": "SwiftTagLib",
+            "declAttributes": [
+              "RawDocComment"
+            ],
             "isFromExtension": true,
             "conformances": [
               {
@@ -2334,20 +2714,6 @@
                 "printedName": "Escapable",
                 "usr": "s:s9EscapableP",
                 "mangledName": "$ss9EscapableP"
-              },
-              {
-                "kind": "Conformance",
-                "name": "Equatable",
-                "printedName": "Equatable",
-                "usr": "s:SQ",
-                "mangledName": "$sSQ"
-              },
-              {
-                "kind": "Conformance",
-                "name": "Hashable",
-                "printedName": "Hashable",
-                "usr": "s:SH",
-                "mangledName": "$sSH"
               },
               {
                 "kind": "Conformance",
@@ -3195,39 +3561,102 @@
                 ]
               },
               {
-                "kind": "Function",
-                "name": "forFile",
-                "printedName": "forFile(at:)",
+                "kind": "TypeDecl",
+                "name": "Detector",
+                "printedName": "Detector",
                 "children": [
                   {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "SwiftTagLib.AudioFile.Format?",
+                    "kind": "Function",
+                    "name": "format",
+                    "printedName": "format(at:)",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "Format",
-                        "printedName": "SwiftTagLib.AudioFile.Format",
-                        "usr": "s:11SwiftTagLib9AudioFileV6FormatO"
+                        "name": "Optional",
+                        "printedName": "SwiftTagLib.AudioFile.Format?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Format",
+                            "printedName": "SwiftTagLib.AudioFile.Format",
+                            "usr": "s:11SwiftTagLib9AudioFileV6FormatO"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "URL",
+                        "printedName": "Foundation.URL",
+                        "usr": "s:10Foundation3URLV"
                       }
                     ],
-                    "usr": "s:Sq"
+                    "declKind": "Func",
+                    "usr": "s:11SwiftTagLib9AudioFileV6FormatO8DetectorV6format2atAESg10Foundation3URLV_tAC19InitializationErrorOYKFZ",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV6FormatO8DetectorV6format2atAESg10Foundation3URLV_tAC19InitializationErrorOYKFZ",
+                    "moduleName": "SwiftTagLib",
+                    "static": true,
+                    "throwing": true,
+                    "funcSelfKind": "NonMutating"
                   },
                   {
-                    "kind": "TypeNominal",
-                    "name": "URL",
-                    "printedName": "Foundation.URL",
-                    "usr": "s:10Foundation3URLV"
+                    "kind": "Constructor",
+                    "name": "init",
+                    "printedName": "init()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Detector",
+                        "printedName": "SwiftTagLib.AudioFile.Format.Detector",
+                        "usr": "s:11SwiftTagLib9AudioFileV6FormatO8DetectorV"
+                      }
+                    ],
+                    "declKind": "Constructor",
+                    "usr": "s:11SwiftTagLib9AudioFileV6FormatO8DetectorVAGycfc",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV6FormatO8DetectorVAGycfc",
+                    "moduleName": "SwiftTagLib",
+                    "implicit": true,
+                    "init_kind": "Designated"
                   }
                 ],
-                "declKind": "Func",
-                "usr": "s:11SwiftTagLib9AudioFileV6FormatO03forE02atAESg10Foundation3URLV_tAC19InitializationErrorOYKFZ",
-                "mangledName": "$s11SwiftTagLib9AudioFileV6FormatO03forE02atAESg10Foundation3URLV_tAC19InitializationErrorOYKFZ",
+                "declKind": "Struct",
+                "usr": "s:11SwiftTagLib9AudioFileV6FormatO8DetectorV",
+                "mangledName": "$s11SwiftTagLib9AudioFileV6FormatO8DetectorV",
                 "moduleName": "SwiftTagLib",
-                "static": true,
+                "declAttributes": [
+                  "RawDocComment"
+                ],
                 "isFromExtension": true,
-                "throwing": true,
-                "funcSelfKind": "NonMutating"
+                "conformances": [
+                  {
+                    "kind": "Conformance",
+                    "name": "Copyable",
+                    "printedName": "Copyable",
+                    "usr": "s:s8CopyableP",
+                    "mangledName": "$ss8CopyableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Escapable",
+                    "printedName": "Escapable",
+                    "usr": "s:s9EscapableP",
+                    "mangledName": "$ss9EscapableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "Sendable",
+                    "printedName": "Sendable",
+                    "usr": "s:s8SendableP",
+                    "mangledName": "$ss8SendableP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "BitwiseCopyable",
+                    "printedName": "BitwiseCopyable",
+                    "usr": "s:s15BitwiseCopyableP",
+                    "mangledName": "$ss15BitwiseCopyableP"
+                  }
+                ]
               }
             ],
             "declKind": "Enum",
@@ -3330,10 +3759,12 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV5titleSSSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
                   "AccessControl",
-                  "Custom",
                   "RawDocComment"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -3439,9 +3870,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV10albumTitleSSSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -3547,9 +3980,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV6artistSSSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -3655,9 +4090,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV5genreSSSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -3763,9 +4200,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11releaseDateSSSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -3871,9 +4310,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV7commentSSSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -3979,10 +4420,12 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV8composerSSSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
                   "AccessControl",
-                  "Custom",
                   "RawDocComment"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -4088,9 +4531,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11albumArtistSSSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -4173,8 +4618,8 @@
               },
               {
                 "kind": "Var",
-                "name": "bpm",
-                "printedName": "bpm",
+                "name": "beatPerMinute",
+                "printedName": "beatPerMinute",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -4192,13 +4637,15 @@
                   }
                 ],
                 "declKind": "Var",
-                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV3bpms5Int32VSgvp",
-                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV3bpms5Int32VSgvp",
+                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV13beatPerMinutes5Int32VSgvp",
+                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV13beatPerMinutes5Int32VSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -4221,8 +4668,8 @@
                       }
                     ],
                     "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV3bpms5Int32VSgvg",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV3bpms5Int32VSgvg",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV13beatPerMinutes5Int32VSgvg",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV13beatPerMinutes5Int32VSgvg",
                     "moduleName": "SwiftTagLib",
                     "implicit": true,
                     "accessorKind": "get"
@@ -4253,8 +4700,8 @@
                       }
                     ],
                     "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV3bpms5Int32VSgvs",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV3bpms5Int32VSgvs",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV13beatPerMinutes5Int32VSgvs",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV13beatPerMinutes5Int32VSgvs",
                     "moduleName": "SwiftTagLib",
                     "implicit": true,
                     "accessorKind": "set"
@@ -4271,8 +4718,8 @@
                       }
                     ],
                     "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV3bpms5Int32VSgvM",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV3bpms5Int32VSgvM",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV13beatPerMinutes5Int32VSgvM",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV13beatPerMinutes5Int32VSgvM",
                     "moduleName": "SwiftTagLib",
                     "implicit": true,
                     "accessorKind": "_modify"
@@ -4304,9 +4751,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV6ratings5Int32VSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -4412,9 +4861,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11trackNumbers5Int32VSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -4520,9 +4971,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV10trackTotals5Int32VSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -4628,9 +5081,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV10discNumbers5Int32VSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -4736,9 +5191,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV9discTotals5Int32VSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -4844,9 +5301,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV6lyricsSSSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -4934,14 +5393,22 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Var",
-                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11compilationSbvp",
-                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11compilationSbvp",
+                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11compilationSbSgvp",
+                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11compilationSbSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
                   "HasInitialValue",
@@ -4957,14 +5424,22 @@
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "Bool",
-                        "printedName": "Swift.Bool",
-                        "usr": "s:Sb"
+                        "name": "Optional",
+                        "printedName": "Swift.Bool?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          }
+                        ],
+                        "usr": "s:Sq"
                       }
                     ],
                     "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11compilationSbvg",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11compilationSbvg",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11compilationSbSgvg",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11compilationSbSgvg",
                     "moduleName": "SwiftTagLib",
                     "implicit": true,
                     "accessorKind": "get"
@@ -4981,14 +5456,22 @@
                       },
                       {
                         "kind": "TypeNominal",
-                        "name": "Bool",
-                        "printedName": "Swift.Bool",
-                        "usr": "s:Sb"
+                        "name": "Optional",
+                        "printedName": "Swift.Bool?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Bool",
+                            "printedName": "Swift.Bool",
+                            "usr": "s:Sb"
+                          }
+                        ],
+                        "usr": "s:Sq"
                       }
                     ],
                     "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11compilationSbvs",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11compilationSbvs",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11compilationSbSgvs",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11compilationSbSgvs",
                     "moduleName": "SwiftTagLib",
                     "implicit": true,
                     "accessorKind": "set"
@@ -5005,8 +5488,8 @@
                       }
                     ],
                     "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11compilationSbvM",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11compilationSbvM",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11compilationSbSgvM",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11compilationSbSgvM",
                     "moduleName": "SwiftTagLib",
                     "implicit": true,
                     "accessorKind": "_modify"
@@ -5015,8 +5498,8 @@
               },
               {
                 "kind": "Var",
-                "name": "isrc",
-                "printedName": "isrc",
+                "name": "internationalStandardRecordingCode",
+                "printedName": "internationalStandardRecordingCode",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -5034,14 +5517,15 @@
                   }
                 ],
                 "declKind": "Var",
-                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV4isrcSSSgvp",
-                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV4isrcSSSgvp",
+                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV34internationalStandardRecordingCodeSSSgvp",
+                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV34internationalStandardRecordingCodeSSSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom",
-                  "RawDocComment"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -5064,8 +5548,8 @@
                       }
                     ],
                     "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV4isrcSSSgvg",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV4isrcSSSgvg",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV34internationalStandardRecordingCodeSSSgvg",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV34internationalStandardRecordingCodeSSSgvg",
                     "moduleName": "SwiftTagLib",
                     "implicit": true,
                     "accessorKind": "get"
@@ -5096,8 +5580,8 @@
                       }
                     ],
                     "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV4isrcSSSgvs",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV4isrcSSSgvs",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV34internationalStandardRecordingCodeSSSgvs",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV34internationalStandardRecordingCodeSSSgvs",
                     "moduleName": "SwiftTagLib",
                     "implicit": true,
                     "accessorKind": "set"
@@ -5114,8 +5598,8 @@
                       }
                     ],
                     "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV4isrcSSSgvM",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV4isrcSSSgvM",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV34internationalStandardRecordingCodeSSSgvM",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV34internationalStandardRecordingCodeSSSgvM",
                     "moduleName": "SwiftTagLib",
                     "implicit": true,
                     "accessorKind": "_modify"
@@ -5124,8 +5608,8 @@
               },
               {
                 "kind": "Var",
-                "name": "mcn",
-                "printedName": "mcn",
+                "name": "mediaCatalogNumber",
+                "printedName": "mediaCatalogNumber",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -5143,14 +5627,15 @@
                   }
                 ],
                 "declKind": "Var",
-                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV3mcnSSSgvp",
-                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV3mcnSSSgvp",
+                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV18mediaCatalogNumberSSSgvp",
+                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV18mediaCatalogNumberSSSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom",
-                  "RawDocComment"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -5173,8 +5658,8 @@
                       }
                     ],
                     "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV3mcnSSSgvg",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV3mcnSSSgvg",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV18mediaCatalogNumberSSSgvg",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV18mediaCatalogNumberSSSgvg",
                     "moduleName": "SwiftTagLib",
                     "implicit": true,
                     "accessorKind": "get"
@@ -5205,8 +5690,8 @@
                       }
                     ],
                     "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV3mcnSSSgvs",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV3mcnSSSgvs",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV18mediaCatalogNumberSSSgvs",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV18mediaCatalogNumberSSSgvs",
                     "moduleName": "SwiftTagLib",
                     "implicit": true,
                     "accessorKind": "set"
@@ -5223,8 +5708,8 @@
                       }
                     ],
                     "declKind": "Accessor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV3mcnSSSgvM",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV3mcnSSSgvM",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV18mediaCatalogNumberSSSgvM",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV18mediaCatalogNumberSSSgvM",
                     "moduleName": "SwiftTagLib",
                     "implicit": true,
                     "accessorKind": "_modify"
@@ -5256,9 +5741,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV20musicBrainzReleaseIDSSSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -5364,9 +5851,11 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV22musicBrainzRecordingIDSSSgvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl",
-                  "Custom"
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
                 ],
+                "hasStorage": true,
                 "accessors": [
                   {
                     "kind": "Accessor",
@@ -5670,6 +6159,52 @@
                 ]
               },
               {
+                "kind": "Var",
+                "name": "tagSource",
+                "printedName": "tagSource",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TagSource",
+                    "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV9tagSourceAE0bH0Vvp",
+                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV9tagSourceAE0bH0Vvp",
+                "moduleName": "SwiftTagLib",
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "SetterAccess",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TagSource",
+                        "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV9tagSourceAE0bH0Vvg",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV9tagSourceAE0bH0Vvg",
+                    "moduleName": "SwiftTagLib",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
                 "kind": "Constructor",
                 "name": "init",
                 "printedName": "init()",
@@ -5692,9 +6227,37 @@
                 "init_kind": "Designated"
               },
               {
+                "kind": "Function",
+                "name": "hash",
+                "printedName": "hash(into:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Hasher",
+                    "printedName": "Swift.Hasher",
+                    "paramValueOwnership": "InOut",
+                    "usr": "s:s6HasherV"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV4hash4intoys6HasherVz_tF",
+                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV4hash4intoys6HasherVz_tF",
+                "moduleName": "SwiftTagLib",
+                "declAttributes": [
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
                 "kind": "Constructor",
                 "name": "init",
-                "printedName": "init(_:)",
+                "printedName": "init(cxxRepresentation:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -5710,8 +6273,8 @@
                   }
                 ],
                 "declKind": "Constructor",
-                "usr": "s:11SwiftTagLib9AudioFileV8MetadataVyAESo0dF0Vcfc",
-                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataVyAESo0dF0Vcfc",
+                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV17cxxRepresentationAESo0dF0V_tcfc",
+                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV17cxxRepresentationAESo0dF0V_tcfc",
                 "moduleName": "SwiftTagLib",
                 "init_kind": "Designated"
               },
@@ -5790,31 +6353,6 @@
                     "accessorKind": "get"
                   }
                 ]
-              },
-              {
-                "kind": "Function",
-                "name": "hash",
-                "printedName": "hash(into:)",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Hasher",
-                    "printedName": "Swift.Hasher",
-                    "paramValueOwnership": "InOut",
-                    "usr": "s:s6HasherV"
-                  }
-                ],
-                "declKind": "Func",
-                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV4hash4intoys6HasherVz_tF",
-                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV4hash4intoys6HasherVz_tF",
-                "moduleName": "SwiftTagLib",
-                "implicit": true,
-                "funcSelfKind": "NonMutating"
               },
               {
                 "kind": "Function",
@@ -5927,38 +6465,324 @@
               },
               {
                 "kind": "TypeDecl",
-                "name": "IntProperty",
-                "printedName": "IntProperty",
+                "name": "TagSource",
+                "printedName": "TagSource",
                 "children": [
                   {
                     "kind": "Var",
-                    "name": "wrappedValue",
-                    "printedName": "wrappedValue",
+                    "name": "abstract",
+                    "printedName": "abstract",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "Swift.Int32?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Int32",
-                            "printedName": "Swift.Int32",
-                            "usr": "s:s5Int32V"
-                          }
-                        ],
-                        "usr": "s:Sq"
+                        "name": "TagSource",
+                        "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
                       }
                     ],
                     "declKind": "Var",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV12wrappedValues5Int32VSgvp",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV12wrappedValues5Int32VSgvp",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8abstractAGvpZ",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8abstractAGvpZ",
+                    "moduleName": "SwiftTagLib",
+                    "static": true,
+                    "declAttributes": [
+                      "AccessControl"
+                    ],
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "TagSource",
+                            "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                            "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8abstractAGvgZ",
+                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8abstractAGvgZ",
+                        "moduleName": "SwiftTagLib",
+                        "static": true,
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "id3v1",
+                    "printedName": "id3v1",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TagSource",
+                        "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v1AGvpZ",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v1AGvpZ",
+                    "moduleName": "SwiftTagLib",
+                    "static": true,
+                    "declAttributes": [
+                      "AccessControl"
+                    ],
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "TagSource",
+                            "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                            "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v1AGvgZ",
+                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v1AGvgZ",
+                        "moduleName": "SwiftTagLib",
+                        "static": true,
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "id3v2",
+                    "printedName": "id3v2",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TagSource",
+                        "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v2AGvpZ",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v2AGvpZ",
+                    "moduleName": "SwiftTagLib",
+                    "static": true,
+                    "declAttributes": [
+                      "AccessControl"
+                    ],
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "TagSource",
+                            "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                            "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v2AGvgZ",
+                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v2AGvgZ",
+                        "moduleName": "SwiftTagLib",
+                        "static": true,
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "mp4",
+                    "printedName": "mp4",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TagSource",
+                        "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3mp4AGvpZ",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3mp4AGvpZ",
+                    "moduleName": "SwiftTagLib",
+                    "static": true,
+                    "declAttributes": [
+                      "AccessControl"
+                    ],
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "TagSource",
+                            "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                            "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3mp4AGvgZ",
+                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3mp4AGvgZ",
+                        "moduleName": "SwiftTagLib",
+                        "static": true,
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "ape",
+                    "printedName": "ape",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TagSource",
+                        "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3apeAGvpZ",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3apeAGvpZ",
+                    "moduleName": "SwiftTagLib",
+                    "static": true,
+                    "declAttributes": [
+                      "AccessControl"
+                    ],
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "TagSource",
+                            "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                            "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3apeAGvgZ",
+                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3apeAGvgZ",
+                        "moduleName": "SwiftTagLib",
+                        "static": true,
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "xiph",
+                    "printedName": "xiph",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TagSource",
+                        "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV4xiphAGvpZ",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV4xiphAGvpZ",
+                    "moduleName": "SwiftTagLib",
+                    "static": true,
+                    "declAttributes": [
+                      "AccessControl"
+                    ],
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "TagSource",
+                            "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                            "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV4xiphAGvgZ",
+                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV4xiphAGvgZ",
+                        "moduleName": "SwiftTagLib",
+                        "static": true,
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "undefined",
+                    "printedName": "undefined",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TagSource",
+                        "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV9undefinedAGvpZ",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV9undefinedAGvpZ",
+                    "moduleName": "SwiftTagLib",
+                    "static": true,
+                    "declAttributes": [
+                      "AccessControl"
+                    ],
+                    "accessors": [
+                      {
+                        "kind": "Accessor",
+                        "name": "Get",
+                        "printedName": "Get()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "TagSource",
+                            "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                            "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                          }
+                        ],
+                        "declKind": "Accessor",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV9undefinedAGvgZ",
+                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV9undefinedAGvgZ",
+                        "moduleName": "SwiftTagLib",
+                        "static": true,
+                        "accessorKind": "get"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Var",
+                    "name": "rawValue",
+                    "printedName": "rawValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      }
+                    ],
+                    "declKind": "Var",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValues5UInt8Vvp",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValues5UInt8Vvp",
                     "moduleName": "SwiftTagLib",
                     "declAttributes": [
-                      "HasInitialValue",
                       "HasStorage",
                       "AccessControl"
                     ],
+                    "isLet": true,
                     "hasStorage": true,
                     "accessors": [
                       {
@@ -5968,162 +6792,46 @@
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Swift.Int32?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Int32",
-                                "printedName": "Swift.Int32",
-                                "usr": "s:s5Int32V"
-                              }
-                            ],
-                            "usr": "s:Sq"
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
                           }
                         ],
                         "declKind": "Accessor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV12wrappedValues5Int32VSgvg",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV12wrappedValues5Int32VSgvg",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValues5UInt8Vvg",
+                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValues5UInt8Vvg",
                         "moduleName": "SwiftTagLib",
                         "implicit": true,
                         "accessorKind": "get"
-                      },
-                      {
-                        "kind": "Accessor",
-                        "name": "Set",
-                        "printedName": "Set()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Swift.Int32?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "Int32",
-                                "printedName": "Swift.Int32",
-                                "usr": "s:s5Int32V"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ],
-                        "declKind": "Accessor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV12wrappedValues5Int32VSgvs",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV12wrappedValues5Int32VSgvs",
-                        "moduleName": "SwiftTagLib",
-                        "implicit": true,
-                        "accessorKind": "set"
-                      },
-                      {
-                        "kind": "Accessor",
-                        "name": "Modify",
-                        "printedName": "Modify()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          }
-                        ],
-                        "declKind": "Accessor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV12wrappedValues5Int32VSgvM",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV12wrappedValues5Int32VSgvM",
-                        "moduleName": "SwiftTagLib",
-                        "implicit": true,
-                        "accessorKind": "_modify"
                       }
                     ]
                   },
                   {
                     "kind": "Constructor",
                     "name": "init",
-                    "printedName": "init()",
+                    "printedName": "init(rawValue:)",
                     "children": [
                       {
                         "kind": "TypeNominal",
-                        "name": "IntProperty",
-                        "printedName": "SwiftTagLib.AudioFile.Metadata.IntProperty",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV"
-                      }
-                    ],
-                    "declKind": "Constructor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyVAGycfc",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyVAGycfc",
-                    "moduleName": "SwiftTagLib",
-                    "declAttributes": [
-                      "AccessControl"
-                    ],
-                    "init_kind": "Designated"
-                  },
-                  {
-                    "kind": "Constructor",
-                    "name": "init",
-                    "printedName": "init(_:)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "IntProperty",
-                        "printedName": "SwiftTagLib.AudioFile.Metadata.IntProperty",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV"
+                        "name": "TagSource",
+                        "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
                       },
                       {
                         "kind": "TypeNominal",
-                        "name": "Int32",
-                        "printedName": "Swift.Int32",
-                        "usr": "s:s5Int32V"
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
                       }
                     ],
                     "declKind": "Constructor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyVyAGs5Int32Vcfc",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyVyAGs5Int32Vcfc",
-                    "moduleName": "SwiftTagLib",
-                    "init_kind": "Designated"
-                  },
-                  {
-                    "kind": "Var",
-                    "name": "underlyingValue",
-                    "printedName": "underlyingValue",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Int32",
-                        "printedName": "Swift.Int32",
-                        "usr": "s:s5Int32V"
-                      }
-                    ],
-                    "declKind": "Var",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV15underlyingValues5Int32Vvp",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV15underlyingValues5Int32Vvp",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValueAGs5UInt8V_tcfc",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValueAGs5UInt8V_tcfc",
                     "moduleName": "SwiftTagLib",
                     "declAttributes": [
                       "AccessControl"
                     ],
-                    "accessors": [
-                      {
-                        "kind": "Accessor",
-                        "name": "Get",
-                        "printedName": "Get()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Int32",
-                            "printedName": "Swift.Int32",
-                            "usr": "s:s5Int32V"
-                          }
-                        ],
-                        "declKind": "Accessor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV15underlyingValues5Int32Vvg",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV15underlyingValues5Int32Vvg",
-                        "moduleName": "SwiftTagLib",
-                        "accessorKind": "get"
-                      }
-                    ]
+                    "init_kind": "Designated"
                   },
                   {
                     "kind": "Var",
@@ -6138,8 +6846,8 @@
                       }
                     ],
                     "declKind": "Var",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV11descriptionSSvp",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV11descriptionSSvp",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV11descriptionSSvp",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV11descriptionSSvp",
                     "moduleName": "SwiftTagLib",
                     "declAttributes": [
                       "AccessControl"
@@ -6158,116 +6866,20 @@
                           }
                         ],
                         "declKind": "Accessor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV11descriptionSSvg",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV11descriptionSSvg",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV11descriptionSSvg",
+                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV11descriptionSSvg",
                         "moduleName": "SwiftTagLib",
                         "accessorKind": "get"
                       }
                     ]
-                  },
-                  {
-                    "kind": "Var",
-                    "name": "hashValue",
-                    "printedName": "hashValue",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Int",
-                        "printedName": "Swift.Int",
-                        "usr": "s:Si"
-                      }
-                    ],
-                    "declKind": "Var",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV9hashValueSivp",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV9hashValueSivp",
-                    "moduleName": "SwiftTagLib",
-                    "implicit": true,
-                    "accessors": [
-                      {
-                        "kind": "Accessor",
-                        "name": "Get",
-                        "printedName": "Get()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Int",
-                            "printedName": "Swift.Int",
-                            "usr": "s:Si"
-                          }
-                        ],
-                        "declKind": "Accessor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV9hashValueSivg",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV9hashValueSivg",
-                        "moduleName": "SwiftTagLib",
-                        "implicit": true,
-                        "accessorKind": "get"
-                      }
-                    ]
-                  },
-                  {
-                    "kind": "Function",
-                    "name": "hash",
-                    "printedName": "hash(into:)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Hasher",
-                        "printedName": "Swift.Hasher",
-                        "paramValueOwnership": "InOut",
-                        "usr": "s:s6HasherV"
-                      }
-                    ],
-                    "declKind": "Func",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV4hash4intoys6HasherVz_tF",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV4hash4intoys6HasherVz_tF",
-                    "moduleName": "SwiftTagLib",
-                    "implicit": true,
-                    "funcSelfKind": "NonMutating"
-                  },
-                  {
-                    "kind": "Function",
-                    "name": "==",
-                    "printedName": "==(_:_:)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Bool",
-                        "printedName": "Swift.Bool",
-                        "usr": "s:Sb"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "IntProperty",
-                        "printedName": "SwiftTagLib.AudioFile.Metadata.IntProperty",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "IntProperty",
-                        "printedName": "SwiftTagLib.AudioFile.Metadata.IntProperty",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV"
-                      }
-                    ],
-                    "declKind": "Func",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV2eeoiySbAG_AGtFZ",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV2eeoiySbAG_AGtFZ",
-                    "moduleName": "SwiftTagLib",
-                    "static": true,
-                    "implicit": true,
-                    "funcSelfKind": "NonMutating"
                   }
                 ],
                 "declKind": "Struct",
-                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV",
-                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV11IntPropertyV",
+                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV",
+                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "PropertyWrapper"
+                  "RawDocComment"
                 ],
                 "isFromExtension": true,
                 "conformances": [
@@ -6301,386 +6913,25 @@
                   },
                   {
                     "kind": "Conformance",
-                    "name": "CustomStringConvertible",
-                    "printedName": "CustomStringConvertible",
-                    "usr": "s:s23CustomStringConvertibleP",
-                    "mangledName": "$ss23CustomStringConvertibleP"
-                  }
-                ]
-              },
-              {
-                "kind": "TypeDecl",
-                "name": "StringProperty",
-                "printedName": "StringProperty",
-                "children": [
-                  {
-                    "kind": "Var",
-                    "name": "wrappedValue",
-                    "printedName": "wrappedValue",
+                    "name": "OptionSet",
+                    "printedName": "OptionSet",
                     "children": [
                       {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "Swift.String?",
+                        "kind": "TypeWitness",
+                        "name": "Element",
+                        "printedName": "Element",
                         "children": [
                           {
                             "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
+                            "name": "TagSource",
+                            "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                            "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
                           }
-                        ],
-                        "usr": "s:Sq"
+                        ]
                       }
                     ],
-                    "declKind": "Var",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV12wrappedValueSSSgvp",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV12wrappedValueSSSgvp",
-                    "moduleName": "SwiftTagLib",
-                    "declAttributes": [
-                      "HasInitialValue",
-                      "HasStorage",
-                      "AccessControl"
-                    ],
-                    "hasStorage": true,
-                    "accessors": [
-                      {
-                        "kind": "Accessor",
-                        "name": "Get",
-                        "printedName": "Get()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Swift.String?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ],
-                        "declKind": "Accessor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV12wrappedValueSSSgvg",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV12wrappedValueSSSgvg",
-                        "moduleName": "SwiftTagLib",
-                        "implicit": true,
-                        "accessorKind": "get"
-                      },
-                      {
-                        "kind": "Accessor",
-                        "name": "Set",
-                        "printedName": "Set()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Optional",
-                            "printedName": "Swift.String?",
-                            "children": [
-                              {
-                                "kind": "TypeNominal",
-                                "name": "String",
-                                "printedName": "Swift.String",
-                                "usr": "s:SS"
-                              }
-                            ],
-                            "usr": "s:Sq"
-                          }
-                        ],
-                        "declKind": "Accessor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV12wrappedValueSSSgvs",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV12wrappedValueSSSgvs",
-                        "moduleName": "SwiftTagLib",
-                        "implicit": true,
-                        "accessorKind": "set"
-                      },
-                      {
-                        "kind": "Accessor",
-                        "name": "Modify",
-                        "printedName": "Modify()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Void",
-                            "printedName": "()"
-                          }
-                        ],
-                        "declKind": "Accessor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV12wrappedValueSSSgvM",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV12wrappedValueSSSgvM",
-                        "moduleName": "SwiftTagLib",
-                        "implicit": true,
-                        "accessorKind": "_modify"
-                      }
-                    ]
-                  },
-                  {
-                    "kind": "Constructor",
-                    "name": "init",
-                    "printedName": "init()",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "StringProperty",
-                        "printedName": "SwiftTagLib.AudioFile.Metadata.StringProperty",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV"
-                      }
-                    ],
-                    "declKind": "Constructor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyVAGycfc",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyVAGycfc",
-                    "moduleName": "SwiftTagLib",
-                    "declAttributes": [
-                      "AccessControl"
-                    ],
-                    "init_kind": "Designated"
-                  },
-                  {
-                    "kind": "Constructor",
-                    "name": "init",
-                    "printedName": "init(_:)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "StringProperty",
-                        "printedName": "SwiftTagLib.AudioFile.Metadata.StringProperty",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "basic_string<CChar, char_traits<CChar>, allocator<CChar>>",
-                        "printedName": "__ObjC.std.__1.basic_string<CChar, char_traits<CChar>, allocator<CChar>>",
-                        "usr": "c:@N@std@N@__1@S@basic_string>#C#$@N@std@N@__1@S@char_traits>#C#$@N@std@N@__1@S@allocator>#C"
-                      }
-                    ],
-                    "declKind": "Constructor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyVyAGSo3stdO3__1O0071basic_stringCCharchar_traitsCCharallocatorCChar_mHGHsqaGJcraCCfsaqChraaVcfc",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyVyAGSo3stdO3__1O0071basic_stringCCharchar_traitsCCharallocatorCChar_mHGHsqaGJcraCCfsaqChraaVcfc",
-                    "moduleName": "SwiftTagLib",
-                    "init_kind": "Designated"
-                  },
-                  {
-                    "kind": "Var",
-                    "name": "underlyingValue",
-                    "printedName": "underlyingValue",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "basic_string<CChar, char_traits<CChar>, allocator<CChar>>",
-                        "printedName": "__ObjC.std.__1.basic_string<CChar, char_traits<CChar>, allocator<CChar>>",
-                        "usr": "c:@N@std@N@__1@S@basic_string>#C#$@N@std@N@__1@S@char_traits>#C#$@N@std@N@__1@S@allocator>#C"
-                      }
-                    ],
-                    "declKind": "Var",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV15underlyingValueSo3stdO3__1O0071basic_stringCCharchar_traitsCCharallocatorCChar_mHGHsqaGJcraCCfsaqChraaVvp",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV15underlyingValueSo3stdO3__1O0071basic_stringCCharchar_traitsCCharallocatorCChar_mHGHsqaGJcraCCfsaqChraaVvp",
-                    "moduleName": "SwiftTagLib",
-                    "declAttributes": [
-                      "AccessControl"
-                    ],
-                    "accessors": [
-                      {
-                        "kind": "Accessor",
-                        "name": "Get",
-                        "printedName": "Get()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "basic_string<CChar, char_traits<CChar>, allocator<CChar>>",
-                            "printedName": "__ObjC.std.__1.basic_string<CChar, char_traits<CChar>, allocator<CChar>>",
-                            "usr": "c:@N@std@N@__1@S@basic_string>#C#$@N@std@N@__1@S@char_traits>#C#$@N@std@N@__1@S@allocator>#C"
-                          }
-                        ],
-                        "declKind": "Accessor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV15underlyingValueSo3stdO3__1O0071basic_stringCCharchar_traitsCCharallocatorCChar_mHGHsqaGJcraCCfsaqChraaVvg",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV15underlyingValueSo3stdO3__1O0071basic_stringCCharchar_traitsCCharallocatorCChar_mHGHsqaGJcraCCfsaqChraaVvg",
-                        "moduleName": "SwiftTagLib",
-                        "accessorKind": "get"
-                      }
-                    ]
-                  },
-                  {
-                    "kind": "Var",
-                    "name": "description",
-                    "printedName": "description",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "declKind": "Var",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV11descriptionSSvp",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV11descriptionSSvp",
-                    "moduleName": "SwiftTagLib",
-                    "declAttributes": [
-                      "AccessControl"
-                    ],
-                    "accessors": [
-                      {
-                        "kind": "Accessor",
-                        "name": "Get",
-                        "printedName": "Get()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ],
-                        "declKind": "Accessor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV11descriptionSSvg",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV11descriptionSSvg",
-                        "moduleName": "SwiftTagLib",
-                        "accessorKind": "get"
-                      }
-                    ]
-                  },
-                  {
-                    "kind": "Var",
-                    "name": "hashValue",
-                    "printedName": "hashValue",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Int",
-                        "printedName": "Swift.Int",
-                        "usr": "s:Si"
-                      }
-                    ],
-                    "declKind": "Var",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV9hashValueSivp",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV9hashValueSivp",
-                    "moduleName": "SwiftTagLib",
-                    "implicit": true,
-                    "accessors": [
-                      {
-                        "kind": "Accessor",
-                        "name": "Get",
-                        "printedName": "Get()",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Int",
-                            "printedName": "Swift.Int",
-                            "usr": "s:Si"
-                          }
-                        ],
-                        "declKind": "Accessor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV9hashValueSivg",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV9hashValueSivg",
-                        "moduleName": "SwiftTagLib",
-                        "implicit": true,
-                        "accessorKind": "get"
-                      }
-                    ]
-                  },
-                  {
-                    "kind": "Function",
-                    "name": "hash",
-                    "printedName": "hash(into:)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Void",
-                        "printedName": "()"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Hasher",
-                        "printedName": "Swift.Hasher",
-                        "paramValueOwnership": "InOut",
-                        "usr": "s:s6HasherV"
-                      }
-                    ],
-                    "declKind": "Func",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV4hash4intoys6HasherVz_tF",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV4hash4intoys6HasherVz_tF",
-                    "moduleName": "SwiftTagLib",
-                    "implicit": true,
-                    "funcSelfKind": "NonMutating"
-                  },
-                  {
-                    "kind": "Function",
-                    "name": "==",
-                    "printedName": "==(_:_:)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Bool",
-                        "printedName": "Swift.Bool",
-                        "usr": "s:Sb"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "StringProperty",
-                        "printedName": "SwiftTagLib.AudioFile.Metadata.StringProperty",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "StringProperty",
-                        "printedName": "SwiftTagLib.AudioFile.Metadata.StringProperty",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV"
-                      }
-                    ],
-                    "declKind": "Func",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV2eeoiySbAG_AGtFZ",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV2eeoiySbAG_AGtFZ",
-                    "moduleName": "SwiftTagLib",
-                    "static": true,
-                    "implicit": true,
-                    "funcSelfKind": "NonMutating"
-                  }
-                ],
-                "declKind": "Struct",
-                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV",
-                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14StringPropertyV",
-                "moduleName": "SwiftTagLib",
-                "declAttributes": [
-                  "PropertyWrapper"
-                ],
-                "isFromExtension": true,
-                "conformances": [
-                  {
-                    "kind": "Conformance",
-                    "name": "Copyable",
-                    "printedName": "Copyable",
-                    "usr": "s:s8CopyableP",
-                    "mangledName": "$ss8CopyableP"
-                  },
-                  {
-                    "kind": "Conformance",
-                    "name": "Escapable",
-                    "printedName": "Escapable",
-                    "usr": "s:s9EscapableP",
-                    "mangledName": "$ss9EscapableP"
-                  },
-                  {
-                    "kind": "Conformance",
-                    "name": "Hashable",
-                    "printedName": "Hashable",
-                    "usr": "s:SH",
-                    "mangledName": "$sSH"
-                  },
-                  {
-                    "kind": "Conformance",
-                    "name": "Equatable",
-                    "printedName": "Equatable",
-                    "usr": "s:SQ",
-                    "mangledName": "$sSQ"
+                    "usr": "s:s9OptionSetP",
+                    "mangledName": "$ss9OptionSetP"
                   },
                   {
                     "kind": "Conformance",
@@ -6688,6 +6939,72 @@
                     "printedName": "CustomStringConvertible",
                     "usr": "s:s23CustomStringConvertibleP",
                     "mangledName": "$ss23CustomStringConvertibleP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "RawRepresentable",
+                    "printedName": "RawRepresentable",
+                    "children": [
+                      {
+                        "kind": "TypeWitness",
+                        "name": "RawValue",
+                        "printedName": "RawValue",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:SY",
+                    "mangledName": "$sSY"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "SetAlgebra",
+                    "printedName": "SetAlgebra",
+                    "children": [
+                      {
+                        "kind": "TypeWitness",
+                        "name": "Element",
+                        "printedName": "Element",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "TagSource",
+                            "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                            "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:s10SetAlgebraP",
+                    "mangledName": "$ss10SetAlgebraP"
+                  },
+                  {
+                    "kind": "Conformance",
+                    "name": "ExpressibleByArrayLiteral",
+                    "printedName": "ExpressibleByArrayLiteral",
+                    "children": [
+                      {
+                        "kind": "TypeWitness",
+                        "name": "ArrayLiteralElement",
+                        "printedName": "ArrayLiteralElement",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "TagSource",
+                            "printedName": "SwiftTagLib.AudioFile.Metadata.TagSource",
+                            "usr": "s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:s25ExpressibleByArrayLiteralP",
+                    "mangledName": "$ss25ExpressibleByArrayLiteralP"
                   }
                 ]
               },
@@ -6820,7 +7137,7 @@
                   {
                     "kind": "Constructor",
                     "name": "init",
-                    "printedName": "init(_:)",
+                    "printedName": "init(cxxRepresentation:)",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -6836,8 +7153,8 @@
                       }
                     ],
                     "declKind": "Constructor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVyAGSo3stdO3__1O00138pairbasic_stringCCharchar_traitsCCharallocatorCCharbasic_stringCCharchar_traitsCCharallocatorCChar_AcFHFbqaorqEJirapsrJGnmasqtsqInraaDbraaVcfc",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVyAGSo3stdO3__1O00138pairbasic_stringCCharchar_traitsCCharallocatorCCharbasic_stringCCharchar_traitsCCharallocatorCChar_AcFHFbqaorqEJirapsrJGnmasqtsqInraaDbraaVcfc",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV17cxxRepresentationAGSo3stdO3__1O00138pairbasic_stringCCharchar_traitsCCharallocatorCCharbasic_stringCCharchar_traitsCCharallocatorCChar_AcFHFbqaorqEJirapsrJGnmasqtsqInraaDbraaV_tcfc",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV17cxxRepresentationAGSo3stdO3__1O00138pairbasic_stringCCharchar_traitsCCharallocatorCCharbasic_stringCCharchar_traitsCCharallocatorCChar_AcFHFbqaorqEJirapsrJGnmasqtsqInraaDbraaV_tcfc",
                     "moduleName": "SwiftTagLib",
                     "init_kind": "Designated"
                   },
@@ -7219,7 +7536,7 @@
                   {
                     "kind": "Constructor",
                     "name": "init",
-                    "printedName": "init(_:)",
+                    "printedName": "init(cxxRepresentation:)",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -7235,8 +7552,8 @@
                       }
                     ],
                     "declKind": "Constructor",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureVyAGSo0dF0V0H0Vcfc",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureVyAGSo0dF0V0H0Vcfc",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV17cxxRepresentationAGSo0dF0V0H0V_tcfc",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV17cxxRepresentationAGSo0dF0V0H0V_tcfc",
                     "moduleName": "SwiftTagLib",
                     "declAttributes": [
                       "AccessControl"
@@ -8224,7 +8541,7 @@
                       {
                         "kind": "Constructor",
                         "name": "init",
-                        "printedName": "init(_:)",
+                        "printedName": "init(cxxRepresentation:)",
                         "children": [
                           {
                             "kind": "TypeNominal",
@@ -8240,8 +8557,8 @@
                           }
                         ],
                         "declKind": "Constructor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV4KindOyAISo0dF0V0H0VAHVcfc",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV4KindOyAISo0dF0V0H0VAHVcfc",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV4KindO17cxxRepresentationAISo0dF0V0H0VAHV_tcfc",
+                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV4KindO17cxxRepresentationAISo0dF0V0H0VAHV_tcfc",
                         "moduleName": "SwiftTagLib",
                         "init_kind": "Designated"
                       },
@@ -8856,7 +9173,7 @@
               {
                 "kind": "Constructor",
                 "name": "init",
-                "printedName": "init(_:)",
+                "printedName": "init(cxxRepresentation:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -8872,8 +9189,8 @@
                   }
                 ],
                 "declKind": "Constructor",
-                "usr": "s:11SwiftTagLib9AudioFileV10PropertiesVyAESo0dF0Vcfc",
-                "mangledName": "$s11SwiftTagLib9AudioFileV10PropertiesVyAESo0dF0Vcfc",
+                "usr": "s:11SwiftTagLib9AudioFileV10PropertiesV17cxxRepresentationAESo0dF0V_tcfc",
+                "mangledName": "$s11SwiftTagLib9AudioFileV10PropertiesV17cxxRepresentationAESo0dF0V_tcfc",
                 "moduleName": "SwiftTagLib",
                 "init_kind": "Designated"
               },
@@ -16953,29 +17270,22 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SwiftTagLib",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SwiftTagLib"
-      },
-      {
-        "kind": "Import",
         "name": "CxxTagLibBridge",
         "printedName": "CxxTagLibBridge",
         "declKind": "Import",
         "moduleName": "SwiftTagLib",
         "declAttributes": [
           "ImplementationOnly"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CxxStdlib",
+        "printedName": "CxxStdlib",
+        "declKind": "Import",
+        "moduleName": "SwiftTagLib",
+        "declAttributes": [
+          "AccessControl"
         ]
       },
       {
@@ -17487,6 +17797,20 @@
         "moduleName": "SwiftTagLib"
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SwiftTagLib"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SwiftTagLib"
+      },
+      {
         "kind": "TypeDecl",
         "name": "ID3v2ShallowHeader",
         "printedName": "ID3v2ShallowHeader",
@@ -17932,26 +18256,6 @@
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
           }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "CxxTagLibBridge",
-        "printedName": "CxxTagLibBridge",
-        "declKind": "Import",
-        "moduleName": "SwiftTagLib",
-        "declAttributes": [
-          "ImplementationOnly"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "CxxTagLibBridge",
-        "printedName": "CxxTagLibBridge",
-        "declKind": "Import",
-        "moduleName": "SwiftTagLib",
-        "declAttributes": [
-          "ImplementationOnly"
         ]
       },
       {
@@ -18604,147 +18908,147 @@
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 1856,
+      "offset": 1891,
       "length": 4,
       "value": "0x00"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 1950,
+      "offset": 1985,
       "length": 4,
       "value": "0x01"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 2036,
+      "offset": 2071,
       "length": 4,
       "value": "0x02"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 2110,
+      "offset": 2145,
       "length": 4,
       "value": "0x03"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 2182,
+      "offset": 2217,
       "length": 4,
       "value": "0x04"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 2259,
+      "offset": 2294,
       "length": 4,
       "value": "0x05"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 2325,
+      "offset": 2360,
       "length": 4,
       "value": "0x06"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 2406,
+      "offset": 2441,
       "length": 4,
       "value": "0x07"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 2480,
+      "offset": 2515,
       "length": 4,
       "value": "0x08"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 2547,
+      "offset": 2582,
       "length": 4,
       "value": "0x09"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 2617,
+      "offset": 2652,
       "length": 4,
       "value": "0x0A"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 2682,
+      "offset": 2717,
       "length": 4,
       "value": "0x0B"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 2762,
+      "offset": 2797,
       "length": 4,
       "value": "0x0C"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 2856,
+      "offset": 2891,
       "length": 4,
       "value": "0x0D"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 2944,
+      "offset": 2979,
       "length": 4,
       "value": "0x0E"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 3036,
+      "offset": 3071,
       "length": 4,
       "value": "0x0F"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 3138,
+      "offset": 3173,
       "length": 4,
       "value": "0x10"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 3217,
+      "offset": 3252,
       "length": 4,
       "value": "0x11"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 3296,
+      "offset": 3331,
       "length": 4,
       "value": "0x12"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 3367,
+      "offset": 3402,
       "length": 4,
       "value": "0x13"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/AttachedPicture.swift",
       "kind": "IntegerLiteral",
-      "offset": 3452,
+      "offset": 3487,
       "length": 4,
       "value": "0x14"
     },
@@ -19373,22 +19677,15 @@
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/Metadata.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1283,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/Metadata.swift",
       "kind": "Array",
-      "offset": 1695,
+      "offset": 1399,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Projects\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/Metadata.swift",
       "kind": "Array",
-      "offset": 1795,
+      "offset": 1499,
       "length": 2,
       "value": "[]"
     },

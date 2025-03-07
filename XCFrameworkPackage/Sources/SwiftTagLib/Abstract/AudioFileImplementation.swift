@@ -4,11 +4,17 @@
 /// Acts as common interace for `C++` `AudioFile` subtypes.
 protocol AudioFileImplementation {
     init(_ fileName: std.string)
+
     func readMetadata(
         _ metadata: UnsafeMutablePointer<AudioMetadata>!,
-        _ properties: UnsafeMutablePointer<AudioProperties>!
+        _ properties: UnsafeMutablePointer<AudioProperties>!,
+        _ errorDescription: UnsafeMutablePointer<std.string>!
     ) -> MetadataReadingOutcome
-    func writeMetadata(_ metadata: UnsafeMutablePointer<AudioMetadata>!) -> MetadataWritingOutcome
+
+    func writeMetadata(
+        _ metadata: UnsafeMutablePointer<AudioMetadata>!,
+        _ errorDescription: UnsafeMutablePointer<std.string>!
+    ) -> MetadataWritingOutcome
 }
 
 // MARK: - After the fact Conformances

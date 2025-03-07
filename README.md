@@ -12,13 +12,10 @@ Currently supporting reading from most of the same types as [SFBAudioEngine](htt
 
 #### Notes:
 
-- [WMA](https://en.wikipedia.org/wiki/Advanced_Systems_Format) file format is supported by taglib, but not `SFBAudioEngine`, can probably try to support it even though it's outdated.
+- [WMA](https://en.wikipedia.org/wiki/Advanced_Systems_Format) file format is supported by taglib [here](https://taglib.org/api/namespaceTagLib_1_1ASF.html#details), but not `SFBAudioEngine`, can probably try to support it even though it's outdated.
 
 #### Todo:
 
-- [x] Refactor boilerplate macro as abstract class.
-- [x] Make `AudioMetadata` properties optional in  `Swift`
-- [ ] Check that `releaseDate` is being read correctly.
 - [ ] Add some tests:
   - [x] Language boundary traversal for Metadata: `Swift` -> `C++` -> `Swift`:
     - [x] string properties
@@ -30,224 +27,39 @@ Currently supporting reading from most of the same types as [SFBAudioEngine](htt
   - [ ] Writing metadata:
     - [x] same self overwrite
       - [ ] fix bugs in outliers
-    - [ ] fill/erase all fields
+    - [x] fill/erase all fields
     - [ ] trasnplanting metadata between formats
-- [ ] Add code to catch `C++` errors/exceptions while reading/writing metadata.
+- [ ] Value limitations:
+  - [ ] ~~cover MCN, ISRC & MusicBrains RecordID, TrackID with types~~
+  - [ ] add validation functions for value limitations
+    - [ ] limited integers
+      - [ ] rating
+      - [ ] bpm
+      - [ ] disc number & total
+      - [ ] track number & total
+
+    - [ ] string limitations in mp3
 - [ ] Additional metadata subscript interface?
 
 #### Bugs:
 
-- [ ] `aiff`:
-
-  - [ ] `ID3v2`:
-    - [ ] mcn 
-      - [ ] not written
-
-    - [ ] rating
-      - [ ] not written, previous value stays
-
-- [ ] `mp4`, `m4a`:
-
-  - [ ] `MP4`:
-    - [ ] albumTitle
-      - [ ] not written, previous value?
-
-      - [ ] not erased
-
-    - [ ] comment
-      - [ ] wrong value
-
-    - [ ] lyrics
-      - [ ] not written
-
-    - [ ] isrc 
-      - [ ] not written
-
-    - [ ] mcn
-      - [ ] not written
-
-    - [ ] musicBrainzReleaseID
-      - [ ] not written
-
-    - [ ] musicBrainzRecordingID
-      - [ ] not written
-
-    - [ ] rating
-      - [ ] not written
-
-    - [ ] trackNumber
-      - [ ] not written
+- [ ] `ID3v2`:
+  - [ ] either read or write are incorrect
+    - [ ] mediaCatalogNumber
 
     - [ ] trackTotal
-      - [ ] not written
 
-- [ ] `wav`
-
-  - [ ] `AbstractTag`, `ID3v2`:
-    - [ ] mcn
-      - [ ] not written
-    - [ ] releaseDate
-      - [ ] not written, becomes 0
-      - [ ] not erased
-    - [ ] compilation
-      - [ ] not written
-
-- [ ] `mp3`
-
-  - [ ] `APE`, `ID3v1`, `ID3v2`:
+  - [ ] `mp3` values are truncated at 30 characters:
     - [ ] title
-      - [ ] truncated
-    - [ ] albumTitle
-      - [ ] truncated
-    - [ ] artist
-      - [ ] truncated
-    - [ ] comment
-      - [ ] truncted
-    - [ ] mcn 
-      - [ ] not written
-    - [ ] rating
-      - [ ] either limited to 196 or not written
-    - [ ] compilation
-      - [ ] not written
-    - [ ] releaseDate
-      - [ ] not erased, becomes 0
 
-- [ ] `opus.ogg`, `vorbis.ogg`:
-
-  - [ ] `XIPHComment`:
-    - [ ] title
-      - [ ] not written
     - [ ] albumTitle
-      - [ ] not written
-      - [ ] not erased
+
     - [ ] artist
-      - [ ] wrong value
-    - [ ] genre
-      - [ ] not written
+
     - [ ] comment
-      - [ ] not written
-    - [ ] composer
-      - [ ] not written
-    - [ ] albumArtist
-      - [ ] not written
-    - [ ] lyrics
-      - [ ] not written
-    - [ ] isrc 
-      - [ ] not written
-    - [ ] mcn
-      - [ ] not written
-    
-    - [ ] musicBrainzReleaseID
-      - [ ] not written
-    
-    - [ ] musicBrainzRecordingID
-      - [ ] not written
-    - [ ] bpm
-      - [ ] not written
-    - [ ] rating
-      - [ ] not written
-    - [ ] trackNumber
-      - [ ] not written
+
+- [ ] `MP4`:
+  - [ ] either read or write are incorrect
     - [ ] trackTotal
-      - [ ] not written
-    - [ ] discNumber
-      - [ ] not written
     - [ ] discTotal
-      - [ ] not written
-    - [ ] releaseDate
-      - [ ] not written
-    - [ ] releaseDate
-      - [ ] not written
     - [ ] compilation
-      - [ ] not written
-
-- [ ] `flac`:
-
-  - [ ] `ID3v1`, `ID3v2`, `XiphComment`:
-
-    - [ ] title
-
-      - [ ] not written
-      - [ ] not erased
-
-    - [ ] albumTitle
-
-      - [ ] not written
-      - [ ] not erased
-
-    - [ ] artist
-
-      - [ ] wrong value
-
-    - [ ] comment
-
-      - [ ] wrong value or not written
-      - [ ] not erased
-
-    - [ ] composer
-
-      - [ ] wrong value or not written
-      - [ ] not erased
-
-    - [ ] albumArtist
-
-      - [ ] wrong value or not written
-      - [ ] not erased
-
-    - [ ] lyrics
-
-      - [ ] not written
-      - [ ] not erased
-
-    - [ ] isrc 
-
-      - [ ] not written
-
-    - [ ] mcn
-
-      - [ ] not written
-
-    - [ ] musicBrainzReleaseID
-
-      - [ ] not written
-
-    - [ ] musicBrainzRecordingID
-
-      - [ ] not written
-
-    - [ ] bpm
-
-      - [ ] not written
-
-    - [ ] trackNumber
-
-      - [ ] not written
-      - [ ] not erased
-
-    - [ ] trackTotal
-
-      - [ ] not written
-
-    - [ ] discNumber
-
-      - [ ] not written
-      - [ ] not erased
-
-    - [ ] discTotal
-
-      - [ ] not written
-
-    - [ ] releaseDate
-
-      - [ ] not written or previous value
-      - [ ] not erased
-
-    - [ ] compilation
-
-      - [ ] not written
-
-    - [ ] attached pictures goes up by 1 after writing same metadata to file
-
-      probably the problem is image being read from different containers and saved to each of them regardless
-
-      maybe track where image was stored?

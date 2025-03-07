@@ -1,263 +1,356 @@
 
 #import "AudioMetadata.hpp"
-#import <taglib/attachedpictureframe.h>
 #import <taglib/id3v2frame.h>
+#import <taglib/attachedpictureframe.h>
 #import <taglib/popularimeterframe.h>
 #import <taglib/textidentificationframe.h>
+#import <string_view>
+#import <taglib/unsynchronizedlyricsframe.h>
+//#import <taglib/relativevolumeframe.h>
 
+// MARK: - Keys
+namespace MetadataKey {
+    struct ID3v2 final {
+        // album
+//        static constexpr const char* albumV2_2 = "TAL";
+//        static constexpr const char* albumV2_3 = "TALB";
+        // artist
+//        static constexpr const char* artist = "TPE1";
+        // genre
+//        static constexpr const char* genreV2_2 = "TCO";
+//        static constexpr const char* genreV2_3 = "TCON";
+        static constexpr const char* releaseDate = "TDRC";
+        // comment
+//        static constexpr const char* commentV2_2 = "COM";
+//        static constexpr const char* commentV2_3 = "COMM";
+        // title
+//        static constexpr const char* titleV2_2 = "TT2";
+//        static constexpr const char* titleV2_3 = "TIT2";
+        static constexpr const char* track = "TRCK"; // both trackNumber & trackTotal
+        static constexpr const char* disc = "TPOS"; // both discNumber & discTotal
+        static constexpr const char* composer = "TCOM";
+        static constexpr const char* albumArtist = "TPE2";
+        static constexpr const char* bpm = "TBPM";
+        static constexpr const char* rating = "POPM";
+        static constexpr const char* lyrics = "USLT";
+        static constexpr const char* compilation = "TCMP";
+        static constexpr const char* isrc = "TSRC";
+        static constexpr const char* mcn = "MCDI";
+        static constexpr const char* musicBrainzReleaseID = "MusicBrainz Album Id";
+        static constexpr const char* musicBrainzRecordingID = "MusicBrainz Track Id";
+        static constexpr const char* pictures = "APIC";
+    };
+}
+
+// MARK: - Read
 /// constructor for `AudioMetadata` from `TagLib::ID3v2::Tag`.
-AudioMetadata AudioMetadata::fromID3v2Tag(const TagLib::ID3v2::Tag *tag) {
-    AudioMetadata metadata = AudioMetadata::fromTag(tag);
-    auto frameList = tag->frameListMap()["TDRC"];
-    if (!frameList.isEmpty()) {
-        /*
-         The timestamp fields are based on a subset of ISO 8601. When being as
-         precise as possible the format of a time string is
-         yyyy-MM-ddTHH:mm:ss (year, "-", month, "-", day, "T", hour (out of
-         24), ":", minutes, ":", seconds), but the precision may be reduced by
-         removing as many time indicators as wanted. Hence valid timestamps
-         are
-         yyyy, yyyy-MM, yyyy-MM-dd, yyyy-MM-ddTHH, yyyy-MM-ddTHH:mm and
-         yyyy-MM-ddTHH:mm:ss. All time stamps are UTC. For durations, use
-         the slash character as described in 8601, and for multiple non-
-         contiguous dates, use multiple strings, if allowed by the frame
-         definition.
-         */
-        metadata.releaseDate = frameList.front()->toString().toCString(true);
-    }
+AudioMetadata AudioMetadata::read_from_ID3v2_tag(const TagLib::ID3v2::Tag *tag) {
+    AudioMetadata metadata = AudioMetadata::read_from_tag(tag);
+    metadata.tagSource |= TagSource::ID3v2;
 
-    // Extract composer if present
-    frameList = tag->frameListMap()["TCOM"];
-    if (!frameList.isEmpty()) {
-        metadata.composer = frameList.front()->toString().toCString();
-    }
+    using Key = MetadataKey::ID3v2;
+    using Type = AudioMetadata;
 
-    // Extract album artist
-    frameList = tag->frameListMap()["TPE2"];
-    if (!frameList.isEmpty()) {
-        metadata.albumArtist = frameList.front()->toString().toCString();
-    }
+    auto none_if_empty = [] (const char* string) -> std::optional<std::string> {
+        return (!std::string_view(string).empty()) ? std::optional<std::string>(string) : std::nullopt;
+    };
 
-    // BPM
-    frameList = tag->frameListMap()["TBPM"];
-    if (!frameList.isEmpty()) {
-        bool ok = false;
-        int bpm = frameList.front()->toString().toInt(&ok);
-        if (ok) {
-            metadata.beatPerMinute = bpm;
+    auto read_string = [&metadata, &tag] (const char* key, std::optional<std::string> Type:: *memberPointer, bool isUnicode = false) {
+        auto frameList = tag->frameListMap()[key];
+        if (!frameList.isEmpty()) {
+            auto frame = frameList.front();
+            std::string string = frame->toString().toCString(isUnicode);
+            if (!string.empty()) {
+                auto &property = metadata.*memberPointer;
+                property = string;
+            }
         }
-    }
+    };
 
-    // Rating
+    auto read_int_pair = [&metadata, &tag] (const char* key, std::optional<int> Type:: *firstMemberPointer, std::optional<int> Type:: *secondMemberPointer) {
+        auto frameList = tag->frameListMap()[key];
+        if (!frameList.isEmpty()) {
+            auto string = frameList.front()->toString();
+            bool ok;
+            auto pos = string.find("/", 0);
+            if (-1 != pos) {
+                auto upos = static_cast<unsigned int>(pos);
+                int first = string.substr(0, upos).toInt(&ok);
+                if (ok && first != 0) {
+                    auto &firstProperty = metadata.*firstMemberPointer;
+                    firstProperty = first;
+                }
+                int second = string.substr(upos + 1).toInt(&ok);
+                if (ok && second != 0) {
+                    auto &secondProperty = metadata.*secondMemberPointer;
+                    secondProperty = second;
+                }
+            } else if (!string.isEmpty()) {
+                int first = string.toInt(&ok);
+                if (ok && first != 0) {
+                    auto &firstProperty = metadata.*firstMemberPointer;
+                    firstProperty = first;
+                }
+            }
+        }
+    };
+
+    auto read_int = [&metadata, &tag] (const char* key, std::optional<int> Type:: *memberPointer) {
+        auto frameList = tag->frameListMap()[key];
+        if (!frameList.isEmpty()) {
+            auto frame = frameList.front();
+            bool ok;
+            auto value = frame->toString().toInt(&ok);
+            if (ok && value != 0) {
+                auto &property = metadata.*memberPointer;
+                property = value;
+            }
+        }
+    };
+
+    auto read_bool = [&metadata, &tag] (const char* key, std::optional<bool> Type:: *memberPointer) {
+        auto frameList = tag->frameListMap()[key];
+        if (!frameList.isEmpty()) {
+            auto frame = frameList.front();
+            auto value = frame->toString().toCString(true);
+            auto flag = std::atoi(value);
+            auto &property = metadata.*memberPointer;
+            if (flag == 0) {
+                property = std::optional<bool>(false);
+            } else if (flag == 1) {
+                property = std::optional<bool>(true);
+            }
+        }
+    };
+
+    auto read_user_string = [&metadata, &tag] (const char* key, std::optional<std:: string> Type:: *memberPointer, bool isUnicode = true) {
+        auto frame = TagLib::ID3v2::UserTextIdentificationFrame::find(const_cast<TagLib::ID3v2::Tag *>(tag), key);
+        if (frame) {
+            std::string string = frame->fieldList().back().toCString(true);
+            if (!string.empty()) {
+                auto &property = metadata.*memberPointer;
+                property = string;
+            }
+        }
+    };
+
+
+    metadata.title = none_if_empty(tag->title().toCString(true));
+    metadata.albumTitle = none_if_empty(tag->album().toCString(true));
+    metadata.artist = none_if_empty(tag->artist().toCString(true));
+    metadata.genre = none_if_empty(tag->genre().toCString(true));
+    metadata.comment = none_if_empty(tag->comment().toCString(true));
+
+    /*
+     The timestamp fields are based on a subset of ISO 8601. When being as
+     precise as possible the format of a time string is
+     yyyy-MM-ddTHH:mm:ss (year, "-", month, "-", day, "T", hour (out of
+     24), ":", minutes, ":", seconds), but the precision may be reduced by
+     removing as many time indicators as wanted. Hence valid timestamps
+     are
+     yyyy, yyyy-MM, yyyy-MM-dd, yyyy-MM-ddTHH, yyyy-MM-ddTHH:mm and
+     yyyy-MM-ddTHH:mm:ss. All time stamps are UTC. For durations, use
+     the slash character as described in 8601, and for multiple non-
+     contiguous dates, use multiple strings, if allowed by the frame
+     definition.
+     */
+    read_string(Key::releaseDate, &Type::releaseDate, true);
+    read_int_pair(Key::track, &Type::trackNumber, &Type::trackTotal);
+    read_int_pair(Key::disc, &Type::discNumber, &Type::discTotal);
+    read_string(Key::composer, &Type::composer, false);
+    read_string(Key::albumArtist, &Type::albumArtist, false);
+    read_int(Key::bpm, &Type::beatPerMinute);
+
+    /// well, yeah special case
     TagLib::ID3v2::PopularimeterFrame *popularimeter = nullptr;
-    frameList = tag->frameListMap()["POPM"];
+    auto ratingFrameList = tag->frameListMap()[Key::rating];
     if (
-        !frameList.isEmpty()
-        && nullptr != (popularimeter = dynamic_cast<TagLib::ID3v2::PopularimeterFrame *>(frameList.front()))
+        !ratingFrameList.isEmpty()
+        && nullptr != (popularimeter = dynamic_cast<TagLib::ID3v2::PopularimeterFrame *>(ratingFrameList.front()))
     ) {
-        metadata.rating = popularimeter->rating();
-    }
-
-    // Extract total tracks if present
-    frameList = tag->frameListMap()["TRCK"];
-    if (!frameList.isEmpty()) {
-        // Split the tracks at '/'
-        TagLib::String string = frameList.front()->toString();
-        bool ok;
-        auto pos = string.find("/", 0);
-        if (-1 != pos) {
-            auto upos = static_cast<unsigned int>(pos);
-            int trackNumber = string.substr(0, upos).toInt(&ok);
-            if(ok) {
-                metadata.trackNumber = trackNumber;
-            }
-            int trackTotal = string.substr(upos + 1).toInt(&ok);
-            if(ok) {
-                metadata.trackTotal = trackTotal;
-            }
-        } else if (string.length()) {
-            int trackNumber = string.toInt(&ok);
-            if (ok) {
-                metadata.trackNumber = trackNumber;
-            }
+        auto value = popularimeter->rating();
+        if (value != 0) {
+            metadata.rating = value;
         }
     }
 
-    // Extract disc number and total discs
-    frameList = tag->frameListMap()["TPOS"];
-    if (!frameList.isEmpty()) {
-        // Split the tracks at '/'
-        TagLib::String string = frameList.front()->toString();
-        bool ok;
-        auto pos = string.find("/", 0);
-        if (-1 != pos) {
-            auto upos = static_cast<unsigned int>(pos);
-            int discNumber = string.substr(0, upos).toInt(&ok);
-            if (ok) {
-                metadata.discNumber = discNumber;
-            }
-            int discTotal = string.substr(upos + 1).toInt(&ok);
-            if (ok) {
-                metadata.discTotal = discTotal;
-            }
-        } else if (string.length()) {
-            int discNumber = string.toInt(&ok);
-            if(ok) {
-                metadata.discNumber = discNumber;
-            }
-        }
-    }
+    read_string(Key::lyrics, &Type::lyrics, true);
+    read_bool(Key::compilation, &Type::compilation);
+    read_string(Key::isrc, &Type::internationalStandardRecordingCode);
+    read_string(Key::mcn, &Type::mediaCatalogNumber);
+    read_user_string(Key::musicBrainzReleaseID, &Type::musicBrainzReleaseID);
+    read_user_string(Key::musicBrainzRecordingID, &Type::musicBrainzRecordingID);
 
-    // Lyrics
-    frameList = tag->frameListMap()["USLT"];
-    if (!frameList.isEmpty()) {
-        metadata.lyrics = frameList.front()->toString().toCString(true);
-    }
-
-    // Extract compilation if present (iTunes TCMP tag)
-    frameList = tag->frameListMap()["TCMP"];
-    if (!frameList.isEmpty()) {
-        auto value = frameList.front()->toString().toCString(true);
-        if (std::atoi(value) > 0) {
-            metadata.compilation = true;
-        }
-    }
-
-    // Extract ISRC id
-    frameList = tag->frameListMap()["TSRC"];
-    if (!frameList.isEmpty()) {
-        metadata.internationalStandardRecordingCode = frameList.front()->toString().toCString(true);
-    }
-
-    // MusicBrainz
-    auto musicBrainzReleaseIDFrame = TagLib::ID3v2::UserTextIdentificationFrame
-        ::find(const_cast<TagLib::ID3v2::Tag *>(tag), "MusicBrainz Album Id");
-    if (musicBrainzReleaseIDFrame) {
-        metadata.musicBrainzReleaseID = musicBrainzReleaseIDFrame->fieldList().back().toCString(true);
-    }
-
-    auto musicBrainzRecordingIDFrame = TagLib::ID3v2::UserTextIdentificationFrame
-        ::find(const_cast<TagLib::ID3v2::Tag *>(tag), "MusicBrainz Track Id");
-    if (musicBrainzRecordingIDFrame) {
-        metadata.musicBrainzRecordingID = musicBrainzRecordingIDFrame->fieldList().back().toCString(true);
-    }
-
-    #warning there's much more that SFBAudioEngine extracts from ID3v2Tag, but let's just cover this for now. In more details the skipped things are: sorting & grouping, ReplayGain, RVA2 and LAME headers.
-
-    for (auto iterator: tag->frameListMap()["APIC"]) {
+    for (auto iterator: tag->frameListMap()[Key::pictures]) {
         TagLib::ID3v2::AttachedPictureFrame *frame = dynamic_cast<TagLib::ID3v2::AttachedPictureFrame *>(iterator);
         if (frame) {
-            auto picture = AudioMetadata::Picture::fromID3v2Picture(frame);
+            auto picture = AudioMetadata::Picture::create_from_ID3v2Picture(frame);
             metadata.attachedPictures.push_back(picture);
         }
     }
     return metadata;
 }
 
-#import <taglib/unsynchronizedlyricsframe.h>
-//#import <taglib/relativevolumeframe.h>
-
+// MARK: - Write
 /// fills`TagLib::ID3v2::Tag` from `AudioMetadata`.
-void AudioMetadata::fillID3v2Tag(TagLib::ID3v2::Tag *tag) const {
-    auto apply_specific_frame = [&] (const TagLib::ByteVector &id, auto create) {
-        tag->removeFrames(id);
-        tag->addFrame(create(id));
+void AudioMetadata::write_to_ID3v2_tag(TagLib::ID3v2::Tag *tag, bool shouldWritePictures) const {
+    using Key = MetadataKey::ID3v2;
+
+    auto empty_if_none = [](std::optional<std::string> optional) -> TagLib::String {
+        return optional.has_value() ? TagLib::String(optional.value()) : TagLib::String();
     };
-    /// apply text frame from text
-    auto apply_text = [&] (const TagLib::ByteVector &id, std::string value) {
-        apply_specific_frame(id, [&] (auto id) {
-            auto frame = new TagLib::ID3v2::TextIdentificationFrame(id, TagLib::String::Latin1);
-            frame->setText(TagLib::String(value));
-            return frame;
-        });
+
+    auto write_string = [&tag] (const char* key, std::optional<std::string> optional) {
+        tag->removeFrames(key);
+        if (optional.has_value()) {
+            #warning is it Latin1 here really?
+            auto frame = new TagLib::ID3v2::TextIdentificationFrame(key, TagLib::String::Latin1);
+            auto value = TagLib::String(optional.value(), TagLib::String::UTF8);
+            frame->setText(value);
+            tag->addFrame(frame);
+        }
     };
-    /// apply text to `UserTextIdentificationFrame` by searching for it
-    auto find_and_apply_user_text = [&] (const char* id, std::string value) {
-        auto foundFrame = TagLib::ID3v2::UserTextIdentificationFrame::find(tag, id);
+
+    auto write_user_string = [&tag] (const char* key, std::optional<std::string> optioanl) {
+        auto foundFrame = TagLib::ID3v2::UserTextIdentificationFrame::find(tag, key);
         if (foundFrame) {
             tag->removeFrame(foundFrame);
         }
-        auto frame = new TagLib::ID3v2::UserTextIdentificationFrame();
-        frame->setDescription(id);
-        frame->setText(TagLib::String(value));
-        tag->addFrame(frame);
+        if (optioanl.has_value()) {
+            auto frame = new TagLib::ID3v2::UserTextIdentificationFrame();
+            frame->setDescription(key);
+            frame->setText(TagLib::String(optioanl.value()));
+            tag->addFrame(frame);
+        }
+    };
+
+    auto write_int_pair = [&tag] (const char* key, std::optional<int> first, std::optional<int> second) {
+        tag->removeFrames(key);
+        if (first.has_value() && second.has_value()) {
+            auto frame = new TagLib::ID3v2::TextIdentificationFrame(key, TagLib::String::Latin1);
+            auto string = std::to_string(first.value()) + "/" + std::to_string(second.value());
+            auto value = TagLib::String(string, TagLib::String::UTF8);
+            frame->setText(value);
+            tag->addFrame(frame);
+        }
+    };
+
+    auto write_int = [&tag] (const char* key, std::optional<int> optional) {
+        tag->removeFrames(key);
+        if (optional.has_value()) {
+            auto frame = new TagLib::ID3v2::TextIdentificationFrame(key, TagLib::String::Latin1);
+            auto string = std::to_string(optional.value());
+            auto value = TagLib::String(string, TagLib::String::UTF8);
+            frame->setText(value);
+            tag->addFrame(frame);
+        }
+    };
+
+    auto write_bool = [&tag] (const char* key, std::optional<bool> optional) {
+        tag->removeFrames(key);
+        if (optional.has_value()) {
+            auto frame = new TagLib::ID3v2::TextIdentificationFrame(key, TagLib::String::Latin1);
+            auto flag = std::to_string(optional.value() ? 1 : 0);
+            auto value = TagLib::String(flag);
+            frame->setText(value);
+            tag->addFrame(frame);
+        }
+    };
+
+
+    /*
+     The timestamp fields are based on a subset of ISO 8601. When being as
+     precise as possible the format of a time string is
+     yyyy-MM-ddTHH:mm:ss (year, "-", month, "-", day, "T", hour (out of
+     24), ":", minutes, ":", seconds), but the precision may be reduced by
+     removing as many time indicators as wanted. Hence valid timestamps
+     are
+     yyyy, yyyy-MM, yyyy-MM-dd, yyyy-MM-ddTHH, yyyy-MM-ddTHH:mm and
+     yyyy-MM-ddTHH:mm:ss. All time stamps are UTC. For durations, use
+     the slash character as described in 8601, and for multiple non-
+     contiguous dates, use multiple strings, if allowed by the frame
+     definition.
+     */
+    auto release_date_to_year_transfromer = [](std::optional<std::string> optional) -> unsigned int {
+        if (optional.has_value()) {
+            const std::string yearSubstring = optional.value().substr(0, 4);
+            if (std::all_of(yearSubstring.begin(), yearSubstring.end(), isdigit)) {
+                unsigned int year = static_cast<unsigned int>(std::stoul(yearSubstring));
+                return year;
+            } else {
+                return 0;
+            }
+        } else {
+            return 0;
+        }
     };
 
     // Use UTF-8 as the default encoding
     TagLib::ID3v2::FrameFactory::instance()->setDefaultTextEncoding(TagLib::String::UTF8);
 
-    // Album title
-    tag->setAlbum(TagLib::String(albumTitle));
-    // Artist
-    tag->setArtist(TagLib::String(artist));
-    // Composer
-    apply_text("TCOM", composer);
-    // Genre
-    tag->setGenre(TagLib::String(genre));
-    // Date
-    apply_text("TDRC", releaseDate);
-    if (!releaseDate.empty() && releaseDate.size() >= 4) {
-        /*
-         The timestamp fields are based on a subset of ISO 8601. When being as
-         precise as possible the format of a time string is
-         yyyy-MM-ddTHH:mm:ss (year, "-", month, "-", day, "T", hour (out of
-         24), ":", minutes, ":", seconds), but the precision may be reduced by
-         removing as many time indicators as wanted. Hence valid timestamps
-         are
-         yyyy, yyyy-MM, yyyy-MM-dd, yyyy-MM-ddTHH, yyyy-MM-ddTHH:mm and
-         yyyy-MM-ddTHH:mm:ss. All time stamps are UTC. For durations, use
-         the slash character as described in 8601, and for multiple non-
-         contiguous dates, use multiple strings, if allowed by the frame
-         definition.
-         */
-        const std::string yearSubstring = releaseDate.substr(0, 4);
-        if (std::all_of(yearSubstring.begin(), yearSubstring.end(), isdigit)) {
-            unsigned int year = static_cast<unsigned int>(std::stoul(yearSubstring));
-            tag->setYear(year);
-        }
+    tag->setTitle(empty_if_none(title));
+    tag->setAlbum(empty_if_none(albumTitle));
+    tag->setArtist(empty_if_none(artist));
+    tag->setGenre(empty_if_none(genre));
+    tag->setComment(empty_if_none(comment));
+    write_string(Key::releaseDate, releaseDate);
+    tag->setYear(release_date_to_year_transfromer(releaseDate));
+
+    #warning unsure about need to erase track when pair is set partially, also order of operation
+    if (trackNumber.has_value() && trackTotal.has_value()) { /// both present, ok
+        write_int_pair(Key::track, trackNumber, trackTotal);
+        tag->setTrack(static_cast<unsigned int>(trackNumber.value()));
+    } else if (trackNumber.has_value() && !trackTotal.has_value()) { /// only track number, try to set regardless
+        write_int_pair(Key::track, trackNumber, std::optional<int>(0));
+        tag->setTrack(static_cast<unsigned int>(trackNumber.value()));
+    } else if (!trackNumber.has_value() && trackTotal.has_value()) { /// only track total, ignored
+        write_int_pair(Key::track, std::optional<int>(0), trackTotal);
+        tag->setTrack(0);
+//        taglib_bridge_log(Error, "ID3v2: setting `trackTotal` without setting `trackNumber` is ignored");
+    } else { /// both missing, erase
+        tag->removeFrames(Key::track);
+        tag->setTrack(0);
     }
-    // Comment
-    tag->setComment(TagLib::String(comment));
-    // Album artist
-    apply_text("TPE2", albumArtist);
-    // Track title
-    tag->setTitle(TagLib::String(title));
-    // BPM
-    apply_text("TBPM", std::to_string(beatPerMinute));
-    // Rating
-    apply_specific_frame("POPM", [&] (auto id) {
+
+    if (discNumber.has_value() && discTotal.has_value()) { // noth present, ok
+        write_int_pair(Key::disc, discNumber, discTotal);
+    } else if (discNumber.has_value() && !discTotal.has_value()) { /// only disc number, try to set?
+        write_int_pair(Key::disc, discNumber, std::optional<int>(0));
+    } else if (!discNumber.has_value() && discTotal.has_value()) { /// only disc total, try to set?
+        write_int_pair(Key::disc, std::optional<int>(0), discTotal);
+    } else { /// both missing, erase
+        tag->removeFrames(Key::disc);
+    }
+
+    write_string(Key::composer, composer);
+    write_string(Key::albumArtist, albumArtist);
+    write_int(Key::bpm, beatPerMinute);
+
+    tag->removeFrames(Key::rating);
+    if (rating.has_value()) {
         auto frame = new TagLib::ID3v2::PopularimeterFrame();
-        frame->setRating(rating);
-        return frame;
-    });
-    // Track number and total tracks
-    apply_text("TRCK", std::to_string(trackNumber) + "/" + std::to_string(trackTotal));
-    // Compilation
-    // iTunes uses the TCMP frame for this, which isn't in the standard, but we'll use it for compatibility
-    apply_text("TCMP", compilation ? "1" : "0");
-    // Disc number and total discs
-    apply_text("TPOS", std::to_string(discNumber) + "/" + std::to_string(discTotal));
-    // Lyrics
-    apply_specific_frame("USLT", [&] (auto id) {
+        frame->setRating(rating.value());
+        tag->addFrame(frame);
+    }
+
+    tag->removeFrames(Key::lyrics);
+    if (lyrics.has_value()) {
         auto frame = new TagLib::ID3v2::UnsynchronizedLyricsFrame(TagLib::String::UTF8);
-        frame->setText(TagLib::String(lyrics, TagLib::String::UTF8));
-        return frame;
-    });
-    /// ISRC
-    apply_text("TSRC", internationalStandardRecordingCode);
-    // MusicBrainz
-    find_and_apply_user_text("MusicBrainz Album Id", musicBrainzReleaseID);
-    find_and_apply_user_text("MusicBrainz Track Id", musicBrainzRecordingID);
+        frame->setText(TagLib::String(lyrics.value(), TagLib::String::UTF8));
+        tag->addFrame(frame);
+    }
 
-    #warning ignored metadata sorting and grouping
-
-    #warning ignored metadata replay gain
-
+    write_bool(Key::compilation, compilation);
+    write_string(Key::isrc, internationalStandardRecordingCode);
+    write_string(Key::mcn, mediaCatalogNumber);
+    write_user_string(Key::musicBrainzReleaseID, musicBrainzReleaseID);
+    write_user_string(Key::musicBrainzRecordingID, musicBrainzRecordingID);
     // Album art
-    tag->removeFrames("APIC");
-    if (!attachedPictures.empty()) {
+    tag->removeFrames(Key::pictures);
+
+    if (shouldWritePictures && !attachedPictures.empty()) {
         for (auto picture: attachedPictures) {
-            tag->addFrame(picture.asID3v2Picture()/*.release()*/);
+            tag->addFrame(picture.convert_to_ID3v2Picture());
         }
     }
 }
