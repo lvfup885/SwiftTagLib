@@ -132,7 +132,7 @@ void AudioMetadata::write_to_MP4_tag(TagLib::MP4::Tag *tag, bool shouldWritePict
         }
     };
 
-    auto wrtie_int_pair = [&tag] (const char* key, std::optional<int> first, std::optional<int> second) {
+    auto write_int_pair = [&tag] (const char* key, std::optional<int> first, std::optional<int> second) {
         tag->removeItem(key);
         if (first.has_value() && second.has_value()) {
             auto item = TagLib::MP4::Item(first.value(), second.value());
@@ -168,14 +168,14 @@ void AudioMetadata::write_to_MP4_tag(TagLib::MP4::Tag *tag, bool shouldWritePict
 
     #warning unsure about need to erase track when pair is set partially, also order of operation
     if (trackNumber.has_value() && trackTotal.has_value()) { /// both present, ok
-        wrtie_int_pair(Key::track, trackNumber, trackTotal);
         tag->setTrack(static_cast<unsigned int>(trackNumber.value()));
+        write_int_pair(Key::track, trackNumber, trackTotal);
     } else if (trackNumber.has_value() && !trackTotal.has_value()) { /// only track number, try to set regardless
-        wrtie_int_pair(Key::track, trackNumber, std::optional<int>(0));
         tag->setTrack(static_cast<unsigned int>(trackNumber.value()));
+        write_int_pair(Key::track, trackNumber, std::optional<int>(0));
     } else if (!trackNumber.has_value() && trackTotal.has_value()) { /// only track total, ignored
-        wrtie_int_pair(Key::track, std::optional<int>(0), trackTotal);
         tag->setTrack(0);
+        write_int_pair(Key::track, std::optional<int>(0), trackTotal);
 //        taglib_bridge_log(Error, "MP4: setting `trackTotal` without setting `trackNumber` is ignored");
     } else { /// both missing, erase
         tag->removeItem(Key::track);
@@ -183,11 +183,11 @@ void AudioMetadata::write_to_MP4_tag(TagLib::MP4::Tag *tag, bool shouldWritePict
     }
 
     if (discNumber.has_value() && discTotal.has_value()) { // noth present, ok
-        wrtie_int_pair(Key::disc, discNumber, discTotal);
+        write_int_pair(Key::disc, discNumber, discTotal);
     } else if (discNumber.has_value() && !discTotal.has_value()) { /// only disc number, try to set?
-        wrtie_int_pair(Key::disc, discNumber, std::optional<int>(0));
+        write_int_pair(Key::disc, discNumber, std::optional<int>(0));
     } else if (!discNumber.has_value() && discTotal.has_value()) { /// only disc total, try to set?
-        wrtie_int_pair(Key::disc, std::optional<int>(0), discTotal);
+        write_int_pair(Key::disc, std::optional<int>(0), discTotal);
     } else { /// both missing, erase
         tag->removeItem(Key::disc);
     }

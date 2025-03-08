@@ -26,13 +26,12 @@ Currently supporting reading from most of the same types as [SFBAudioEngine](htt
     - [ ] additional metadata
   - [ ] Writing metadata:
     - [x] same self overwrite
-      - [ ] fix bugs in outliers
     - [x] fill/erase all fields
     - [ ] trasnplanting metadata between formats
 - [ ] Value limitations:
   - [ ] ~~cover MCN, ISRC & MusicBrains RecordID, TrackID with types~~
-  - [ ] add validation functions for value limitations
-    - [ ] limited integers
+  - [ ] add validation functions for value limitations:
+    - [ ] limited integers:
       - [ ] rating
       - [ ] bpm
       - [ ] disc number & total
@@ -44,7 +43,7 @@ Currently supporting reading from most of the same types as [SFBAudioEngine](htt
 #### Bugs:
 
 - [ ] `ID3v2`:
-  - [ ] either read or write are incorrect
+  - [ ] either read or write are incorrect:
     - [ ] mediaCatalogNumber
 
     - [ ] trackTotal
@@ -59,7 +58,7 @@ Currently supporting reading from most of the same types as [SFBAudioEngine](htt
     - [ ] comment
 
 - [ ] `MP4`:
-  - [ ] either read or write are incorrect
+  - [ ] either read or write are incorrect:
     - [ ] trackTotal
     - [ ] discTotal
     - [ ] compilation

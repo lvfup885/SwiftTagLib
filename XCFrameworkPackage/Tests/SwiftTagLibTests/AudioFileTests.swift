@@ -29,7 +29,7 @@ struct AudioFileTests {
         }
     }
 
-    @Test("Overwriting metadata with metadata read file, no metadata should change.", arguments: AudioSample.supported)
+    @Test("Overwriting metadata with metadata read from file, no metadata should change.", arguments: AudioSample.supported)
     func sameSelfOverwrite(source: AudioSample) throws {
         let directory = Constants.Directory.test()
         let destination = directory.appending(path: source.filename)
