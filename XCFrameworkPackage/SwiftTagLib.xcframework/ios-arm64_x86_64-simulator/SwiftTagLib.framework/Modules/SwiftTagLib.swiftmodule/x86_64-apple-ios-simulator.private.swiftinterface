@@ -205,7 +205,7 @@ extension SwiftTagLib.AudioFile {
   }
 }
 extension SwiftTagLib.AudioFile.Metadata {
-  public struct TagSource : Swift.Hashable, Swift.Equatable, Swift.OptionSet, Swift.CustomStringConvertible {
+  public struct TagSource : Swift.OptionSet, Swift.Hashable, Swift.Equatable, Swift.CustomStringConvertible {
     public static var abstract: SwiftTagLib.AudioFile.Metadata.TagSource {
       get
     }
