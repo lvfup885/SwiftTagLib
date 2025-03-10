@@ -8,7 +8,11 @@ extension AudioFile.Metadata {
         /// string properties
         for keyPath in Self.stringProperties {
             let string = UUID().uuidString.replacingOccurrences(of: "-", with: "")
-            metadata[keyPath: keyPath] = String(string.prefix(string.count / 2))
+            /// ID3v1 imposes 128 bytes limitation on fields
+            /// which is 30 characters: or approximately 28 ASCII characters + 2 bytes of language code.
+            /// Going over this character limit currently only fails test for mp3 file,
+            /// indicating the limit dependes on actual format implementation
+            metadata[keyPath: keyPath] = String(string.prefix(28))
         }
         /// int propeties
         metadata.trackTotal = Int32.random(in: 1 ... 255) // or 200
@@ -19,7 +23,7 @@ extension AudioFile.Metadata {
         metadata.beatPerMinute = Int32.random(in: 1 ... 300) // or 250
         /// bool properties
         for keyPath in Self.boolProperties {
-            metadata[keyPath: keyPath] = false//Bool.random()
+            metadata[keyPath: keyPath] = Bool.random()
         }
         /// date properties
         for keyPath in Self.dateProperties {

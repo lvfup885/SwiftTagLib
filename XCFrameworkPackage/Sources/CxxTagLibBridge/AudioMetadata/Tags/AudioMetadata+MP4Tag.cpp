@@ -57,7 +57,7 @@ AudioMetadata AudioMetadata::read_from_MP4_tag(const TagLib::MP4::Tag *tag) {
             }
             if (pair.second) {
                 auto &secondProperty = metadata.*secondMemberPointer;
-                secondProperty = pair.first;
+                secondProperty = pair.second;
             }
         }
     };
@@ -79,12 +79,6 @@ AudioMetadata AudioMetadata::read_from_MP4_tag(const TagLib::MP4::Tag *tag) {
             auto &property = metadata.*memberPointer;
             bool flag = item.toBool();
             property = flag;
-//            auto number = item.toInt();
-//            if (number == 0) {
-//                property = std::optional<bool>(false);
-//            } else if (number == 1) {
-//                property = std::optional<bool>(true);
-//            }
         }
     };
 
@@ -101,6 +95,7 @@ AudioMetadata AudioMetadata::read_from_MP4_tag(const TagLib::MP4::Tag *tag) {
     read_int(Key::bpm, &Type::beatPerMinute);
     read_int(Key::rating, &Type::rating);
     read_string(Key::lyrics, &Type::lyrics);
+    read_bool(Key::compilation, &Type::compilation);
     read_string(Key::isrc, &Type::internationalStandardRecordingCode);
     read_string(Key::mcn, &Type::mediaCatalogNumber);
     read_string(Key::musicBrainzReleaseID, &Type::musicBrainzReleaseID);
@@ -159,24 +154,23 @@ void AudioMetadata::write_to_MP4_tag(TagLib::MP4::Tag *tag, bool shouldWritePict
 
     write_string(Key::title, title);
     /// for some reason setting album as item fails?
-    auto albumTitle = this->title.has_value() ? TagLib::String(this->albumTitle.value()) : TagLib::String();
+    auto albumTitle = this->albumTitle.has_value() ? TagLib::String(this->albumTitle.value()) : TagLib::String();
     tag->setAlbum(albumTitle);
     write_string(Key::artist, artist);
     write_string(Key::genre, genre);
     write_string(Key::comment, comment);
     write_string(Key::releaseDate, releaseDate);
 
-    #warning unsure about need to erase track when pair is set partially, also order of operation
+    /// **beware**: sequence of operation is improtance here
     if (trackNumber.has_value() && trackTotal.has_value()) { /// both present, ok
         tag->setTrack(static_cast<unsigned int>(trackNumber.value()));
         write_int_pair(Key::track, trackNumber, trackTotal);
     } else if (trackNumber.has_value() && !trackTotal.has_value()) { /// only track number, try to set regardless
         tag->setTrack(static_cast<unsigned int>(trackNumber.value()));
         write_int_pair(Key::track, trackNumber, std::optional<int>(0));
-    } else if (!trackNumber.has_value() && trackTotal.has_value()) { /// only track total, ignored
+    } else if (!trackNumber.has_value() && trackTotal.has_value()) { /// only track total, try to set regardless
         tag->setTrack(0);
         write_int_pair(Key::track, std::optional<int>(0), trackTotal);
-//        taglib_bridge_log(Error, "MP4: setting `trackTotal` without setting `trackNumber` is ignored");
     } else { /// both missing, erase
         tag->removeItem(Key::track);
         tag->setTrack(0);
@@ -184,9 +178,9 @@ void AudioMetadata::write_to_MP4_tag(TagLib::MP4::Tag *tag, bool shouldWritePict
 
     if (discNumber.has_value() && discTotal.has_value()) { // noth present, ok
         write_int_pair(Key::disc, discNumber, discTotal);
-    } else if (discNumber.has_value() && !discTotal.has_value()) { /// only disc number, try to set?
+    } else if (discNumber.has_value() && !discTotal.has_value()) { /// only disc number, try to set regardless
         write_int_pair(Key::disc, discNumber, std::optional<int>(0));
-    } else if (!discNumber.has_value() && discTotal.has_value()) { /// only disc total, try to set?
+    } else if (!discNumber.has_value() && discTotal.has_value()) { /// only disc total, try to set regardless
         write_int_pair(Key::disc, std::optional<int>(0), discTotal);
     } else { /// both missing, erase
         tag->removeItem(Key::disc);
@@ -204,7 +198,7 @@ void AudioMetadata::write_to_MP4_tag(TagLib::MP4::Tag *tag, bool shouldWritePict
     write_string(Key::musicBrainzRecordingID, musicBrainzRecordingID);
 
     // Album Art
-    #warning possibly redundant
+    /// this might be reudndant
     tag->removeItem(Key::pictures);
 
     if (shouldWritePictures && !attachedPictures.empty()) {

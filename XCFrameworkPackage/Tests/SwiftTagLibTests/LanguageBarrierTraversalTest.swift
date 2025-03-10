@@ -6,14 +6,14 @@ import Testing
 /// Just a sanity check to confirm correct conversion of Metadata aggregate from Swift to C++ and back to Swift.
 @Suite("Language Barrier Traversal Test")
 struct LanguageBarrierTraversalTest {
-    @Test
+    @Test("Empty metadata remains empty")
     func emptyMetadataRemainsEmpty() {
         let metadata = AudioFile.Metadata()
         let converted = AudioFile.Metadata(cxxRepresentation: metadata.cxxRepresentation)
         #expect(metadata == converted)
     }
 
-    @Test(arguments: AudioFile.Metadata.stringProperties)
+    @Test("String properties change persits", arguments: AudioFile.Metadata.stringProperties)
     func stringPropertyChangePersists(property: WritableKeyPath<AudioFile.Metadata, String?>) {
         /// some
         var metadata = AudioFile.Metadata()
@@ -26,7 +26,7 @@ struct LanguageBarrierTraversalTest {
         #expect(metadata[keyPath: property] == converted[keyPath: property], "\(property)")
     }
 
-    @Test(arguments: AudioFile.Metadata.intProperties)
+    @Test("Int properties change persits", arguments: AudioFile.Metadata.intProperties)
     func intPropertyChangePersists(property: WritableKeyPath<AudioFile.Metadata, Int32?>) {
         /// some
         var metadata = AudioFile.Metadata()
@@ -39,11 +39,11 @@ struct LanguageBarrierTraversalTest {
         #expect(metadata[keyPath: property] == converted[keyPath: property])
     }
 
-    @Test
+    @Test("Release date change persits")
     func releaseDateChangePersists() {
         /// some
         var metadata = AudioFile.Metadata()
-        metadata.releaseDate = "1993"
+        metadata.releaseDate = "\(Int.random(in: 1960 ... 2024))"
         var converted = AudioFile.Metadata(cxxRepresentation: metadata.cxxRepresentation)
         #expect(metadata.releaseDate == converted.releaseDate)
         /// none
@@ -52,7 +52,8 @@ struct LanguageBarrierTraversalTest {
         #expect(metadata.releaseDate == converted.releaseDate)
     }
 
-    @Test func compilationChangePersists() {
+    @Test("Compilation change persits")
+    func compilationChangePersists() {
         var metadata = AudioFile.Metadata()
         metadata.compilation = true
         var converted = AudioFile.Metadata(cxxRepresentation: metadata.cxxRepresentation)
@@ -62,12 +63,12 @@ struct LanguageBarrierTraversalTest {
         #expect(metadata.compilation == converted.compilation)
     }
 
-    @Test
+    @Test("Attached pictures change persists")
     func attachedPicturesChangePersists() {
 
     }
 
-    @Test
+    @Test("Additional metadata change persists")
     func additionalMetadataChangePersists() {
 
     }

@@ -6,20 +6,30 @@ public extension AudioFile {
     /// Aggregate metadata container built from `AuidoFile.Formt` specific combination of the following: `TagLib::Tag`, `TagLib:ID3v1::Tag`, `TagLib::ID3v2::Tag`, `TagLib::Ogg::XiphComment`, `TagLib::APE::Tag`, `TagLib::MP4::Tag`.
     struct Metadata: CxxRepresentable, Hashable {
         // MARK: - Basic Properties shared across ID3v1, ID3v2 and some other Tags
+        /// Might be limited to `28 ... 30` characters if the file has `ID3v1` in `tagSource`.
         public var title: String?
+        /// Might be limited to `28 ... 30` characters if the file has `ID3v1` in `tagSource`.
         public var albumTitle: String?
+        /// Might be limited to `28 ... 30` characters if the file has `ID3v1` in `tagSource`.
         public var artist: String?
         public var genre: String?
         public var releaseDate: String?
+        /// Might be limited to `28 ... 30` characters if the file has `ID3v1` in `tagSource`.
         public var comment: String?
         // MARK: - ID3v2 Properties
         public var composer: String?
         public var albumArtist: String?
+        /// Appropriate values are within `1 ... 300`.
         public var beatPerMinute: Int32?
+        /// Appropriate values are within `1 ... 100`.
         public var rating: Int32?
+        /// Appropriate values are within `1 ... trackTotal`.
         public var trackNumber: Int32?
+        /// Appropriate values are within `1 ... 255`.
         public var trackTotal: Int32?
+        /// Appropriate values are within `1 ... discTotal`.
         public var discNumber: Int32?
+        /// Appropriate values are within `1 ... 99`.
         public var discTotal: Int32?
         public var lyrics: String?
         public var compilation: Bool?

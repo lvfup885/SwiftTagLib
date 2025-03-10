@@ -100,9 +100,6 @@ let taglib = Target.target(
         .headerSearchPath("taglib/taglib/trueaudio/"),
         .headerSearchPath("taglib/taglib/wavpack/"),
         .headerSearchPath("taglib/taglib/xm/"),
-    ],
-    swiftSettings: [
-        .interoperabilityMode(.Cxx)
     ]
 )
 /// C++ intermediate layer replacing AudioMetadata class hierarchy from SFBAudioEngine.
@@ -110,8 +107,7 @@ let taglibBridge = Target.target(
     name: "CxxTagLibBridge",
     dependencies: [
         taglib.asDependency,
-    ],
-    swiftSettings: swiftSettings
+    ]
 )
 /// Swift facade
 let swiftTagLib = Target.target(
@@ -148,5 +144,5 @@ let package = Package(
         swiftTagLib,
         tests
     ],
-    cxxLanguageStandard: .cxx2b //.cxx20
+    cxxLanguageStandard: .cxx2b
 )
