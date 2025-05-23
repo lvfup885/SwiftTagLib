@@ -1,39 +1,27 @@
 
 #import "AudioMetadata.hpp"
 
-namespace MetadataOverlay {
-    enum class CheckLevel: uint8_t {
-        /// checks if value is already read, and if not replaces only with new its not `std::nullopt`.
-        Graceful = 0,
-        /// does not check if value is already read, replaces when new its not `std::nullopt`.
-        Override = 1,
-        /// no checks, newest value is written
-        Regardless = 2,
-    };
-    static constexpr CheckLevel checkLevel = CheckLevel::Graceful;
-}
-
 /// convenience method to combine `AudioMetadata` as layers.
-void AudioMetadata::overlay(const AudioMetadata layer) {
+void AudioMetadata::overlay(const AudioMetadata layer, const MetadataOverlayStrategy strategy) {
     using Type = AudioMetadata;
     tagSource |= layer.tagSource;
 
-    auto overlay_optional = [this, &layer](auto Type:: *memberPointer) {
+    auto overlay_optional = [this, &layer, &strategy](auto Type:: *memberPointer) {
         auto &property = this->*memberPointer;
         const auto &overlayProperty = layer.*memberPointer;
-        switch (MetadataOverlay::checkLevel) {
+        switch (strategy) {
             default:
-            case MetadataOverlay::CheckLevel::Graceful:
+            case MetadataOverlayStrategy::graceful:
                 if (!property.has_value() && overlayProperty.has_value()) {
                     property = overlayProperty;
                 }
                 break;
-            case MetadataOverlay::CheckLevel::Override:
+            case MetadataOverlayStrategy::override:
                 if (overlayProperty.has_value()) {
                     property = overlayProperty;
                 }
                 break;
-            case MetadataOverlay::CheckLevel::Regardless:
+            case MetadataOverlayStrategy::regardless:
                 property = overlayProperty;
                 break;;
         }

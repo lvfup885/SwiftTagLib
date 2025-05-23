@@ -15,6 +15,9 @@ let swiftSettings: [SwiftSetting] = [
 //    .define("ImageDataTransformationEnabled"),
 ]
 
+/// only used as a testing convenience, should not be exposed or enabled in release
+let includeMetadataReader: Bool = false
+
 // MARK: - Targets
 let taglib = Target.target(
     name: "taglib",
@@ -146,3 +149,20 @@ let package = Package(
     ],
     cxxLanguageStandard: .cxx2b
 )
+
+// MARK: - MetadataReader Executable
+if includeMetadataReader {
+    package.dependencies += [
+        .package(url: "https://github.com/apple/swift-argument-parser", .upToNextMajor(from: "1.5.0")),
+    ]
+    let metadataReader = Target.executableTarget(
+        name: "MetadataReader",
+        dependencies: [
+            swiftTagLib.asDependency,
+            .product(name: "ArgumentParser", package: "swift-argument-parser"),
+        ],
+        swiftSettings: swiftSettings
+    )
+    package.targets.append(metadataReader)
+    package.products.append(.executable(name: "read-metadata", targets: [metadataReader.name]))
+}

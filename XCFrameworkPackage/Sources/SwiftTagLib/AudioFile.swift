@@ -13,13 +13,20 @@ public struct AudioFile {
     public let properties: Properties
 
     /// attempts to create `AudioFile` from `URL`.
-    public init(url: URL) throws(InitializationError) {
+    public init(
+        url: URL,
+        overlayStrategy: Metadata.OverlayStrategy = .override
+    ) throws(InitializationError) {
         guard let format = try Format.Detector.format(at: url) else {
             throw .unableToDetermineAudioFormat
         }
         self.url = url
         self.format = format
-        let (metadata, properties) = try Metadata.readMetadataAndProperties(from: url, format: format)
+        let (metadata, properties) = try Metadata.readMetadataAndProperties(
+            from: url,
+            format: format,
+            overlayStrategy: overlayStrategy
+        )
         self.metadata = metadata
         self.properties = properties
     }

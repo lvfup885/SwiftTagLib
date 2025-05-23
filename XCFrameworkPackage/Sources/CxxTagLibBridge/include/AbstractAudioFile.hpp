@@ -1,29 +1,5 @@
 
-// MARK: - Outcomes
-#import <stdint.h>
-
-/// Tells the API consumer the outcome of `readMetadata` method.
-enum class MetadataReadingOutcome: uint8_t {
-    fileIsNotOpen,
-    invalidFile,
-    runtimeError,
-    exception,
-    unknownException,
-    success
-};
-
-/// Tells the API consumer the outcome of `writeMetadata` method.
-enum class MetadataWritingOutcome: uint8_t {
-    fileIsNotOpen,
-    invalidFile,
-    saveError,
-    runtimeError,
-    exception,
-    unknownException,
-    success
-};
-
-// MARK: - Abstract AudioFile
+#import "InterfaceEnums.hpp"
 #import "AudioMetadata.hpp"
 #import "AudioProperties.hpp"
 #import "Logging.hpp"
@@ -50,6 +26,7 @@ namespace AudioFile {
         MetadataReadingOutcome readMetadata(
             AudioMetadata *metadata,
             AudioProperties *properties,
+            const MetadataOverlayStrategy overlayStrategy,
             std::string *errorDescription
         ) const {
             try {
@@ -63,7 +40,7 @@ namespace AudioFile {
                     taglib_bridge_log(Error, "file is not valid: %s", fileName.c_str());
                     return MetadataReadingOutcome::invalidFile;
                 }
-                read_metadata_implementation(file, metadata);
+                read_metadata_implementation(file, metadata, overlayStrategy);
                 if (file.audioProperties()) {
                     properties->fillFromProperties(*file.audioProperties());
                 }
@@ -124,8 +101,15 @@ namespace AudioFile {
         }
     protected:
         /// Format specific internal `read` metadata implementation.
-        virtual void read_metadata_implementation(FileType &file, AudioMetadata *metadata) const = 0;
+        virtual void read_metadata_implementation(
+            FileType &file,
+            AudioMetadata *metadata,
+            const MetadataOverlayStrategy overlayStrategy
+        ) const = 0;
         /// Format specific internal `write` metadata implementation.
-        virtual void write_metadata_implementation(FileType &file, AudioMetadata *metadata) const = 0;
+        virtual void write_metadata_implementation(
+            FileType &file,
+            AudioMetadata *metadata
+        ) const = 0;
     };
 }

@@ -9,12 +9,16 @@ namespace AudioFile {
     protected:
         using FileType = TagLib::MPC::File;
 
-        void read_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
+        void read_metadata_implementation(
+            FileType &file,
+            AudioMetadata *metadata,
+            const MetadataOverlayStrategy overlayStrategy
+        ) const {
             if (file.hasID3v1Tag()) {
-                metadata->overlay(AudioMetadata::read_from_ID3v1_tag(file.ID3v1Tag()));
+                metadata->overlay(AudioMetadata::read_from_ID3v1_tag(file.ID3v1Tag()), overlayStrategy);
             }
             if (file.hasAPETag()) {
-                metadata->overlay(AudioMetadata::read_from_APE_tag(file.APETag()));
+                metadata->overlay(AudioMetadata::read_from_APE_tag(file.APETag()), overlayStrategy);
             }
         }
 

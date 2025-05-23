@@ -9,12 +9,16 @@ namespace AudioFile {
     protected:
         using FileType = TagLib::RIFF::WAV::File;
 
-        void read_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
+        void read_metadata_implementation(
+            FileType &file,
+            AudioMetadata *metadata,
+            const MetadataOverlayStrategy overlayStrategy
+        ) const {
             if (file.hasInfoTag()) {
-                metadata->overlay(AudioMetadata::read_from_tag(file.InfoTag()));
+                metadata->overlay(AudioMetadata::read_from_tag(file.InfoTag()), overlayStrategy);
             }
             if (file.hasID3v2Tag()) {
-                metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.ID3v2Tag()));
+                metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.ID3v2Tag()), overlayStrategy);
             }
         }
 

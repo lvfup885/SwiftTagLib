@@ -6,6 +6,7 @@
 #import <ImageIO/ImageIO.h>
 #import <CoreFoundation/CoreFoundation.h>
 // MARK: - Core
+#import "InterfaceEnums.hpp"
 #import "AudioProperties.hpp"
 #import "AudioMetadata.hpp"
 #import "AbstractAudioFile.hpp"

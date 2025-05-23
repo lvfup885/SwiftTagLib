@@ -9,9 +9,13 @@ namespace AudioFile {
     protected:
         using FileType = TagLib::RIFF::AIFF::File;
 
-        void read_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
+        void read_metadata_implementation(
+            FileType &file,
+            AudioMetadata *metadata,
+            const MetadataOverlayStrategy overlayStrategy
+        ) const {
             if (file.tag()) {
-                metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.tag()));
+                metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.tag()), overlayStrategy);
             }
         }
 

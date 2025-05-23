@@ -219,13 +219,19 @@ import struct Foundation.URL
 extension AudioFile.Metadata {
     static func readMetadataAndProperties(
         from url: URL,
-        format: AudioFile.Format
+        format: AudioFile.Format,
+        overlayStrategy: OverlayStrategy,
     ) throws(AudioFile.InitializationError) -> (metadata: Self, properties: AudioFile.Properties) {
         var metadata = AudioMetadata()
         var properties = AudioProperties()
         let implementation = format.implementationMetatype.init(std.string(url.path))
         var errorDescription = std.string()
-        let outcome = implementation.readMetadata(&metadata, &properties, &errorDescription)
+        let outcome = implementation.readMetadata(
+            &metadata,
+            &properties,
+            overlayStrategy.cxxRepresentation,
+            &errorDescription
+        )
         try AudioFile.InitializationError.throwIfNeeded(outcome, String(errorDescription))
         return (.init(cxxRepresentation: metadata), .init(cxxRepresentation: properties))
     }

@@ -10,6 +10,7 @@
 #import <taglib/apetag.h>
 #import <taglib/mp4tag.h>
 #import <taglib/attachedpictureframe.h>
+#import "InterfaceEnums.hpp"
 
 /// Attempts to combine different [Tags](https://taglib.org/api/classTagLib_1_1Tag.html) into single interace.
 struct AudioMetadata final {
@@ -166,5 +167,5 @@ public:
     void write_to_MP4_tag(TagLib::MP4::Tag *tag, bool shouldWritePictures = true) const;
 
     // MARK: - Utility
-    void overlay(const AudioMetadata layer);
+    void overlay(const AudioMetadata layer, const MetadataOverlayStrategy strategy);
 };
