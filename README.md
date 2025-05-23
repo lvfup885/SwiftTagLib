@@ -181,6 +181,22 @@ for keyPath in Self.stringProperties {
   > it can be improved but this will introduce some use of unsafe pointers, and i'm quite unsure what's worse unsafe memory access in between `Swift` and `C++` or slowly building up a `std::vector` in `loop` via `push_back` method.
 - Not all metadata fields are covered/supported, i ignored supporting `ReplayGain` and `Sorting`/`Grouping` metadata entries, here's the [Issue](https://github.com/Volodymyr-13/SwiftTagLib/issues/1) for that.
 
+### Development:
+
+- After cloning this repository you should call(in it's root directory, to fetch the submodules):
+
+```sh
+git submodule update --init
+```
+
+The `Package.swift` in the root directory is a wrapper for underlying `Package.swift` in `XCFrameworkPackage` directory, you should edit the latter.
+
+To compile `Package.swift` in `XCFrameworkPackage` as bunch of `.xcframework`'s, go into `XCFrameworkPackage` directory and call:
+
+```sh
+make
+```
 
 ### Notes:
+
 - [WMA](https://en.wikipedia.org/wiki/Advanced_Systems_Format) file format is supported by taglib [here](https://taglib.org/api/namespaceTagLib_1_1ASF.html#details), but not `SFBAudioEngine`, can probably try to support it even though it's outdated.
