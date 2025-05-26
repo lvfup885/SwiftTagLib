@@ -127,9 +127,11 @@ AudioMetadata AudioMetadata::read_from_APE_tag(const TagLib::APE::Tag *tag) {
             auto intPropertyIterator = intPropertiesByKeys.find(lookupKey);
             if (intPropertyIterator != intPropertiesByKeys.end()) {
                 auto memberPointer = intPropertyIterator->second; /// maybe `auto&`
-                auto number = std::stoi(value);
-                metadata.*memberPointer = none_if_zero(number);
-                hasHandledValue = true;
+                try {
+                    auto number = std::stoi(value);
+                    metadata.*memberPointer = none_if_zero(number);
+                    hasHandledValue = true;
+                } catch (const std::invalid_argument &exception) {}
             }
             if (hasHandledValue) { continue; }
 
