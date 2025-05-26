@@ -1,13 +1,13 @@
 
-#import "AbstractAudioFile.hpp"
-#import <taglib/oggflacfile.h>
+#import <CxxTagLibBridge/AbstractAudioFile.hpp>
+#import <taglib/mp4file.h>
 
 namespace AudioFile {
-    struct OggFLAC final: public AbstractAudioFile<TagLib::Ogg::FLAC::File> {
+    struct MP4 final: public AbstractAudioFile<TagLib::MP4::File> {
     public:
         using AbstractAudioFile::AbstractAudioFile;
     protected:
-        using FileType = TagLib::Ogg::FLAC::File;
+        using FileType = TagLib::MP4::File;
 
         void read_metadata_implementation(
             FileType &file,
@@ -15,12 +15,12 @@ namespace AudioFile {
             const MetadataOverlayStrategy overlayStrategy
         ) const {
             if (file.tag()) {
-                metadata->overlay(AudioMetadata::read_from_XiphComment(file.tag()), overlayStrategy);
+                metadata->overlay(AudioMetadata::read_from_MP4_tag(file.tag()), overlayStrategy);
             }
         }
 
         void write_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
-            metadata->write_to_XiphComment(file.tag());
+            metadata->write_to_MP4_tag(file.tag());
         }
     };
 }

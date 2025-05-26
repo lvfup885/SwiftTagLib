@@ -1,5 +1,5 @@
 
-#import "AudioMetadata.hpp"
+#import <CxxTagLibBridge/AudioMetadata.hpp>
 #import <taglib/id3v2frame.h>
 #import <taglib/attachedpictureframe.h>
 #import <taglib/popularimeterframe.h>

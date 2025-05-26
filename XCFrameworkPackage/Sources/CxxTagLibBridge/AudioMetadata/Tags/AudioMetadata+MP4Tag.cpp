@@ -1,6 +1,5 @@
 
-#import "AudioMetadata.hpp"
-#import "Logging.hpp"
+#import <CxxTagLibBridge/AudioMetadata.hpp>
 
 // MARK: - Keys
 namespace MetadataKey {

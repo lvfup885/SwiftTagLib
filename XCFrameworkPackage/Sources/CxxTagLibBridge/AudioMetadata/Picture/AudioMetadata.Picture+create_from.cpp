@@ -1,5 +1,5 @@
 
-#import "AudioMetadata.hpp"
+#import <CxxTagLibBridge/AudioMetadata.hpp>
 
 /// builds `AudioMetadata::Picture` from `TagLib::FLAC::Picture`.
 AudioMetadata::Picture AudioMetadata::Picture::create_from_FLACPicture(const TagLib::FLAC::Picture *flacPicture) {

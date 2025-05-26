@@ -1,5 +1,5 @@
 
-#import "AudioMetadata.hpp"
+#import <CxxTagLibBridge/AudioMetadata.hpp>
 #import <CoreFoundation/CoreFoundation.h>
 #import <ImageIO/ImageIO.h>
 

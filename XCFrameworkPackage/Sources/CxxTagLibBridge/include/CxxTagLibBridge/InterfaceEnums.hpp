@@ -1,4 +1,6 @@
 
+#import <stdint.h>
+
 // MARK: - Outcomes
 /// Tells the API consumer the outcome of `readMetadata` method.
 enum class MetadataReadingOutcome: uint8_t {

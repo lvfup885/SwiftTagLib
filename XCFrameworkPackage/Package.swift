@@ -110,6 +110,14 @@ let taglibBridge = Target.target(
     name: "CxxTagLibBridge",
     dependencies: [
         taglib.asDependency,
+    ],
+    publicHeadersPath: "include",
+    cxxSettings: [
+        .headerSearchPath("include/CxxTagLibBridge")
+    ],
+    linkerSettings: [
+        .linkedFramework("CoreFoundation"),
+        .linkedFramework("ImageIO"),
     ]
 )
 /// Swift facade

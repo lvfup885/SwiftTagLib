@@ -4,36 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/CxxTagLibBridge.h</key>
-		<data>
-		Q/xqS2ZSvAHupVPg1a8LH2Fenmg=
-		</data>
 		<key>Info.plist</key>
 		<data>
-		ZPTZzZw3y7IIWfYFPh40jsWfhFA=
-		</data>
-		<key>Modules/module.modulemap</key>
-		<data>
-		I0jB2Xb68D+d0k4RqMgoSi9kVLM=
+		AZgG6FiURh2ADhUQdeurtgU+lVQ=
 		</data>
 	</dict>
 	<key>files2</key>
-	<dict>
-		<key>Headers/CxxTagLibBridge.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			FiHr5zqaALXps/VO4SvbEFl6ffnrGab64eewIeN0Zk8=
-			</data>
-		</dict>
-		<key>Modules/module.modulemap</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			xahfEvWV1aBb6JCjlbogal9mLWou66qASB5oPhsufIo=
-			</data>
-		</dict>
-	</dict>
+	<dict/>
 	<key>rules</key>
 	<dict>
 		<key>^.*</key>

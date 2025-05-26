@@ -1,20 +1,22 @@
 
-#import "AbstractAudioFile.hpp"
-#import <taglib/dsffile.h>
+#import <CxxTagLibBridge/AbstractAudioFile.hpp>
+#import <taglib/aifffile.h>
 
 namespace AudioFile {
-    struct DSF final: public AbstractAudioFile<TagLib::DSF::File> {
+    struct AIFF final: public AbstractAudioFile<TagLib::RIFF::AIFF::File> {
     public:
         using AbstractAudioFile::AbstractAudioFile;
     protected:
-        using FileType = TagLib::DSF::File;
+        using FileType = TagLib::RIFF::AIFF::File;
 
         void read_metadata_implementation(
             FileType &file,
             AudioMetadata *metadata,
             const MetadataOverlayStrategy overlayStrategy
         ) const {
-            metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.tag()), overlayStrategy);
+            if (file.tag()) {
+                metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.tag()), overlayStrategy);
+            }
         }
 
         void write_metadata_implementation(FileType &file, AudioMetadata *metadata) const {

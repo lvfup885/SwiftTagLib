@@ -1,38 +1,32 @@
 
-#import "AbstractAudioFile.hpp"
-#import <taglib/mpegfile.h>
+#import <CxxTagLibBridge/AbstractAudioFile.hpp>
+#import <taglib/wavpackfile.h>
 
 namespace AudioFile {
-    struct MP3 final: public AbstractAudioFile<TagLib::MPEG::File> {
+    struct WavPack final: public AbstractAudioFile<TagLib::WavPack::File> {
     public:
         using AbstractAudioFile::AbstractAudioFile;
     protected:
-        using FileType = TagLib::MPEG::File;
+        using FileType = TagLib::WavPack::File;
 
         void read_metadata_implementation(
             FileType &file,
             AudioMetadata *metadata,
             const MetadataOverlayStrategy overlayStrategy
         ) const {
-            if (file.hasAPETag()) {
-                metadata->overlay(AudioMetadata::read_from_APE_tag(file.APETag()), overlayStrategy);
-            }
             if (file.hasID3v1Tag()) {
                 metadata->overlay(AudioMetadata::read_from_ID3v1_tag(file.ID3v1Tag()), overlayStrategy);
             }
-            if (file.hasID3v2Tag()) {
-                metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.ID3v2Tag()), overlayStrategy);
+            if (file.hasAPETag()) {
+                metadata->overlay(AudioMetadata::read_from_APE_tag(file.APETag()), overlayStrategy);
             }
         }
 
         void write_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
-            if (file.hasAPETag()) {
-                metadata->write_to_APE_tag(file.APETag(true));
-            }
             if (file.hasID3v1Tag()) {
                 metadata->write_to_ID3v1_tag(file.ID3v1Tag());
             }
-            metadata->write_to_ID3v2_tag(file.ID3v2Tag(true));
+            metadata->write_to_APE_tag(file.APETag(true));
         }
     };
 }

@@ -1,5 +1,5 @@
 
-#import "AudioMetadata.hpp"
+#import <CxxTagLibBridge/AudioMetadata.hpp>
 
 /// convenience method to combine `AudioMetadata` as layers.
 void AudioMetadata::overlay(const AudioMetadata layer, const MetadataOverlayStrategy strategy) {

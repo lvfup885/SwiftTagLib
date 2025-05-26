@@ -1,5 +1,5 @@
 
-#import "AudioMetadata.hpp"
+#import <CxxTagLibBridge/AudioMetadata.hpp>
 
 /// constructor for `AudioMetadata` from `TagLib::ID3v1::Tag`.
 AudioMetadata AudioMetadata::read_from_ID3v1_tag(const TagLib::ID3v1::Tag *tag) {

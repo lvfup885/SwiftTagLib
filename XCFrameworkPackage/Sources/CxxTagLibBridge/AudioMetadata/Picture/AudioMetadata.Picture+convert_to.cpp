@@ -1,5 +1,5 @@
 
-#import "AudioMetadata.hpp"
+#import <CxxTagLibBridge/AudioMetadata.hpp>
 
 // MARK: - Format specific picture builders
 /// Build `TagLib::FLAC::Picture` and returns it wrapped in `std::unique_ptr`.

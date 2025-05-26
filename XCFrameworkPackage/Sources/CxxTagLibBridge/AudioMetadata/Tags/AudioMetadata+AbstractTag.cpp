@@ -1,5 +1,5 @@
 
-#import "AudioMetadata.hpp"
+#import <CxxTagLibBridge/AudioMetadata.hpp>
 #import <string_view>
 
 /// constructor for `AudioMetadata` from **abstract** `TagLib::Tag`.

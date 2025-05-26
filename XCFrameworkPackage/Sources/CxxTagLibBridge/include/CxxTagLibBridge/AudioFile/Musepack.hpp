@@ -1,13 +1,13 @@
 
-#import "AbstractAudioFile.hpp"
-#import <taglib/apefile.h>
+#import <CxxTagLibBridge/AbstractAudioFile.hpp>
+#import <taglib/mpcfile.h>
 
 namespace AudioFile {
-    struct MonkeyAudio final: public AbstractAudioFile<TagLib::APE::File> {
+    struct Musepack final: public AbstractAudioFile<TagLib::MPC::File> {
     public:
         using AbstractAudioFile::AbstractAudioFile;
     protected:
-        using FileType = TagLib::APE::File;
+        using FileType = TagLib::MPC::File;
 
         void read_metadata_implementation(
             FileType &file,

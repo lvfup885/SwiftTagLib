@@ -1,5 +1,5 @@
 
-#import "AbstractAudioFile.hpp"
+#import <CxxTagLibBridge/AbstractAudioFile.hpp>
 #import <taglib/speexfile.h>
 
 namespace AudioFile {

@@ -1,5 +1,5 @@
 
-#import "AbstractAudioFile.hpp"
+#import <CxxTagLibBridge/AbstractAudioFile.hpp>
 #import <taglib/trueaudiofile.h>
 
 namespace AudioFile {
