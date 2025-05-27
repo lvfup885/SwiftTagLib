@@ -3,7 +3,7 @@
 #import <string_view>
 
 /// constructor for `AudioMetadata` from **abstract** `TagLib::Tag`.
-AudioMetadata AudioMetadata::read_from_tag(const TagLib::Tag *tag) {
+AudioMetadata AudioMetadata::read_from_tag(const TagLib::Tag *tag, const MetadataReadingOptions options) {
     auto optional_if_empty = [](const char* string) -> std::optional<std::string> {
         return (!std::string_view(string).empty()) ? std::optional<std::string>(string) : std::nullopt;
     };

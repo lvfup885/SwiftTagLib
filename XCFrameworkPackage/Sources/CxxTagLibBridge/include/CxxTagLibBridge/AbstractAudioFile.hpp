@@ -26,6 +26,7 @@ namespace AudioFile {
         MetadataReadingOutcome readMetadata(
             AudioMetadata *metadata,
             AudioProperties *properties,
+            const MetadataReadingOptions options,
             const MetadataOverlayStrategy overlayStrategy,
             std::string *errorDescription
         ) const {
@@ -40,7 +41,7 @@ namespace AudioFile {
                     taglib_bridge_log(Error, "file is not valid: %s", fileName.c_str());
                     return MetadataReadingOutcome::invalidFile;
                 }
-                read_metadata_implementation(file, metadata, overlayStrategy);
+                read_metadata_implementation(file, metadata, options, overlayStrategy);
                 if (file.audioProperties()) {
                     properties->fillFromProperties(*file.audioProperties());
                 }
@@ -104,6 +105,7 @@ namespace AudioFile {
         virtual void read_metadata_implementation(
             FileType &file,
             AudioMetadata *metadata,
+            const MetadataReadingOptions options,
             const MetadataOverlayStrategy overlayStrategy
         ) const = 0;
         /// Format specific internal `write` metadata implementation.

@@ -66,7 +66,7 @@ namespace MetadataKey {
 
 // MARK: - Read
 /// constructor for `AudioMetadata` from `TagLib::APE::Tag`.
-AudioMetadata AudioMetadata::read_from_APE_tag(const TagLib::APE::Tag *tag) {
+AudioMetadata AudioMetadata::read_from_APE_tag(const TagLib::APE::Tag *tag, const MetadataReadingOptions options) {
     auto metadata = AudioMetadata();
     if (tag->isEmpty()) {
         return metadata;
@@ -149,6 +149,10 @@ AudioMetadata AudioMetadata::read_from_APE_tag(const TagLib::APE::Tag *tag) {
             }
         } else if(TagLib::APE::Item::Binary == item.type()) {
             if (key == Key::coverArtFront || key == Key::coverArtBack) {
+                /// if theres no need to read images skip this step.
+                if (options & MetadataReadingOptions::skipImages) {
+                    continue;
+                }
                 auto picture = AudioMetadata::Picture::create_from_APEPicture(item, key);
                 if (picture.has_value()) {
                     metadata.attachedPictures.push_back(picture.value());

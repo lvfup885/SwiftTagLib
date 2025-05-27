@@ -2,8 +2,8 @@
 #import <CxxTagLibBridge/AudioMetadata.hpp>
 
 /// constructor for `AudioMetadata` from `TagLib::ID3v1::Tag`.
-AudioMetadata AudioMetadata::read_from_ID3v1_tag(const TagLib::ID3v1::Tag *tag) {
-    auto metadata = AudioMetadata::read_from_tag(tag);
+AudioMetadata AudioMetadata::read_from_ID3v1_tag(const TagLib::ID3v1::Tag *tag, const MetadataReadingOptions options) {
+    auto metadata = AudioMetadata::read_from_tag(tag, options);
     metadata.tagSource |= TagSource::ID3v1;
     return metadata;
 }

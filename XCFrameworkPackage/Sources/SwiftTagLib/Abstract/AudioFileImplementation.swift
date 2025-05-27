@@ -8,6 +8,7 @@ protocol AudioFileImplementation {
     func readMetadata(
         _ metadata: UnsafeMutablePointer<AudioMetadata>!,
         _ properties: UnsafeMutablePointer<AudioProperties>!,
+        _ options: MetadataReadingOptions,
         _ overlayStrategy: MetadataOverlayStrategy,
         _ errorDescription: UnsafeMutablePointer<std.string>!
     ) -> MetadataReadingOutcome

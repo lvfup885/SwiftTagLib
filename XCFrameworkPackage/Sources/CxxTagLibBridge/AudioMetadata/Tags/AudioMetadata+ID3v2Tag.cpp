@@ -44,8 +44,8 @@ namespace MetadataKey {
 
 // MARK: - Read
 /// constructor for `AudioMetadata` from `TagLib::ID3v2::Tag`.
-AudioMetadata AudioMetadata::read_from_ID3v2_tag(const TagLib::ID3v2::Tag *tag) {
-    AudioMetadata metadata = AudioMetadata::read_from_tag(tag);
+AudioMetadata AudioMetadata::read_from_ID3v2_tag(const TagLib::ID3v2::Tag *tag, const MetadataReadingOptions options) {
+    AudioMetadata metadata = AudioMetadata::read_from_tag(tag, options);
     metadata.tagSource |= TagSource::ID3v2;
 
     using Key = MetadataKey::ID3v2;
@@ -168,6 +168,11 @@ AudioMetadata AudioMetadata::read_from_ID3v2_tag(const TagLib::ID3v2::Tag *tag) 
     read_user_string(Key::mcn, &Type::mediaCatalogNumber);
     read_user_string(Key::musicBrainzReleaseID, &Type::musicBrainzReleaseID);
     read_user_string(Key::musicBrainzRecordingID, &Type::musicBrainzRecordingID);
+
+    /// if there's no need to read images exit early.
+    if (options & MetadataReadingOptions::skipImages) {
+        return metadata;
+    }
 
     for (auto iterator: tag->frameListMap()[Key::pictures]) {
         TagLib::ID3v2::AttachedPictureFrame *frame = dynamic_cast<TagLib::ID3v2::AttachedPictureFrame *>(iterator);

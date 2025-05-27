@@ -6,4 +6,4 @@ SWIFT_VERSION = 5.9
 HEADER_SEARCH_PATHS = ./cxxheaders/utfcpp/ ./cxxheaders/taglib/ ./cxxheaders/cxx-tag-lib-bridge/
 OTHER_LDFLAGS = $(inherited) \
     -framework CoreFoundation \
-    -framework ImageIO \
+    -framework ImageIO

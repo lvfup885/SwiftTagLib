@@ -12,10 +12,11 @@ namespace AudioFile {
         void read_metadata_implementation(
             FileType &file,
             AudioMetadata *metadata,
+            const MetadataReadingOptions options,
             const MetadataOverlayStrategy overlayStrategy
         ) const {
             if (file.tag()) {
-                metadata->overlay(AudioMetadata::read_from_XiphComment(file.tag()), overlayStrategy);
+                metadata->overlay(AudioMetadata::read_from_XiphComment(file.tag(), options), overlayStrategy);
             }
         }
 

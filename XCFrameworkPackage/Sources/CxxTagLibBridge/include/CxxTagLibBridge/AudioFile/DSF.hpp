@@ -12,9 +12,10 @@ namespace AudioFile {
         void read_metadata_implementation(
             FileType &file,
             AudioMetadata *metadata,
+            const MetadataReadingOptions options,
             const MetadataOverlayStrategy overlayStrategy
         ) const {
-            metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.tag()), overlayStrategy);
+            metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.tag(), options), overlayStrategy);
         }
 
         void write_metadata_implementation(FileType &file, AudioMetadata *metadata) const {

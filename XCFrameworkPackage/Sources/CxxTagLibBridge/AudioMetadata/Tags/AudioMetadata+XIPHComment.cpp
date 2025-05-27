@@ -67,7 +67,7 @@ namespace MetadataKey {
 
 // MARK: - Read
 /// constructor for `AudioMetadata` from `TagLib::Ogg::XiphComment`.
-AudioMetadata AudioMetadata::read_from_XiphComment(const TagLib::Ogg::XiphComment *tag) {
+AudioMetadata AudioMetadata::read_from_XiphComment(const TagLib::Ogg::XiphComment *tag, const MetadataReadingOptions options) {
     auto metadata = AudioMetadata();
     if (tag->isEmpty()) {
         return metadata;
@@ -152,6 +152,11 @@ AudioMetadata AudioMetadata::read_from_XiphComment(const TagLib::Ogg::XiphCommen
 
     if (!additionalMetadata.empty()) {
         metadata.additional = additionalMetadata;
+    }
+
+    /// if there's no need to read images exit early.
+    if (options & MetadataReadingOptions::skipImages) {
+        return metadata;
     }
 
     for (auto iterator: const_cast<TagLib::Ogg::XiphComment *>(tag)->pictureList()) {

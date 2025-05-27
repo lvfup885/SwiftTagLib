@@ -12,13 +12,14 @@ namespace AudioFile {
         void read_metadata_implementation(
             FileType &file,
             AudioMetadata *metadata,
+            const MetadataReadingOptions options,
             const MetadataOverlayStrategy overlayStrategy
         ) const {
             if (file.hasDIINTag()) {
-                metadata->overlay(AudioMetadata::read_from_tag(file.DIINTag()), overlayStrategy);
+                metadata->overlay(AudioMetadata::read_from_tag(file.DIINTag(), options), overlayStrategy);
             }
             if (file.hasID3v2Tag()) {
-                metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.ID3v2Tag()), overlayStrategy);
+                metadata->overlay(AudioMetadata::read_from_ID3v2_tag(file.ID3v2Tag(), options), overlayStrategy);
             }
         }
 

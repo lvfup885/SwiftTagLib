@@ -15,6 +15,7 @@ public struct AudioFile {
     /// attempts to create `AudioFile` from `URL`.
     public init(
         url: URL,
+        options: Metadata.ReadingOptions = [],
         overlayStrategy: Metadata.OverlayStrategy = .override
     ) throws(InitializationError) {
         guard let format = try Format.Detector.format(at: url) else {
@@ -25,6 +26,7 @@ public struct AudioFile {
         let (metadata, properties) = try Metadata.readMetadataAndProperties(
             from: url,
             format: format,
+            options: options,
             overlayStrategy: overlayStrategy
         )
         self.metadata = metadata

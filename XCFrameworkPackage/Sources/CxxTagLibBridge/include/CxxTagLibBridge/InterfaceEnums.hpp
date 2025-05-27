@@ -23,6 +23,12 @@ enum class MetadataWritingOutcome: uint8_t {
     success
 };
 
+// MARK: - Reading Options
+/// Influences how `AudioMetadata` is read.
+enum MetadataReadingOptions: uint32_t {
+    skipImages = 1 << 0
+};
+
 // MARK: - Overlay Strategy
 /// Influences how duplicate fields are being handled when overlaying one `AudioMetadata` with another.
 enum class MetadataOverlayStrategy: uint8_t {

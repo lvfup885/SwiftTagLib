@@ -28,8 +28,8 @@ namespace MetadataKey {
 
 // MARK: - Read
 /// constructor for `AudioMetadata` from `TagLib::MP4::Tag`.
-AudioMetadata AudioMetadata::read_from_MP4_tag(const TagLib::MP4::Tag *tag) {
-    AudioMetadata metadata = AudioMetadata::read_from_tag(tag);
+AudioMetadata AudioMetadata::read_from_MP4_tag(const TagLib::MP4::Tag *tag, const MetadataReadingOptions options) {
+    AudioMetadata metadata = AudioMetadata::read_from_tag(tag, options);
     metadata.tagSource |= TagSource::MP4;
 
     using Key = MetadataKey::MP4;
@@ -99,6 +99,11 @@ AudioMetadata AudioMetadata::read_from_MP4_tag(const TagLib::MP4::Tag *tag) {
     read_string(Key::mcn, &Type::mediaCatalogNumber);
     read_string(Key::musicBrainzReleaseID, &Type::musicBrainzReleaseID);
     read_string(Key::musicBrainzRecordingID, &Type::musicBrainzRecordingID);
+
+    /// if there's no need to read images exit early.
+    if (options & MetadataReadingOptions::skipImages) {
+        return metadata;
+    }
 
     // Album art
     if (tag->contains(Key::pictures)) {

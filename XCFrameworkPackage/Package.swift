@@ -12,6 +12,7 @@ extension Target {
 // MARK: - Configuration
 let swiftSettings: [SwiftSetting] = [
     .interoperabilityMode(.Cxx),
+//    .unsafeFlags(["-enable-library-evolution"]),
 //    .define("ImageDataTransformationEnabled"),
 ]
 

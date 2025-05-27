@@ -8,11 +8,14 @@ extension AudioFile.Metadata {
         /// string properties
         for keyPath in Self.stringProperties {
             let string = UUID().uuidString.replacingOccurrences(of: "-", with: "")
-            /// ID3v1 imposes 128 bytes limitation on fields
-            /// which is 30 characters: or approximately 28 ASCII characters + 2 bytes of language code.
-            /// Going over this character limit currently only fails test for mp3 file,
-            /// indicating the limit dependes on actual format implementation
-            metadata[keyPath: keyPath] = String(string.prefix(28))
+            /**
+             This note is now **redundant unless** `AudioFile.Metadata.OverlayStrategy.graceful` is used.
+             ID3v1 imposes 128 bytes limitation on fields which is 30 characters:
+             or approximately 28 ASCII characters + 2 bytes of language code.
+             Going over this character limit currently only fails test for mp3 file,
+             indicating the limit dependes on actual format implementation
+             */
+            metadata[keyPath: keyPath] = string
         }
         /// int propeties
         metadata.trackTotal = Int32.random(in: 1 ... 255) // or 200

@@ -220,6 +220,7 @@ extension AudioFile.Metadata {
     static func readMetadataAndProperties(
         from url: URL,
         format: AudioFile.Format,
+        options: ReadingOptions,
         overlayStrategy: OverlayStrategy,
     ) throws(AudioFile.InitializationError) -> (metadata: Self, properties: AudioFile.Properties) {
         var metadata = AudioMetadata()
@@ -229,6 +230,7 @@ extension AudioFile.Metadata {
         let outcome = implementation.readMetadata(
             &metadata,
             &properties,
+            options.cxxRepresentation,
             overlayStrategy.cxxRepresentation,
             &errorDescription
         )

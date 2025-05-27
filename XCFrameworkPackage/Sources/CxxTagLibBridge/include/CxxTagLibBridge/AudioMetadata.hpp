@@ -12,7 +12,7 @@
 #import <taglib/attachedpictureframe.h>
 #import "InterfaceEnums.hpp"
 
-/// Attempts to combine different [Tags](https://taglib.org/api/classTagLib_1_1Tag.html) into single interace.
+/// Attempts to combine different [Tags](https://taglib.org/api/classTagLib_1_1Tag.html) into single interface.
 struct AudioMetadata final {
     /// Macro to escape writing boilerplate for `setter` for `Swift` & `C++` **Interoperability**.
     /// Quircks:
@@ -143,27 +143,27 @@ public:
     AdditionalMetadata additional;
 
     // MARK: - Abstract Tag
-    static AudioMetadata read_from_tag(const TagLib::Tag *tag);
+    static AudioMetadata read_from_tag(const TagLib::Tag *tag, const MetadataReadingOptions options);
     void write_to_tag(TagLib::Tag *tag) const;
 
     // MARK: - ID3v1 Tag
-    static AudioMetadata read_from_ID3v1_tag(const TagLib::ID3v1::Tag *tag);
+    static AudioMetadata read_from_ID3v1_tag(const TagLib::ID3v1::Tag *tag, const MetadataReadingOptions options);
     void write_to_ID3v1_tag(TagLib::ID3v1::Tag *tag) const;
 
     // MARK: - ID3v2 Tag
-    static AudioMetadata read_from_ID3v2_tag(const TagLib::ID3v2::Tag *tag);
+    static AudioMetadata read_from_ID3v2_tag(const TagLib::ID3v2::Tag *tag, const MetadataReadingOptions options);
     void write_to_ID3v2_tag(TagLib::ID3v2::Tag *tag, bool shouldWritePictures = true) const;
 
     // MARK: - Xiph Comment
-    static AudioMetadata read_from_XiphComment(const TagLib::Ogg::XiphComment *tag);
+    static AudioMetadata read_from_XiphComment(const TagLib::Ogg::XiphComment *tag, const MetadataReadingOptions options);
     void write_to_XiphComment(TagLib::Ogg::XiphComment *tag, bool shouldWritePictures = true) const;
 
     // MARK: - APE Tag
-    static AudioMetadata read_from_APE_tag(const TagLib::APE::Tag *tag);
+    static AudioMetadata read_from_APE_tag(const TagLib::APE::Tag *tag, const MetadataReadingOptions options);
     void write_to_APE_tag(TagLib::APE::Tag *tag, bool shouldWritePictures = true) const;
 
     // MARK: - MP4 Tag
-    static AudioMetadata read_from_MP4_tag(const TagLib::MP4::Tag *tag);
+    static AudioMetadata read_from_MP4_tag(const TagLib::MP4::Tag *tag, const MetadataReadingOptions options);
     void write_to_MP4_tag(TagLib::MP4::Tag *tag, bool shouldWritePictures = true) const;
 
     // MARK: - Utility
