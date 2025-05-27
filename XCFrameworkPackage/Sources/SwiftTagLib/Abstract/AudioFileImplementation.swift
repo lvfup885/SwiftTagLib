@@ -6,16 +6,16 @@ protocol AudioFileImplementation {
     init(_ fileName: std.string)
 
     func readMetadata(
-        _ metadata: UnsafeMutablePointer<AudioMetadata>!,
-        _ properties: UnsafeMutablePointer<AudioProperties>!,
+        _ metadata: UnsafeMutablePointer<AudioMetadata>,
+        _ properties: UnsafeMutablePointer<AudioProperties>,
         _ options: MetadataReadingOptions,
         _ overlayStrategy: MetadataOverlayStrategy,
-        _ errorDescription: UnsafeMutablePointer<std.string>!
+        _ errorDescription: UnsafeMutablePointer<std.string>
     ) -> MetadataReadingOutcome
 
     func writeMetadata(
-        _ metadata: UnsafeMutablePointer<AudioMetadata>!,
-        _ errorDescription: UnsafeMutablePointer<std.string>!
+        _ metadata: UnsafeMutablePointer<AudioMetadata>,
+        _ errorDescription: UnsafeMutablePointer<std.string>
     ) -> MetadataWritingOutcome
 }
 

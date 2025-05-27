@@ -24,11 +24,11 @@ namespace AudioFile {
         virtual ~AbstractAudioFile() = default;
         /// Reads `AudioMetadata` & `AudioProperties` from file.
         MetadataReadingOutcome readMetadata(
-            AudioMetadata *metadata,
-            AudioProperties *properties,
+            AudioMetadata * _Nonnull metadata,
+            AudioProperties * _Nonnull properties,
             const MetadataReadingOptions options,
             const MetadataOverlayStrategy overlayStrategy,
-            std::string *errorDescription
+            std::string * _Nonnull errorDescription
         ) const {
             try {
                 TagLib::FileStream stream(fileName.c_str(), true);
@@ -64,8 +64,8 @@ namespace AudioFile {
         }
         /// Writes `AudioMetadata` to the file.
         MetadataWritingOutcome writeMetadata(
-            AudioMetadata *metadata,
-            std::string *errorDescription
+            AudioMetadata * _Nonnull metadata,
+            std::string * _Nonnull errorDescription
         ) const {
             try {
                 TagLib::FileStream stream(fileName.c_str());
@@ -104,14 +104,14 @@ namespace AudioFile {
         /// Format specific internal `read` metadata implementation.
         virtual void read_metadata_implementation(
             FileType &file,
-            AudioMetadata *metadata,
+            AudioMetadata * _Nonnull metadata,
             const MetadataReadingOptions options,
             const MetadataOverlayStrategy overlayStrategy
         ) const = 0;
         /// Format specific internal `write` metadata implementation.
         virtual void write_metadata_implementation(
             FileType &file,
-            AudioMetadata *metadata
+            AudioMetadata * _Nonnull metadata
         ) const = 0;
     };
 }
