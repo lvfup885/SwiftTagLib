@@ -1,6 +1,10 @@
+<div align=center>
+<img src="./assets/SwiftTagLib.png" width="20%"/>
 
 # SwiftTagLib
-![Swift Version](https://img.shields.io/badge/Swift-5.9+-orange.svg) ![iOS Version](https://img.shields.io/badge/iOS-17+-orange.svg)
+![Swift Version](https://img.shields.io/badge/Swift-5.9+-orange.svg) ![iOS Version](https://img.shields.io/badge/iOS-16+-orange.svg)
+
+</div>
 
 A library to read and write **Metadata** in audio files.
 Built on top of [`taglib`](https://github.com/taglib/taglib).
@@ -37,6 +41,10 @@ audioFile.metadata.attachedPictures = [
 try audioFile.write()
 ```
 
+> [!WARNING] 
+> This library does not state or guarantee ABI stability despite packaging `XCFramework`'s.
+> Whenever the version changes you should recompile.
+
 ## Note on C++ Interoprability
 
 This library is done using [Swift C++ Interop](https://www.swift.org/documentation/cxx-interop/) (there are some [limitations](https://www.swift.org/documentation/cxx-interop/status/) to consider).
@@ -64,6 +72,6 @@ This library would not be possible without any of this libraries:
 - [taglib](https://github.com/taglib/taglib)
 - [utfcpp](https://github.com/nemtrif/utfcpp)
 
-## Notes:
+## Notes
 
 - [WMA](https://en.wikipedia.org/wiki/Advanced_Systems_Format) file format is supported by taglib [here](https://taglib.org/api/namespaceTagLib_1_1ASF.html#details), but not `SFBAudioEngine`, can probably try to support it even though it's outdated.
