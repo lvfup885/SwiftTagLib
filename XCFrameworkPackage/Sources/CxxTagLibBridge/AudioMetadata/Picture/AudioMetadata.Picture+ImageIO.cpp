@@ -3,9 +3,26 @@
 #import <CoreFoundation/CoreFoundation.h>
 #import <ImageIO/ImageIO.h>
 
+/// Creates `AudioMetadata::Picture` from `CFDataRef data`, `std::string description` and `Kind kind`.
+AudioMetadata::Picture AudioMetadata::Picture::create_from_CFData(
+    CFDataRef data,
+    std::string description,
+    Kind kind
+) {
+    const UInt8 *bytes = CFDataGetBytePtr(data);
+    CFIndex length = CFDataGetLength(data);
+    auto buffer = Picture::Bytes(bytes, bytes + length);
+    return {
+        .bytes = std::move(buffer),
+        .size = static_cast<unsigned int>(length),
+        .description = description,
+        .kind = kind
+    };
+}
+
 /// Attempts to extract `MIME type` from raw image `bytes`, if fails returns empty string.
 AudioMetadata::Picture::MIMEType AudioMetadata::Picture::mime_type() {
-    auto data = CFDataCreate(nullptr, reinterpret_cast<const UInt8*>(bytes.data()), size);
+    auto data = CFDataCreate(kCFAllocatorDefault, reinterpret_cast<const UInt8*>(bytes.data()), size);
     auto imageSource = CGImageSourceCreateWithData(data, nullptr);
     std::string mimeType;
     if (imageSource) {
@@ -30,7 +47,7 @@ AudioMetadata::Picture::MIMEType AudioMetadata::Picture::mime_type() {
 /// Attempts to extract `MIME type, pixel width & height, color depth` from raw image `bytes`,
 /// if fails returns empty string and 0's.
 AudioMetadata::Picture::Properties AudioMetadata::Picture::properties() {
-    auto data = CFDataCreate(nullptr, reinterpret_cast<const UInt8*>(bytes.data()), size);
+    auto data = CFDataCreate(kCFAllocatorDefault, reinterpret_cast<const UInt8*>(bytes.data()), size);
     auto imageSource = CGImageSourceCreateWithData(data, nullptr);
     std::string mimeType;
     int width, height, depth;

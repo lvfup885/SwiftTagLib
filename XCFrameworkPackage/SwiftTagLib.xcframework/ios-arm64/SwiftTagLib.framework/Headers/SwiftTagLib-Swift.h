@@ -4160,27 +4160,6 @@ SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8metadataAC8MetadataVvg(SWIFT_INDIRE
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8metadataAC8MetadataVvs(const void * _Nonnull value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV10propertiesAC10PropertiesVvg(SWIFT_INDIRECT_RESULT void * _Nonnull, SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 // Stub struct to be used to pass/return values to/from Swift functions.
-struct swift_interop_returnStub_SwiftTagLib_void_ptr_0_8 {
-  void * _Nullable _1;
-};
-
-static SWIFT_C_INLINE_THUNK void swift_interop_returnDirect_SwiftTagLib_void_ptr_0_8(char * _Nonnull result, struct swift_interop_returnStub_SwiftTagLib_void_ptr_0_8 value) {
-  memcpy(result + 0, &value._1, 8);
-}
-
-SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_void_ptr_0_8 $s11SwiftTagLib9AudioFileV6FormatO8allCasesSayAEGvgZ(void) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN ptrdiff_t $s11SwiftTagLib9AudioFileV6FormatO9hashValueSivg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN int32_t $s11SwiftTagLib9AudioFileV10PropertiesV15lengthInSecondss5Int32Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV10PropertiesV15lengthInSecondss5Int32Vvs(int32_t value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN int32_t $s11SwiftTagLib9AudioFileV10PropertiesV8channelss5Int32Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV10PropertiesV8channelss5Int32Vvs(int32_t value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN int32_t $s11SwiftTagLib9AudioFileV10PropertiesV10sampleRates5Int32Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV10PropertiesV10sampleRates5Int32Vvs(int32_t value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN int32_t $s11SwiftTagLib9AudioFileV10PropertiesV7bitrates5Int32Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV10PropertiesV7bitrates5Int32Vvs(int32_t value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN double $s11SwiftTagLib9AudioFileV10PropertiesV8durationSdvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN ptrdiff_t $s11SwiftTagLib9AudioFileV10PropertiesV9hashValueSivg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-// Stub struct to be used to pass/return values to/from Swift functions.
 struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_uint64_t_8_16 {
   uint64_t _1;
   uint64_t _2;
@@ -4284,6 +4263,15 @@ SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_uint64_t_8
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV20musicBrainzReleaseIDSSSgvs(struct swift_interop_passStub_SwiftTagLib_uint64_t_0_8_uint64_t_8_16 value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_uint64_t_8_16 $s11SwiftTagLib9AudioFileV8MetadataV22musicBrainzRecordingIDSSSgvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV22musicBrainzRecordingIDSSSgvs(struct swift_interop_passStub_SwiftTagLib_uint64_t_0_8_uint64_t_8_16 value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+// Stub struct to be used to pass/return values to/from Swift functions.
+struct swift_interop_returnStub_SwiftTagLib_void_ptr_0_8 {
+  void * _Nullable _1;
+};
+
+static SWIFT_C_INLINE_THUNK void swift_interop_returnDirect_SwiftTagLib_void_ptr_0_8(char * _Nonnull result, struct swift_interop_returnStub_SwiftTagLib_void_ptr_0_8 value) {
+  memcpy(result + 0, &value._1, 8);
+}
+
 SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_void_ptr_0_8 $s11SwiftTagLib9AudioFileV8MetadataV16attachedPicturesSayAE15AttachedPictureVGvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 // Stub struct to be used to pass/return values to/from Swift functions.
 struct swift_interop_passStub_SwiftTagLib_void_ptr_0_8 {
@@ -4314,9 +4302,6 @@ static SWIFT_C_INLINE_THUNK void swift_interop_returnDirect_SwiftTagLib_uint64_t
   memcpy(result + 8, &value._2, 8);
 }
 
-SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO11descriptionSSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO8rawValueAGSgs5UInt8V_tcfC(SWIFT_INDIRECT_RESULT void * _Nonnull, uint8_t rawValue) SWIFT_NOEXCEPT SWIFT_CALL; // init(rawValue:)
-SWIFT_EXTERN uint8_t $s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO8rawValues5UInt8Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV3keySSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV5valueSSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 // Stub struct to be used to pass/return values to/from Swift functions.
@@ -4334,12 +4319,13 @@ static SWIFT_C_INLINE_THUNK struct swift_interop_passStub_SwiftTagLib_uint64_t_0
 
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV3key5valueAGSS_SStcfC(SWIFT_INDIRECT_RESULT void * _Nonnull, struct swift_interop_passStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 key, struct swift_interop_passStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 value) SWIFT_NOEXCEPT SWIFT_CALL; // init(key:value:)
 SWIFT_EXTERN ptrdiff_t $s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV9hashValueSivg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV11descriptionSSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV4kindAG4KindOvg(SWIFT_INDIRECT_RESULT void * _Nonnull, SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN ptrdiff_t $s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV9hashValueSivg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV4KindO11descriptionSSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV4KindO8rawValueAISgs6UInt32V_tcfC(SWIFT_INDIRECT_RESULT void * _Nonnull, uint32_t rawValue) SWIFT_NOEXCEPT SWIFT_CALL; // init(rawValue:)
-SWIFT_EXTERN uint32_t $s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV4KindO8rawValues6UInt32Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO11descriptionSSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO8rawValueAGSgs5UInt8V_tcfC(SWIFT_INDIRECT_RESULT void * _Nonnull, uint8_t rawValue) SWIFT_NOEXCEPT SWIFT_CALL; // init(rawValue:)
+SWIFT_EXTERN uint8_t $s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO8rawValues5UInt8Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV10skipImagesAGvgZ(SWIFT_INDIRECT_RESULT void * _Nonnull) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN uint32_t $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValues6UInt32Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValueAGs6UInt32V_tcfC(SWIFT_INDIRECT_RESULT void * _Nonnull, uint32_t rawValue) SWIFT_NOEXCEPT SWIFT_CALL; // init(rawValue:)
+SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV11descriptionSSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8abstractAGvgZ(SWIFT_INDIRECT_RESULT void * _Nonnull) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v1AGvgZ(SWIFT_INDIRECT_RESULT void * _Nonnull) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v2AGvgZ(SWIFT_INDIRECT_RESULT void * _Nonnull) SWIFT_NOEXCEPT SWIFT_CALL; // _
@@ -4349,6 +4335,24 @@ SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV4xiphAGvgZ(SWIFT
 SWIFT_EXTERN uint8_t $s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValues5UInt8Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValueAGs5UInt8V_tcfC(SWIFT_INDIRECT_RESULT void * _Nonnull, uint8_t rawValue) SWIFT_NOEXCEPT SWIFT_CALL; // init(rawValue:)
 SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV11descriptionSSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV11descriptionSSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV4kindAG4KindOvg(SWIFT_INDIRECT_RESULT void * _Nonnull, SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN ptrdiff_t $s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV9hashValueSivg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV4KindO11descriptionSSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV4KindO8rawValueAISgs6UInt32V_tcfC(SWIFT_INDIRECT_RESULT void * _Nonnull, uint32_t rawValue) SWIFT_NOEXCEPT SWIFT_CALL; // init(rawValue:)
+SWIFT_EXTERN uint32_t $s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV4KindO8rawValues6UInt32Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_void_ptr_0_8 $s11SwiftTagLib9AudioFileV6FormatO8allCasesSayAEGvgZ(void) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN ptrdiff_t $s11SwiftTagLib9AudioFileV6FormatO9hashValueSivg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN int32_t $s11SwiftTagLib9AudioFileV10PropertiesV15lengthInSecondss5Int32Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV10PropertiesV15lengthInSecondss5Int32Vvs(int32_t value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN int32_t $s11SwiftTagLib9AudioFileV10PropertiesV8channelss5Int32Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV10PropertiesV8channelss5Int32Vvs(int32_t value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN int32_t $s11SwiftTagLib9AudioFileV10PropertiesV10sampleRates5Int32Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV10PropertiesV10sampleRates5Int32Vvs(int32_t value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN int32_t $s11SwiftTagLib9AudioFileV10PropertiesV7bitrates5Int32Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV10PropertiesV7bitrates5Int32Vvs(int32_t value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN double $s11SwiftTagLib9AudioFileV10PropertiesV8durationSdvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN ptrdiff_t $s11SwiftTagLib9AudioFileV10PropertiesV9hashValueSivg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV12CxxExceptionV4kindAE4KindOvg(SWIFT_INDIRECT_RESULT void * _Nonnull, SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_uint64_t_8_16 $s11SwiftTagLib9AudioFileV12CxxExceptionV7messageSSSgvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV12CxxExceptionV4KindO8rawValueAGSgSS_tcfC(SWIFT_INDIRECT_RESULT void * _Nonnull, struct swift_interop_passStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 rawValue) SWIFT_NOEXCEPT SWIFT_CALL; // init(rawValue:)
@@ -4505,9 +4509,9 @@ public:
   using CxxException=CxxException;
   using InitializationError=InitializationError;
   using MetadataWritingError=MetadataWritingError;
-  using Metadata=Metadata;
   using Properties=Properties;
   using Format=Format;
+  using Metadata=Metadata;
 private:
   SWIFT_INLINE_THUNK AudioFile(swift::_impl::ValueWitnessTable * _Nonnull vwTable) noexcept : _storage(vwTable->size, vwTable->getAlignment()) {}
   static SWIFT_INLINE_THUNK AudioFile _make() noexcept {
@@ -4585,495 +4589,6 @@ struct implClassFor<SwiftTagLib::AudioFile> { using type = SwiftTagLib::_impl::_
 
 namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
 
-/// Describes the file format of <code>AudioFile</code>.
-namespace _impl {
-
-class _impl_Format;
-
-// Type metadata accessor for Format
-SWIFT_EXTERN swift::_impl::MetadataResponseTy $s11SwiftTagLib9AudioFileV6FormatOMa(swift::_impl::MetadataRequestTy) SWIFT_NOEXCEPT SWIFT_CALL;
-
-// Tags for resilient enum Format
-extern "C" {
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO4aiffyA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO6dsdiffyA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO3dsfyA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO4flacyA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO07monkeysD0yA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO3mp3yA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO3mp4yA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO8musepackyA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO7oggFlacyA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO7oggOpusyA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO8oggSpeexyA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO9oggVorbixyA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO04trueD0yA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO4waveyA2EmFWC;
-extern unsigned $s11SwiftTagLib9AudioFileV6FormatO7wavPackyA2EmFWC;
-}
-
-} // namespace _impl
-
-class SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO") Format final {
-public:
-  SWIFT_INLINE_THUNK ~Format() noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
-    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
-#ifdef __arm64e__
-    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
-#else
-    auto *vwTable = *vwTableAddr;
-#endif
-    vwTable->destroy(_getOpaquePointer(), metadata._0);
-  }
-  SWIFT_INLINE_THUNK Format(const Format &other) noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
-    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
-#ifdef __arm64e__
-    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
-#else
-    auto *vwTable = *vwTableAddr;
-#endif
-    _storage = swift::_impl::OpaqueStorage(vwTable->size, vwTable->getAlignment());
-    vwTable->initializeWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
-  }
-  SWIFT_INLINE_THUNK Format &operator =(const Format &other) noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
-    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
-#ifdef __arm64e__
-    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
-#else
-    auto *vwTable = *vwTableAddr;
-#endif
-    vwTable->assignWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
-  return *this;
-  }
-  SWIFT_INLINE_THUNK Format &operator =(Format &&other) = delete;
-  [[noreturn]] SWIFT_INLINE_PRIVATE_HELPER Format(Format &&) noexcept {
-  swift::_impl::_fatalError_Cxx_move_of_Swift_value_type_not_supported_yet();
-  swift::_impl::_swift_stdlib_reportFatalError("swift", 5, "C++ does not support moving a Swift value yet", 45, 0);
-  abort();
-  }
-
-  enum class cases {
-    aiff SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO4aiffyA2EmF"),
-    dsdiff SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO6dsdiffyA2EmF"),
-    dsf SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO3dsfyA2EmF"),
-    flac SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO4flacyA2EmF"),
-    monkeysAudio SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO07monkeysD0yA2EmF"),
-    mp3 SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO3mp3yA2EmF"),
-    mp4 SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO3mp4yA2EmF"),
-    musepack SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO8musepackyA2EmF"),
-    oggFlac SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO7oggFlacyA2EmF"),
-    oggOpus SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO7oggOpusyA2EmF"),
-    oggSpeex SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO8oggSpeexyA2EmF"),
-    oggVorbix SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO9oggVorbixyA2EmF"),
-    trueAudio SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO04trueD0yA2EmF"),
-    wave SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO4waveyA2EmF"),
-    wavPack SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO7wavPackyA2EmF"),
-    unknownDefault
-  };
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wc++17-extensions"  // allow use of inline static data member
-  inline const static struct _impl_aiff {  // impl struct for case aiff
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::aiff;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } aiff SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO4aiffyA2EmF");
-  SWIFT_INLINE_THUNK bool isAiff() const;
-
-  inline const static struct _impl_dsdiff {  // impl struct for case dsdiff
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::dsdiff;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } dsdiff SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO6dsdiffyA2EmF");
-  SWIFT_INLINE_THUNK bool isDsdiff() const;
-
-  inline const static struct _impl_dsf {  // impl struct for case dsf
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::dsf;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } dsf SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO3dsfyA2EmF");
-  SWIFT_INLINE_THUNK bool isDsf() const;
-
-  inline const static struct _impl_flac {  // impl struct for case flac
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::flac;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } flac SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO4flacyA2EmF");
-  SWIFT_INLINE_THUNK bool isFlac() const;
-
-  inline const static struct _impl_monkeysAudio {  // impl struct for case monkeysAudio
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::monkeysAudio;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } monkeysAudio SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO07monkeysD0yA2EmF");
-  SWIFT_INLINE_THUNK bool isMonkeysAudio() const;
-
-  inline const static struct _impl_mp3 {  // impl struct for case mp3
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::mp3;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } mp3 SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO3mp3yA2EmF");
-  SWIFT_INLINE_THUNK bool isMp3() const;
-
-  inline const static struct _impl_mp4 {  // impl struct for case mp4
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::mp4;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } mp4 SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO3mp4yA2EmF");
-  SWIFT_INLINE_THUNK bool isMp4() const;
-
-  inline const static struct _impl_musepack {  // impl struct for case musepack
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::musepack;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } musepack SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO8musepackyA2EmF");
-  SWIFT_INLINE_THUNK bool isMusepack() const;
-
-  inline const static struct _impl_oggFlac {  // impl struct for case oggFlac
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::oggFlac;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } oggFlac SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO7oggFlacyA2EmF");
-  SWIFT_INLINE_THUNK bool isOggFlac() const;
-
-  inline const static struct _impl_oggOpus {  // impl struct for case oggOpus
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::oggOpus;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } oggOpus SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO7oggOpusyA2EmF");
-  SWIFT_INLINE_THUNK bool isOggOpus() const;
-
-  inline const static struct _impl_oggSpeex {  // impl struct for case oggSpeex
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::oggSpeex;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } oggSpeex SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO8oggSpeexyA2EmF");
-  SWIFT_INLINE_THUNK bool isOggSpeex() const;
-
-  inline const static struct _impl_oggVorbix {  // impl struct for case oggVorbix
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::oggVorbix;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } oggVorbix SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO9oggVorbixyA2EmF");
-  SWIFT_INLINE_THUNK bool isOggVorbix() const;
-
-  inline const static struct _impl_trueAudio {  // impl struct for case trueAudio
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::trueAudio;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } trueAudio SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO04trueD0yA2EmF");
-  SWIFT_INLINE_THUNK bool isTrueAudio() const;
-
-  inline const static struct _impl_wave {  // impl struct for case wave
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::wave;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } wave SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO4waveyA2EmF");
-  SWIFT_INLINE_THUNK bool isWave() const;
-
-  inline const static struct _impl_wavPack {  // impl struct for case wavPack
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::wavPack;
-    }
-    SWIFT_INLINE_THUNK Format operator()() const;
-  } wavPack SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO7wavPackyA2EmF");
-  SWIFT_INLINE_THUNK bool isWavPack() const;
-
-  inline const static struct _impl_unknownDefault {  // impl struct for case unknownDefault
-    SWIFT_INLINE_THUNK constexpr operator cases() const {
-      return cases::unknownDefault;
-    }
-  } unknownDefault;
-  SWIFT_INLINE_THUNK bool isUnknownDefault() const;
-
-#pragma clang diagnostic pop
-  SWIFT_INLINE_THUNK operator cases() const {
-    auto tag = _getEnumTag();
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO4aiffyA2EmFWC) return cases::aiff;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO6dsdiffyA2EmFWC) return cases::dsdiff;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO3dsfyA2EmFWC) return cases::dsf;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO4flacyA2EmFWC) return cases::flac;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO07monkeysD0yA2EmFWC) return cases::monkeysAudio;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO3mp3yA2EmFWC) return cases::mp3;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO3mp4yA2EmFWC) return cases::mp4;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO8musepackyA2EmFWC) return cases::musepack;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO7oggFlacyA2EmFWC) return cases::oggFlac;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO7oggOpusyA2EmFWC) return cases::oggOpus;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO8oggSpeexyA2EmFWC) return cases::oggSpeex;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO9oggVorbixyA2EmFWC) return cases::oggVorbix;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO04trueD0yA2EmFWC) return cases::trueAudio;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO4waveyA2EmFWC) return cases::wave;
-    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO7wavPackyA2EmFWC) return cases::wavPack;
-    return cases::unknownDefault;
-  }
-
-  static SWIFT_INLINE_THUNK swift::Array<Format> getAllCases() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO8allCasesSayAEGvpZ");
-  SWIFT_INLINE_THUNK swift::Int getHashValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO9hashValueSivp");
-private:
-  SWIFT_INLINE_THUNK Format(swift::_impl::ValueWitnessTable * _Nonnull vwTable) noexcept : _storage(vwTable->size, vwTable->getAlignment()) {}
-  static SWIFT_INLINE_THUNK Format _make() noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
-    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
-#ifdef __arm64e__
-    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
-#else
-    auto *vwTable = *vwTableAddr;
-#endif
-    return Format(vwTable);
-  }
-  SWIFT_INLINE_THUNK const char * _Nonnull _getOpaquePointer() const noexcept { return _storage.getOpaquePointer(); }
-  SWIFT_INLINE_THUNK char * _Nonnull _getOpaquePointer() noexcept { return _storage.getOpaquePointer(); }
-
-  SWIFT_INLINE_THUNK char * _Nonnull _destructiveProjectEnumData() noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
-    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
-#ifdef __arm64e__
-    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
-#else
-    auto *vwTable = *vwTableAddr;
-#endif
-    const auto *enumVWTable = reinterpret_cast<swift::_impl::EnumValueWitnessTable *>(vwTable);
-    enumVWTable->destructiveProjectEnumData(_getOpaquePointer(), metadata._0);
-    return _getOpaquePointer();
-  }
-  SWIFT_INLINE_THUNK void _destructiveInjectEnumTag(unsigned tag) noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
-    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
-#ifdef __arm64e__
-    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
-#else
-    auto *vwTable = *vwTableAddr;
-#endif
-    const auto *enumVWTable = reinterpret_cast<swift::_impl::EnumValueWitnessTable *>(vwTable);
-    enumVWTable->destructiveInjectEnumTag(_getOpaquePointer(), tag, metadata._0);
-  }
-  SWIFT_INLINE_THUNK unsigned _getEnumTag() const noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
-    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
-#ifdef __arm64e__
-    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
-#else
-    auto *vwTable = *vwTableAddr;
-#endif
-    const auto *enumVWTable = reinterpret_cast<swift::_impl::EnumValueWitnessTable *>(vwTable);
-    return enumVWTable->getEnumTag(_getOpaquePointer(), metadata._0);
-  }
-  swift::_impl::OpaqueStorage _storage;
-  friend class _impl::_impl_Format;
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wc++17-extensions"
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wreserved-identifier"
-  typedef char $s11SwiftTagLib9AudioFileV6FormatOD;
-  static inline constexpr $s11SwiftTagLib9AudioFileV6FormatOD __swift_mangled_name = 0;
-#pragma clang diagnostic pop
-#pragma clang diagnostic pop
-};
-
-namespace _impl {
-
-class _impl_Format {
-public:
-  static SWIFT_INLINE_THUNK char * _Nonnull getOpaquePointer(Format &object) { return object._getOpaquePointer(); }
-  static SWIFT_INLINE_THUNK const char * _Nonnull getOpaquePointer(const Format &object) { return object._getOpaquePointer(); }
-  template<class T>
-  static SWIFT_INLINE_PRIVATE_HELPER Format returnNewValue(T callable) {
-    auto result = Format::_make();
-    callable(result._getOpaquePointer());
-    return result;
-  }
-  static SWIFT_INLINE_THUNK void initializeWithTake(char * _Nonnull destStorage, char * _Nonnull srcStorage) {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
-    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
-#ifdef __arm64e__
-    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
-#else
-    auto *vwTable = *vwTableAddr;
-#endif
-    vwTable->initializeWithTake(destStorage, srcStorage, metadata._0);
-  }
-};
-
-} // namespace _impl
-
-} // end namespace 
-
-namespace swift SWIFT_PRIVATE_ATTR {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wc++17-extensions"
-template<>
-struct TypeMetadataTrait<SwiftTagLib::Format> {
-  static SWIFT_INLINE_PRIVATE_HELPER void * _Nonnull getTypeMetadata() {
-    return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0)._0;
-  }
-};
-namespace _impl{
-template<>
-inline const constexpr bool isValueType<SwiftTagLib::Format> = true;
-template<>
-inline const constexpr bool isOpaqueLayout<SwiftTagLib::Format> = true;
-template<>
-struct implClassFor<SwiftTagLib::Format> { using type = SwiftTagLib::_impl::_impl_Format; };
-} // namespace
-#pragma clang diagnostic pop
-} // namespace swift
-
-namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
-
-namespace _impl {
-
-class _impl_Properties;
-
-// Type metadata accessor for Properties
-SWIFT_EXTERN swift::_impl::MetadataResponseTy $s11SwiftTagLib9AudioFileV10PropertiesVMa(swift::_impl::MetadataRequestTy) SWIFT_NOEXCEPT SWIFT_CALL;
-
-
-} // namespace _impl
-
-class SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV") Properties final {
-public:
-  SWIFT_INLINE_THUNK ~Properties() noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV10PropertiesVMa(0);
-    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
-#ifdef __arm64e__
-    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
-#else
-    auto *vwTable = *vwTableAddr;
-#endif
-    vwTable->destroy(_getOpaquePointer(), metadata._0);
-  }
-  SWIFT_INLINE_THUNK Properties(const Properties &other) noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV10PropertiesVMa(0);
-    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
-#ifdef __arm64e__
-    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
-#else
-    auto *vwTable = *vwTableAddr;
-#endif
-    _storage = swift::_impl::OpaqueStorage(vwTable->size, vwTable->getAlignment());
-    vwTable->initializeWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
-  }
-  SWIFT_INLINE_THUNK Properties &operator =(const Properties &other) noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV10PropertiesVMa(0);
-    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
-#ifdef __arm64e__
-    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
-#else
-    auto *vwTable = *vwTableAddr;
-#endif
-    vwTable->assignWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
-  return *this;
-  }
-  SWIFT_INLINE_THUNK Properties &operator =(Properties &&other) = delete;
-  [[noreturn]] SWIFT_INLINE_PRIVATE_HELPER Properties(Properties &&) noexcept {
-  swift::_impl::_fatalError_Cxx_move_of_Swift_value_type_not_supported_yet();
-  swift::_impl::_swift_stdlib_reportFatalError("swift", 5, "C++ does not support moving a Swift value yet", 45, 0);
-  abort();
-  }
-  SWIFT_INLINE_THUNK int32_t getLengthInSeconds() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV15lengthInSecondss5Int32Vvp");
-  SWIFT_INLINE_THUNK void setLengthInSeconds(int32_t value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV15lengthInSecondss5Int32Vvp");
-  SWIFT_INLINE_THUNK int32_t getChannels() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV8channelss5Int32Vvp");
-  SWIFT_INLINE_THUNK void setChannels(int32_t value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV8channelss5Int32Vvp");
-  SWIFT_INLINE_THUNK int32_t getSampleRate() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV10sampleRates5Int32Vvp");
-  SWIFT_INLINE_THUNK void setSampleRate(int32_t value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV10sampleRates5Int32Vvp");
-  SWIFT_INLINE_THUNK int32_t getBitrate() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV7bitrates5Int32Vvp");
-  SWIFT_INLINE_THUNK void setBitrate(int32_t value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV7bitrates5Int32Vvp");
-  SWIFT_INLINE_THUNK double getDuration() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV8durationSdvp");
-  SWIFT_INLINE_THUNK swift::Int getHashValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV9hashValueSivp");
-private:
-  SWIFT_INLINE_THUNK Properties(swift::_impl::ValueWitnessTable * _Nonnull vwTable) noexcept : _storage(vwTable->size, vwTable->getAlignment()) {}
-  static SWIFT_INLINE_THUNK Properties _make() noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV10PropertiesVMa(0);
-    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
-#ifdef __arm64e__
-    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
-#else
-    auto *vwTable = *vwTableAddr;
-#endif
-    return Properties(vwTable);
-  }
-  SWIFT_INLINE_THUNK const char * _Nonnull _getOpaquePointer() const noexcept { return _storage.getOpaquePointer(); }
-  SWIFT_INLINE_THUNK char * _Nonnull _getOpaquePointer() noexcept { return _storage.getOpaquePointer(); }
-
-  swift::_impl::OpaqueStorage _storage;
-  friend class _impl::_impl_Properties;
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wc++17-extensions"
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wreserved-identifier"
-  typedef char $s11SwiftTagLib9AudioFileV10PropertiesVD;
-  static inline constexpr $s11SwiftTagLib9AudioFileV10PropertiesVD __swift_mangled_name = 0;
-#pragma clang diagnostic pop
-#pragma clang diagnostic pop
-};
-
-namespace _impl {
-
-class _impl_Properties {
-public:
-  static SWIFT_INLINE_THUNK char * _Nonnull getOpaquePointer(Properties &object) { return object._getOpaquePointer(); }
-  static SWIFT_INLINE_THUNK const char * _Nonnull getOpaquePointer(const Properties &object) { return object._getOpaquePointer(); }
-  template<class T>
-  static SWIFT_INLINE_PRIVATE_HELPER Properties returnNewValue(T callable) {
-    auto result = Properties::_make();
-    callable(result._getOpaquePointer());
-    return result;
-  }
-  static SWIFT_INLINE_THUNK void initializeWithTake(char * _Nonnull destStorage, char * _Nonnull srcStorage) {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV10PropertiesVMa(0);
-    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
-#ifdef __arm64e__
-    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
-#else
-    auto *vwTable = *vwTableAddr;
-#endif
-    vwTable->initializeWithTake(destStorage, srcStorage, metadata._0);
-  }
-};
-
-} // namespace _impl
-
-} // end namespace 
-
-namespace swift SWIFT_PRIVATE_ATTR {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wc++17-extensions"
-template<>
-struct TypeMetadataTrait<SwiftTagLib::Properties> {
-  static SWIFT_INLINE_PRIVATE_HELPER void * _Nonnull getTypeMetadata() {
-    return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesVMa(0)._0;
-  }
-};
-namespace _impl{
-template<>
-inline const constexpr bool isValueType<SwiftTagLib::Properties> = true;
-template<>
-inline const constexpr bool isOpaqueLayout<SwiftTagLib::Properties> = true;
-template<>
-struct implClassFor<SwiftTagLib::Properties> { using type = SwiftTagLib::_impl::_impl_Properties; };
-} // namespace
-#pragma clang diagnostic pop
-} // namespace swift
-
-namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
-
 class SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV") AttachedPicture;
 } // end namespace 
 
@@ -5106,6 +4621,18 @@ namespace swift SWIFT_PRIVATE_ATTR {
 #pragma clang diagnostic ignored "-Wc++17-extensions"
 template<>
 inline const constexpr bool isUsableInGenericContext<SwiftTagLib::TagSource> = true;
+#pragma clang diagnostic pop
+} // namespace swift
+
+namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
+class SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV") ReadingOptions;
+} // end namespace 
+
+namespace swift SWIFT_PRIVATE_ATTR {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wc++17-extensions"
+template<>
+inline const constexpr bool isUsableInGenericContext<SwiftTagLib::ReadingOptions> = true;
 #pragma clang diagnostic pop
 } // namespace swift
 
@@ -5220,10 +4747,11 @@ public:
   SWIFT_INLINE_THUNK void setTagSource(const TagSource& value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV9tagSourceAE0bH0Vvp");
   static SWIFT_INLINE_THUNK Metadata init() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataVAEycfc");
   SWIFT_INLINE_THUNK swift::Int getHashValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV9hashValueSivp");
-  using TagSource=TagSource;
   using AttachedPicture=AttachedPicture;
-  using AdditionalMetadataPair=AdditionalMetadataPair;
+  using TagSource=TagSource;
+  using ReadingOptions=ReadingOptions;
   using OverlayStrategy=OverlayStrategy;
+  using AdditionalMetadataPair=AdditionalMetadataPair;
 private:
   SWIFT_INLINE_THUNK Metadata(swift::_impl::ValueWitnessTable * _Nonnull vwTable) noexcept : _storage(vwTable->size, vwTable->getAlignment()) {}
   static SWIFT_INLINE_THUNK Metadata _make() noexcept {
@@ -5295,6 +4823,137 @@ template<>
 inline const constexpr bool isOpaqueLayout<SwiftTagLib::Metadata> = true;
 template<>
 struct implClassFor<SwiftTagLib::Metadata> { using type = SwiftTagLib::_impl::_impl_Metadata; };
+} // namespace
+#pragma clang diagnostic pop
+} // namespace swift
+
+namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
+
+namespace _impl {
+
+class _impl_AdditionalMetadataPair;
+
+// Type metadata accessor for AdditionalMetadataPair
+SWIFT_EXTERN swift::_impl::MetadataResponseTy $s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(swift::_impl::MetadataRequestTy) SWIFT_NOEXCEPT SWIFT_CALL;
+
+
+} // namespace _impl
+
+class SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV") AdditionalMetadataPair final {
+public:
+  SWIFT_INLINE_THUNK ~AdditionalMetadataPair() noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    vwTable->destroy(_getOpaquePointer(), metadata._0);
+  }
+  SWIFT_INLINE_THUNK AdditionalMetadataPair(const AdditionalMetadataPair &other) noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    _storage = swift::_impl::OpaqueStorage(vwTable->size, vwTable->getAlignment());
+    vwTable->initializeWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
+  }
+  SWIFT_INLINE_THUNK AdditionalMetadataPair &operator =(const AdditionalMetadataPair &other) noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    vwTable->assignWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
+  return *this;
+  }
+  SWIFT_INLINE_THUNK AdditionalMetadataPair &operator =(AdditionalMetadataPair &&other) = delete;
+  [[noreturn]] SWIFT_INLINE_PRIVATE_HELPER AdditionalMetadataPair(AdditionalMetadataPair &&) noexcept {
+  swift::_impl::_fatalError_Cxx_move_of_Swift_value_type_not_supported_yet();
+  swift::_impl::_swift_stdlib_reportFatalError("swift", 5, "C++ does not support moving a Swift value yet", 45, 0);
+  abort();
+  }
+  SWIFT_INLINE_THUNK swift::String getKey() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV3keySSvp");
+  SWIFT_INLINE_THUNK swift::String getValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV5valueSSvp");
+  static SWIFT_INLINE_THUNK AdditionalMetadataPair init(const swift::String& key, const swift::String& value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV3key5valueAGSS_SStcfc");
+  SWIFT_INLINE_THUNK swift::Int getHashValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV9hashValueSivp");
+private:
+  SWIFT_INLINE_THUNK AdditionalMetadataPair(swift::_impl::ValueWitnessTable * _Nonnull vwTable) noexcept : _storage(vwTable->size, vwTable->getAlignment()) {}
+  static SWIFT_INLINE_THUNK AdditionalMetadataPair _make() noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    return AdditionalMetadataPair(vwTable);
+  }
+  SWIFT_INLINE_THUNK const char * _Nonnull _getOpaquePointer() const noexcept { return _storage.getOpaquePointer(); }
+  SWIFT_INLINE_THUNK char * _Nonnull _getOpaquePointer() noexcept { return _storage.getOpaquePointer(); }
+
+  swift::_impl::OpaqueStorage _storage;
+  friend class _impl::_impl_AdditionalMetadataPair;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wc++17-extensions"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wreserved-identifier"
+  typedef char $s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVD;
+  static inline constexpr $s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVD __swift_mangled_name = 0;
+#pragma clang diagnostic pop
+#pragma clang diagnostic pop
+};
+
+namespace _impl {
+
+class _impl_AdditionalMetadataPair {
+public:
+  static SWIFT_INLINE_THUNK char * _Nonnull getOpaquePointer(AdditionalMetadataPair &object) { return object._getOpaquePointer(); }
+  static SWIFT_INLINE_THUNK const char * _Nonnull getOpaquePointer(const AdditionalMetadataPair &object) { return object._getOpaquePointer(); }
+  template<class T>
+  static SWIFT_INLINE_PRIVATE_HELPER AdditionalMetadataPair returnNewValue(T callable) {
+    auto result = AdditionalMetadataPair::_make();
+    callable(result._getOpaquePointer());
+    return result;
+  }
+  static SWIFT_INLINE_THUNK void initializeWithTake(char * _Nonnull destStorage, char * _Nonnull srcStorage) {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    vwTable->initializeWithTake(destStorage, srcStorage, metadata._0);
+  }
+};
+
+} // namespace _impl
+
+} // end namespace 
+
+namespace swift SWIFT_PRIVATE_ATTR {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wc++17-extensions"
+template<>
+struct TypeMetadataTrait<SwiftTagLib::AdditionalMetadataPair> {
+  static SWIFT_INLINE_PRIVATE_HELPER void * _Nonnull getTypeMetadata() {
+    return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(0)._0;
+  }
+};
+namespace _impl{
+template<>
+inline const constexpr bool isValueType<SwiftTagLib::AdditionalMetadataPair> = true;
+template<>
+inline const constexpr bool isOpaqueLayout<SwiftTagLib::AdditionalMetadataPair> = true;
+template<>
+struct implClassFor<SwiftTagLib::AdditionalMetadataPair> { using type = SwiftTagLib::_impl::_impl_AdditionalMetadataPair; };
 } // namespace
 #pragma clang diagnostic pop
 } // namespace swift
@@ -5524,18 +5183,18 @@ namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
 
 namespace _impl {
 
-class _impl_AdditionalMetadataPair;
+class _impl_ReadingOptions;
 
-// Type metadata accessor for AdditionalMetadataPair
-SWIFT_EXTERN swift::_impl::MetadataResponseTy $s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(swift::_impl::MetadataRequestTy) SWIFT_NOEXCEPT SWIFT_CALL;
+// Type metadata accessor for ReadingOptions
+SWIFT_EXTERN swift::_impl::MetadataResponseTy $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsVMa(swift::_impl::MetadataRequestTy) SWIFT_NOEXCEPT SWIFT_CALL;
 
 
 } // namespace _impl
 
-class SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV") AdditionalMetadataPair final {
+class SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV") ReadingOptions final {
 public:
-  SWIFT_INLINE_THUNK ~AdditionalMetadataPair() noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(0);
+  SWIFT_INLINE_THUNK ~ReadingOptions() noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsVMa(0);
     auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
 #ifdef __arm64e__
     auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
@@ -5544,8 +5203,8 @@ public:
 #endif
     vwTable->destroy(_getOpaquePointer(), metadata._0);
   }
-  SWIFT_INLINE_THUNK AdditionalMetadataPair(const AdditionalMetadataPair &other) noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(0);
+  SWIFT_INLINE_THUNK ReadingOptions(const ReadingOptions &other) noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsVMa(0);
     auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
 #ifdef __arm64e__
     auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
@@ -5555,8 +5214,8 @@ public:
     _storage = swift::_impl::OpaqueStorage(vwTable->size, vwTable->getAlignment());
     vwTable->initializeWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
   }
-  SWIFT_INLINE_THUNK AdditionalMetadataPair &operator =(const AdditionalMetadataPair &other) noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(0);
+  SWIFT_INLINE_THUNK ReadingOptions &operator =(const ReadingOptions &other) noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsVMa(0);
     auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
 #ifdef __arm64e__
     auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
@@ -5566,57 +5225,57 @@ public:
     vwTable->assignWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
   return *this;
   }
-  SWIFT_INLINE_THUNK AdditionalMetadataPair &operator =(AdditionalMetadataPair &&other) = delete;
-  [[noreturn]] SWIFT_INLINE_PRIVATE_HELPER AdditionalMetadataPair(AdditionalMetadataPair &&) noexcept {
+  SWIFT_INLINE_THUNK ReadingOptions &operator =(ReadingOptions &&other) = delete;
+  [[noreturn]] SWIFT_INLINE_PRIVATE_HELPER ReadingOptions(ReadingOptions &&) noexcept {
   swift::_impl::_fatalError_Cxx_move_of_Swift_value_type_not_supported_yet();
   swift::_impl::_swift_stdlib_reportFatalError("swift", 5, "C++ does not support moving a Swift value yet", 45, 0);
   abort();
   }
-  SWIFT_INLINE_THUNK swift::String getKey() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV3keySSvp");
-  SWIFT_INLINE_THUNK swift::String getValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV5valueSSvp");
-  static SWIFT_INLINE_THUNK AdditionalMetadataPair init(const swift::String& key, const swift::String& value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV3key5valueAGSS_SStcfc");
-  SWIFT_INLINE_THUNK swift::Int getHashValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV9hashValueSivp");
+  static SWIFT_INLINE_THUNK ReadingOptions getSkipImages() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV10skipImagesAGvpZ");
+  SWIFT_INLINE_THUNK uint32_t getRawValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValues6UInt32Vvp");
+  static SWIFT_INLINE_THUNK ReadingOptions init(uint32_t rawValue) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValueAGs6UInt32V_tcfc");
+  SWIFT_INLINE_THUNK swift::String getDescription() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV11descriptionSSvp");
 private:
-  SWIFT_INLINE_THUNK AdditionalMetadataPair(swift::_impl::ValueWitnessTable * _Nonnull vwTable) noexcept : _storage(vwTable->size, vwTable->getAlignment()) {}
-  static SWIFT_INLINE_THUNK AdditionalMetadataPair _make() noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(0);
+  SWIFT_INLINE_THUNK ReadingOptions(swift::_impl::ValueWitnessTable * _Nonnull vwTable) noexcept : _storage(vwTable->size, vwTable->getAlignment()) {}
+  static SWIFT_INLINE_THUNK ReadingOptions _make() noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsVMa(0);
     auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
 #ifdef __arm64e__
     auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
 #else
     auto *vwTable = *vwTableAddr;
 #endif
-    return AdditionalMetadataPair(vwTable);
+    return ReadingOptions(vwTable);
   }
   SWIFT_INLINE_THUNK const char * _Nonnull _getOpaquePointer() const noexcept { return _storage.getOpaquePointer(); }
   SWIFT_INLINE_THUNK char * _Nonnull _getOpaquePointer() noexcept { return _storage.getOpaquePointer(); }
 
   swift::_impl::OpaqueStorage _storage;
-  friend class _impl::_impl_AdditionalMetadataPair;
+  friend class _impl::_impl_ReadingOptions;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wc++17-extensions"
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wreserved-identifier"
-  typedef char $s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVD;
-  static inline constexpr $s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVD __swift_mangled_name = 0;
+  typedef char $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsVD;
+  static inline constexpr $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsVD __swift_mangled_name = 0;
 #pragma clang diagnostic pop
 #pragma clang diagnostic pop
 };
 
 namespace _impl {
 
-class _impl_AdditionalMetadataPair {
+class _impl_ReadingOptions {
 public:
-  static SWIFT_INLINE_THUNK char * _Nonnull getOpaquePointer(AdditionalMetadataPair &object) { return object._getOpaquePointer(); }
-  static SWIFT_INLINE_THUNK const char * _Nonnull getOpaquePointer(const AdditionalMetadataPair &object) { return object._getOpaquePointer(); }
+  static SWIFT_INLINE_THUNK char * _Nonnull getOpaquePointer(ReadingOptions &object) { return object._getOpaquePointer(); }
+  static SWIFT_INLINE_THUNK const char * _Nonnull getOpaquePointer(const ReadingOptions &object) { return object._getOpaquePointer(); }
   template<class T>
-  static SWIFT_INLINE_PRIVATE_HELPER AdditionalMetadataPair returnNewValue(T callable) {
-    auto result = AdditionalMetadataPair::_make();
+  static SWIFT_INLINE_PRIVATE_HELPER ReadingOptions returnNewValue(T callable) {
+    auto result = ReadingOptions::_make();
     callable(result._getOpaquePointer());
     return result;
   }
   static SWIFT_INLINE_THUNK void initializeWithTake(char * _Nonnull destStorage, char * _Nonnull srcStorage) {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(0);
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsVMa(0);
     auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
 #ifdef __arm64e__
     auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
@@ -5635,18 +5294,154 @@ namespace swift SWIFT_PRIVATE_ATTR {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wc++17-extensions"
 template<>
-struct TypeMetadataTrait<SwiftTagLib::AdditionalMetadataPair> {
+struct TypeMetadataTrait<SwiftTagLib::ReadingOptions> {
   static SWIFT_INLINE_PRIVATE_HELPER void * _Nonnull getTypeMetadata() {
-    return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairVMa(0)._0;
+    return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsVMa(0)._0;
   }
 };
 namespace _impl{
 template<>
-inline const constexpr bool isValueType<SwiftTagLib::AdditionalMetadataPair> = true;
+inline const constexpr bool isValueType<SwiftTagLib::ReadingOptions> = true;
 template<>
-inline const constexpr bool isOpaqueLayout<SwiftTagLib::AdditionalMetadataPair> = true;
+inline const constexpr bool isOpaqueLayout<SwiftTagLib::ReadingOptions> = true;
 template<>
-struct implClassFor<SwiftTagLib::AdditionalMetadataPair> { using type = SwiftTagLib::_impl::_impl_AdditionalMetadataPair; };
+struct implClassFor<SwiftTagLib::ReadingOptions> { using type = SwiftTagLib::_impl::_impl_ReadingOptions; };
+} // namespace
+#pragma clang diagnostic pop
+} // namespace swift
+
+namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
+
+namespace _impl {
+
+class _impl_TagSource;
+
+// Type metadata accessor for TagSource
+SWIFT_EXTERN swift::_impl::MetadataResponseTy $s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(swift::_impl::MetadataRequestTy) SWIFT_NOEXCEPT SWIFT_CALL;
+
+
+} // namespace _impl
+
+class SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV") TagSource final {
+public:
+  SWIFT_INLINE_THUNK ~TagSource() noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    vwTable->destroy(_getOpaquePointer(), metadata._0);
+  }
+  SWIFT_INLINE_THUNK TagSource(const TagSource &other) noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    _storage = swift::_impl::OpaqueStorage(vwTable->size, vwTable->getAlignment());
+    vwTable->initializeWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
+  }
+  SWIFT_INLINE_THUNK TagSource &operator =(const TagSource &other) noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    vwTable->assignWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
+  return *this;
+  }
+  SWIFT_INLINE_THUNK TagSource &operator =(TagSource &&other) = delete;
+  [[noreturn]] SWIFT_INLINE_PRIVATE_HELPER TagSource(TagSource &&) noexcept {
+  swift::_impl::_fatalError_Cxx_move_of_Swift_value_type_not_supported_yet();
+  swift::_impl::_swift_stdlib_reportFatalError("swift", 5, "C++ does not support moving a Swift value yet", 45, 0);
+  abort();
+  }
+  static SWIFT_INLINE_THUNK TagSource getAbstract() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8abstractAGvpZ");
+  static SWIFT_INLINE_THUNK TagSource getId3v1() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v1AGvpZ");
+  static SWIFT_INLINE_THUNK TagSource getId3v2() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v2AGvpZ");
+  static SWIFT_INLINE_THUNK TagSource getMp4() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3mp4AGvpZ");
+  static SWIFT_INLINE_THUNK TagSource getApe() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3apeAGvpZ");
+  static SWIFT_INLINE_THUNK TagSource getXiph() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV4xiphAGvpZ");
+  SWIFT_INLINE_THUNK uint8_t getRawValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValues5UInt8Vvp");
+  static SWIFT_INLINE_THUNK TagSource init(uint8_t rawValue) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValueAGs5UInt8V_tcfc");
+  SWIFT_INLINE_THUNK swift::String getDescription() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV11descriptionSSvp");
+private:
+  SWIFT_INLINE_THUNK TagSource(swift::_impl::ValueWitnessTable * _Nonnull vwTable) noexcept : _storage(vwTable->size, vwTable->getAlignment()) {}
+  static SWIFT_INLINE_THUNK TagSource _make() noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    return TagSource(vwTable);
+  }
+  SWIFT_INLINE_THUNK const char * _Nonnull _getOpaquePointer() const noexcept { return _storage.getOpaquePointer(); }
+  SWIFT_INLINE_THUNK char * _Nonnull _getOpaquePointer() noexcept { return _storage.getOpaquePointer(); }
+
+  swift::_impl::OpaqueStorage _storage;
+  friend class _impl::_impl_TagSource;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wc++17-extensions"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wreserved-identifier"
+  typedef char $s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVD;
+  static inline constexpr $s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVD __swift_mangled_name = 0;
+#pragma clang diagnostic pop
+#pragma clang diagnostic pop
+};
+
+namespace _impl {
+
+class _impl_TagSource {
+public:
+  static SWIFT_INLINE_THUNK char * _Nonnull getOpaquePointer(TagSource &object) { return object._getOpaquePointer(); }
+  static SWIFT_INLINE_THUNK const char * _Nonnull getOpaquePointer(const TagSource &object) { return object._getOpaquePointer(); }
+  template<class T>
+  static SWIFT_INLINE_PRIVATE_HELPER TagSource returnNewValue(T callable) {
+    auto result = TagSource::_make();
+    callable(result._getOpaquePointer());
+    return result;
+  }
+  static SWIFT_INLINE_THUNK void initializeWithTake(char * _Nonnull destStorage, char * _Nonnull srcStorage) {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    vwTable->initializeWithTake(destStorage, srcStorage, metadata._0);
+  }
+};
+
+} // namespace _impl
+
+} // end namespace 
+
+namespace swift SWIFT_PRIVATE_ATTR {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wc++17-extensions"
+template<>
+struct TypeMetadataTrait<SwiftTagLib::TagSource> {
+  static SWIFT_INLINE_PRIVATE_HELPER void * _Nonnull getTypeMetadata() {
+    return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(0)._0;
+  }
+};
+namespace _impl{
+template<>
+inline const constexpr bool isValueType<SwiftTagLib::TagSource> = true;
+template<>
+inline const constexpr bool isOpaqueLayout<SwiftTagLib::TagSource> = true;
+template<>
+struct implClassFor<SwiftTagLib::TagSource> { using type = SwiftTagLib::_impl::_impl_TagSource; };
 } // namespace
 #pragma clang diagnostic pop
 } // namespace swift
@@ -6214,20 +6009,39 @@ struct implClassFor<SwiftTagLib::Kind> { using type = SwiftTagLib::_impl::_impl_
 
 namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
 
+/// Describes the file format of <code>AudioFile</code>.
 namespace _impl {
 
-class _impl_TagSource;
+class _impl_Format;
 
-// Type metadata accessor for TagSource
-SWIFT_EXTERN swift::_impl::MetadataResponseTy $s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(swift::_impl::MetadataRequestTy) SWIFT_NOEXCEPT SWIFT_CALL;
+// Type metadata accessor for Format
+SWIFT_EXTERN swift::_impl::MetadataResponseTy $s11SwiftTagLib9AudioFileV6FormatOMa(swift::_impl::MetadataRequestTy) SWIFT_NOEXCEPT SWIFT_CALL;
 
+// Tags for resilient enum Format
+extern "C" {
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO4aiffyA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO6dsdiffyA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO3dsfyA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO4flacyA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO07monkeysD0yA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO3mp3yA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO3mp4yA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO8musepackyA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO7oggFlacyA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO7oggOpusyA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO8oggSpeexyA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO9oggVorbixyA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO04trueD0yA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO4waveyA2EmFWC;
+extern unsigned $s11SwiftTagLib9AudioFileV6FormatO7wavPackyA2EmFWC;
+}
 
 } // namespace _impl
 
-class SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV") TagSource final {
+class SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO") Format final {
 public:
-  SWIFT_INLINE_THUNK ~TagSource() noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(0);
+  SWIFT_INLINE_THUNK ~Format() noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
     auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
 #ifdef __arm64e__
     auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
@@ -6236,8 +6050,8 @@ public:
 #endif
     vwTable->destroy(_getOpaquePointer(), metadata._0);
   }
-  SWIFT_INLINE_THUNK TagSource(const TagSource &other) noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(0);
+  SWIFT_INLINE_THUNK Format(const Format &other) noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
     auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
 #ifdef __arm64e__
     auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
@@ -6247,8 +6061,8 @@ public:
     _storage = swift::_impl::OpaqueStorage(vwTable->size, vwTable->getAlignment());
     vwTable->initializeWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
   }
-  SWIFT_INLINE_THUNK TagSource &operator =(const TagSource &other) noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(0);
+  SWIFT_INLINE_THUNK Format &operator =(const Format &other) noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
     auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
 #ifdef __arm64e__
     auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
@@ -6258,62 +6072,259 @@ public:
     vwTable->assignWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
   return *this;
   }
-  SWIFT_INLINE_THUNK TagSource &operator =(TagSource &&other) = delete;
-  [[noreturn]] SWIFT_INLINE_PRIVATE_HELPER TagSource(TagSource &&) noexcept {
+  SWIFT_INLINE_THUNK Format &operator =(Format &&other) = delete;
+  [[noreturn]] SWIFT_INLINE_PRIVATE_HELPER Format(Format &&) noexcept {
   swift::_impl::_fatalError_Cxx_move_of_Swift_value_type_not_supported_yet();
   swift::_impl::_swift_stdlib_reportFatalError("swift", 5, "C++ does not support moving a Swift value yet", 45, 0);
   abort();
   }
-  static SWIFT_INLINE_THUNK TagSource getAbstract() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8abstractAGvpZ");
-  static SWIFT_INLINE_THUNK TagSource getId3v1() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v1AGvpZ");
-  static SWIFT_INLINE_THUNK TagSource getId3v2() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v2AGvpZ");
-  static SWIFT_INLINE_THUNK TagSource getMp4() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3mp4AGvpZ");
-  static SWIFT_INLINE_THUNK TagSource getApe() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3apeAGvpZ");
-  static SWIFT_INLINE_THUNK TagSource getXiph() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV4xiphAGvpZ");
-  SWIFT_INLINE_THUNK uint8_t getRawValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValues5UInt8Vvp");
-  static SWIFT_INLINE_THUNK TagSource init(uint8_t rawValue) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValueAGs5UInt8V_tcfc");
-  SWIFT_INLINE_THUNK swift::String getDescription() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV0B6SourceV11descriptionSSvp");
+
+  enum class cases {
+    aiff SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO4aiffyA2EmF"),
+    dsdiff SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO6dsdiffyA2EmF"),
+    dsf SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO3dsfyA2EmF"),
+    flac SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO4flacyA2EmF"),
+    monkeysAudio SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO07monkeysD0yA2EmF"),
+    mp3 SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO3mp3yA2EmF"),
+    mp4 SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO3mp4yA2EmF"),
+    musepack SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO8musepackyA2EmF"),
+    oggFlac SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO7oggFlacyA2EmF"),
+    oggOpus SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO7oggOpusyA2EmF"),
+    oggSpeex SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO8oggSpeexyA2EmF"),
+    oggVorbix SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO9oggVorbixyA2EmF"),
+    trueAudio SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO04trueD0yA2EmF"),
+    wave SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO4waveyA2EmF"),
+    wavPack SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO7wavPackyA2EmF"),
+    unknownDefault
+  };
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wc++17-extensions"  // allow use of inline static data member
+  inline const static struct _impl_aiff {  // impl struct for case aiff
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::aiff;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } aiff SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO4aiffyA2EmF");
+  SWIFT_INLINE_THUNK bool isAiff() const;
+
+  inline const static struct _impl_dsdiff {  // impl struct for case dsdiff
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::dsdiff;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } dsdiff SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO6dsdiffyA2EmF");
+  SWIFT_INLINE_THUNK bool isDsdiff() const;
+
+  inline const static struct _impl_dsf {  // impl struct for case dsf
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::dsf;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } dsf SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO3dsfyA2EmF");
+  SWIFT_INLINE_THUNK bool isDsf() const;
+
+  inline const static struct _impl_flac {  // impl struct for case flac
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::flac;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } flac SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO4flacyA2EmF");
+  SWIFT_INLINE_THUNK bool isFlac() const;
+
+  inline const static struct _impl_monkeysAudio {  // impl struct for case monkeysAudio
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::monkeysAudio;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } monkeysAudio SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO07monkeysD0yA2EmF");
+  SWIFT_INLINE_THUNK bool isMonkeysAudio() const;
+
+  inline const static struct _impl_mp3 {  // impl struct for case mp3
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::mp3;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } mp3 SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO3mp3yA2EmF");
+  SWIFT_INLINE_THUNK bool isMp3() const;
+
+  inline const static struct _impl_mp4 {  // impl struct for case mp4
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::mp4;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } mp4 SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO3mp4yA2EmF");
+  SWIFT_INLINE_THUNK bool isMp4() const;
+
+  inline const static struct _impl_musepack {  // impl struct for case musepack
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::musepack;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } musepack SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO8musepackyA2EmF");
+  SWIFT_INLINE_THUNK bool isMusepack() const;
+
+  inline const static struct _impl_oggFlac {  // impl struct for case oggFlac
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::oggFlac;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } oggFlac SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO7oggFlacyA2EmF");
+  SWIFT_INLINE_THUNK bool isOggFlac() const;
+
+  inline const static struct _impl_oggOpus {  // impl struct for case oggOpus
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::oggOpus;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } oggOpus SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO7oggOpusyA2EmF");
+  SWIFT_INLINE_THUNK bool isOggOpus() const;
+
+  inline const static struct _impl_oggSpeex {  // impl struct for case oggSpeex
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::oggSpeex;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } oggSpeex SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO8oggSpeexyA2EmF");
+  SWIFT_INLINE_THUNK bool isOggSpeex() const;
+
+  inline const static struct _impl_oggVorbix {  // impl struct for case oggVorbix
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::oggVorbix;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } oggVorbix SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO9oggVorbixyA2EmF");
+  SWIFT_INLINE_THUNK bool isOggVorbix() const;
+
+  inline const static struct _impl_trueAudio {  // impl struct for case trueAudio
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::trueAudio;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } trueAudio SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO04trueD0yA2EmF");
+  SWIFT_INLINE_THUNK bool isTrueAudio() const;
+
+  inline const static struct _impl_wave {  // impl struct for case wave
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::wave;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } wave SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO4waveyA2EmF");
+  SWIFT_INLINE_THUNK bool isWave() const;
+
+  inline const static struct _impl_wavPack {  // impl struct for case wavPack
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::wavPack;
+    }
+    SWIFT_INLINE_THUNK Format operator()() const;
+  } wavPack SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO7wavPackyA2EmF");
+  SWIFT_INLINE_THUNK bool isWavPack() const;
+
+  inline const static struct _impl_unknownDefault {  // impl struct for case unknownDefault
+    SWIFT_INLINE_THUNK constexpr operator cases() const {
+      return cases::unknownDefault;
+    }
+  } unknownDefault;
+  SWIFT_INLINE_THUNK bool isUnknownDefault() const;
+
+#pragma clang diagnostic pop
+  SWIFT_INLINE_THUNK operator cases() const {
+    auto tag = _getEnumTag();
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO4aiffyA2EmFWC) return cases::aiff;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO6dsdiffyA2EmFWC) return cases::dsdiff;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO3dsfyA2EmFWC) return cases::dsf;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO4flacyA2EmFWC) return cases::flac;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO07monkeysD0yA2EmFWC) return cases::monkeysAudio;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO3mp3yA2EmFWC) return cases::mp3;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO3mp4yA2EmFWC) return cases::mp4;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO8musepackyA2EmFWC) return cases::musepack;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO7oggFlacyA2EmFWC) return cases::oggFlac;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO7oggOpusyA2EmFWC) return cases::oggOpus;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO8oggSpeexyA2EmFWC) return cases::oggSpeex;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO9oggVorbixyA2EmFWC) return cases::oggVorbix;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO04trueD0yA2EmFWC) return cases::trueAudio;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO4waveyA2EmFWC) return cases::wave;
+    if (tag == _impl::$s11SwiftTagLib9AudioFileV6FormatO7wavPackyA2EmFWC) return cases::wavPack;
+    return cases::unknownDefault;
+  }
+
+  static SWIFT_INLINE_THUNK swift::Array<Format> getAllCases() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO8allCasesSayAEGvpZ");
+  SWIFT_INLINE_THUNK swift::Int getHashValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV6FormatO9hashValueSivp");
 private:
-  SWIFT_INLINE_THUNK TagSource(swift::_impl::ValueWitnessTable * _Nonnull vwTable) noexcept : _storage(vwTable->size, vwTable->getAlignment()) {}
-  static SWIFT_INLINE_THUNK TagSource _make() noexcept {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(0);
+  SWIFT_INLINE_THUNK Format(swift::_impl::ValueWitnessTable * _Nonnull vwTable) noexcept : _storage(vwTable->size, vwTable->getAlignment()) {}
+  static SWIFT_INLINE_THUNK Format _make() noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
     auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
 #ifdef __arm64e__
     auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
 #else
     auto *vwTable = *vwTableAddr;
 #endif
-    return TagSource(vwTable);
+    return Format(vwTable);
   }
   SWIFT_INLINE_THUNK const char * _Nonnull _getOpaquePointer() const noexcept { return _storage.getOpaquePointer(); }
   SWIFT_INLINE_THUNK char * _Nonnull _getOpaquePointer() noexcept { return _storage.getOpaquePointer(); }
 
+  SWIFT_INLINE_THUNK char * _Nonnull _destructiveProjectEnumData() noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    const auto *enumVWTable = reinterpret_cast<swift::_impl::EnumValueWitnessTable *>(vwTable);
+    enumVWTable->destructiveProjectEnumData(_getOpaquePointer(), metadata._0);
+    return _getOpaquePointer();
+  }
+  SWIFT_INLINE_THUNK void _destructiveInjectEnumTag(unsigned tag) noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    const auto *enumVWTable = reinterpret_cast<swift::_impl::EnumValueWitnessTable *>(vwTable);
+    enumVWTable->destructiveInjectEnumTag(_getOpaquePointer(), tag, metadata._0);
+  }
+  SWIFT_INLINE_THUNK unsigned _getEnumTag() const noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    const auto *enumVWTable = reinterpret_cast<swift::_impl::EnumValueWitnessTable *>(vwTable);
+    return enumVWTable->getEnumTag(_getOpaquePointer(), metadata._0);
+  }
   swift::_impl::OpaqueStorage _storage;
-  friend class _impl::_impl_TagSource;
+  friend class _impl::_impl_Format;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wc++17-extensions"
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wreserved-identifier"
-  typedef char $s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVD;
-  static inline constexpr $s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVD __swift_mangled_name = 0;
+  typedef char $s11SwiftTagLib9AudioFileV6FormatOD;
+  static inline constexpr $s11SwiftTagLib9AudioFileV6FormatOD __swift_mangled_name = 0;
 #pragma clang diagnostic pop
 #pragma clang diagnostic pop
 };
 
 namespace _impl {
 
-class _impl_TagSource {
+class _impl_Format {
 public:
-  static SWIFT_INLINE_THUNK char * _Nonnull getOpaquePointer(TagSource &object) { return object._getOpaquePointer(); }
-  static SWIFT_INLINE_THUNK const char * _Nonnull getOpaquePointer(const TagSource &object) { return object._getOpaquePointer(); }
+  static SWIFT_INLINE_THUNK char * _Nonnull getOpaquePointer(Format &object) { return object._getOpaquePointer(); }
+  static SWIFT_INLINE_THUNK const char * _Nonnull getOpaquePointer(const Format &object) { return object._getOpaquePointer(); }
   template<class T>
-  static SWIFT_INLINE_PRIVATE_HELPER TagSource returnNewValue(T callable) {
-    auto result = TagSource::_make();
+  static SWIFT_INLINE_PRIVATE_HELPER Format returnNewValue(T callable) {
+    auto result = Format::_make();
     callable(result._getOpaquePointer());
     return result;
   }
   static SWIFT_INLINE_THUNK void initializeWithTake(char * _Nonnull destStorage, char * _Nonnull srcStorage) {
-    auto metadata = _impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(0);
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0);
     auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
 #ifdef __arm64e__
     auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
@@ -6332,18 +6343,155 @@ namespace swift SWIFT_PRIVATE_ATTR {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wc++17-extensions"
 template<>
-struct TypeMetadataTrait<SwiftTagLib::TagSource> {
+struct TypeMetadataTrait<SwiftTagLib::Format> {
   static SWIFT_INLINE_PRIVATE_HELPER void * _Nonnull getTypeMetadata() {
-    return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceVMa(0)._0;
+    return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV6FormatOMa(0)._0;
   }
 };
 namespace _impl{
 template<>
-inline const constexpr bool isValueType<SwiftTagLib::TagSource> = true;
+inline const constexpr bool isValueType<SwiftTagLib::Format> = true;
 template<>
-inline const constexpr bool isOpaqueLayout<SwiftTagLib::TagSource> = true;
+inline const constexpr bool isOpaqueLayout<SwiftTagLib::Format> = true;
 template<>
-struct implClassFor<SwiftTagLib::TagSource> { using type = SwiftTagLib::_impl::_impl_TagSource; };
+struct implClassFor<SwiftTagLib::Format> { using type = SwiftTagLib::_impl::_impl_Format; };
+} // namespace
+#pragma clang diagnostic pop
+} // namespace swift
+
+namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
+
+namespace _impl {
+
+class _impl_Properties;
+
+// Type metadata accessor for Properties
+SWIFT_EXTERN swift::_impl::MetadataResponseTy $s11SwiftTagLib9AudioFileV10PropertiesVMa(swift::_impl::MetadataRequestTy) SWIFT_NOEXCEPT SWIFT_CALL;
+
+
+} // namespace _impl
+
+class SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV") Properties final {
+public:
+  SWIFT_INLINE_THUNK ~Properties() noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV10PropertiesVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    vwTable->destroy(_getOpaquePointer(), metadata._0);
+  }
+  SWIFT_INLINE_THUNK Properties(const Properties &other) noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV10PropertiesVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    _storage = swift::_impl::OpaqueStorage(vwTable->size, vwTable->getAlignment());
+    vwTable->initializeWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
+  }
+  SWIFT_INLINE_THUNK Properties &operator =(const Properties &other) noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV10PropertiesVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    vwTable->assignWithCopy(_getOpaquePointer(), const_cast<char *>(other._getOpaquePointer()), metadata._0);
+  return *this;
+  }
+  SWIFT_INLINE_THUNK Properties &operator =(Properties &&other) = delete;
+  [[noreturn]] SWIFT_INLINE_PRIVATE_HELPER Properties(Properties &&) noexcept {
+  swift::_impl::_fatalError_Cxx_move_of_Swift_value_type_not_supported_yet();
+  swift::_impl::_swift_stdlib_reportFatalError("swift", 5, "C++ does not support moving a Swift value yet", 45, 0);
+  abort();
+  }
+  SWIFT_INLINE_THUNK int32_t getLengthInSeconds() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV15lengthInSecondss5Int32Vvp");
+  SWIFT_INLINE_THUNK void setLengthInSeconds(int32_t value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV15lengthInSecondss5Int32Vvp");
+  SWIFT_INLINE_THUNK int32_t getChannels() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV8channelss5Int32Vvp");
+  SWIFT_INLINE_THUNK void setChannels(int32_t value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV8channelss5Int32Vvp");
+  SWIFT_INLINE_THUNK int32_t getSampleRate() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV10sampleRates5Int32Vvp");
+  SWIFT_INLINE_THUNK void setSampleRate(int32_t value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV10sampleRates5Int32Vvp");
+  SWIFT_INLINE_THUNK int32_t getBitrate() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV7bitrates5Int32Vvp");
+  SWIFT_INLINE_THUNK void setBitrate(int32_t value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV7bitrates5Int32Vvp");
+  SWIFT_INLINE_THUNK double getDuration() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV8durationSdvp");
+  SWIFT_INLINE_THUNK swift::Int getHashValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV10PropertiesV9hashValueSivp");
+private:
+  SWIFT_INLINE_THUNK Properties(swift::_impl::ValueWitnessTable * _Nonnull vwTable) noexcept : _storage(vwTable->size, vwTable->getAlignment()) {}
+  static SWIFT_INLINE_THUNK Properties _make() noexcept {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV10PropertiesVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    return Properties(vwTable);
+  }
+  SWIFT_INLINE_THUNK const char * _Nonnull _getOpaquePointer() const noexcept { return _storage.getOpaquePointer(); }
+  SWIFT_INLINE_THUNK char * _Nonnull _getOpaquePointer() noexcept { return _storage.getOpaquePointer(); }
+
+  swift::_impl::OpaqueStorage _storage;
+  friend class _impl::_impl_Properties;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wc++17-extensions"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wreserved-identifier"
+  typedef char $s11SwiftTagLib9AudioFileV10PropertiesVD;
+  static inline constexpr $s11SwiftTagLib9AudioFileV10PropertiesVD __swift_mangled_name = 0;
+#pragma clang diagnostic pop
+#pragma clang diagnostic pop
+};
+
+namespace _impl {
+
+class _impl_Properties {
+public:
+  static SWIFT_INLINE_THUNK char * _Nonnull getOpaquePointer(Properties &object) { return object._getOpaquePointer(); }
+  static SWIFT_INLINE_THUNK const char * _Nonnull getOpaquePointer(const Properties &object) { return object._getOpaquePointer(); }
+  template<class T>
+  static SWIFT_INLINE_PRIVATE_HELPER Properties returnNewValue(T callable) {
+    auto result = Properties::_make();
+    callable(result._getOpaquePointer());
+    return result;
+  }
+  static SWIFT_INLINE_THUNK void initializeWithTake(char * _Nonnull destStorage, char * _Nonnull srcStorage) {
+    auto metadata = _impl::$s11SwiftTagLib9AudioFileV10PropertiesVMa(0);
+    auto *vwTableAddr = reinterpret_cast<swift::_impl::ValueWitnessTable **>(metadata._0) - 1;
+#ifdef __arm64e__
+    auto *vwTable = reinterpret_cast<swift::_impl::ValueWitnessTable *>(ptrauth_auth_data(reinterpret_cast<void *>(*vwTableAddr), ptrauth_key_process_independent_data, ptrauth_blend_discriminator(vwTableAddr, 11839)));
+#else
+    auto *vwTable = *vwTableAddr;
+#endif
+    vwTable->initializeWithTake(destStorage, srcStorage, metadata._0);
+  }
+};
+
+} // namespace _impl
+
+} // end namespace 
+
+namespace swift SWIFT_PRIVATE_ATTR {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wc++17-extensions"
+template<>
+struct TypeMetadataTrait<SwiftTagLib::Properties> {
+  static SWIFT_INLINE_PRIVATE_HELPER void * _Nonnull getTypeMetadata() {
+    return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesVMa(0)._0;
+  }
+};
+namespace _impl{
+template<>
+inline const constexpr bool isValueType<SwiftTagLib::Properties> = true;
+template<>
+inline const constexpr bool isOpaqueLayout<SwiftTagLib::Properties> = true;
+template<>
+struct implClassFor<SwiftTagLib::Properties> { using type = SwiftTagLib::_impl::_impl_Properties; };
 } // namespace
 #pragma clang diagnostic pop
 } // namespace swift
@@ -7226,167 +7374,6 @@ namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
     SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10propertiesAC10PropertiesVvg(result, _getOpaquePointer());
   });
   }
-  SWIFT_INLINE_THUNK Format Format::_impl_aiff::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO4aiffyA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isAiff() const {
-    return *this == Format::aiff;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_dsdiff::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO6dsdiffyA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isDsdiff() const {
-    return *this == Format::dsdiff;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_dsf::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO3dsfyA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isDsf() const {
-    return *this == Format::dsf;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_flac::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO4flacyA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isFlac() const {
-    return *this == Format::flac;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_monkeysAudio::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO07monkeysD0yA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isMonkeysAudio() const {
-    return *this == Format::monkeysAudio;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_mp3::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO3mp3yA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isMp3() const {
-    return *this == Format::mp3;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_mp4::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO3mp4yA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isMp4() const {
-    return *this == Format::mp4;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_musepack::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO8musepackyA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isMusepack() const {
-    return *this == Format::musepack;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_oggFlac::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO7oggFlacyA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isOggFlac() const {
-    return *this == Format::oggFlac;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_oggOpus::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO7oggOpusyA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isOggOpus() const {
-    return *this == Format::oggOpus;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_oggSpeex::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO8oggSpeexyA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isOggSpeex() const {
-    return *this == Format::oggSpeex;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_oggVorbix::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO9oggVorbixyA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isOggVorbix() const {
-    return *this == Format::oggVorbix;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_trueAudio::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO04trueD0yA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isTrueAudio() const {
-    return *this == Format::trueAudio;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_wave::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO4waveyA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isWave() const {
-    return *this == Format::wave;
-  }
-  SWIFT_INLINE_THUNK Format Format::_impl_wavPack::operator()() const {
-    auto result = Format::_make();
-    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO7wavPackyA2EmFWC);
-    return result;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isWavPack() const {
-    return *this == Format::wavPack;
-  }
-  SWIFT_INLINE_THUNK  bool Format::isUnknownDefault() const {
-    return *this == Format::unknownDefault;
-  }
-  SWIFT_INLINE_THUNK swift::Array<Format> Format::getAllCases() {
-  return swift::_impl::_impl_Array<Format>::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::swift_interop_returnDirect_SwiftTagLib_void_ptr_0_8(result, SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV6FormatO8allCasesSayAEGvgZ());
-  });
-  }
-  SWIFT_INLINE_THUNK swift::Int Format::getHashValue() const {
-  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV6FormatO9hashValueSivg(_getOpaquePointer());
-  }
-  SWIFT_INLINE_THUNK int32_t Properties::getLengthInSeconds() const {
-  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV15lengthInSecondss5Int32Vvg(_getOpaquePointer());
-  }
-  SWIFT_INLINE_THUNK void Properties::setLengthInSeconds(int32_t value) {
-  SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV15lengthInSecondss5Int32Vvs(value, _getOpaquePointer());
-  }
-  SWIFT_INLINE_THUNK int32_t Properties::getChannels() const {
-  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV8channelss5Int32Vvg(_getOpaquePointer());
-  }
-  SWIFT_INLINE_THUNK void Properties::setChannels(int32_t value) {
-  SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV8channelss5Int32Vvs(value, _getOpaquePointer());
-  }
-  SWIFT_INLINE_THUNK int32_t Properties::getSampleRate() const {
-  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV10sampleRates5Int32Vvg(_getOpaquePointer());
-  }
-  SWIFT_INLINE_THUNK void Properties::setSampleRate(int32_t value) {
-  SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV10sampleRates5Int32Vvs(value, _getOpaquePointer());
-  }
-  SWIFT_INLINE_THUNK int32_t Properties::getBitrate() const {
-  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV7bitrates5Int32Vvg(_getOpaquePointer());
-  }
-  SWIFT_INLINE_THUNK void Properties::setBitrate(int32_t value) {
-  SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV7bitrates5Int32Vvs(value, _getOpaquePointer());
-  }
-  SWIFT_INLINE_THUNK double Properties::getDuration() const {
-  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV8durationSdvg(_getOpaquePointer());
-  }
-  SWIFT_INLINE_THUNK swift::Int Properties::getHashValue() const {
-  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV9hashValueSivg(_getOpaquePointer());
-  }
   SWIFT_INLINE_THUNK swift::Optional<swift::String> Metadata::getTitle() const {
   return swift::_impl::_impl_Optional<swift::String>::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
     SwiftTagLib::_impl::swift_interop_returnDirect_SwiftTagLib_uint64_t_0_8_uint64_t_8_16(result, SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV5titleSSSgvg(_getOpaquePointer()));
@@ -7627,6 +7614,30 @@ namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
   SWIFT_INLINE_THUNK swift::Int Metadata::getHashValue() const {
   return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV9hashValueSivg(_getOpaquePointer());
   }
+  SWIFT_INLINE_THUNK swift::String AdditionalMetadataPair::getKey() const {
+  return swift::_impl::_impl_String::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
+    SwiftTagLib::_impl::swift_interop_returnDirect_SwiftTagLib_uint64_t_0_8_void_ptr_8_16(result, SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV3keySSvg(_getOpaquePointer()));
+  });
+  }
+  SWIFT_INLINE_THUNK swift::String AdditionalMetadataPair::getValue() const {
+  return swift::_impl::_impl_String::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
+    SwiftTagLib::_impl::swift_interop_returnDirect_SwiftTagLib_uint64_t_0_8_void_ptr_8_16(result, SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV5valueSSvg(_getOpaquePointer()));
+  });
+  }
+  SWIFT_INLINE_THUNK AdditionalMetadataPair AdditionalMetadataPair::init(const swift::String& key, const swift::String& value) {
+  alignas(alignof(swift::String)) char copyBuffer_consumedParamCopy_key[sizeof(swift::String)];
+  auto &consumedParamCopy_key = *(new(copyBuffer_consumedParamCopy_key) swift::String(key));
+  swift::_impl::ConsumedValueStorageDestroyer<swift::String> storageGuard_consumedParamCopy_key(consumedParamCopy_key);
+  alignas(alignof(swift::String)) char copyBuffer_consumedParamCopy_value[sizeof(swift::String)];
+  auto &consumedParamCopy_value = *(new(copyBuffer_consumedParamCopy_value) swift::String(value));
+  swift::_impl::ConsumedValueStorageDestroyer<swift::String> storageGuard_consumedParamCopy_value(consumedParamCopy_value);
+  return SwiftTagLib::_impl::_impl_AdditionalMetadataPair::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
+    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV3key5valueAGSS_SStcfC(result, SwiftTagLib::_impl::swift_interop_passDirect_SwiftTagLib_uint64_t_0_8_void_ptr_8_16(swift::_impl::_impl_String::getOpaquePointer(consumedParamCopy_key)), SwiftTagLib::_impl::swift_interop_passDirect_SwiftTagLib_uint64_t_0_8_void_ptr_8_16(swift::_impl::_impl_String::getOpaquePointer(consumedParamCopy_value)));
+  });
+  }
+  SWIFT_INLINE_THUNK swift::Int AdditionalMetadataPair::getHashValue() const {
+  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV9hashValueSivg(_getOpaquePointer());
+  }
   SWIFT_INLINE_THUNK OverlayStrategy OverlayStrategy::_impl_graceful::operator()() const {
     auto result = OverlayStrategy::_make();
     result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO8gracefulyA2GmFWC);
@@ -7667,29 +7678,66 @@ namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
   SWIFT_INLINE_THUNK uint8_t OverlayStrategy::getRawValue() const {
   return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO8rawValues5UInt8Vvg(_getOpaquePointer());
   }
-  SWIFT_INLINE_THUNK swift::String AdditionalMetadataPair::getKey() const {
+  SWIFT_INLINE_THUNK ReadingOptions ReadingOptions::getSkipImages() {
+  return SwiftTagLib::_impl::_impl_ReadingOptions::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
+    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV10skipImagesAGvgZ(result);
+  });
+  }
+  SWIFT_INLINE_THUNK uint32_t ReadingOptions::getRawValue() const {
+  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValues6UInt32Vvg(_getOpaquePointer());
+  }
+  SWIFT_INLINE_THUNK ReadingOptions ReadingOptions::init(uint32_t rawValue) {
+  return SwiftTagLib::_impl::_impl_ReadingOptions::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
+    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValueAGs6UInt32V_tcfC(result, rawValue);
+  });
+  }
+  SWIFT_INLINE_THUNK swift::String ReadingOptions::getDescription() const {
   return swift::_impl::_impl_String::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::swift_interop_returnDirect_SwiftTagLib_uint64_t_0_8_void_ptr_8_16(result, SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV3keySSvg(_getOpaquePointer()));
+    SwiftTagLib::_impl::swift_interop_returnDirect_SwiftTagLib_uint64_t_0_8_void_ptr_8_16(result, SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV11descriptionSSvg(_getOpaquePointer()));
   });
   }
-  SWIFT_INLINE_THUNK swift::String AdditionalMetadataPair::getValue() const {
+  SWIFT_INLINE_THUNK TagSource TagSource::getAbstract() {
+  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
+    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8abstractAGvgZ(result);
+  });
+  }
+  SWIFT_INLINE_THUNK TagSource TagSource::getId3v1() {
+  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
+    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v1AGvgZ(result);
+  });
+  }
+  SWIFT_INLINE_THUNK TagSource TagSource::getId3v2() {
+  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
+    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v2AGvgZ(result);
+  });
+  }
+  SWIFT_INLINE_THUNK TagSource TagSource::getMp4() {
+  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
+    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3mp4AGvgZ(result);
+  });
+  }
+  SWIFT_INLINE_THUNK TagSource TagSource::getApe() {
+  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
+    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3apeAGvgZ(result);
+  });
+  }
+  SWIFT_INLINE_THUNK TagSource TagSource::getXiph() {
+  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
+    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV4xiphAGvgZ(result);
+  });
+  }
+  SWIFT_INLINE_THUNK uint8_t TagSource::getRawValue() const {
+  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValues5UInt8Vvg(_getOpaquePointer());
+  }
+  SWIFT_INLINE_THUNK TagSource TagSource::init(uint8_t rawValue) {
+  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
+    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValueAGs5UInt8V_tcfC(result, rawValue);
+  });
+  }
+  SWIFT_INLINE_THUNK swift::String TagSource::getDescription() const {
   return swift::_impl::_impl_String::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::swift_interop_returnDirect_SwiftTagLib_uint64_t_0_8_void_ptr_8_16(result, SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV5valueSSvg(_getOpaquePointer()));
+    SwiftTagLib::_impl::swift_interop_returnDirect_SwiftTagLib_uint64_t_0_8_void_ptr_8_16(result, SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV11descriptionSSvg(_getOpaquePointer()));
   });
-  }
-  SWIFT_INLINE_THUNK AdditionalMetadataPair AdditionalMetadataPair::init(const swift::String& key, const swift::String& value) {
-  alignas(alignof(swift::String)) char copyBuffer_consumedParamCopy_key[sizeof(swift::String)];
-  auto &consumedParamCopy_key = *(new(copyBuffer_consumedParamCopy_key) swift::String(key));
-  swift::_impl::ConsumedValueStorageDestroyer<swift::String> storageGuard_consumedParamCopy_key(consumedParamCopy_key);
-  alignas(alignof(swift::String)) char copyBuffer_consumedParamCopy_value[sizeof(swift::String)];
-  auto &consumedParamCopy_value = *(new(copyBuffer_consumedParamCopy_value) swift::String(value));
-  swift::_impl::ConsumedValueStorageDestroyer<swift::String> storageGuard_consumedParamCopy_value(consumedParamCopy_value);
-  return SwiftTagLib::_impl::_impl_AdditionalMetadataPair::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV3key5valueAGSS_SStcfC(result, SwiftTagLib::_impl::swift_interop_passDirect_SwiftTagLib_uint64_t_0_8_void_ptr_8_16(swift::_impl::_impl_String::getOpaquePointer(consumedParamCopy_key)), SwiftTagLib::_impl::swift_interop_passDirect_SwiftTagLib_uint64_t_0_8_void_ptr_8_16(swift::_impl::_impl_String::getOpaquePointer(consumedParamCopy_value)));
-  });
-  }
-  SWIFT_INLINE_THUNK swift::Int AdditionalMetadataPair::getHashValue() const {
-  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV9hashValueSivg(_getOpaquePointer());
   }
   SWIFT_INLINE_THUNK swift::String AttachedPicture::getDescription() const {
   return swift::_impl::_impl_String::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
@@ -7888,48 +7936,166 @@ namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
   SWIFT_INLINE_THUNK uint32_t Kind::getRawValue() const {
   return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV15AttachedPictureV4KindO8rawValues6UInt32Vvg(_getOpaquePointer());
   }
-  SWIFT_INLINE_THUNK TagSource TagSource::getAbstract() {
-  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8abstractAGvgZ(result);
+  SWIFT_INLINE_THUNK Format Format::_impl_aiff::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO4aiffyA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isAiff() const {
+    return *this == Format::aiff;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_dsdiff::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO6dsdiffyA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isDsdiff() const {
+    return *this == Format::dsdiff;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_dsf::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO3dsfyA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isDsf() const {
+    return *this == Format::dsf;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_flac::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO4flacyA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isFlac() const {
+    return *this == Format::flac;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_monkeysAudio::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO07monkeysD0yA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isMonkeysAudio() const {
+    return *this == Format::monkeysAudio;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_mp3::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO3mp3yA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isMp3() const {
+    return *this == Format::mp3;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_mp4::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO3mp4yA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isMp4() const {
+    return *this == Format::mp4;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_musepack::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO8musepackyA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isMusepack() const {
+    return *this == Format::musepack;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_oggFlac::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO7oggFlacyA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isOggFlac() const {
+    return *this == Format::oggFlac;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_oggOpus::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO7oggOpusyA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isOggOpus() const {
+    return *this == Format::oggOpus;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_oggSpeex::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO8oggSpeexyA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isOggSpeex() const {
+    return *this == Format::oggSpeex;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_oggVorbix::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO9oggVorbixyA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isOggVorbix() const {
+    return *this == Format::oggVorbix;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_trueAudio::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO04trueD0yA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isTrueAudio() const {
+    return *this == Format::trueAudio;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_wave::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO4waveyA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isWave() const {
+    return *this == Format::wave;
+  }
+  SWIFT_INLINE_THUNK Format Format::_impl_wavPack::operator()() const {
+    auto result = Format::_make();
+    result._destructiveInjectEnumTag(_impl::$s11SwiftTagLib9AudioFileV6FormatO7wavPackyA2EmFWC);
+    return result;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isWavPack() const {
+    return *this == Format::wavPack;
+  }
+  SWIFT_INLINE_THUNK  bool Format::isUnknownDefault() const {
+    return *this == Format::unknownDefault;
+  }
+  SWIFT_INLINE_THUNK swift::Array<Format> Format::getAllCases() {
+  return swift::_impl::_impl_Array<Format>::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
+    SwiftTagLib::_impl::swift_interop_returnDirect_SwiftTagLib_void_ptr_0_8(result, SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV6FormatO8allCasesSayAEGvgZ());
   });
   }
-  SWIFT_INLINE_THUNK TagSource TagSource::getId3v1() {
-  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v1AGvgZ(result);
-  });
+  SWIFT_INLINE_THUNK swift::Int Format::getHashValue() const {
+  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV6FormatO9hashValueSivg(_getOpaquePointer());
   }
-  SWIFT_INLINE_THUNK TagSource TagSource::getId3v2() {
-  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV5id3v2AGvgZ(result);
-  });
+  SWIFT_INLINE_THUNK int32_t Properties::getLengthInSeconds() const {
+  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV15lengthInSecondss5Int32Vvg(_getOpaquePointer());
   }
-  SWIFT_INLINE_THUNK TagSource TagSource::getMp4() {
-  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3mp4AGvgZ(result);
-  });
+  SWIFT_INLINE_THUNK void Properties::setLengthInSeconds(int32_t value) {
+  SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV15lengthInSecondss5Int32Vvs(value, _getOpaquePointer());
   }
-  SWIFT_INLINE_THUNK TagSource TagSource::getApe() {
-  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV3apeAGvgZ(result);
-  });
+  SWIFT_INLINE_THUNK int32_t Properties::getChannels() const {
+  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV8channelss5Int32Vvg(_getOpaquePointer());
   }
-  SWIFT_INLINE_THUNK TagSource TagSource::getXiph() {
-  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV4xiphAGvgZ(result);
-  });
+  SWIFT_INLINE_THUNK void Properties::setChannels(int32_t value) {
+  SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV8channelss5Int32Vvs(value, _getOpaquePointer());
   }
-  SWIFT_INLINE_THUNK uint8_t TagSource::getRawValue() const {
-  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValues5UInt8Vvg(_getOpaquePointer());
+  SWIFT_INLINE_THUNK int32_t Properties::getSampleRate() const {
+  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV10sampleRates5Int32Vvg(_getOpaquePointer());
   }
-  SWIFT_INLINE_THUNK TagSource TagSource::init(uint8_t rawValue) {
-  return SwiftTagLib::_impl::_impl_TagSource::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV8rawValueAGs5UInt8V_tcfC(result, rawValue);
-  });
+  SWIFT_INLINE_THUNK void Properties::setSampleRate(int32_t value) {
+  SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV10sampleRates5Int32Vvs(value, _getOpaquePointer());
   }
-  SWIFT_INLINE_THUNK swift::String TagSource::getDescription() const {
-  return swift::_impl::_impl_String::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::swift_interop_returnDirect_SwiftTagLib_uint64_t_0_8_void_ptr_8_16(result, SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV0B6SourceV11descriptionSSvg(_getOpaquePointer()));
-  });
+  SWIFT_INLINE_THUNK int32_t Properties::getBitrate() const {
+  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV7bitrates5Int32Vvg(_getOpaquePointer());
+  }
+  SWIFT_INLINE_THUNK void Properties::setBitrate(int32_t value) {
+  SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV7bitrates5Int32Vvs(value, _getOpaquePointer());
+  }
+  SWIFT_INLINE_THUNK double Properties::getDuration() const {
+  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV8durationSdvg(_getOpaquePointer());
+  }
+  SWIFT_INLINE_THUNK swift::Int Properties::getHashValue() const {
+  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV10PropertiesV9hashValueSivg(_getOpaquePointer());
   }
   SWIFT_INLINE_THUNK __CxxExceptionNested::Kind CxxException::getKind() const {
   return SwiftTagLib::__CxxExceptionNested::_impl::_impl_Kind::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {

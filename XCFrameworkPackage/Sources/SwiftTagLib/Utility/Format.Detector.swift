@@ -4,7 +4,7 @@ import class Foundation.FileHandle
 
 extension AudioFile.Format {
     /// Attempts to determine `AudioFile.Format` from given `URL`.
-    struct Detector {
+    enum Detector {
         static func format(at url: URL) throws(AudioFile.InitializationError) -> AudioFile.Format? {
             let fileExtension = url.pathExtension.lowercased()
             guard let fileHandle = try? FileHandle(forReadingFrom: url) else {

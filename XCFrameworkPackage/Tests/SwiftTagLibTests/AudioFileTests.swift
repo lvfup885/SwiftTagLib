@@ -8,8 +8,8 @@ struct AudioFileTests {
     @Test("Reading from same file twice should produce exactly same metadata.", arguments: AudioSample.supported)
     func readingMetadata(sample: AudioSample) {
         do {
-            let metadata = try #require(AudioFile(url: sample.url).metadata)
-            let secondReadMetadata = try #require(AudioFile(url: sample.url).metadata)
+            let metadata = try AudioFile(url: sample.url).metadata
+            let secondReadMetadata = try AudioFile(url: sample.url).metadata
             #expect(metadata.hashValue == secondReadMetadata.hashValue, "reading metadata from same file gives exactly same metadata; \(metadata.tagSource)")
             guard metadata.hashValue != secondReadMetadata.hashValue else { return }
             func compare<T: Equatable & Hashable>(_ keyPaths: [KeyPath<AudioFile.Metadata, T>]) {

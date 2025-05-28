@@ -25,16 +25,7 @@ public extension AudioFile.Metadata {
         }
 
         var cxxRepresentation: AudioMetadata.Picture {
-            var picture = AudioMetadata.Picture();
-            #warning("this is rather slow & inefficient way to go from Data to [UInt8] to std::vector<char>")
-            /// take a look at [pointers to C](https://github.com/swiftlang/swift/blob/main/docs/HowSwiftImportsCAPIs.md#pointers-to-data).
-            var bytes = AudioMetadata.Picture.Bytes()
-            data.forEach { bytes.push_back(Int8(bitPattern: $0)) }
-            picture.bytes = bytes;
-            picture.size = UInt32(bytes.count);
-            picture.description = std.string(description)
-            picture.kind = kind.cxxRepresentation
-            return picture;
+            .create_from_CFData(data as CFData, std.string(description), kind.cxxRepresentation)
         }
     }
 }

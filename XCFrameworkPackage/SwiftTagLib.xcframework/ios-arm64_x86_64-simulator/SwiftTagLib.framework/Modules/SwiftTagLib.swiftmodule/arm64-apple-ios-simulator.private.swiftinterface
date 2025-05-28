@@ -74,7 +74,7 @@ public struct AudioFile {
   public let format: SwiftTagLib.AudioFile.Format
   public var metadata: SwiftTagLib.AudioFile.Metadata
   public let properties: SwiftTagLib.AudioFile.Properties
-  public init(url: Foundation.URL, overlayStrategy: SwiftTagLib.AudioFile.Metadata.OverlayStrategy = .override) throws(SwiftTagLib.AudioFile.InitializationError)
+  public init(url: Foundation.URL, options: SwiftTagLib.AudioFile.Metadata.ReadingOptions = [], overlayStrategy: SwiftTagLib.AudioFile.Metadata.OverlayStrategy = .override) throws(SwiftTagLib.AudioFile.InitializationError)
   public func write() throws(SwiftTagLib.AudioFile.MetadataWritingError)
 }
 extension SwiftTagLib.AudioFile {
@@ -213,6 +213,21 @@ extension SwiftTagLib.AudioFile {
     public var hashValue: Swift.Int {
       get
     }
+  }
+}
+extension SwiftTagLib.AudioFile.Metadata {
+  public struct ReadingOptions : Swift.OptionSet, Swift.Hashable, Swift.Equatable, Swift.CustomStringConvertible {
+    public static var skipImages: SwiftTagLib.AudioFile.Metadata.ReadingOptions {
+      get
+    }
+    public let rawValue: Swift.UInt32
+    public init(rawValue: Swift.UInt32)
+    public var description: Swift.String {
+      get
+    }
+    public typealias ArrayLiteralElement = SwiftTagLib.AudioFile.Metadata.ReadingOptions
+    public typealias Element = SwiftTagLib.AudioFile.Metadata.ReadingOptions
+    public typealias RawValue = Swift.UInt32
   }
 }
 extension SwiftTagLib.AudioFile.Metadata {

@@ -1,5 +1,6 @@
 
 #import <swift/bridging>
+#import <CoreFoundation/CoreFoundation.h>
 #import <tuple>
 #import <string>
 #import <optional>
@@ -118,6 +119,9 @@ public:
         using Properties = std::tuple<std::string, int, int, int>;
         Properties properties();
     public:
+        // MARK: - Convenience Constructor for Swift
+        static Picture create_from_CFData(CFDataRef data, std::string description, Kind kind);
+        
         // MARK: - Attached Picture: Format specific builders
         using FLACPicture = TagLib::FLAC::Picture *;
         FLACPicture convert_to_FLACPicture();
