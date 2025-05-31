@@ -7,7 +7,7 @@
 </div>
 
 A library to read and write **Metadata** in audio files.
-Built on top of [`taglib`](https://github.com/taglib/taglib).
+Built on top of [`taglib`](https://github.com/taglib/taglib) [`v2.1`](https://github.com/taglib/taglib/tree/v2.1).
 
 Heavily inspired by [`SFBAudioEngine`](https://github.com/sbooth/SFBAudioEngine/) and made as an adaptation of it with focus on **metadata**. 
 You can review differences from [`SFBAudioEngine`](https://github.com/sbooth/SFBAudioEngine/) [here](./Differences-from-SFBAudioEngine-and-how-it-works.md).
@@ -24,6 +24,8 @@ var audioFile = try AudioFile(url: url)
 // by default images are read from metadata during initialization
 // skipping them will reduce time spent reading metadata
 audioFile = try AudioFile(url: url, options: [.skipImages])
+// if you need to know if file metadata has attached pictures
+print("has attached pictures:", audioFile.metadata.hasAttachedPictures)
 
 // get metadata values
 print("song:", audioFile.metadata.artist ?? "_", "-", audioFile.metadata.title ?? "_")
@@ -75,3 +77,4 @@ This library would not be possible without any of this libraries:
 ## Notes
 
 - [WMA](https://en.wikipedia.org/wiki/Advanced_Systems_Format) file format is supported by taglib [here](https://taglib.org/api/namespaceTagLib_1_1ASF.html#details), but not `SFBAudioEngine`, can probably try to support it even though it's outdated.
+- taglib v2.1 introduced **shorten** file support, but no changes were made to accomodate that yet.
