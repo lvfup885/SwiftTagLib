@@ -149,6 +149,7 @@ AudioMetadata AudioMetadata::read_from_APE_tag(const TagLib::APE::Tag *tag, cons
             }
         } else if(TagLib::APE::Item::Binary == item.type()) {
             if (key == Key::coverArtFront || key == Key::coverArtBack) {
+                ++metadata.attachedPicturesCount;
                 /// if theres no need to read images skip this step.
                 if (options & MetadataReadingOptions::skipImages) {
                     continue;

@@ -100,15 +100,15 @@ AudioMetadata AudioMetadata::read_from_MP4_tag(const TagLib::MP4::Tag *tag, cons
     read_string(Key::musicBrainzReleaseID, &Type::musicBrainzReleaseID);
     read_string(Key::musicBrainzRecordingID, &Type::musicBrainzRecordingID);
 
-    /// if there's no need to read images exit early.
-    if (options & MetadataReadingOptions::skipImages) {
-        return metadata;
-    }
-
     // Album art
     if (tag->contains(Key::pictures)) {
         auto art = tag->item(Key::pictures).toCoverArtList();
         for (auto iterator: art) {
+            ++metadata.attachedPicturesCount;
+            /// if theres no need to read images skip this step.
+            if (options & MetadataReadingOptions::skipImages) {
+                continue;
+            }
             auto picture = AudioMetadata::Picture::create_from_MP4Picture(iterator);
             metadata.attachedPictures.push_back(picture);
         }

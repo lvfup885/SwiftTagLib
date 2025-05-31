@@ -164,6 +164,9 @@ extension SwiftTagLib.AudioFile {
     public var musicBrainzReleaseID: Swift.String?
     public var musicBrainzRecordingID: Swift.String?
     public var attachedPictures: [SwiftTagLib.AudioFile.Metadata.AttachedPicture]
+    public var hasAttachedPictures: Swift.Bool {
+      get
+    }
     public var additional: [SwiftTagLib.AudioFile.Metadata.AdditionalMetadataPair]
     public var tagSource: SwiftTagLib.AudioFile.Metadata.TagSource {
       get

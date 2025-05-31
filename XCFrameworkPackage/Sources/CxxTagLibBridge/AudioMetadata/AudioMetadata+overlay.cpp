@@ -68,6 +68,8 @@ void AudioMetadata::overlay(const AudioMetadata layer, const MetadataOverlayStra
             std::make_move_iterator(layer.attachedPictures.end())
         );
     }
+    attachedPicturesCount += layer.attachedPicturesCount;
+
     // MARK: - Additional Metadata
     if (!layer.additional.empty()) {
         additional.insert(

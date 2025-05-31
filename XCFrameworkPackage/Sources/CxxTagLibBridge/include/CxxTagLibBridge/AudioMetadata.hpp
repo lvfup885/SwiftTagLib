@@ -140,6 +140,7 @@ public:
     };
     using AttachedPictures = std::vector<Picture>;
     AttachedPictures attachedPictures;
+    int attachedPicturesCount = 0;
 
     // MARK: - Additional Metadata
     using AdditionalMetadataPair = std::pair<std::string, std::string>;

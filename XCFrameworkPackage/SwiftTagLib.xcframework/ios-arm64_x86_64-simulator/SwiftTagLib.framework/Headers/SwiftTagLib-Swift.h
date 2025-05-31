@@ -4285,6 +4285,7 @@ static SWIFT_C_INLINE_THUNK struct swift_interop_passStub_SwiftTagLib_void_ptr_0
 }
 
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV16attachedPicturesSayAE15AttachedPictureVGvs(struct swift_interop_passStub_SwiftTagLib_void_ptr_0_8 value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN bool $s11SwiftTagLib9AudioFileV8MetadataV19hasAttachedPicturesSbvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_void_ptr_0_8 $s11SwiftTagLib9AudioFileV8MetadataV10additionalSayAE010AdditionalF4PairVGvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV10additionalSayAE010AdditionalF4PairVGvs(struct swift_interop_passStub_SwiftTagLib_void_ptr_0_8 value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV9tagSourceAE0bH0Vvg(SWIFT_INDIRECT_RESULT void * _Nonnull, SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
@@ -4741,6 +4742,7 @@ public:
   SWIFT_INLINE_THUNK void setMusicBrainzRecordingID(const swift::Optional<swift::String>& value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV22musicBrainzRecordingIDSSSgvp");
   SWIFT_INLINE_THUNK swift::Array<AttachedPicture> getAttachedPictures() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV16attachedPicturesSayAE15AttachedPictureVGvp");
   SWIFT_INLINE_THUNK void setAttachedPictures(const swift::Array<AttachedPicture>& value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV16attachedPicturesSayAE15AttachedPictureVGvp");
+  SWIFT_INLINE_THUNK bool hasAttachedPictures() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV19hasAttachedPicturesSbvp");
   SWIFT_INLINE_THUNK swift::Array<AdditionalMetadataPair> getAdditional() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV10additionalSayAE010AdditionalF4PairVGvp");
   SWIFT_INLINE_THUNK void setAdditional(const swift::Array<AdditionalMetadataPair>& value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV10additionalSayAE010AdditionalF4PairVGvp");
   SWIFT_INLINE_THUNK TagSource getTagSource() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV9tagSourceAE0bH0Vvp");
@@ -7583,6 +7585,9 @@ namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
   auto &consumedParamCopy_value = *(new(copyBuffer_consumedParamCopy_value) swift::Array<AttachedPicture>(value));
   swift::_impl::ConsumedValueStorageDestroyer<swift::Array<AttachedPicture>> storageGuard_consumedParamCopy_value(consumedParamCopy_value);
   SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV16attachedPicturesSayAE15AttachedPictureVGvs(SwiftTagLib::_impl::swift_interop_passDirect_SwiftTagLib_void_ptr_0_8(swift::_impl::_impl_Array<AttachedPicture>::getOpaquePointer(consumedParamCopy_value)), _getOpaquePointer());
+  }
+  SWIFT_INLINE_THUNK bool Metadata::hasAttachedPictures() const {
+  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV19hasAttachedPicturesSbvg(_getOpaquePointer());
   }
   SWIFT_INLINE_THUNK swift::Array<AdditionalMetadataPair> Metadata::getAdditional() const {
   return swift::_impl::_impl_Array<AdditionalMetadataPair>::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
@@ -12562,6 +12567,7 @@ static SWIFT_C_INLINE_THUNK struct swift_interop_passStub_SwiftTagLib_void_ptr_0
 }
 
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV16attachedPicturesSayAE15AttachedPictureVGvs(struct swift_interop_passStub_SwiftTagLib_void_ptr_0_8 value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN bool $s11SwiftTagLib9AudioFileV8MetadataV19hasAttachedPicturesSbvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_void_ptr_0_8 $s11SwiftTagLib9AudioFileV8MetadataV10additionalSayAE010AdditionalF4PairVGvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV10additionalSayAE010AdditionalF4PairVGvs(struct swift_interop_passStub_SwiftTagLib_void_ptr_0_8 value, SWIFT_CONTEXT void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV9tagSourceAE0bH0Vvg(SWIFT_INDIRECT_RESULT void * _Nonnull, SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
@@ -13018,6 +13024,7 @@ public:
   SWIFT_INLINE_THUNK void setMusicBrainzRecordingID(const swift::Optional<swift::String>& value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV22musicBrainzRecordingIDSSSgvp");
   SWIFT_INLINE_THUNK swift::Array<AttachedPicture> getAttachedPictures() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV16attachedPicturesSayAE15AttachedPictureVGvp");
   SWIFT_INLINE_THUNK void setAttachedPictures(const swift::Array<AttachedPicture>& value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV16attachedPicturesSayAE15AttachedPictureVGvp");
+  SWIFT_INLINE_THUNK bool hasAttachedPictures() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV19hasAttachedPicturesSbvp");
   SWIFT_INLINE_THUNK swift::Array<AdditionalMetadataPair> getAdditional() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV10additionalSayAE010AdditionalF4PairVGvp");
   SWIFT_INLINE_THUNK void setAdditional(const swift::Array<AdditionalMetadataPair>& value) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV10additionalSayAE010AdditionalF4PairVGvp");
   SWIFT_INLINE_THUNK TagSource getTagSource() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV9tagSourceAE0bH0Vvp");
@@ -15860,6 +15867,9 @@ namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
   auto &consumedParamCopy_value = *(new(copyBuffer_consumedParamCopy_value) swift::Array<AttachedPicture>(value));
   swift::_impl::ConsumedValueStorageDestroyer<swift::Array<AttachedPicture>> storageGuard_consumedParamCopy_value(consumedParamCopy_value);
   SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV16attachedPicturesSayAE15AttachedPictureVGvs(SwiftTagLib::_impl::swift_interop_passDirect_SwiftTagLib_void_ptr_0_8(swift::_impl::_impl_Array<AttachedPicture>::getOpaquePointer(consumedParamCopy_value)), _getOpaquePointer());
+  }
+  SWIFT_INLINE_THUNK bool Metadata::hasAttachedPictures() const {
+  return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV19hasAttachedPicturesSbvg(_getOpaquePointer());
   }
   SWIFT_INLINE_THUNK swift::Array<AdditionalMetadataPair> Metadata::getAdditional() const {
   return swift::_impl::_impl_Array<AdditionalMetadataPair>::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {

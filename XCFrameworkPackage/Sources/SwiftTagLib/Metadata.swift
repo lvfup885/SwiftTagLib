@@ -39,6 +39,10 @@ public extension AudioFile {
         public var musicBrainzRecordingID: String?
         // MARK: - Attached Pictures
         public var attachedPictures: [AttachedPicture] = []
+        internal private(set) var attachedPicturesCount: Int32 = 0
+        public var hasAttachedPictures: Bool {
+            attachedPicturesCount > 0 || attachedPictures.count > 0
+        }
         // MARK: - Additional Metadata
         public var additional: [AdditionalMetadataPair] = []
         // MARK: - Tag Source
@@ -135,6 +139,7 @@ public extension AudioFile {
                 self.musicBrainzRecordingID = String(musicBrainzRecordingID)
             }
             attachedPictures = metadata.attachedPictures.map(AttachedPicture.init)
+            attachedPicturesCount = metadata.attachedPicturesCount
             additional = metadata.additional.map(AdditionalMetadataPair.init)
         }
 

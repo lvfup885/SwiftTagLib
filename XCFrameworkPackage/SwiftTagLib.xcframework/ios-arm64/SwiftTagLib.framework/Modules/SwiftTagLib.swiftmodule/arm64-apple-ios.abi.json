@@ -6026,6 +6026,91 @@
               },
               {
                 "kind": "Var",
+                "name": "attachedPicturesCount",
+                "printedName": "attachedPicturesCount",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV21attachedPicturesCounts5Int32Vvp",
+                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV21attachedPicturesCounts5Int32Vvp",
+                "moduleName": "SwiftTagLib",
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "SetterAccess",
+                  "AccessControl"
+                ],
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int32",
+                        "printedName": "Swift.Int32",
+                        "usr": "s:s5Int32V"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV21attachedPicturesCounts5Int32Vvg",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV21attachedPicturesCounts5Int32Vvg",
+                    "moduleName": "SwiftTagLib",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "hasAttachedPictures",
+                "printedName": "hasAttachedPictures",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:11SwiftTagLib9AudioFileV8MetadataV19hasAttachedPicturesSbvp",
+                "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV19hasAttachedPicturesSbvp",
+                "moduleName": "SwiftTagLib",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV19hasAttachedPicturesSbvg",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV19hasAttachedPicturesSbvg",
+                    "moduleName": "SwiftTagLib",
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
                 "name": "additional",
                 "printedName": "additional",
                 "children": [
@@ -20473,8 +20558,15 @@
     },
     {
       "filePath": "\/Users\/igor\/Developer\/Work\/BuildSucceeded.io\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/Metadata.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2189,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/igor\/Developer\/Work\/BuildSucceeded.io\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/Metadata.swift",
       "kind": "Array",
-      "offset": 2221,
+      "offset": 2413,
       "length": 2,
       "value": "[]"
     },

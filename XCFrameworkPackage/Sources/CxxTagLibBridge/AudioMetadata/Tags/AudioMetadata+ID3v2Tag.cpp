@@ -169,13 +169,13 @@ AudioMetadata AudioMetadata::read_from_ID3v2_tag(const TagLib::ID3v2::Tag *tag, 
     read_user_string(Key::musicBrainzReleaseID, &Type::musicBrainzReleaseID);
     read_user_string(Key::musicBrainzRecordingID, &Type::musicBrainzRecordingID);
 
-    /// if there's no need to read images exit early.
-    if (options & MetadataReadingOptions::skipImages) {
-        return metadata;
-    }
-
     for (auto iterator: tag->frameListMap()[Key::pictures]) {
         TagLib::ID3v2::AttachedPictureFrame *frame = dynamic_cast<TagLib::ID3v2::AttachedPictureFrame *>(iterator);
+        ++metadata.attachedPicturesCount;
+        /// if theres no need to read images skip this step.
+        if (options & MetadataReadingOptions::skipImages) {
+            continue;
+        }
         if (frame) {
             auto picture = AudioMetadata::Picture::create_from_ID3v2Picture(frame);
             metadata.attachedPictures.push_back(picture);
