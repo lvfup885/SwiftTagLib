@@ -4323,7 +4323,7 @@ SWIFT_EXTERN ptrdiff_t $s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV9
 SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO11descriptionSSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO8rawValueAGSgs5UInt8V_tcfC(SWIFT_INDIRECT_RESULT void * _Nonnull, uint8_t rawValue) SWIFT_NOEXCEPT SWIFT_CALL; // init(rawValue:)
 SWIFT_EXTERN uint8_t $s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO8rawValues5UInt8Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV10skipImagesAGvgZ(SWIFT_INDIRECT_RESULT void * _Nonnull) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV12skipPicturesAGvgZ(SWIFT_INDIRECT_RESULT void * _Nonnull) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN uint32_t $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValues6UInt32Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValueAGs6UInt32V_tcfC(SWIFT_INDIRECT_RESULT void * _Nonnull, uint32_t rawValue) SWIFT_NOEXCEPT SWIFT_CALL; // init(rawValue:)
 SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV11descriptionSSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
@@ -5233,7 +5233,7 @@ public:
   swift::_impl::_swift_stdlib_reportFatalError("swift", 5, "C++ does not support moving a Swift value yet", 45, 0);
   abort();
   }
-  static SWIFT_INLINE_THUNK ReadingOptions getSkipImages() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV10skipImagesAGvpZ");
+  static SWIFT_INLINE_THUNK ReadingOptions getSkipPictures() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV12skipPicturesAGvpZ");
   SWIFT_INLINE_THUNK uint32_t getRawValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValues6UInt32Vvp");
   static SWIFT_INLINE_THUNK ReadingOptions init(uint32_t rawValue) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValueAGs6UInt32V_tcfc");
   SWIFT_INLINE_THUNK swift::String getDescription() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV11descriptionSSvp");
@@ -7683,9 +7683,9 @@ namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
   SWIFT_INLINE_THUNK uint8_t OverlayStrategy::getRawValue() const {
   return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO8rawValues5UInt8Vvg(_getOpaquePointer());
   }
-  SWIFT_INLINE_THUNK ReadingOptions ReadingOptions::getSkipImages() {
+  SWIFT_INLINE_THUNK ReadingOptions ReadingOptions::getSkipPictures() {
   return SwiftTagLib::_impl::_impl_ReadingOptions::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV10skipImagesAGvgZ(result);
+    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV12skipPicturesAGvgZ(result);
   });
   }
   SWIFT_INLINE_THUNK uint32_t ReadingOptions::getRawValue() const {
@@ -12605,7 +12605,7 @@ SWIFT_EXTERN ptrdiff_t $s11SwiftTagLib9AudioFileV8MetadataV010AdditionalF4PairV9
 SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO11descriptionSSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO8rawValueAGSgs5UInt8V_tcfC(SWIFT_INDIRECT_RESULT void * _Nonnull, uint8_t rawValue) SWIFT_NOEXCEPT SWIFT_CALL; // init(rawValue:)
 SWIFT_EXTERN uint8_t $s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO8rawValues5UInt8Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
-SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV10skipImagesAGvgZ(SWIFT_INDIRECT_RESULT void * _Nonnull) SWIFT_NOEXCEPT SWIFT_CALL; // _
+SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV12skipPicturesAGvgZ(SWIFT_INDIRECT_RESULT void * _Nonnull) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN uint32_t $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValues6UInt32Vvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
 SWIFT_EXTERN void $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValueAGs6UInt32V_tcfC(SWIFT_INDIRECT_RESULT void * _Nonnull, uint32_t rawValue) SWIFT_NOEXCEPT SWIFT_CALL; // init(rawValue:)
 SWIFT_EXTERN struct swift_interop_returnStub_SwiftTagLib_uint64_t_0_8_void_ptr_8_16 $s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV11descriptionSSvg(SWIFT_CONTEXT const void * _Nonnull _self) SWIFT_NOEXCEPT SWIFT_CALL; // _
@@ -13515,7 +13515,7 @@ public:
   swift::_impl::_swift_stdlib_reportFatalError("swift", 5, "C++ does not support moving a Swift value yet", 45, 0);
   abort();
   }
-  static SWIFT_INLINE_THUNK ReadingOptions getSkipImages() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV10skipImagesAGvpZ");
+  static SWIFT_INLINE_THUNK ReadingOptions getSkipPictures() SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV12skipPicturesAGvpZ");
   SWIFT_INLINE_THUNK uint32_t getRawValue() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValues6UInt32Vvp");
   static SWIFT_INLINE_THUNK ReadingOptions init(uint32_t rawValue) SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV8rawValueAGs6UInt32V_tcfc");
   SWIFT_INLINE_THUNK swift::String getDescription() const SWIFT_SYMBOL("s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV11descriptionSSvp");
@@ -15965,9 +15965,9 @@ namespace SwiftTagLib SWIFT_PRIVATE_ATTR SWIFT_SYMBOL_MODULE("SwiftTagLib") {
   SWIFT_INLINE_THUNK uint8_t OverlayStrategy::getRawValue() const {
   return SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV15OverlayStrategyO8rawValues5UInt8Vvg(_getOpaquePointer());
   }
-  SWIFT_INLINE_THUNK ReadingOptions ReadingOptions::getSkipImages() {
+  SWIFT_INLINE_THUNK ReadingOptions ReadingOptions::getSkipPictures() {
   return SwiftTagLib::_impl::_impl_ReadingOptions::returnNewValue([&](char * _Nonnull result) SWIFT_INLINE_THUNK_ATTRIBUTES {
-    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV10skipImagesAGvgZ(result);
+    SwiftTagLib::_impl::$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV12skipPicturesAGvgZ(result);
   });
   }
   SWIFT_INLINE_THUNK uint32_t ReadingOptions::getRawValue() const {

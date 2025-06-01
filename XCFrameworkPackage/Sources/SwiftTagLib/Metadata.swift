@@ -40,6 +40,7 @@ public extension AudioFile {
         // MARK: - Attached Pictures
         public var attachedPictures: [AttachedPicture] = []
         internal private(set) var attachedPicturesCount: Int32 = 0
+        /// might give false positives when skipping pictures(images may carry no data, but unless read the count is based on metadata frames)
         public var hasAttachedPictures: Bool {
             attachedPicturesCount > 0 || attachedPictures.count > 0
         }

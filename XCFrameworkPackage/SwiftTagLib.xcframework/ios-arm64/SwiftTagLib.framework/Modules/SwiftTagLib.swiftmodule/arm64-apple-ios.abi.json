@@ -6086,7 +6086,8 @@
                 "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV19hasAttachedPicturesSbvp",
                 "moduleName": "SwiftTagLib",
                 "declAttributes": [
-                  "AccessControl"
+                  "AccessControl",
+                  "RawDocComment"
                 ],
                 "accessors": [
                   {
@@ -6934,8 +6935,8 @@
                 "children": [
                   {
                     "kind": "Var",
-                    "name": "skipImages",
-                    "printedName": "skipImages",
+                    "name": "skipPictures",
+                    "printedName": "skipPictures",
                     "children": [
                       {
                         "kind": "TypeNominal",
@@ -6945,8 +6946,8 @@
                       }
                     ],
                     "declKind": "Var",
-                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV10skipImagesAGvpZ",
-                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV10skipImagesAGvpZ",
+                    "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV12skipPicturesAGvpZ",
+                    "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV12skipPicturesAGvpZ",
                     "moduleName": "SwiftTagLib",
                     "static": true,
                     "declAttributes": [
@@ -6967,8 +6968,8 @@
                           }
                         ],
                         "declKind": "Accessor",
-                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV10skipImagesAGvgZ",
-                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV10skipImagesAGvgZ",
+                        "usr": "s:11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV12skipPicturesAGvgZ",
+                        "mangledName": "$s11SwiftTagLib9AudioFileV8MetadataV14ReadingOptionsV12skipPicturesAGvgZ",
                         "moduleName": "SwiftTagLib",
                         "static": true,
                         "accessorKind": "get"
@@ -20566,7 +20567,7 @@
     {
       "filePath": "\/Users\/igor\/Developer\/Work\/BuildSucceeded.io\/SwiftTagLib\/XCFrameworkPackage\/Sources\/SwiftTagLib\/Metadata.swift",
       "kind": "Array",
-      "offset": 2413,
+      "offset": 2556,
       "length": 2,
       "value": "[]"
     },

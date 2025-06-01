@@ -220,7 +220,7 @@ extension SwiftTagLib.AudioFile {
 }
 extension SwiftTagLib.AudioFile.Metadata {
   public struct ReadingOptions : Swift.OptionSet, Swift.Hashable, Swift.Equatable, Swift.CustomStringConvertible {
-    public static var skipImages: SwiftTagLib.AudioFile.Metadata.ReadingOptions {
+    public static var skipPictures: SwiftTagLib.AudioFile.Metadata.ReadingOptions {
       get
     }
     public let rawValue: Swift.UInt32

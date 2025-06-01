@@ -172,13 +172,15 @@ AudioMetadata AudioMetadata::read_from_ID3v2_tag(const TagLib::ID3v2::Tag *tag, 
     for (auto iterator: tag->frameListMap()[Key::pictures]) {
         TagLib::ID3v2::AttachedPictureFrame *frame = dynamic_cast<TagLib::ID3v2::AttachedPictureFrame *>(iterator);
         ++metadata.attachedPicturesCount;
-        /// if theres no need to read images skip this step.
-        if (options & MetadataReadingOptions::skipImages) {
+        /// if theres no need to read pictures skip this step.
+        if (options & MetadataReadingOptions::skipPictures) {
             continue;
         }
-        if (frame) {
-            auto picture = AudioMetadata::Picture::create_from_ID3v2Picture(frame);
-            metadata.attachedPictures.push_back(picture);
+        auto picture = AudioMetadata::Picture::create_from_ID3v2Picture(frame);
+        if (picture.has_value()) {
+            metadata.attachedPictures.push_back(picture.value());
+        } else {
+            --metadata.attachedPicturesCount;
         }
     }
     return metadata;

@@ -23,7 +23,7 @@ final class PerformanceTests: XCTestCase {
         }
     }
 
-    func testMetadataReadingSkippingImages() throws {
+    func testMetadataReadingSkippingPictures() throws {
         let fileURLs = AudioSample.supported.map(\.url)
         try XCTSkipIf(fileURLs.isEmpty, "no file URLs for test")
 
@@ -33,7 +33,7 @@ final class PerformanceTests: XCTestCase {
             XCTCPUMetric(),
         ]) {
             for url in fileURLs {
-                guard let _ = try? AudioFile(url: url, options: [.skipImages]) else {
+                guard let _ = try? AudioFile(url: url, options: [.skipPictures]) else {
                     XCTFail("failed to read file at: \(url.path)")
                     return
                 }

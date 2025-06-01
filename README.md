@@ -21,10 +21,12 @@ import SwiftTagLib
 let url = URL(fileURLWithPath: "./path/to/audiofile.mp3")
 var audioFile = try AudioFile(url: url)
 
-// by default images are read from metadata during initialization
+// by default attached pictures are read from metadata during initialization
 // skipping them will reduce time spent reading metadata
-audioFile = try AudioFile(url: url, options: [.skipImages])
-// if you need to know if file metadata has attached pictures
+audioFile = try AudioFile(url: url, options: [.skipPictures])
+
+// if you need to know if file metadata has attached pictures,
+// might give false positives if pictures are corrupted/empty
 print("has attached pictures:", audioFile.metadata.hasAttachedPictures)
 
 // get metadata values

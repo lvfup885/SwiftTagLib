@@ -2,9 +2,15 @@
 #import <CxxTagLibBridge/AudioMetadata.hpp>
 
 /// builds `AudioMetadata::Picture` from `TagLib::FLAC::Picture`.
-AudioMetadata::Picture AudioMetadata::Picture::create_from_FLACPicture(const TagLib::FLAC::Picture *flacPicture) {
+std::optional<AudioMetadata::Picture> AudioMetadata::Picture::create_from_FLACPicture(const TagLib::FLAC::Picture *flacPicture) {
+    if (!flacPicture) {
+        return std::nullopt;
+    }
     auto pointer = flacPicture->data().data();
     auto size = flacPicture->data().size();
+    if (!pointer || size <= 0) {
+        return std::nullopt;
+    }
     auto picture = AudioMetadata::Picture {
         std::vector<char>(pointer, pointer + size),
         size
@@ -17,22 +23,35 @@ AudioMetadata::Picture AudioMetadata::Picture::create_from_FLACPicture(const Tag
 }
 
 /// builds `AudioMetadata::Picture` from `TagLib::MP4::CoverArt`.
-AudioMetadata::Picture AudioMetadata::Picture::create_from_MP4Picture(const TagLib::MP4::CoverArt coverArt) {
-    auto pointer = coverArt.data().data();
-    auto size = coverArt.data().size();
-    return {
-        std::vector<char>(pointer, pointer + size),
-        size
+std::optional<AudioMetadata::Picture> AudioMetadata::Picture::create_from_MP4Picture(const TagLib::MP4::CoverArt *coverArt) {
+    if (!coverArt) {
+        return std::nullopt;
+    }
+    auto pointer = coverArt->data().data();
+    auto size = coverArt->data().size();
+    if (!pointer || size <= 0) {
+        return std::nullopt;
+    }
+    auto picture = AudioMetadata::Picture {
+        .bytes = std::vector<char>(pointer, pointer + size),
+        .size = size
     };
+    return picture;
 }
 
 /// builds `AudioMetadata::Picture` from `TagLib::ID3v2::AttachedPictureFrame *`.
-AudioMetadata::Picture AudioMetadata::Picture::create_from_ID3v2Picture(const TagLib::ID3v2::AttachedPictureFrame *frame) {
+std::optional<AudioMetadata::Picture> AudioMetadata::Picture::create_from_ID3v2Picture(const TagLib::ID3v2::AttachedPictureFrame *frame) {
+    if (!frame) {
+        return std::nullopt;
+    }
     auto pointer = frame->picture().data();
     auto size = frame->picture().size();
+    if (!pointer || size <= 0) {
+        return std::nullopt;
+    }
     auto picture = AudioMetadata::Picture {
-        std::vector<char>(pointer, pointer + size),
-        size
+        .bytes = std::vector<char>(pointer, pointer + size),
+        .size = size
     };
     if (!frame->description().isEmpty()) {
         picture.description = frame->description().toCString(true);
@@ -41,7 +60,7 @@ AudioMetadata::Picture AudioMetadata::Picture::create_from_ID3v2Picture(const Ta
 }
 
 /// maybe builds `AudioMetadata::Picture` from `const TagLib::APE::Item item` and `const char* key` return wrapped in `std::optional`.
-std::optional<AudioMetadata::Picture> AudioMetadata::Picture::create_from_APEPicture(const TagLib::APE::Item item, const char* key) {
+std::optional<AudioMetadata::Picture> AudioMetadata::Picture::create_from_APEPicture(const TagLib::APE::Item *item, const char* key) {
     // From http://www.hydrogenaudio.org/forums/index.php?showtopic=40603&view=findpost&p=504669
     /*
      <length> 32 bit
@@ -52,21 +71,27 @@ std::optional<AudioMetadata::Picture> AudioMetadata::Picture::create_from_APEPic
      0x00
      <cover data> binary
      */
-    auto binaryData = item.binaryData();
+    if (!item) {
+        return std::nullopt;
+    }
+    auto binaryData = item->binaryData();
     auto pos = binaryData.find('\0');
     if (-1 != pos && 3 < binaryData.size()) {
         auto upos = static_cast<unsigned int>(pos);
         auto pointer = binaryData.mid(upos + 1).data();
         auto size = (binaryData.size() - upos - 1);
+        if (!pointer || size <= 0) {
+            return std::nullopt;
+        }
         auto description = TagLib::String(binaryData.mid(0, upos), TagLib::String::UTF8).toCString(true);
         auto type = strcasecmp(key, "Cover Art (Front)")
             ? AudioMetadata::Picture::Kind::frontCover
             : AudioMetadata::Picture::Kind::backCover;
         auto picture = AudioMetadata::Picture {
-            std::vector<char>(pointer, pointer + size),
-            size,
-            description,
-            type
+            .bytes = std::vector<char>(pointer, pointer + size),
+            .size = size,
+            .description = description,
+            .kind = type
         };
         return picture;
     } else {

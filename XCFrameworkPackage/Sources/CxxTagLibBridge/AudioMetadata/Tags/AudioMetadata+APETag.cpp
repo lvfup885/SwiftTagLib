@@ -150,13 +150,15 @@ AudioMetadata AudioMetadata::read_from_APE_tag(const TagLib::APE::Tag *tag, cons
         } else if(TagLib::APE::Item::Binary == item.type()) {
             if (key == Key::coverArtFront || key == Key::coverArtBack) {
                 ++metadata.attachedPicturesCount;
-                /// if theres no need to read images skip this step.
-                if (options & MetadataReadingOptions::skipImages) {
+                /// if theres no need to read pictures skip this step.
+                if (options & MetadataReadingOptions::skipPictures) {
                     continue;
                 }
-                auto picture = AudioMetadata::Picture::create_from_APEPicture(item, key);
+                auto picture = AudioMetadata::Picture::create_from_APEPicture(&item, key);
                 if (picture.has_value()) {
                     metadata.attachedPictures.push_back(picture.value());
+                } else {
+                    --metadata.attachedPicturesCount;
                 }
             } else {
                 continue;

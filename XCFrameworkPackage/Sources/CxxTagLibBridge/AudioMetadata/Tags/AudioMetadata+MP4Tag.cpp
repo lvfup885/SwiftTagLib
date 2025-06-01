@@ -105,12 +105,16 @@ AudioMetadata AudioMetadata::read_from_MP4_tag(const TagLib::MP4::Tag *tag, cons
         auto art = tag->item(Key::pictures).toCoverArtList();
         for (auto iterator: art) {
             ++metadata.attachedPicturesCount;
-            /// if theres no need to read images skip this step.
-            if (options & MetadataReadingOptions::skipImages) {
+            /// if theres no need to read pictures skip this step.
+            if (options & MetadataReadingOptions::skipPictures) {
                 continue;
             }
-            auto picture = AudioMetadata::Picture::create_from_MP4Picture(iterator);
-            metadata.attachedPictures.push_back(picture);
+            auto picture = AudioMetadata::Picture::create_from_MP4Picture(&iterator);
+            if (picture.has_value()) {
+                metadata.attachedPictures.push_back(picture.value());
+            } else {
+                --metadata.attachedPicturesCount;
+            }
         }
     }
     

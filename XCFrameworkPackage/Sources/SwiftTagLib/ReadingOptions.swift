@@ -4,8 +4,8 @@
 public extension AudioFile.Metadata {
     /// Defines how `AudioFile.Mmetadata` is read.
     struct ReadingOptions: OptionSet, Hashable, Equatable, CxxRepresentable, CustomStringConvertible {
-        /// Skip the images when reading metadata.
-        public static var skipImages: Self { .init(rawValue: 1 << 0) }
+        /// Skip pictures when reading metadata.
+        public static var skipPictures: Self { .init(rawValue: 1 << 0) }
 
         public let rawValue: UInt32
 
@@ -23,8 +23,8 @@ public extension AudioFile.Metadata {
 
         public var description: String {
             var descriptions: [String] = []
-            if contains(.skipImages) {
-                descriptions.append("skipImages")
+            if contains(.skipPictures) {
+                descriptions.append("skipPictures")
             }
             return "ReadOptions(" + descriptions.joined(separator: ", ") + ")"
         }

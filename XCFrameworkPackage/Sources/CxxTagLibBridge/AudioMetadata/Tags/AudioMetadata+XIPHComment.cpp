@@ -156,12 +156,16 @@ AudioMetadata AudioMetadata::read_from_XiphComment(const TagLib::Ogg::XiphCommen
 
     for (auto iterator: const_cast<TagLib::Ogg::XiphComment *>(tag)->pictureList()) {
         ++metadata.attachedPicturesCount;
-        /// if theres no need to read images skip this step.
-        if (options & MetadataReadingOptions::skipImages) {
+        /// if theres no need to read pictures skip this step.
+        if (options & MetadataReadingOptions::skipPictures) {
             continue;
         }
         auto picture = AudioMetadata::Picture::create_from_FLACPicture(iterator);
-        metadata.attachedPictures.push_back(picture);
+        if (picture.has_value()) {
+            metadata.attachedPictures.push_back(picture.value());
+        } else {
+            --metadata.attachedPicturesCount;
+        }
     }
 
     return metadata;
