@@ -5,6 +5,7 @@
 #import "Logging.hpp"
 #import <taglib/tfilestream.h>
 #import <taglib/tfile.h>
+#import <taglib/tag.h>
 #import <stdexcept>
 #import <exception>
 
@@ -79,6 +80,7 @@ namespace AudioFile {
                     return MetadataWritingOutcome::invalidFile;
                 }
                 write_metadata_implementation(file, metadata);
+                file.strip(TagLib::Tag::ID3v1);
                 if (!file.save()) {
                     taglib_bridge_log(Error, "error while saving file: %s", fileName.c_str());
                     return MetadataWritingOutcome::saveError;
