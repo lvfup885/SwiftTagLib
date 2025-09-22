@@ -29,16 +29,12 @@ namespace AudioFile {
         }
 
         void write_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
+            // we do not care about other tags, since they're stripped upon saving.
+            // we just create ID3v2 tag and write to it.
             if (auto tag = file.ID3v2Tag(true)) {
                 tag->frameFactory()->setDefaultTextEncoding(TagLib::String::UTF8);
+                metadata->write_to_ID3v2_tag(tag);
             }
-            if (file.hasAPETag()) {
-                metadata->write_to_APE_tag(file.APETag(true));
-            }
-            if (file.hasID3v1Tag()) {
-                metadata->write_to_ID3v1_tag(file.ID3v1Tag());
-            }
-            metadata->write_to_ID3v2_tag(file.ID3v2Tag(true));
         }
     };
 }
