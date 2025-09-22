@@ -81,6 +81,7 @@ namespace AudioFile {
                 }
                 write_metadata_implementation(file, metadata);
                 file.strip(TagLib::Tag::ID3v1);
+                file.strip(TagLib::Tag::APE);
                 if (!file.save()) {
                     taglib_bridge_log(Error, "error while saving file: %s", fileName.c_str());
                     return MetadataWritingOutcome::saveError;
