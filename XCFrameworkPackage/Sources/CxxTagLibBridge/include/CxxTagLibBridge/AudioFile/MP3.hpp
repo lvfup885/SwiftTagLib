@@ -1,6 +1,8 @@
 
 #import <CxxTagLibBridge/AbstractAudioFile.hpp>
 #import <taglib/mpegfile.h>
+#import <taglib/id3v2tag.h>
+#import <taglib/id3v2framefactory.h>
 
 namespace AudioFile {
     struct MP3 final: public AbstractAudioFile<TagLib::MPEG::File> {
@@ -27,6 +29,9 @@ namespace AudioFile {
         }
 
         void write_metadata_implementation(FileType &file, AudioMetadata *metadata) const {
+            if (auto tag = file.ID3v2Tag(true)) {
+                tag->frameFactory()->setDefaultTextEncoding(TagLib::String::UTF8);
+            }
             if (file.hasAPETag()) {
                 metadata->write_to_APE_tag(file.APETag(true));
             }
